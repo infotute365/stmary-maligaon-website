@@ -17,7 +17,12 @@ adminApi.interceptors.response.use(
     return response
   },
   (error) => {
-    console.error('API Error:', error.response?.status, error.response?.data)
+    // The auth provider handles this response as the normal signed-out state.
+    const signedOutCheck = error.response?.status === 401 &&
+      error.config?.method === 'get' && error.config?.url === '/auth/check'
+    if (!signedOutCheck) {
+      console.error('API Error:', error.response?.status, error.response?.data)
+    }
     if (
       error.response?.status === 401 &&
       typeof window !== 'undefined' &&

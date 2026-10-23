@@ -1,0 +1,28 @@
+{
+  "pages_checked": 44,
+  "page_failures": [],
+  "homepage_assets_checked": 16,
+  "asset_failures": [],
+  "api_checks": [
+    {
+      "route": "/api/health",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "route": "/api/auth/check",
+      "status": 401,
+      "pass": true
+    },
+    {
+      "route": "/api/staff/bad-id",
+      "status": 400,
+      "pass": true
+    },
+    {
+      "route": "/api/files/downloads/7ca15cf6-382b-4e5c-afe0-30a5d32ccba3.pdf",
+      "status": 200,
+      "pass": true
+    }
+  ]
+}

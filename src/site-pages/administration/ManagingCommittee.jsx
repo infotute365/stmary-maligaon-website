@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useState, useEffect } from 'react'
 import { Users } from 'lucide-react'
 import PageHeader from '../../components/common/PageHeader.jsx'
@@ -6,6 +7,7 @@ import api from '../../services/api.js'
 import { getMediaUrl } from '../../utils/media.js'
 
 const ManagingCommittee = () => {
+  const c = useSiteContent()
   const [committee, setCommittee] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -28,7 +30,7 @@ const ManagingCommittee = () => {
   if (loading) {
     return (
       <div>
-        <PageHeader title="Managing Committee" subtitle="Meet the governing body" icon={<Users size={18} />} />
+        <PageHeader homeLabel={c('administration.managingCommittee.breadcrumb.home')} title={c('administration.managingCommittee.pageHeader.title')} subtitle={c('administration.managingCommittee.pageHeader.subtitle')} icon={<Users size={18} />} />
         <section className="section-padding">
           <div className="container-custom flex justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-4 border-maroon-600 border-t-transparent"></div>
@@ -40,11 +42,11 @@ const ManagingCommittee = () => {
 
   return (
     <div>
-      <PageHeader title="Managing Committee" subtitle="Meet the governing body" icon={<Users size={18} />} />
+      <PageHeader homeLabel={c('administration.managingCommittee.breadcrumb.home')} title={c('administration.managingCommittee.pageHeader.title')} subtitle={c('administration.managingCommittee.pageHeader.subtitle')} icon={<Users size={18} />} />
       <section className="section-padding">
         <div className="container-custom grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
           {committee.length === 0 ? (
-            <p className="text-center text-gray-500 col-span-2">No committee members found.</p>
+            <p className="text-center text-gray-500 col-span-2">{c('administration.managingCommittee.copy.page-header.paragraph.no-committee-members-found-95511df9')}</p>
           ) : (
             committee.map((m) => (
               <SectionWrapper key={m._id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-center gap-4">

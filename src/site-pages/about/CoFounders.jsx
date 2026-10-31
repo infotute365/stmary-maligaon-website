@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { 
@@ -15,6 +16,7 @@ import {
 import coFounderImage from '../../assets/coFounder.png';
 
 const CoFounders = () => {
+  const c = useSiteContent()
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
@@ -115,9 +117,7 @@ const CoFounders = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="inline-flex items-center gap-2 bg-gold-400/20 backdrop-blur-sm border border-gold-400/30 text-gold-300 px-4 py-2 rounded-full text-sm font-semibold tracking-[0.2em] uppercase mb-6"
             >
-              <Sparkles size={16} className="text-gold-400" />
-              Our Founders
-            </motion.div>
+              <Sparkles size={16} className="text-gold-400" />{c('about.coFounders.copy.page-header.text.our-founders-7ed63d30')}</motion.div>
 
             {/* Title */}
             <motion.h1
@@ -125,8 +125,7 @@ const CoFounders = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-            >
-              Our <span className="text-gold-400 italic">Co-Foundress</span>
+            >{c('about.coFounders.copy.page-header.text.our-1d20526a') + ' '}<span className="text-gold-400 italic">{c('about.coFounders.copy.page-header.text.co-foundress-f8005040')}</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -135,9 +134,7 @@ const CoFounders = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-gold-300 text-xl md:text-2xl mt-4 font-light"
-            >
-              St. Mary Domenica Mazzarello
-            </motion.p>
+            >{c('about.coFounders.copy.page-header.text.st-mary-domenica-mazzarell-665fbc21')}</motion.p>
 
             {/* Years */}
             <motion.p
@@ -146,9 +143,7 @@ const CoFounders = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-gray-400 text-sm mt-2 tracking-widest flex items-center justify-center gap-2"
             >
-              <Calendar size={16} className="text-gold-400" />
-              1837 – 1881
-            </motion.p>
+              <Calendar size={16} className="text-gold-400" />{c('about.coFounders.copy.page-header.text.1837-1881-91b9cbb9')}</motion.p>
 
             {/* Decorative Divider */}
             <motion.div
@@ -220,7 +215,7 @@ const CoFounders = () => {
                       className="absolute -bottom-1 -right-1 bg-gold-500 text-maroon-900 px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 z-20"
                     >
                       <Star size={14} className="fill-current" />
-                      <span className="text-xs font-bold">Saint</span>
+                      <span className="text-xs font-bold">{c('about.coFounders.copy.page-header.text.saint-4ab07918')}</span>
                     </motion.div>
                   </motion.div>
 
@@ -229,31 +224,24 @@ const CoFounders = () => {
                     <motion.h2 
                       variants={fadeInUp}
                       className="font-serif text-3xl md:text-4xl font-bold text-maroon-900"
-                    >
-                      St. Mary Domenica <br className="hidden sm:block" />
-                      <span className="text-gold-600">Mazzarello</span>
+                    >{c('about.coFounders.copy.page-header.text.st-mary-domenica-154823dd') + ' '}<br className="hidden sm:block" />
+                      <span className="text-gold-600">{c('about.coFounders.copy.page-header.text.mazzarello-f4f696aa')}</span>
                     </motion.h2>
 
                     <motion.p 
                       variants={fadeInUp}
                       className="text-gold-600 text-sm font-semibold mt-1 flex items-center justify-center md:justify-start gap-2"
                     >
-                      <Award size={16} />
-                      Co-Foundress of the Salesian Sisters (FMA)
-                    </motion.p>
+                      <Award size={16} />{c('about.coFounders.copy.page-header.text.co-foundress-of-the-salesi-a7808a8d')}</motion.p>
 
                     <motion.div 
                       variants={fadeInUp}
                       className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-3"
                     >
                       <span className="inline-flex items-center gap-1.5 text-xs bg-maroon-50 text-maroon-700 px-3 py-1 rounded-full">
-                        <Heart size={12} className="text-rose-500" />
-                        Born May 9, 1837
-                      </span>
+                        <Heart size={12} className="text-rose-500" />{c('about.coFounders.copy.page-header.text.born-may-9-1837-0781ad5e')}</span>
                       <span className="inline-flex items-center gap-1.5 text-xs bg-maroon-50 text-maroon-700 px-3 py-1 rounded-full">
-                        <Cross size={12} className="text-gold-500" />
-                        Died May 14, 1881
-                      </span>
+                        <Cross size={12} className="text-gold-500" />{c('about.coFounders.copy.page-header.text.died-may-14-1881-82eb4323')}</span>
                     </motion.div>
 
                     {/* Quote from the Saint */}
@@ -262,9 +250,7 @@ const CoFounders = () => {
                       className="mt-4 p-4 bg-gradient-to-r from-gold-50/80 to-transparent rounded-xl border-l-4 border-gold-400"
                     >
                       <Quote size={16} className="text-gold-400 mb-1" />
-                      <p className="text-maroon-800 italic text-sm leading-relaxed">
-                        "I entrust them to you."
-                      </p>
+                      <p className="text-maroon-800 italic text-sm leading-relaxed">{c('about.coFounders.copy.page-header.paragraph.i-entrust-them-to-you-85d7e18f')}</p>
                     </motion.div>
                   </div>
                 </div>
@@ -280,39 +266,30 @@ const CoFounders = () => {
                     <div className="w-8 h-8 rounded-lg bg-maroon-100 text-maroon-700 flex items-center justify-center">
                       <BookOpen size={18} />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-maroon-900">Her Life & Mission</h3>
+                    <h3 className="font-serif text-xl font-bold text-maroon-900">{c('about.coFounders.copy.her-life-mission.heading.her-life-mission-879b07ee')}</h3>
                   </div>
 
                   <div className="space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
                     <p>
-                      <span className="text-maroon-800 font-semibold">God's ways are marvelous.</span> Contemporary with Don Bosco, 
-                      Mary Mazzarello, in the hamlet of Mornese a little village in Piedmont, Italy, 
-                      thirsted with the same desire to help girls. Mary Domenica Mazzarello was born on 
-                      <span className="text-maroon-700 font-medium"> May 9, 1837</span>.
+                      <span className="text-maroon-800 font-semibold">{c('about.coFounders.copy.her-life-mission.text.god-s-ways-are-marvelous-e2449398')}</span>{' ' + c('about.coFounders.copy.her-life-mission.paragraph.contemporary-with-don-bosc-7ce1947d')}<span className="text-maroon-700 font-medium">{' ' + c('about.coFounders.copy.her-life-mission.text.may-9-1837-e73c7da7')}</span>.
                     </p>
 
-                    <p>
-                      She too did receive a heavenly mandate. While walking down the uninhabited slopes 
-                      of Borgo Alto she saw a group of girls playing in the non‑existent playground and 
-                      a strong voice – firm and steady, communicated to her the divine mission:{' '}
-                      <span className="italic text-maroon-800 font-medium">"I entrust them to you."</span> 
-                      Was it a dream, a hallucination? Yet there she was fully awake. Walking in full 
-                      consciousness…
-                    </p>
+                    <p>{c('about.coFounders.copy.her-life-mission.paragraph.she-too-did-receive-a-heav-da84b0ca')}{' '}
+                      <span className="italic text-maroon-800 font-medium">{c('about.coFounders.copy.her-life-mission.text.i-entrust-them-to-you-85d7e18f')}</span>{c('about.coFounders.copy.her-life-mission.paragraph.was-it-a-dream-a-hallucina-a2ef9141')}</p>
 
                     {/* Key Stats */}
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
                       <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
-                        <p className="text-2xl font-bold text-maroon-900">1837</p>
-                        <p className="text-xs text-gray-500">Birth Year</p>
+                        <p className="text-2xl font-bold text-maroon-900">{c('about.coFounders.copy.her-life-mission.paragraph.1837-3e8a9277')}</p>
+                        <p className="text-xs text-gray-500">{c('about.coFounders.copy.her-life-mission.paragraph.birth-year-c7856ad3')}</p>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
-                        <p className="text-2xl font-bold text-maroon-900">1872</p>
-                        <p className="text-xs text-gray-500">Founded FMA</p>
+                        <p className="text-2xl font-bold text-maroon-900">{c('about.coFounders.copy.her-life-mission.paragraph.1872-3f613c55')}</p>
+                        <p className="text-xs text-gray-500">{c('about.coFounders.copy.her-life-mission.paragraph.founded-fma-c5caaee6')}</p>
                       </div>
                       <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
-                        <p className="text-2xl font-bold text-maroon-900">1922</p>
-                        <p className="text-xs text-gray-500">Arrived in India</p>
+                        <p className="text-2xl font-bold text-maroon-900">{c('about.coFounders.copy.her-life-mission.paragraph.1922-2c1f3f5f')}</p>
+                        <p className="text-xs text-gray-500">{c('about.coFounders.copy.her-life-mission.paragraph.arrived-in-india-f7d99d31')}</p>
                       </div>
                     </div>
                   </div>
@@ -329,30 +306,15 @@ const CoFounders = () => {
                     <div className="w-8 h-8 rounded-lg bg-gold-100 text-gold-700 flex items-center justify-center">
                       <Users size={18} />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-maroon-900">
-                      The Meeting &amp; Foundation
-                    </h3>
+                    <h3 className="font-serif text-xl font-bold text-maroon-900">{c('about.coFounders.copy.the-meeting-foundation.heading.the-meeting-foundation-76a4d737')}</h3>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="md:col-span-2 space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
+                      <p>{c('about.coFounders.copy.the-meeting-foundation.paragraph.in-8bc1d53c') + ' '}<span className="text-maroon-700 font-semibold">{c('about.coFounders.copy.the-meeting-foundation.text.1864-d9521266')}</span>{' ' + c('about.coFounders.copy.the-meeting-foundation.paragraph.came-the-momentous-meeting-76910a5d') + ' '}<span className="italic">{c('about.coFounders.copy.the-meeting-foundation.text.he-is-a-saint-i-can-feel-i-018dc8fc')}</span>{' '}{c('about.coFounders.copy.the-meeting-foundation.paragraph.she-said-to-all-don-bosco--accc9fab')}</p>
+                      <p>{c('about.coFounders.copy.the-meeting-foundation.paragraph.in-8bc1d53c.2') + ' '}<span className="text-maroon-700 font-semibold">{c('about.coFounders.copy.the-meeting-foundation.text.1872-3f613c55')}</span>{' ' + c('about.coFounders.copy.the-meeting-foundation.paragraph.he-founded-the-society-of--7b21c532')}</p>
                       <p>
-                        In <span className="text-maroon-700 font-semibold">1864</span> came the momentous 
-                        meeting with Don Bosco. <span className="italic">"He is a saint! I can feel it!"</span>{' '}
-                        she said to all. Don Bosco too saw something equally precious in her. In Mary Mazzarello
-                        a like‑minded soul, Salesian by instinct, Don Bosco found a ready, active and creative
-                        collaborator.
-                      </p>
-                      <p>
-                        In <span className="text-maroon-700 font-semibold">1872</span> he founded the 
-                        Society of the Salesian Sisters (FMA) with Mary Mazzarello at their head. Imbued with 
-                        the spirit of the Founder they would march forward in the quest of providing integral 
-                        formation and education for girls.
-                      </p>
-                      <p>
-                        <span className="text-maroon-700 font-semibold">1875</span> saw the first expansion 
-                        of the Salesian work outside Europe. India welcomed the first Salesian Sisters in 
-                        <span className="text-maroon-700 font-semibold"> 1922</span>.
+                        <span className="text-maroon-700 font-semibold">{c('about.coFounders.copy.the-meeting-foundation.text.1875-af9d0081')}</span>{' ' + c('about.coFounders.copy.the-meeting-foundation.paragraph.saw-the-first-expansion-of-d89bfbf6')}<span className="text-maroon-700 font-semibold">{' ' + c('about.coFounders.copy.the-meeting-foundation.text.1922-2c1f3f5f')}</span>.
                       </p>
                     </div>
 
@@ -360,24 +322,24 @@ const CoFounders = () => {
                     <div className="relative bg-gradient-to-b from-maroon-50 to-gold-50 rounded-2xl p-5 border border-gold-200">
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-maroon-800 text-white flex items-center justify-center text-xs font-bold">1</div>
+                          <div className="w-8 h-8 rounded-full bg-maroon-800 text-white flex items-center justify-center text-xs font-bold">{c('about.coFounders.copy.the-meeting-foundation.text.1-6b86b273')}</div>
                           <div>
-                            <p className="text-xs font-semibold text-maroon-900">1864</p>
-                            <p className="text-[10px] text-gray-600">Meeting with Don Bosco</p>
+                            <p className="text-xs font-semibold text-maroon-900">{c('about.coFounders.copy.the-meeting-foundation.paragraph.1864-d9521266')}</p>
+                            <p className="text-[10px] text-gray-600">{c('about.coFounders.copy.the-meeting-foundation.paragraph.meeting-with-don-bosco-42a48526')}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-gold-500 text-maroon-900 flex items-center justify-center text-xs font-bold">2</div>
+                          <div className="w-8 h-8 rounded-full bg-gold-500 text-maroon-900 flex items-center justify-center text-xs font-bold">{c('about.coFounders.copy.the-meeting-foundation.text.2-d4735e3a')}</div>
                           <div>
-                            <p className="text-xs font-semibold text-maroon-900">1872</p>
-                            <p className="text-[10px] text-gray-600">Founded FMA</p>
+                            <p className="text-xs font-semibold text-maroon-900">{c('about.coFounders.copy.the-meeting-foundation.paragraph.1872-3f613c55')}</p>
+                            <p className="text-[10px] text-gray-600">{c('about.coFounders.copy.the-meeting-foundation.paragraph.founded-fma-c5caaee6')}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-maroon-800 text-white flex items-center justify-center text-xs font-bold">3</div>
+                          <div className="w-8 h-8 rounded-full bg-maroon-800 text-white flex items-center justify-center text-xs font-bold">{c('about.coFounders.copy.the-meeting-foundation.text.3-4e074085')}</div>
                           <div>
-                            <p className="text-xs font-semibold text-maroon-900">1922</p>
-                            <p className="text-[10px] text-gray-600">Arrived in India</p>
+                            <p className="text-xs font-semibold text-maroon-900">{c('about.coFounders.copy.the-meeting-foundation.paragraph.1922-2c1f3f5f')}</p>
+                            <p className="text-[10px] text-gray-600">{c('about.coFounders.copy.the-meeting-foundation.paragraph.arrived-in-india-f7d99d31')}</p>
                           </div>
                         </div>
                       </div>
@@ -396,28 +358,17 @@ const CoFounders = () => {
                     <div className="w-8 h-8 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center">
                       <Heart size={18} />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-maroon-900">
-                      Her Enduring Legacy
-                    </h3>
+                    <h3 className="font-serif text-xl font-bold text-maroon-900">{c('about.coFounders.copy.her-enduring-legacy.heading.her-enduring-legacy-9a15c070')}</h3>
                   </div>
 
                   <div className="space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
-                    <p>
-                      Today, the Salesian Sisters continue to carry forward the charism of Don Bosco and
-                      Mother Mazzarello, serving young women with the same loving kindness, reason, and faith
-                      that inspired their founders. Her vision of integral education – nurturing the mind,
-                      heart, and spirit – remains as relevant as ever, guiding countless institutions across
-                      the globe.
-                    </p>
+                    <p>{c('about.coFounders.copy.her-enduring-legacy.paragraph.today-the-salesian-sisters-a1de0375')}</p>
 
                     {/* Legacy Quote Box */}
                     <div className="relative bg-gradient-to-r from-gold-50 to-amber-50 border-l-4 border-gold-500 p-5 rounded-r-xl">
                       <Quote size={20} className="text-gold-400 absolute -top-2 -left-2 bg-white rounded-full p-1" />
                       <div className="pl-6">
-                        <p className="text-maroon-900 italic font-serif text-base md:text-lg leading-relaxed">
-                          "I entrust them to you." – a divine mandate that still echoes in every classroom
-                          and community where Salesian sisters serve.
-                        </p>
+                        <p className="text-maroon-900 italic font-serif text-base md:text-lg leading-relaxed">{c('about.coFounders.copy.her-enduring-legacy.paragraph.i-entrust-them-to-you-a-di-4741713a')}</p>
                       </div>
                     </div>
 
@@ -425,18 +376,18 @@ const CoFounders = () => {
                     <div className="grid grid-cols-3 gap-3 mt-4">
                       <div className="text-center p-3 bg-maroon-50 rounded-xl">
                         <Globe size={20} className="mx-auto text-maroon-700" />
-                        <p className="text-xs font-semibold text-maroon-900 mt-1">Global Presence</p>
-                        <p className="text-[10px] text-gray-500">100+ Countries</p>
+                        <p className="text-xs font-semibold text-maroon-900 mt-1">{c('about.coFounders.copy.her-enduring-legacy.paragraph.global-presence-783579ce')}</p>
+                        <p className="text-[10px] text-gray-500">{c('about.coFounders.copy.her-enduring-legacy.paragraph.100-countries-f92d5fae')}</p>
                       </div>
                       <div className="text-center p-3 bg-maroon-50 rounded-xl">
                         <BookOpen size={20} className="mx-auto text-maroon-700" />
-                        <p className="text-xs font-semibold text-maroon-900 mt-1">Educational Institutions</p>
-                        <p className="text-[10px] text-gray-500">2000+ Schools</p>
+                        <p className="text-xs font-semibold text-maroon-900 mt-1">{c('about.coFounders.copy.her-enduring-legacy.paragraph.educational-institutions-79a1c8ce')}</p>
+                        <p className="text-[10px] text-gray-500">{c('about.coFounders.copy.her-enduring-legacy.paragraph.2000-schools-4210cf19')}</p>
                       </div>
                       <div className="text-center p-3 bg-maroon-50 rounded-xl">
                         <Users size={20} className="mx-auto text-maroon-700" />
-                        <p className="text-xs font-semibold text-maroon-900 mt-1">Salesian Sisters</p>
-                        <p className="text-[10px] text-gray-500">14,000+ Sisters</p>
+                        <p className="text-xs font-semibold text-maroon-900 mt-1">{c('about.coFounders.copy.her-enduring-legacy.paragraph.salesian-sisters-dc86dfd2')}</p>
+                        <p className="text-[10px] text-gray-500">{c('about.coFounders.copy.her-enduring-legacy.paragraph.14-000-sisters-35261934')}</p>
                       </div>
                     </div>
                   </div>
@@ -451,13 +402,8 @@ const CoFounders = () => {
                 >
                   <div className="bg-gradient-to-br from-maroon-900 to-maroon-800 rounded-2xl p-6 md:p-8 text-center text-white">
                     <Sparkles size={24} className="text-gold-400 mx-auto mb-3" />
-                    <h4 className="font-serif text-xl font-bold text-gold-300 mb-2">
-                      May Her Legacy Inspire Us
-                    </h4>
-                    <p className="text-maroon-200 text-sm max-w-md mx-auto">
-                      Let us carry forward her spirit of loving kindness, faith, and dedication to 
-                      the education of young minds.
-                    </p>
+                    <h4 className="font-serif text-xl font-bold text-gold-300 mb-2">{c('about.coFounders.copy.may-her-legacy-inspire.heading.may-her-legacy-inspire-us-c993305a')}</h4>
+                    <p className="text-maroon-200 text-sm max-w-md mx-auto">{c('about.coFounders.copy.may-her-legacy-inspire.paragraph.let-us-carry-forward-her-s-27231736')}</p>
                     <div className="mt-4 flex justify-center gap-2">
                       <span className="w-8 h-0.5 bg-gold-400/50 rounded-full" />
                       <span className="w-12 h-0.5 bg-gold-400 rounded-full" />

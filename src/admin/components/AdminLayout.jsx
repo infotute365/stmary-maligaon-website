@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import AdminSidebar from './AdminSidebar'
 import AdminNavbar from './AdminNavbar'
 
-const AdminLayout = ({ children }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(true)
+const AdminLayout = ({ children, initialSidebarOpen = true }) => {
+  const [sidebarOpen, setSidebarOpen] = useState(initialSidebarOpen)
 
   return (
     <div className="min-h-screen bg-gray-50">

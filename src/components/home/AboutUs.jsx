@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 // src/pages/AboutUs.jsx
 
 import React from 'react'
@@ -15,12 +16,13 @@ import {
 } from 'lucide-react'
 
 const AboutUs = () => {
+  const c = useSiteContent()
   const aboutItems = [
     {
       id: 1,
       icon: <School size={28} />,
-      title: 'About School',
-      description: "St. Mary's Senior Secondary School, Maligaon is an English medium School established in 1966, and is run by the Salesians Sisters of Don Bosco.",
+      title: c('home.about.title1'),
+      description: c('home.about.description1'),
       readMore: '/about/school',
       gradient: 'from-maroon-50 to-gold-50/20',
       iconBg: 'bg-maroon-100',
@@ -29,8 +31,8 @@ const AboutUs = () => {
     {
       id: 2,
       icon: <Eye size={28} />,
-      title: 'Vision & Mission',
-      description: "St. Mary's School, Maligaon is committed to making the integral formation accessible to young girls of diverse backgrounds. Our mission is to nurture empowered, compassionate, and responsible citizens who will contribute meaningfully to society.",
+      title: c('home.about.title2'),
+      description: c('home.about.description2'),
       readMore: '/about/vision-mission',
       gradient: 'from-blue-50 to-indigo-50/20',
       iconBg: 'bg-blue-100',
@@ -39,8 +41,8 @@ const AboutUs = () => {
     {
       id: 3,
       icon: <BookOpen size={28} />,
-      title: 'Curriculum',
-      description: "The system of education followed in the schools run by the Salesian Sisters is the Preventive System which is based on three great principles of Reason, Religion, and Loving Kindness. This system focuses on integral formation of the whole person.",
+      title: c('home.about.title3'),
+      description: c('home.about.description3'),
       readMore: '/academics/curriculum',
       gradient: 'from-emerald-50 to-teal-50/20',
       iconBg: 'bg-emerald-100',
@@ -49,8 +51,8 @@ const AboutUs = () => {
     {
       id: 4,
       icon: <UserPlus size={28} />,
-      title: 'Admission Enquiry',
-      description: "Age eligibility (As on 1st April of the academic session for which admission is sought). The day for the pre-primary classes is designed to address the developmental needs of young learners through play-based and activity-oriented learning.",
+      title: c('home.about.title4'),
+      description: c('home.about.description4'),
       readMore: '/admissions/enquiry',
       gradient: 'from-amber-50 to-orange-50/20',
       iconBg: 'bg-amber-100',
@@ -59,10 +61,10 @@ const AboutUs = () => {
   ]
 
   const stats = [
-    { value: '1966', label: 'Year Established', icon: <GraduationCap size={20} /> },
-    { value: '60+', label: 'Years of Excellence', icon: <Award size={20} /> },
-    { value: '1500+', label: 'Students', icon: <Users size={20} /> },
-    { value: '55+', label: 'Teaching Staff', icon: <Users size={20} /> }
+    { value: c('home.about.value1'), label: c('home.about.label1'), icon: <GraduationCap size={20} /> },
+    { value: c('home.about.value2'), label: c('home.about.label2'), icon: <Award size={20} /> },
+    { value: c('home.about.value3'), label: c('home.about.label3'), icon: <Users size={20} /> },
+    { value: c('home.about.value4'), label: c('home.about.label4'), icon: <Users size={20} /> }
   ]
 
   const containerVariants = {
@@ -118,18 +120,13 @@ const AboutUs = () => {
           <div className="flex items-center justify-center gap-2 mb-3">
             <div className="w-8 h-0.5 bg-gold-400 rounded-full" />
             <span className="text-xs font-semibold text-gold-500 tracking-[0.2em] uppercase flex items-center gap-1.5">
-              <Sparkles size={12} className="text-gold-400" />
-              About Our School
-            </span>
+              <Sparkles size={12} className="text-gold-400" />{c('home.about.about-our-school')}</span>
             <div className="w-8 h-0.5 bg-gold-400 rounded-full" />
           </div>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-maroon-900">
-            Welcome to <span className="text-gold-600">St. Mary's</span>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-maroon-900">{c('home.about.welcome-to') + ' '}<span className="text-gold-600">{c('home.about.st-mary-s')}</span>
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-gold-400 to-maroon-600 mx-auto mt-3 rounded-full" />
-          <p className="text-gray-600 text-base mt-4 max-w-2xl mx-auto leading-relaxed">
-            Empowering young minds through quality education, values, and holistic development since 1966.
-          </p>
+          <p className="text-gray-600 text-base mt-4 max-w-2xl mx-auto leading-relaxed">{c('home.about.empowering-young-minds-through-quality-education-values-and-holis')}</p>
         </motion.div>
 
         {/* Stats Row */}
@@ -205,9 +202,7 @@ const AboutUs = () => {
                   <a
                     href={item.readMore}
                     className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-maroon-700 hover:text-gold-600 transition-all duration-300 group-hover:gap-3"
-                  >
-                    Read More
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                  >{c('home.about.read-more')}<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
 
                   {/* Bottom Decorative Effect */}
@@ -231,10 +226,10 @@ const AboutUs = () => {
         >
           <div className="inline-block bg-gradient-to-r from-maroon-50 to-gold-50/30 rounded-2xl px-6 py-4 border border-maroon-100/60">
             <p className="text-sm text-gray-600">
-              <span className="font-semibold text-maroon-700">📚 Discover More</span>
+              <span className="font-semibold text-maroon-700">{c('home.about.discover-more')}</span>
               <span className="hidden sm:inline text-gray-400 mx-2">|</span>
               <br className="sm:hidden" />
-              <span className="text-gray-500">Explore our academic programs, achievements, and community</span>
+              <span className="text-gray-500">{c('home.about.explore-our-academic-programs-achievements-and-community')}</span>
             </p>
           </div>
         </motion.div>

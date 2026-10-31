@@ -1,9 +1,11 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useState } from 'react'
 import { useNavigate, Link } from '@/routing'
 import { LogIn, Mail, Lock, GraduationCap } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 
 const Login = () => {
+  const c = useSiteContent()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -31,8 +33,8 @@ const Login = () => {
           <span className="w-14 h-14 rounded-2xl bg-maroon-800 text-gold-300 flex items-center justify-center mb-3">
             <GraduationCap size={26} />
           </span>
-          <h1 className="font-serif text-2xl font-bold text-maroon-900">Welcome Back</h1>
-          <p className="text-sm text-gray-500 mt-1">Sign in to access your account</p>
+          <h1 className="font-serif text-2xl font-bold text-maroon-900">{c('pages.login.copy.welcome-back.heading.welcome-back-0c3310a6')}</h1>
+          <p className="text-sm text-gray-500 mt-1">{c('pages.login.copy.welcome-back.paragraph.sign-in-to-access-your-acc-bc2e3192')}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -73,11 +75,8 @@ const Login = () => {
           </button>
         </form>
 
-        <p className="text-center text-sm text-gray-500 mt-6">
-          Back to{' '}
-          <Link to="/" className="text-maroon-700 font-medium hover:underline">
-            Homepage
-          </Link>
+        <p className="text-center text-sm text-gray-500 mt-6">{c('pages.login.copy.welcome-back.paragraph.back-to-cd9182ce')}{' '}
+          <Link to="/" className="text-maroon-700 font-medium hover:underline">{c('pages.login.copy.welcome-back.text.homepage-9e3391e9')}</Link>
         </p>
       </div>
     </div>

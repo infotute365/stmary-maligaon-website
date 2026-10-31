@@ -1,14 +1,15 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 // src/components/home/Sister.jsx
 
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Quote, Sparkles, Heart, ArrowRight, Award } from 'lucide-react'
-import { schoolInfo } from '../../data/seedData.js'
 import sisterImage from '../../assets/sister.png'
 import boscoImage from '../../assets/bosco.png'
 import coFounderImage from '../../assets/coFounder.png'
 
 const Sister = () => {
+  const c = useSiteContent()
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -63,13 +64,10 @@ const Sister = () => {
         >
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="h-px w-10 bg-gold-400" />
-            <span className="text-gold-600 text-xs font-semibold tracking-[0.25em] uppercase">
-              Our Leadership
-            </span>
+            <span className="text-gold-600 text-xs font-semibold tracking-[0.25em] uppercase">{c('home.sisters.our-leadership')}</span>
             <span className="h-px w-10 bg-gold-400" />
           </div>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-maroon-900">
-            Sr. Superior's <span className="text-gold-600 italic">Message</span>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-maroon-900">{c('home.sisters.sr-superior-s') + ' '}<span className="text-gold-600 italic">{c('home.sisters.message')}</span>
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-gold-400 to-maroon-600 mx-auto mt-4 rounded-full" />
         </motion.div>
@@ -99,15 +97,12 @@ const Sister = () => {
               <div className="absolute bottom-6 right-6 w-8 h-8 border-b-2 border-r-2 border-gold-400/60 rounded-br" />
               <div className="absolute top-4 right-4 bg-gold-500/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
                 <Award size={12} className="text-maroon-900" />
-                <span className="text-[10px] font-bold text-maroon-900">Salesian Sisters</span>
+                <span className="text-[10px] font-bold text-maroon-900">{c('home.sisters.salesian-sisters')}</span>
               </div>
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="w-12 h-0.5 bg-gold-400 rounded-full mb-3" />
-                <p className="font-serif text-2xl font-bold text-white leading-tight drop-shadow-lg">
-                  Sr. Lissy Mathew
-                </p>
-                <p className="text-xs text-gold-300 tracking-[0.2em] uppercase mt-1 font-medium">
-                  Manager, {schoolInfo.name}
+                <p className="font-serif text-2xl font-bold text-white leading-tight drop-shadow-lg">{c('home.sisters.sr-lissy-mathew')}</p>
+                <p className="text-xs text-gold-300 tracking-[0.2em] uppercase mt-1 font-medium">{c('home.sisters.manager') + ' '}{c('global.school.name')}
                 </p>
               </div>
             </div>
@@ -116,28 +111,18 @@ const Sister = () => {
             <div className="md:col-span-8 p-6 md:p-8 lg:p-10">
               <div className="flex items-start gap-3 mb-4">
                 <Quote size={24} className="text-gold-300 flex-shrink-0 mt-0.5" />
-                <span className="text-[10px] font-semibold text-gold-600 tracking-[0.2em] uppercase">
-                  A Message from the Manager
-                </span>
+                <span className="text-[10px] font-semibold text-gold-600 tracking-[0.2em] uppercase">{c('home.sisters.a-message-from-the-manager')}</span>
               </div>
 
               <div className="space-y-4 text-gray-700 leading-relaxed text-sm md:text-[15px] max-h-[300px] overflow-y-auto pr-3 custom-scrollbar">
-                <p className="text-base md:text-lg font-serif text-maroon-800 font-medium leading-relaxed">
-                  "I am pleased to write these lines on this web page of St. Mary's Sr. Sec. School, Maligaon, as I return to the institution after nine years."
-                </p>
+                <p className="text-base md:text-lg font-serif text-maroon-800 font-medium leading-relaxed">{c('home.sisters.i-am-pleased-to-write-these-lines-on-this-web-page-of-st-mary-s-s')}</p>
 
-                <p>
-                  I am truly excited to be part of this educational community and contribute to the growth and success of our students. Our vision is to build upon our existing strength while implementing new initiatives and programs to enrich the educational experience for all students.
-                </p>
+                <p>{c('home.sisters.i-am-truly-excited-to-be-part-of-this-educational-community-and-c')}</p>
 
-                <p>
-                  I am dedicated to working collaboratively with our esteemed faculty, staff and parents to ensure that every student receives a comprehensive education that is accessible to young people from diverse backgrounds. Our mission is to foster a child-centered learning environment within a supportive and nurturing family-like atmosphere.
-                </p>
+                <p>{c('home.sisters.i-am-dedicated-to-working-collaboratively-with-our-esteemed-facul')}</p>
 
                 <div className="my-3 pl-5 border-l-4 border-gold-400 py-2 bg-gradient-to-r from-gold-50/60 to-transparent rounded-r-lg">
-                  <p className="italic text-maroon-800 text-sm leading-relaxed">
-                    "I sincerely appreciate the ongoing support of the educational community for our school. I look forward to collaborating to achieve success together."
-                  </p>
+                  <p className="italic text-maroon-800 text-sm leading-relaxed">{c('home.sisters.i-sincerely-appreciate-the-ongoing-support-of-the-educational-com')}</p>
                 </div>
               </div>
 
@@ -145,15 +130,15 @@ const Sister = () => {
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
                     <Heart size={16} className="text-rose-400" />
-                    <span className="text-sm text-gray-500">With gratitude and hope</span>
+                    <span className="text-sm text-gray-500">{c('home.sisters.with-gratitude-and-hope')}</span>
                   </div>
                   <div className="text-right">
-                    <p className="font-serif text-xl font-bold text-maroon-800 leading-tight">Sr. Lissy Mathew</p>
-                    <p className="text-xs font-semibold text-gold-600 tracking-[0.15em] uppercase">Manager</p>
+                    <p className="font-serif text-xl font-bold text-maroon-800 leading-tight">{c('home.sisters.sr-lissy-mathew')}</p>
+                    <p className="text-xs font-semibold text-gold-600 tracking-[0.15em] uppercase">{c('home.sisters.managerDesignation')}</p>
                   </div>
                 </div>
                 <div className="mt-2 text-xs text-gray-400">
-                  <span>{schoolInfo.name}, {schoolInfo.city}</span>
+                  <span>{c('global.school.name')}, {c('global.school.city')}</span>
                 </div>
               </div>
             </div>
@@ -191,45 +176,31 @@ const Sister = () => {
 
       {/* Badge - Top right */}
       <div className="absolute top-3 right-3 bg-gold-500/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-lg">
-        <span className="text-[9px] font-bold text-maroon-900">
-          Don Bosco
-        </span>
+        <span className="text-[9px] font-bold text-maroon-900">{c('home.sisters.don-bosco')}</span>
       </div>
 
       {/* Name Plate - Bottom left */}
       <div className="absolute bottom-4 left-4 right-4">
         <div className="w-10 h-0.5 bg-gold-400 rounded-full mb-2" />
 
-        <p className="text-white font-serif text-xl md:text-2xl font-bold drop-shadow-lg">
-          St. John Bosco
-        </p>
+        <p className="text-white font-serif text-xl md:text-2xl font-bold drop-shadow-lg">{c('home.sisters.st-john-bosco')}</p>
 
-        <p className="text-gold-300 text-xs tracking-[0.2em] uppercase font-medium">
-          Founder
-        </p>
+        <p className="text-gold-300 text-xs tracking-[0.2em] uppercase font-medium">{c('home.sisters.founder')}</p>
       </div>
     </div>
 
     {/* Content */}
     <div className="p-6">
-      <h3 className="font-serif text-xl font-bold text-maroon-900 group-hover:text-maroon-700 transition-colors">
-        Founder Message
-      </h3>
+      <h3 className="font-serif text-xl font-bold text-maroon-900 group-hover:text-maroon-700 transition-colors">{c('home.sisters.founder-message')}</h3>
 
       <div className="w-12 h-0.5 bg-gold-400 rounded-full mt-2 mb-3 group-hover:w-20 transition-all duration-500" />
 
-      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-        St. John Bosco, popularly known as Don Bosco (Italian for Father Bosco)
-        was born at Becchi, in Piedmont, Italy on August 16, 1815. From a very
-        young age he was inspired to work for the poor young people of his time...
-      </p>
+      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{c('home.sisters.st-john-bosco-popularly-known-as-don-bosco-italian-for-father-bos')}</p>
 
       <a
         href="/about/founder"
         className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-maroon-700 hover:text-gold-600 transition-all duration-300 group-hover:gap-3"
-      >
-        Read More
-        <ArrowRight
+      >{c('home.sisters.read-more')}<ArrowRight
           size={16}
           className="group-hover:translate-x-1 transition-transform duration-300"
         />
@@ -262,33 +233,25 @@ const Sister = () => {
                 
                 {/* Badge - Top right */}
                 <div className="absolute top-3 right-3 bg-gold-500/95 backdrop-blur-sm px-3 py-1 rounded-full shadow-lg">
-                  <span className="text-[9px] font-bold text-maroon-900">FMA</span>
+                  <span className="text-[9px] font-bold text-maroon-900">{c('home.sisters.fma')}</span>
                 </div>
 
                 {/* Name Plate - Bottom left */}
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="w-10 h-0.5 bg-gold-400 rounded-full mb-2" />
-                  <p className="text-white font-serif text-xl md:text-2xl font-bold drop-shadow-lg">
-                    St. Mary Mazzarello
-                  </p>
-                  <p className="text-gold-300 text-xs tracking-[0.2em] uppercase font-medium">Co-Foundress</p>
+                  <p className="text-white font-serif text-xl md:text-2xl font-bold drop-shadow-lg">{c('home.sisters.st-mary-mazzarello')}</p>
+                  <p className="text-gold-300 text-xs tracking-[0.2em] uppercase font-medium">{c('home.sisters.co-foundress')}</p>
                 </div>
               </div>
 
               <div className="p-6">
-                <h3 className="font-serif text-xl font-bold text-maroon-900 group-hover:text-maroon-700 transition-colors">
-                  Co-Foundress Message
-                </h3>
+                <h3 className="font-serif text-xl font-bold text-maroon-900 group-hover:text-maroon-700 transition-colors">{c('home.sisters.co-foundress-message')}</h3>
                 <div className="w-12 h-0.5 bg-gold-400 rounded-full mt-2 mb-3 group-hover:w-20 transition-all duration-500" />
-                <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                  God's ways are marvellous. Contemporaneously with Don Bosco, Mary Mazzarello in the hamlet of Mornese a little village in Piedmont, Italy thirsted with the same desire to help girls. She was born on May 9, 1837...
-                </p>
+                <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{c('home.sisters.god-s-ways-are-marvellous-contemporaneously-with-don-bosco-mary-m')}</p>
                 <a
                   href="/about/co-founders"
                   className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-maroon-700 hover:text-gold-600 transition-all duration-300 group-hover:gap-3"
-                >
-                  Read More
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                >{c('home.sisters.read-more')}<ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </div>
               <div className="h-0.5 bg-gradient-to-r from-gold-400 to-gold-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
@@ -307,7 +270,7 @@ const Sister = () => {
           <div className="inline-block bg-gradient-to-r from-maroon-50/60 to-gold-50/60 rounded-2xl px-6 py-3 border border-maroon-100/60">
             <div className="flex items-center gap-3 text-sm text-gray-600">
               <Sparkles size={16} className="text-gold-500" />
-              <span>Inspired by the Salesian spirit of <span className="font-semibold text-maroon-700">Reason, Religion, and Loving Kindness</span></span>
+              <span>{c('home.sisters.inspired-by-the-salesian-spirit-of') + ' '}<span className="font-semibold text-maroon-700">{c('home.sisters.reason-religion-and-loving-kindness')}</span></span>
             </div>
           </div>
         </motion.div>

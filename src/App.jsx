@@ -15,6 +15,9 @@ import TeachingStaffPage from './admin/pages/TeachingStaffPage.jsx'
 import CircularsPage from './admin/pages/CircularsPage.jsx'
 import GalleryPage from './admin/pages/GalleryPage.jsx'
 import DownloadsPage from './admin/pages/DownloadsPage.jsx'
+import SiteContentPage from './admin/pages/SiteContentPage.jsx'
+import { SiteContentProvider } from './content/SiteContentProvider.jsx'
+import { contentGroupForPath } from './content/pages.js'
 
 import TopBar from './components/layout/TopBar.jsx'
 import Navbar from './components/layout/Navbar.jsx'
@@ -94,6 +97,7 @@ const publicPages = {
 }
 
 const adminPages = {
+  '/admin/site-content': SiteContentPage,
   '/admin/dashboard': AdminDashboard,
   '/admin/management': ManagementPage,
   '/admin/committee': CommitteePage,
@@ -140,6 +144,7 @@ export default function App() {
   return (
     <>
       <Toaster position="top-right" />
+      <SiteContentProvider pageGroup={contentGroupForPath(routePath)}>
       <div className="flex flex-col min-h-screen">
         <TopBar />
         <Navbar />
@@ -148,6 +153,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      </SiteContentProvider>
     </>
   )
 }

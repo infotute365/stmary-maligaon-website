@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useState, useEffect } from 'react'
 import { Landmark, User, Mail, Phone } from 'lucide-react'
 import PageHeader from '../../components/common/PageHeader.jsx'
@@ -6,6 +7,7 @@ import api from '../../services/api.js'
 import { getMediaUrl } from '../../utils/media.js'
 
 const Management = () => {
+  const c = useSiteContent()
   const [management, setManagement] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -43,13 +45,13 @@ const Management = () => {
   if (loading) {
     return (
       <div>
-        <PageHeader title="Management" subtitle="Governance and leadership" icon={<Landmark size={18} />} />
+        <PageHeader homeLabel={c('administration.management.breadcrumb.home')} title={c('administration.management.pageHeader.title')} subtitle={c('administration.management.pageHeader.subtitle')} icon={<Landmark size={18} />} />
         <section className="section-padding">
           <div className="container-custom max-w-3xl mx-auto">
             <div className="flex items-center justify-center h-64">
               <div className="text-center">
                 <div className="animate-spin rounded-full h-12 w-12 border-4 border-maroon-600 border-t-transparent mx-auto"></div>
-                <p className="text-gray-500 mt-4">Loading management team...</p>
+                <p className="text-gray-500 mt-4">{c('administration.management.copy.page-header.paragraph.loading-management-team-b51d49cc')}</p>
               </div>
             </div>
           </div>
@@ -61,7 +63,7 @@ const Management = () => {
   if (error) {
     return (
       <div>
-        <PageHeader title="Management" subtitle="Governance and leadership" icon={<Landmark size={18} />} />
+        <PageHeader homeLabel={c('administration.management.breadcrumb.home')} title={c('administration.management.pageHeader.title')} subtitle={c('administration.management.pageHeader.subtitle')} icon={<Landmark size={18} />} />
         <section className="section-padding">
           <div className="container-custom max-w-3xl mx-auto">
             <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
@@ -69,9 +71,7 @@ const Management = () => {
               <button 
                 onClick={fetchManagement}
                 className="mt-4 px-4 py-2 bg-maroon-600 text-white rounded-lg hover:bg-maroon-700"
-              >
-                Retry
-              </button>
+              >{c('administration.management.copy.page-header.text.retry-942087cc')}</button>
             </div>
           </div>
         </section>
@@ -81,29 +81,21 @@ const Management = () => {
 
   return (
     <div>
-      <PageHeader title="Management" subtitle="Governance and leadership" icon={<Landmark size={18} />} />
+      <PageHeader homeLabel={c('administration.management.breadcrumb.home')} title={c('administration.management.pageHeader.title')} subtitle={c('administration.management.pageHeader.subtitle')} icon={<Landmark size={18} />} />
       
       <section className="section-padding">
         <div className="container-custom max-w-4xl mx-auto">
           {/* Description */}
           <SectionWrapper className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-8">
-            <p className="text-gray-600 leading-relaxed">
-              St. Mary's Senior Secondary School, Maligaon is managed by a dedicated governing body committed to upholding the
-              school's founding values while steering its academic and administrative growth. The
-              management works closely with the Principal, teaching faculty, and Managing Committee to
-              ensure the institution continues to meet CBSE standards and serve its community well.
-            </p>
-            <p className="text-gray-600 leading-relaxed mt-4">
-              Key responsibilities include policy oversight, infrastructure planning, financial
-              governance, and ensuring compliance with all regulatory and affiliation requirements.
-            </p>
+            <p className="text-gray-600 leading-relaxed">{c('administration.management.copy.page-header.paragraph.st-mary-s-senior-secondary-eea0f6f3')}</p>
+            <p className="text-gray-600 leading-relaxed mt-4">{c('administration.management.copy.page-header.paragraph.key-responsibilities-inclu-d792fec1')}</p>
           </SectionWrapper>
 
           {/* Management Team Cards */}
           {management.length === 0 ? (
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center">
               <User size={48} className="mx-auto text-gray-300" />
-              <p className="text-gray-500 mt-4">No management members to display.</p>
+              <p className="text-gray-500 mt-4">{c('administration.management.copy.page-header.paragraph.no-management-members-to-d-bb6e0bdf')}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

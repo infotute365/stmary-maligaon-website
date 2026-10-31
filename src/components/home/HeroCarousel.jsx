@@ -1,9 +1,11 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useState, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { heroSlides } from '../../data/seedData.js'
 
 const HeroCarousel = () => {
+  const c = useSiteContent()
   const [index, setIndex] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
 
@@ -55,7 +57,7 @@ const HeroCarousel = () => {
         >
           <img
             src={slide.image}
-            alt={slide.title}
+            alt={c(`home.hero.slide${index + 1}.title`)}
             className="w-full h-full object-cover"
             loading={index === 0 ? 'eager' : 'lazy'}
           />
@@ -89,7 +91,7 @@ const HeroCarousel = () => {
               transition={{ delay: 0.2, duration: 0.4 }}
               className="inline-block bg-gold-400/20 backdrop-blur-sm border border-gold-400/30 text-gold-300 text-xs font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-4"
             >
-              {slide.subtitle}
+              {c(`home.hero.slide${index + 1}.subtitle`)}
             </motion.span>
 
             {/* Title — Clean White Text */}
@@ -120,16 +122,12 @@ const HeroCarousel = () => {
               <a
                 href="/about/history"
                 className="group inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-maroon-900 font-semibold px-6 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-              >
-                Discover More
-                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+              >{c('home.hero.discover-more')}<span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
               </a>
               <a
                 href="/gallery"
                 className="group inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 hover:border-white/50 font-medium px-6 py-3 rounded-full transition-all duration-300 hover:scale-105"
-              >
-                Explore Gallery
-                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+              >{c('home.hero.explore-gallery')}<span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
               </a>
             </motion.div>
           </motion.div>

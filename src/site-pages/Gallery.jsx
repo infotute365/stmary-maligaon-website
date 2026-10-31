@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useState, useEffect } from 'react'
 import { Images, X } from 'lucide-react'
 import PageHeader from '../components/common/PageHeader.jsx'
@@ -8,6 +9,7 @@ import { getMediaUrl } from '../utils/media.js'
 const BACKEND_URL = '';
 
 const Gallery = () => {
+  const c = useSiteContent()
   const [galleryData, setGalleryData] = useState([])
   const [loading, setLoading] = useState(true)
   const [activeImage, setActiveImage] = useState(null)
@@ -63,7 +65,7 @@ const Gallery = () => {
   if (loading) {
     return (
       <div>
-        <PageHeader title="Gallery" subtitle="Moments from campus life" icon={<Images size={18} />} />
+        <PageHeader homeLabel={c('pages.gallery.breadcrumb.home')} title={c('pages.gallery.pageHeader.title')} subtitle={c('pages.gallery.pageHeader.subtitle')} icon={<Images size={18} />} />
         <section className="section-padding">
           <div className="container-custom flex justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-4 border-maroon-600 border-t-transparent"></div>
@@ -75,14 +77,14 @@ const Gallery = () => {
 
   return (
     <div>
-      <PageHeader title="Gallery" subtitle="Moments from campus life" icon={<Images size={18} />} />
+      <PageHeader homeLabel={c('pages.gallery.breadcrumb.home')} title={c('pages.gallery.pageHeader.title')} subtitle={c('pages.gallery.pageHeader.subtitle')} icon={<Images size={18} />} />
 
       <section className="section-padding">
         <div className="container-custom">
           {galleryData.length === 0 ? (
             <div className="text-center py-12">
               <Images size={48} className="mx-auto text-gray-300" />
-              <p className="text-gray-500 mt-4">No gallery images available.</p>
+              <p className="text-gray-500 mt-4">{c('pages.gallery.copy.page-header.paragraph.no-gallery-images-availabl-9e0a810c')}</p>
             </div>
           ) : (
             <div className="space-y-12">

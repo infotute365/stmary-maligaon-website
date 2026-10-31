@@ -14,10 +14,19 @@ export function resolveUploadPath(filePath) {
   return resolved
 }
 
-export async function writeLocalUpload(filePath, buffer) {
+export async function writeLocalUpload(filePath, buffer, options = {}) {
   const destination = resolveUploadPath(filePath)
   await fs.mkdir(path.dirname(destination), { recursive: true })
-  await fs.writeFile(destination, buffer)
+  if (options.flag === 'wx') {
+    const handle = await fs.open(destination, 'wx', options.mode)
+    try {
+      options.onCreated?.()
+      await handle.writeFile(buffer)
+      await handle.sync()
+    } finally { await handle.close() }
+    return
+  }
+  await fs.writeFile(destination, buffer, options)
 }
 
 export async function removeLocalUpload(filePath) {

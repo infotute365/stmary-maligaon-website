@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from '@/routing'
 import { ChevronRight, Home } from 'lucide-react'
 
-const PageHeader = ({ title, subtitle, icon }) => {
+const PageHeader = ({ title, subtitle, icon, homeLabel = 'Home' }) => {
   return (
     <div className="relative bg-maroon-900 overflow-hidden">
       <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,rgba(217,164,65,0.5),transparent_45%)]" />
       <div className="container-custom relative py-10 md:py-14">
         <div className="flex items-center gap-2 text-maroon-200 text-xs font-medium mb-3">
           <Link href={"/"} className="flex items-center gap-1 hover:text-gold-300 transition-colors">
-            <Home size={12} /> Home
+            <Home size={12} />{' '}{homeLabel}
           </Link>
           <ChevronRight size={12} />
           <span className="text-gold-300">{title}</span>

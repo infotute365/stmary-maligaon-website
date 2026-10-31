@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { 
@@ -15,6 +16,7 @@ import {
 } from 'lucide-react'
 
 const Discipline = () => {
+  const c = useSiteContent()
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -43,32 +45,32 @@ const Discipline = () => {
   }
 
   const disciplinePoints = [
-    {
-      text: "Students are expected to maintain courtesy and discipline both inside and outside the classroom.",
+    { contentId: "Students are expected to maintain courtesy and discipline both inside and outside the classroom.",
+      text: c('students.discipline.disciplinePoints.students-are-expected-to-maintain-co-6af0d850.text'),
       icon: Users,
       color: 'bg-blue-100 text-blue-700',
       borderColor: 'border-blue-200'
     },
-    {
-      text: "Punctuality and regular attendance are essential to maintaining good academic standing.",
+    { contentId: "Punctuality and regular attendance are essential to maintaining good academic standing.",
+      text: c('students.discipline.disciplinePoints.punctuality-and-regular-attendance-a-2cfc464e.text'),
       icon: Clock,
       color: 'bg-green-100 text-green-700',
       borderColor: 'border-green-200'
     },
-    {
-      text: "Any act of dishonesty, including cheating in examinations, will invite strict disciplinary action.",
+    { contentId: "Any act of dishonesty, including cheating in examinations, will invite strict disciplinary action.",
+      text: c('students.discipline.disciplinePoints.any-act-of-dishonesty-including-chea-c05220e1.text'),
       icon: AlertCircle,
       color: 'bg-red-100 text-red-700',
       borderColor: 'border-red-200'
     },
-    {
-      text: "Repeated violations of school rules may lead to parent counseling or suspension.",
+    { contentId: "Repeated violations of school rules may lead to parent counseling or suspension.",
+      text: c('students.discipline.disciplinePoints.repeated-violations-of-school-rules-bc09ca21.text'),
       icon: ShieldCheck,
       color: 'bg-orange-100 text-orange-700',
       borderColor: 'border-orange-200'
     },
-    {
-      text: "Students are encouraged to resolve conflicts respectfully and report concerns to a teacher.",
+    { contentId: "Students are encouraged to resolve conflicts respectfully and report concerns to a teacher.",
+      text: c('students.discipline.disciplinePoints.students-are-encouraged-to-resolve-c-8a2946e4.text'),
       icon: Handshake,
       color: 'bg-purple-100 text-purple-700',
       borderColor: 'border-purple-200'
@@ -76,11 +78,11 @@ const Discipline = () => {
   ]
 
   const rulesSummary = [
-    { label: 'Attendance', value: '75% Minimum', icon: Clock, status: 'Required' },
-    { label: 'Uniform', value: 'Compulsory', icon: ShieldCheck, status: 'Mandatory' },
-    { label: 'Mobile Phones', value: 'Not Permitted', icon: XCircle, status: 'Strictly Prohibited' },
-    { label: 'Respect', value: 'Mandatory', icon: CheckCircle, status: 'Expected' },
-    { label: 'Discipline', value: 'Zero Tolerance', icon: ShieldCheck, status: 'Strict' }
+    { contentId: "Attendance", label: c('students.discipline.rulesSummary.attendance-4cecc708.label'), value: c('students.discipline.rulesSummary.attendance-4cecc708.value'), icon: Clock, status: 'Required', statusText: c('students.discipline.rulesSummary.attendance-4cecc708.statusText') },
+    { contentId: "Uniform", label: c('students.discipline.rulesSummary.uniform-6a22b156.label'), value: c('students.discipline.rulesSummary.uniform-6a22b156.value'), icon: ShieldCheck, status: 'Mandatory', statusText: c('students.discipline.rulesSummary.uniform-6a22b156.statusText') },
+    { contentId: "Mobile Phones", label: c('students.discipline.rulesSummary.mobile-phones-a35ddbae.label'), value: c('students.discipline.rulesSummary.mobile-phones-a35ddbae.value'), icon: XCircle, status: 'Strictly Prohibited', statusText: c('students.discipline.rulesSummary.mobile-phones-a35ddbae.statusText') },
+    { contentId: "Respect", label: c('students.discipline.rulesSummary.respect-23e2e7fc.label'), value: c('students.discipline.rulesSummary.respect-23e2e7fc.value'), icon: CheckCircle, status: 'Expected', statusText: c('students.discipline.rulesSummary.respect-23e2e7fc.statusText') },
+    { contentId: "Discipline", label: c('students.discipline.rulesSummary.discipline-a1b14db9.label'), value: c('students.discipline.rulesSummary.discipline-a1b14db9.value'), icon: ShieldCheck, status: 'Strict', statusText: c('students.discipline.rulesSummary.discipline-a1b14db9.statusText') }
   ]
 
   return (
@@ -96,8 +98,8 @@ const Discipline = () => {
               <ShieldCheck size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">Discipline & Conduct</h1>
-              <p className="text-gold-300 text-sm mt-0.5">Code of conduct for all students</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('students.discipline.copy.discipline-conduct.heading.discipline-conduct-c92f9e18')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('students.discipline.copy.discipline-conduct.paragraph.code-of-conduct-for-all-st-a58a1ae3')}</p>
             </div>
           </div>
         </div>
@@ -118,7 +120,7 @@ const Discipline = () => {
           >
             {rulesSummary.map((rule) => (
               <motion.div
-                key={rule.label}
+                key={rule.contentId}
                 variants={fadeInUp}
                 className="bg-white rounded-xl shadow-sm border border-gray-100 p-3 text-center hover:shadow-md transition-all duration-300 hover:border-gold-300 group"
               >
@@ -134,7 +136,7 @@ const Discipline = () => {
                   rule.status === 'Expected' ? 'bg-green-100 text-green-700' :
                   'bg-red-100 text-red-700'
                 }`}>
-                  {rule.status}
+                  {rule.statusText}
                 </p>
               </motion.div>
             ))}
@@ -153,12 +155,9 @@ const Discipline = () => {
                 <div className="p-1.5 bg-gold-500/20 rounded-lg">
                   <BookOpen size={18} className="text-gold-300" />
                 </div>
-                <h2 className="text-white font-bold text-sm tracking-wide">
-                  CODE OF CONDUCT
-                </h2>
+                <h2 className="text-white font-bold text-sm tracking-wide">{c('students.discipline.copy.code-of-conduct.heading.code-of-conduct-6ed06caa')}</h2>
                 <span className="ml-auto text-[10px] text-gold-300/70 font-medium">
-                  {disciplinePoints.length} Guidelines
-                </span>
+                  {disciplinePoints.length}{' ' + c('students.discipline.copy.code-of-conduct.text.guidelines-c4f9417b')}</span>
               </div>
             </div>
 
@@ -197,12 +196,10 @@ const Discipline = () => {
             <div className="bg-gradient-to-r from-gray-50 to-gold-50/30 px-6 py-3 border-t border-gray-100">
               <div className="flex items-center justify-between">
                 <p className="text-xs text-gray-500 flex items-center gap-1.5">
-                  <Sparkles size={14} className="text-gold-500" />
-                  All students are expected to adhere to these guidelines at all times.
-                </p>
+                  <Sparkles size={14} className="text-gold-500" />{c('students.discipline.copy.code-of-conduct.paragraph.all-students-are-expected--920e1c7a')}</p>
                 <div className="flex items-center gap-1">
                   <Award size={14} className="text-gold-500" />
-                  <span className="text-[10px] text-gold-600 font-medium">Discipline First</span>
+                  <span className="text-[10px] text-gold-600 font-medium">{c('students.discipline.copy.code-of-conduct.text.discipline-first-f74cb124')}</span>
                 </div>
               </div>
             </div>
@@ -218,7 +215,7 @@ const Discipline = () => {
             <div className="inline-block bg-gradient-to-r from-maroon-50 to-gold-50/30 rounded-2xl px-6 py-3 border border-maroon-100/60">
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Star size={16} className="text-gold-500 fill-gold-500" />
-                <span className="font-semibold text-maroon-700">"Discipline is the bridge between goals and accomplishment."</span>
+                <span className="font-semibold text-maroon-700">{c('students.discipline.copy.code-of-conduct.text.discipline-is-the-bridge-b-3bf2a18b')}</span>
                 <Star size={16} className="text-gold-500 fill-gold-500" />
               </div>
             </div>

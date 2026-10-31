@@ -1,3 +1,6 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
+import { useDisclosureDocuments } from '@/content/useDisclosureDocuments.js'
+import { fixedDisclosureDocuments } from '@/content/disclosureDocuments.js'
 import React, { useState, useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { 
@@ -27,6 +30,8 @@ import {
 } from 'lucide-react'
 
 const MandatoryPublicDisclosure = () => {
+  const c = useSiteContent()
+  const disclosureDocuments = useDisclosureDocuments()
   const [selectedPdf, setSelectedPdf] = useState(null)
   const [showFeeStructure, setShowFeeStructure] = useState(false)
   const [expandedSections, setExpandedSections] = useState({
@@ -36,6 +41,7 @@ const MandatoryPublicDisclosure = () => {
     staff: false,
     infrastructure: false
   })
+  const [pdfError, setPdfError] = useState(false)
 
   const controls = useAnimation()
   const ref = useRef(null)
@@ -65,123 +71,74 @@ const MandatoryPublicDisclosure = () => {
 
   // Fee Structure Data - Exact match from image
   const feeData = [
-    { 
-      class: 'KG', 
-      annualPerInstallment: '₹ 9,150', 
-      tuitionPerInstallment: '—',
-      installmentPeriod: '3 Months'
+    { contentId: "KG",
+      class: c('cbse.disclosure.feeData.kg-88ed3209.class'),
+      annualPerInstallment: c('cbse.disclosure.feeData.kg-88ed3209.annualPerInstallment'),
+      tuitionPerInstallment: c('cbse.disclosure.feeData.kg-88ed3209.tuitionPerInstallment'),
+      installmentPeriod: c('cbse.disclosure.feeData.kg-88ed3209.installmentPeriod')
     },
-    { 
-      class: 'I – III', 
-      annualPerInstallment: '₹ 3,630', 
-      tuitionPerInstallment: '₹ 6,300',
-      installmentPeriod: '3 Months'
+    { contentId: "I – III",
+      class: c('cbse.disclosure.feeData.i-iii-2cbad711.class'),
+      annualPerInstallment: c('cbse.disclosure.feeData.i-iii-2cbad711.annualPerInstallment'),
+      tuitionPerInstallment: c('cbse.disclosure.feeData.i-iii-2cbad711.tuitionPerInstallment'),
+      installmentPeriod: c('cbse.disclosure.feeData.i-iii-2cbad711.installmentPeriod')
     },
-    { 
-      class: 'IV – V', 
-      annualPerInstallment: '₹ 3,640', 
-      tuitionPerInstallment: '₹ 6,300',
-      installmentPeriod: '3 Months'
+    { contentId: "IV – V",
+      class: c('cbse.disclosure.feeData.iv-v-85edf8c5.class'),
+      annualPerInstallment: c('cbse.disclosure.feeData.iv-v-85edf8c5.annualPerInstallment'),
+      tuitionPerInstallment: c('cbse.disclosure.feeData.iv-v-85edf8c5.tuitionPerInstallment'),
+      installmentPeriod: c('cbse.disclosure.feeData.iv-v-85edf8c5.installmentPeriod')
     },
-    { 
-      class: 'VI – VIII', 
-      annualPerInstallment: '₹ 3,680', 
-      tuitionPerInstallment: '₹ 6,300',
-      installmentPeriod: '3 Months'
+    { contentId: "VI – VIII",
+      class: c('cbse.disclosure.feeData.vi-viii-25461a9d.class'),
+      annualPerInstallment: c('cbse.disclosure.feeData.vi-viii-25461a9d.annualPerInstallment'),
+      tuitionPerInstallment: c('cbse.disclosure.feeData.vi-viii-25461a9d.tuitionPerInstallment'),
+      installmentPeriod: c('cbse.disclosure.feeData.vi-viii-25461a9d.installmentPeriod')
     },
-    { 
-      class: 'IX – X', 
-      annualPerInstallment: '₹ 3,775', 
-      tuitionPerInstallment: '₹ 6,300',
-      installmentPeriod: '3 Months'
+    { contentId: "IX – X",
+      class: c('cbse.disclosure.feeData.ix-x-fa5a0ae1.class'),
+      annualPerInstallment: c('cbse.disclosure.feeData.ix-x-fa5a0ae1.annualPerInstallment'),
+      tuitionPerInstallment: c('cbse.disclosure.feeData.ix-x-fa5a0ae1.tuitionPerInstallment'),
+      installmentPeriod: c('cbse.disclosure.feeData.ix-x-fa5a0ae1.installmentPeriod')
     },
-    { 
-      class: 'XI – XII (Hum/Com)', 
-      annualPerInstallment: '₹ 5,930', 
-      tuitionPerInstallment: '₹ 8,800',
-      installmentPeriod: '4 Months'
+    { contentId: "XI – XII (Hum/Com)",
+      class: c('cbse.disclosure.feeData.xi-xii-hum-com-c8567a1a.class'),
+      annualPerInstallment: c('cbse.disclosure.feeData.xi-xii-hum-com-c8567a1a.annualPerInstallment'),
+      tuitionPerInstallment: c('cbse.disclosure.feeData.xi-xii-hum-com-c8567a1a.tuitionPerInstallment'),
+      installmentPeriod: c('cbse.disclosure.feeData.xi-xii-hum-com-c8567a1a.installmentPeriod')
     },
-    { 
-      class: 'XI – XII (Science)', 
-      annualPerInstallment: '₹ 8,480', 
-      tuitionPerInstallment: '₹ 8,800',
-      installmentPeriod: '4 Months'
+    { contentId: "XI – XII (Science)",
+      class: c('cbse.disclosure.feeData.xi-xii-science-30417878.class'),
+      annualPerInstallment: c('cbse.disclosure.feeData.xi-xii-science-30417878.annualPerInstallment'),
+      tuitionPerInstallment: c('cbse.disclosure.feeData.xi-xii-science-30417878.tuitionPerInstallment'),
+      installmentPeriod: c('cbse.disclosure.feeData.xi-xii-science-30417878.installmentPeriod')
     }
   ]
 
   // PDF data with actual file paths
-  const pdfData = {
-    affiliation: {
-      name: 'Affiliation/Upgradation Letter',
-      url: '/wp-content/uploads/2026/05/Affiliation_Certificate.pdf',
-      description: 'CBSE Affiliation Letter and Recent Extension'
-    },
-    society: {
-      name: 'Society/Trust Registration',
-      url: '/wp-content/uploads/2026/05/Society_Certificate.pdf',
-      description: 'Society/Trust/Company Registration Certificate'
-    },
-    noc: {
-      name: 'NOC Certificate',
-      url: '/wp-content/uploads/2026/05/NOC.pdf',
-      description: 'No Objection Certificate from State Govt./UT'
-    },
-    rte: {
-      name: 'RTE Recognition Certificate',
-      url: '/wp-content/uploads/2026/05/Recognition_Certificate_10.pdf',
-      description: 'Recognition Certificate under RTE Act, 2009'
-    },
-    building: {
-      name: 'Building Safety Certificate',
-      url: '/wp-content/uploads/2026/05/Building_Safety_Certificate.pdf',
-      description: 'Valid Building Safety Certificate as per National Building Code'
-    },
-    fire: {
-      name: 'Fire Safety Certificate',
-      url: '/wp-content/uploads/2026/05/Fire_Safety_Certificate.pdf',
-      description: 'Valid Fire Safety Certificate from Competent Authority'
-    },
-    deo: {
-      name: 'DEO Certificate',
-      url: '/wp-content/uploads/2026/05/Self_Certification.pdf',
-      description: 'DEO Certificate submitted for Affiliation/Upgradation/Extension'
-    },
-    water: {
-      name: 'Water, Health & Sanitation Certificate',
-      url: '/wp-content/uploads/2026/05/Health_Hygiene_Certificate.pdf',
-      description: 'Valid Water, Health and Sanitation Certificates'
-    },
-    academic: {
-      name: 'Annual Academic Calendar',
-      url: '/wp-content/uploads/2026/05/Academic_Calendar_2025-26.pdf',
-      description: 'Academic Calendar 2025-26'
-    },
-    smc: {
-      name: 'List of School Management Committee',
-      url: '/wp-content/uploads/2026/05/Managing-Committee.pdf',
-      description: 'School Management Committee Members'
-    },
-    pta: {
-      name: 'List of Parents Teachers Association',
-      url: '/wp-content/uploads/2026/05/Parent-Teacher-Association.pdf',
-      description: 'PTA Members List'
-    },
-    results: {
-      name: 'Last Three-Year Board Results',
-      url: '/wp-content/uploads/2026/05/Board_Result.pdf',
-      description: 'Board Examination Results'
-    }
-  }
+  const pdfData = Object.fromEntries([...fixedDisclosureDocuments.map(document => [document.key, { key: document.key, name: document.name, url: disclosureDocuments.fixed[document.key]?.url || document.url, description: c(`cbse.disclosure.pdf.${document.key}.description`) }]), ...disclosureDocuments.additional.map(document => [document.key, { ...document, description: '' }])])
+
+  const shownPdf = selectedPdf?.key ? (pdfData[selectedPdf.key] || { ...selectedPdf, url: null }) : selectedPdf
+
+  useEffect(() => {
+    if (!shownPdf?.url) return
+    const controller = new AbortController()
+    setPdfError(false)
+    fetch(shownPdf.url, { method: 'HEAD', cache: 'no-store', signal: controller.signal })
+      .then(response => { if (!response.ok || !response.headers.get('content-type')?.includes('application/pdf')) setPdfError(true) })
+      .catch(error => { if (error.name !== 'AbortError') setPdfError(true) })
+    return () => controller.abort()
+  }, [shownPdf?.url])
 
   const generalInfo = [
-    { label: 'Name of the School', value: 'ST. MARYS SR. SEC. SCHOOL MALIGAON GUWAHATI' },
-    { label: 'Affiliation No.', value: '230105' },
-    { label: 'School Code', value: '35189' },
-    { label: 'Complete Address with Pin Code', value: 'ST. MARYS SR. SEC. SCHOOL, MALIGAON, GUWAHATI-11, KAMRUP(M), ASSAM.' },
-    { label: 'Principal Name', value: 'SR. YAMCHINGNAO RIYAO GRACE PEMMILA' },
-    { label: 'Principal Qualification', value: 'MA, BEd.' },
-    { label: 'School Email ID', value: 'st.marysschool66@yahoo.com' },
-    { label: 'Contact Details (Landline/Mobile)', value: '9435199806' }
+    { label: 'Name of the School', value: c('cbse.disclosure.generalInfo.name-of-the-school-edc46f3d.value') },
+    { label: 'Affiliation No.', value: c('cbse.disclosure.generalInfo.affiliation-no-ace32fb2.value') },
+    { label: 'School Code', value: c('cbse.disclosure.generalInfo.school-code-9ac482e0.value') },
+    { label: 'Complete Address with Pin Code', value: c('cbse.disclosure.generalInfo.complete-address-with-pin-code-4a1d3869.value') },
+    { label: 'Principal Name', value: c('cbse.disclosure.generalInfo.principal-name-6da55b79.value') },
+    { label: 'Principal Qualification', value: c('cbse.disclosure.generalInfo.principal-qualification-a66a2a7f.value') },
+    { label: 'School Email ID', value: c('cbse.disclosure.generalInfo.school-email-id-c472d2ad.value') },
+    { label: 'Contact Details (Landline/Mobile)', value: c('cbse.disclosure.generalInfo.contact-details-landline-mobile-131c7776.value') }
   ]
 
   const documentsInfo = [
@@ -204,102 +161,103 @@ const MandatoryPublicDisclosure = () => {
   ]
 
   const staffInfo = [
-    { label: 'Principal', value: 'SR. YAMCHINGNAO RIYAO GRACE PEMMILA' },
-    { label: 'Total No. of Teachers', value: '53' },
-    { label: 'PGT', value: '19' },
-    { label: 'TGT', value: '14' },
-    { label: 'PRT', value: '20' },
-    { label: 'Teachers Section Ratio', value: '1:28' },
-    { label: 'Special Educator', value: 'SR. THEKUVELU RHAKHO - MA, Human Rights (Child Rights and Development)' },
-    { label: 'Counsellor and Wellness Teacher', value: 'MS. BIPANCHI CHOUDHURY - MSc Psychology (Specialisation in Counseling)' }
+    { label: 'Principal', value: c('cbse.disclosure.staffInfo.principal-afc19f17.value') },
+    { label: 'Total No. of Teachers', value: c('cbse.disclosure.staffInfo.total-no-of-teachers-570421ae.value') },
+    { label: 'PGT', value: c('cbse.disclosure.staffInfo.pgt-b38bc0c1.value') },
+    { label: 'TGT', value: c('cbse.disclosure.staffInfo.tgt-655caf7a.value') },
+    { label: 'PRT', value: c('cbse.disclosure.staffInfo.prt-e4fd7627.value') },
+    { label: 'Teachers Section Ratio', value: c('cbse.disclosure.staffInfo.teachers-section-ratio-db85e052.value') },
+    { label: 'Special Educator', value: c('cbse.disclosure.staffInfo.special-educator-63512f39.value') },
+    { label: 'Counsellor and Wellness Teacher', value: c('cbse.disclosure.staffInfo.counsellor-and-wellness-teacher-e968d490.value') }
   ]
 
   const infrastructureInfo = [
-    { label: 'Total Campus Area of the School (in Sq Mtr)', value: '8510' },
-    { label: 'No. and Size of the Class Rooms (in Sq Mtr)', value: '40 & 144' },
-    { label: 'No. and Size of Laboratories including Computer Labs (in Sq Mtr)', value: '8 & 145' },
-    { label: 'Internet Facility', value: 'YES' },
-    { label: 'No. of Girls Toilets', value: '80' },
-    { label: 'No. of Boys Toilets', value: '30' },
-    { label: 'YouTube Video of School Inspection', value: 'https://youtu.be/LF/beqWQy8Q' }
+    { label: 'Total Campus Area of the School (in Sq Mtr)', value: c('cbse.disclosure.infrastructureInfo.total-campus-area-of-the-school-in-sq-mtr-f92c477c.value') },
+    { label: 'No. and Size of the Class Rooms (in Sq Mtr)', value: c('cbse.disclosure.infrastructureInfo.no-and-size-of-the-class-rooms-in-sq-mtr-836e96f3.value') },
+    { label: 'No. and Size of Laboratories including Computer Labs (in Sq Mtr)', value: c('cbse.disclosure.infrastructureInfo.no-and-size-of-laboratories-including-compute-a34dd9d4.value') },
+    { label: 'Internet Facility', value: c('cbse.disclosure.infrastructureInfo.internet-facility-6c67ecd2.value') },
+    { label: 'No. of Girls Toilets', value: c('cbse.disclosure.infrastructureInfo.no-of-girls-toilets-228b5391.value') },
+    { label: 'No. of Boys Toilets', value: c('cbse.disclosure.infrastructureInfo.no-of-boys-toilets-200c7567.value') },
+    { label: 'YouTube Video of School Inspection', value: c('cbse.disclosure.infrastructureInfo.youtube-video-of-school-inspection-8bbb3ac1.value') }
   ]
 
   const classXResult = [
-    { year: '2025', registered: '113', passed: '113', percentage: '100', remarks: 'Satisfactory Performance' }
+    { contentId: "2025", year: c('cbse.disclosure.classXResult.2025-b2b2f104.year'), registered: c('cbse.disclosure.classXResult.2025-b2b2f104.registered'), passed: c('cbse.disclosure.classXResult.2025-b2b2f104.passed'), percentage: c('cbse.disclosure.classXResult.2025-b2b2f104.percentage'), remarks: c('cbse.disclosure.classXResult.2025-b2b2f104.remarks') }
   ]
 
   const classXIIResult = [
-    { year: '2025', registered: '79', passed: '79', percentage: '100', remarks: 'Satisfactory Performance' }
+    { contentId: "2025", year: c('cbse.disclosure.classXIIResult.2025-b2b2f104.year'), registered: c('cbse.disclosure.classXIIResult.2025-b2b2f104.registered'), passed: c('cbse.disclosure.classXIIResult.2025-b2b2f104.passed'), percentage: c('cbse.disclosure.classXIIResult.2025-b2b2f104.percentage'), remarks: c('cbse.disclosure.classXIIResult.2025-b2b2f104.remarks') }
   ]
 
   const teacherDetails = [
-    { name: 'SR. PINKY TOPNO', designation: 'VICE-PRINCIPAL', qualification: 'MA.' },
-    { name: 'SR. MARTHA SOIGI', designation: 'TGT', qualification: 'BA.' },
-    { name: 'MRIGAKHEE PANDIT', designation: 'TGT', qualification: 'MA.' },
-    { name: 'SR. BISHANTIS MYRTHONG', designation: 'TGT', qualification: 'BA.' },
-    { name: 'MRS. LIZA PAUL', designation: 'TGT', qualification: 'GRADUATE' },
-    { name: 'MRS. MOUSUMI DAS', designation: 'TGT', qualification: 'GRADUATE' },
-    { name: 'MISS SHYAMALI CHANDA', designation: 'TGT', qualification: 'POST GRADUATE' },
-    { name: 'TRUPTI DAS', designation: 'TGT', qualification: 'POST GRADUATE' },
-    { name: 'MRS. HEMA TIWARI', designation: 'TGT', qualification: 'POST GRADUATE' },
-    { name: 'MR. INDRAJIT KALITA', designation: 'TGT', qualification: 'GRADUATE' },
-    { name: 'MRS. DIPTI DEKA', designation: 'TGT', qualification: 'POSTGRADUATE' },
-    { name: 'MRS. ANJANA MITRA', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. MINU MARTHA PANNA', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. ZEENAT ZAMAN', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. BINFFA MAJUMDAR', designation: 'PRT', qualification: 'POST GRADUATE' },
-    { name: 'MRS. ANURADHA KALITA', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. SUVARTHA VANI DEKA', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. AJANTA B. CHOWDHURY', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'BARSHA BUJAR BARUAH', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MS. ROSELINE ANTHONY', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. RAJLAXMI ROY', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. SHYAMOBI R. NARZARY', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. MADHUMITA DAS', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. SHONALI ROY', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. NILANJANA SAMANTA', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. PAYEL DAS', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. ANAMIKA DAS', designation: 'PRT', qualification: 'GRADUATE' },
-    { name: 'MRS. JAHNABI BAISHYA', designation: 'PRT', qualification: 'POST GRAOUATE' },
-    { name: 'MISS. JULI DEVI', designation: 'PRT', qualification: 'POST GRAOUATE' },
-    { name: 'MR. THOMAS NARZARY', designation: 'PGT', qualification: 'POST GRAOUATE' },
-    { name: 'MRS. BORNALI SAIKIA', designation: 'PGT', qualification: 'POST GRAOUATE' },
-    { name: 'MISS ALAKANANDA PATHAK', designation: 'PGT', qualification: 'POST GRAOUATE' },
-    { name: 'MRS. NANDITA SENGUPTA', designation: 'PGT', qualification: 'POST GRAOUATE' },
-    { name: 'MRS. DEEPANWITA BOSE SAHA', designation: 'PGT', qualification: 'POST GRAOUATE' },
-    { name: 'MISS BASABI CHANDA', designation: 'PGT', qualification: 'POST GRAOUATE' },
-    { name: 'MISS KAKOLI PATWARI', designation: 'PGT', qualification: 'POST GRAOUATE' },
-    { name: 'MISS TANAYA BARUAH', designation: 'PGT', qualification: 'POST GRAOUATE' },
-    { name: 'MRS. NIZARA KALITA', designation: 'PGT', qualification: 'M.Phil' },
-    { name: 'MRS. NABAMITA BORAL', designation: 'PGT', qualification: 'POST GRADUATE' },
-    { name: 'MRS. NILOTPALA SARMA', designation: 'OTHER', qualification: 'MLI. Sôenœ' },
-    { name: 'MR. BHOGIRAM KUJUR', designation: 'OTHER', qualification: 'HIGHER SECONDARY' },
-    { name: 'MRS. SUNITA CHETTRI', designation: 'OTHER', qualification: 'GRADUATE' },
-    { name: 'MR. STEPHEN BAGLARY', designation: 'OTHER', qualification: 'SECONDARY' },
-    { name: 'MRS. FLORA MARAK', designation: 'OTHER', qualification: 'BELOW SECONDARY' },
-    { name: 'JABA KUMARI DAS', designation: 'PGT', qualification: 'MA.' },
-    { name: 'VALSAMMA JOSEPH', designation: 'TGT', qualification: 'BSc.' },
-    { name: 'CHAYANIKA SARMA', designation: 'PGT', qualification: 'M.Sc. Computer Science' },
-    { name: 'DHRITI DAS', designation: 'PGT', qualification: 'M.Sc.' },
-    { name: 'PANCHALI DAS', designation: 'PGT', qualification: 'MA.' },
-    { name: 'SR. KUNNEL ELIZABETH', designation: 'TGT', qualification: 'BA.' },
-    { name: 'DUITHOILIU PONGNINGMEI', designation: 'TGT', qualification: 'BA.' },
-    { name: 'SR. CAROLINE CHONGLOI', designation: 'TGT', qualification: 'BA.' },
-    { name: 'JAYEETA KAR', designation: 'TGT', qualification: 'M.Sc.' },
-    { name: 'PRANJITA KALITA', designation: 'PRT', qualification: 'MBA' },
-    { name: 'BIPANCHI CHOUDHURY', designation: 'WELLNESS TEACHER', qualification: 'MA. Psychology' },
-    { name: 'SR. YAMCHINGNAO RIYAO GRACE PEMMILA', designation: 'PRINCIPAL', qualification: 'MA.' },
-    { name: 'RIMPI SARKAR', designation: 'PRT', qualification: '12 Science' },
-    { name: 'KAMAL JYOTI NATH', designation: 'PET', qualification: '12 Science' },
-    { name: 'RAJA BISWAS', designation: 'PGT', qualification: 'MSc(Maths)' },
-    { name: 'SHAHNAZ RAHMAN', designation: 'PGT', qualification: 'M.A.' },
-    { name: 'BAISHALI PHOOKUN', designation: 'PGT', qualification: 'M.A.' },
-    { name: 'SR. LISSY MATHEW', designation: 'OTHER', qualification: 'M.A.' },
-    { name: 'SANJANA RAAJ', designation: 'PGT', qualification: 'M.Sc.' },
-    { name: 'SR. THEKUVELU RHAKHO', designation: 'SPECIAL EDUCATOR', qualification: 'BA.' }
+    { contentId: "SR. PINKY TOPNO", name: c('cbse.disclosure.teacherDetails.sr-pinky-topno-0e85b6f2.name'), designation: c('cbse.disclosure.teacherDetails.sr-pinky-topno-0e85b6f2.designation'), designationStyle: "VICE-PRINCIPAL", qualification: c('cbse.disclosure.teacherDetails.sr-pinky-topno-0e85b6f2.qualification') },
+    { contentId: "SR. MARTHA SOIGI", name: c('cbse.disclosure.teacherDetails.sr-martha-soigi-80c2bebc.name'), designation: c('cbse.disclosure.teacherDetails.sr-martha-soigi-80c2bebc.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.sr-martha-soigi-80c2bebc.qualification') },
+    { contentId: "MRIGAKHEE PANDIT", name: c('cbse.disclosure.teacherDetails.mrigakhee-pandit-a35c2e37.name'), designation: c('cbse.disclosure.teacherDetails.mrigakhee-pandit-a35c2e37.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.mrigakhee-pandit-a35c2e37.qualification') },
+    { contentId: "SR. BISHANTIS MYRTHONG", name: c('cbse.disclosure.teacherDetails.sr-bishantis-myrthong-bedcf60f.name'), designation: c('cbse.disclosure.teacherDetails.sr-bishantis-myrthong-bedcf60f.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.sr-bishantis-myrthong-bedcf60f.qualification') },
+    { contentId: "MRS. LIZA PAUL", name: c('cbse.disclosure.teacherDetails.mrs-liza-paul-8ce2161b.name'), designation: c('cbse.disclosure.teacherDetails.mrs-liza-paul-8ce2161b.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.mrs-liza-paul-8ce2161b.qualification') },
+    { contentId: "MRS. MOUSUMI DAS", name: c('cbse.disclosure.teacherDetails.mrs-mousumi-das-df4fd2fe.name'), designation: c('cbse.disclosure.teacherDetails.mrs-mousumi-das-df4fd2fe.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.mrs-mousumi-das-df4fd2fe.qualification') },
+    { contentId: "MISS SHYAMALI CHANDA", name: c('cbse.disclosure.teacherDetails.miss-shyamali-chanda-a9b35fe4.name'), designation: c('cbse.disclosure.teacherDetails.miss-shyamali-chanda-a9b35fe4.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.miss-shyamali-chanda-a9b35fe4.qualification') },
+    { contentId: "TRUPTI DAS", name: c('cbse.disclosure.teacherDetails.trupti-das-5308f350.name'), designation: c('cbse.disclosure.teacherDetails.trupti-das-5308f350.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.trupti-das-5308f350.qualification') },
+    { contentId: "MRS. HEMA TIWARI", name: c('cbse.disclosure.teacherDetails.mrs-hema-tiwari-d670bf1e.name'), designation: c('cbse.disclosure.teacherDetails.mrs-hema-tiwari-d670bf1e.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.mrs-hema-tiwari-d670bf1e.qualification') },
+    { contentId: "MR. INDRAJIT KALITA", name: c('cbse.disclosure.teacherDetails.mr-indrajit-kalita-02d55d35.name'), designation: c('cbse.disclosure.teacherDetails.mr-indrajit-kalita-02d55d35.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.mr-indrajit-kalita-02d55d35.qualification') },
+    { contentId: "MRS. DIPTI DEKA", name: c('cbse.disclosure.teacherDetails.mrs-dipti-deka-ca940eb6.name'), designation: c('cbse.disclosure.teacherDetails.mrs-dipti-deka-ca940eb6.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.mrs-dipti-deka-ca940eb6.qualification') },
+    { contentId: "MRS. ANJANA MITRA", name: c('cbse.disclosure.teacherDetails.mrs-anjana-mitra-1654ac6f.name'), designation: c('cbse.disclosure.teacherDetails.mrs-anjana-mitra-1654ac6f.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-anjana-mitra-1654ac6f.qualification') },
+    { contentId: "MRS. MINU MARTHA PANNA", name: c('cbse.disclosure.teacherDetails.mrs-minu-martha-panna-9aff041f.name'), designation: c('cbse.disclosure.teacherDetails.mrs-minu-martha-panna-9aff041f.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-minu-martha-panna-9aff041f.qualification') },
+    { contentId: "MRS. ZEENAT ZAMAN", name: c('cbse.disclosure.teacherDetails.mrs-zeenat-zaman-a4a2d096.name'), designation: c('cbse.disclosure.teacherDetails.mrs-zeenat-zaman-a4a2d096.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-zeenat-zaman-a4a2d096.qualification') },
+    { contentId: "MRS. BINFFA MAJUMDAR", name: c('cbse.disclosure.teacherDetails.mrs-binffa-majumdar-a29127cc.name'), designation: c('cbse.disclosure.teacherDetails.mrs-binffa-majumdar-a29127cc.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-binffa-majumdar-a29127cc.qualification') },
+    { contentId: "MRS. ANURADHA KALITA", name: c('cbse.disclosure.teacherDetails.mrs-anuradha-kalita-631174e7.name'), designation: c('cbse.disclosure.teacherDetails.mrs-anuradha-kalita-631174e7.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-anuradha-kalita-631174e7.qualification') },
+    { contentId: "MRS. SUVARTHA VANI DEKA", name: c('cbse.disclosure.teacherDetails.mrs-suvartha-vani-deka-17fe883b.name'), designation: c('cbse.disclosure.teacherDetails.mrs-suvartha-vani-deka-17fe883b.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-suvartha-vani-deka-17fe883b.qualification') },
+    { contentId: "MRS. AJANTA B. CHOWDHURY", name: c('cbse.disclosure.teacherDetails.mrs-ajanta-b-chowdhury-516f453c.name'), designation: c('cbse.disclosure.teacherDetails.mrs-ajanta-b-chowdhury-516f453c.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-ajanta-b-chowdhury-516f453c.qualification') },
+    { contentId: "BARSHA BUJAR BARUAH", name: c('cbse.disclosure.teacherDetails.barsha-bujar-baruah-c14a63f9.name'), designation: c('cbse.disclosure.teacherDetails.barsha-bujar-baruah-c14a63f9.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.barsha-bujar-baruah-c14a63f9.qualification') },
+    { contentId: "MS. ROSELINE ANTHONY", name: c('cbse.disclosure.teacherDetails.ms-roseline-anthony-1d5fde16.name'), designation: c('cbse.disclosure.teacherDetails.ms-roseline-anthony-1d5fde16.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.ms-roseline-anthony-1d5fde16.qualification') },
+    { contentId: "MRS. RAJLAXMI ROY", name: c('cbse.disclosure.teacherDetails.mrs-rajlaxmi-roy-d5b1688b.name'), designation: c('cbse.disclosure.teacherDetails.mrs-rajlaxmi-roy-d5b1688b.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-rajlaxmi-roy-d5b1688b.qualification') },
+    { contentId: "MRS. SHYAMOBI R. NARZARY", name: c('cbse.disclosure.teacherDetails.mrs-shyamobi-r-narzary-e5927ee3.name'), designation: c('cbse.disclosure.teacherDetails.mrs-shyamobi-r-narzary-e5927ee3.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-shyamobi-r-narzary-e5927ee3.qualification') },
+    { contentId: "MRS. MADHUMITA DAS", name: c('cbse.disclosure.teacherDetails.mrs-madhumita-das-48abe866.name'), designation: c('cbse.disclosure.teacherDetails.mrs-madhumita-das-48abe866.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-madhumita-das-48abe866.qualification') },
+    { contentId: "MRS. SHONALI ROY", name: c('cbse.disclosure.teacherDetails.mrs-shonali-roy-5ecf839c.name'), designation: c('cbse.disclosure.teacherDetails.mrs-shonali-roy-5ecf839c.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-shonali-roy-5ecf839c.qualification') },
+    { contentId: "MRS. NILANJANA SAMANTA", name: c('cbse.disclosure.teacherDetails.mrs-nilanjana-samanta-a6cee9f9.name'), designation: c('cbse.disclosure.teacherDetails.mrs-nilanjana-samanta-a6cee9f9.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-nilanjana-samanta-a6cee9f9.qualification') },
+    { contentId: "MRS. PAYEL DAS", name: c('cbse.disclosure.teacherDetails.mrs-payel-das-b69aca0a.name'), designation: c('cbse.disclosure.teacherDetails.mrs-payel-das-b69aca0a.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-payel-das-b69aca0a.qualification') },
+    { contentId: "MRS. ANAMIKA DAS", name: c('cbse.disclosure.teacherDetails.mrs-anamika-das-a85e9add.name'), designation: c('cbse.disclosure.teacherDetails.mrs-anamika-das-a85e9add.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-anamika-das-a85e9add.qualification') },
+    { contentId: "MRS. JAHNABI BAISHYA", name: c('cbse.disclosure.teacherDetails.mrs-jahnabi-baishya-664f5269.name'), designation: c('cbse.disclosure.teacherDetails.mrs-jahnabi-baishya-664f5269.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.mrs-jahnabi-baishya-664f5269.qualification') },
+    { contentId: "MISS. JULI DEVI", name: c('cbse.disclosure.teacherDetails.miss-juli-devi-6909e027.name'), designation: c('cbse.disclosure.teacherDetails.miss-juli-devi-6909e027.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.miss-juli-devi-6909e027.qualification') },
+    { contentId: "MR. THOMAS NARZARY", name: c('cbse.disclosure.teacherDetails.mr-thomas-narzary-8716417e.name'), designation: c('cbse.disclosure.teacherDetails.mr-thomas-narzary-8716417e.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.mr-thomas-narzary-8716417e.qualification') },
+    { contentId: "MRS. BORNALI SAIKIA", name: c('cbse.disclosure.teacherDetails.mrs-bornali-saikia-e11e5a3f.name'), designation: c('cbse.disclosure.teacherDetails.mrs-bornali-saikia-e11e5a3f.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.mrs-bornali-saikia-e11e5a3f.qualification') },
+    { contentId: "MISS ALAKANANDA PATHAK", name: c('cbse.disclosure.teacherDetails.miss-alakananda-pathak-f57482a9.name'), designation: c('cbse.disclosure.teacherDetails.miss-alakananda-pathak-f57482a9.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.miss-alakananda-pathak-f57482a9.qualification') },
+    { contentId: "MRS. NANDITA SENGUPTA", name: c('cbse.disclosure.teacherDetails.mrs-nandita-sengupta-4fb014c5.name'), designation: c('cbse.disclosure.teacherDetails.mrs-nandita-sengupta-4fb014c5.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.mrs-nandita-sengupta-4fb014c5.qualification') },
+    { contentId: "MRS. DEEPANWITA BOSE SAHA", name: c('cbse.disclosure.teacherDetails.mrs-deepanwita-bose-saha-d4326a59.name'), designation: c('cbse.disclosure.teacherDetails.mrs-deepanwita-bose-saha-d4326a59.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.mrs-deepanwita-bose-saha-d4326a59.qualification') },
+    { contentId: "MISS BASABI CHANDA", name: c('cbse.disclosure.teacherDetails.miss-basabi-chanda-c64c7a31.name'), designation: c('cbse.disclosure.teacherDetails.miss-basabi-chanda-c64c7a31.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.miss-basabi-chanda-c64c7a31.qualification') },
+    { contentId: "MISS KAKOLI PATWARI", name: c('cbse.disclosure.teacherDetails.miss-kakoli-patwari-701ad15a.name'), designation: c('cbse.disclosure.teacherDetails.miss-kakoli-patwari-701ad15a.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.miss-kakoli-patwari-701ad15a.qualification') },
+    { contentId: "MISS TANAYA BARUAH", name: c('cbse.disclosure.teacherDetails.miss-tanaya-baruah-04e731fe.name'), designation: c('cbse.disclosure.teacherDetails.miss-tanaya-baruah-04e731fe.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.miss-tanaya-baruah-04e731fe.qualification') },
+    { contentId: "MRS. NIZARA KALITA", name: c('cbse.disclosure.teacherDetails.mrs-nizara-kalita-2ab03e13.name'), designation: c('cbse.disclosure.teacherDetails.mrs-nizara-kalita-2ab03e13.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.mrs-nizara-kalita-2ab03e13.qualification') },
+    { contentId: "MRS. NABAMITA BORAL", name: c('cbse.disclosure.teacherDetails.mrs-nabamita-boral-44a59793.name'), designation: c('cbse.disclosure.teacherDetails.mrs-nabamita-boral-44a59793.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.mrs-nabamita-boral-44a59793.qualification') },
+    { contentId: "MRS. NILOTPALA SARMA", name: c('cbse.disclosure.teacherDetails.mrs-nilotpala-sarma-95a4a68a.name'), designation: c('cbse.disclosure.teacherDetails.mrs-nilotpala-sarma-95a4a68a.designation'), designationStyle: "OTHER", qualification: c('cbse.disclosure.teacherDetails.mrs-nilotpala-sarma-95a4a68a.qualification') },
+    { contentId: "MR. BHOGIRAM KUJUR", name: c('cbse.disclosure.teacherDetails.mr-bhogiram-kujur-b2caf7c2.name'), designation: c('cbse.disclosure.teacherDetails.mr-bhogiram-kujur-b2caf7c2.designation'), designationStyle: "OTHER", qualification: c('cbse.disclosure.teacherDetails.mr-bhogiram-kujur-b2caf7c2.qualification') },
+    { contentId: "MRS. SUNITA CHETTRI", name: c('cbse.disclosure.teacherDetails.mrs-sunita-chettri-d145d643.name'), designation: c('cbse.disclosure.teacherDetails.mrs-sunita-chettri-d145d643.designation'), designationStyle: "OTHER", qualification: c('cbse.disclosure.teacherDetails.mrs-sunita-chettri-d145d643.qualification') },
+    { contentId: "MR. STEPHEN BAGLARY", name: c('cbse.disclosure.teacherDetails.mr-stephen-baglary-c48f96f7.name'), designation: c('cbse.disclosure.teacherDetails.mr-stephen-baglary-c48f96f7.designation'), designationStyle: "OTHER", qualification: c('cbse.disclosure.teacherDetails.mr-stephen-baglary-c48f96f7.qualification') },
+    { contentId: "MRS. FLORA MARAK", name: c('cbse.disclosure.teacherDetails.mrs-flora-marak-51d6b9a0.name'), designation: c('cbse.disclosure.teacherDetails.mrs-flora-marak-51d6b9a0.designation'), designationStyle: "OTHER", qualification: c('cbse.disclosure.teacherDetails.mrs-flora-marak-51d6b9a0.qualification') },
+    { contentId: "JABA KUMARI DAS", name: c('cbse.disclosure.teacherDetails.jaba-kumari-das-c805a850.name'), designation: c('cbse.disclosure.teacherDetails.jaba-kumari-das-c805a850.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.jaba-kumari-das-c805a850.qualification') },
+    { contentId: "VALSAMMA JOSEPH", name: c('cbse.disclosure.teacherDetails.valsamma-joseph-f0cdab7e.name'), designation: c('cbse.disclosure.teacherDetails.valsamma-joseph-f0cdab7e.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.valsamma-joseph-f0cdab7e.qualification') },
+    { contentId: "CHAYANIKA SARMA", name: c('cbse.disclosure.teacherDetails.chayanika-sarma-65c56d0e.name'), designation: c('cbse.disclosure.teacherDetails.chayanika-sarma-65c56d0e.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.chayanika-sarma-65c56d0e.qualification') },
+    { contentId: "DHRITI DAS", name: c('cbse.disclosure.teacherDetails.dhriti-das-e0094ddd.name'), designation: c('cbse.disclosure.teacherDetails.dhriti-das-e0094ddd.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.dhriti-das-e0094ddd.qualification') },
+    { contentId: "PANCHALI DAS", name: c('cbse.disclosure.teacherDetails.panchali-das-837b348d.name'), designation: c('cbse.disclosure.teacherDetails.panchali-das-837b348d.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.panchali-das-837b348d.qualification') },
+    { contentId: "SR. KUNNEL ELIZABETH", name: c('cbse.disclosure.teacherDetails.sr-kunnel-elizabeth-c9eb3c88.name'), designation: c('cbse.disclosure.teacherDetails.sr-kunnel-elizabeth-c9eb3c88.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.sr-kunnel-elizabeth-c9eb3c88.qualification') },
+    { contentId: "DUITHOILIU PONGNINGMEI", name: c('cbse.disclosure.teacherDetails.duithoiliu-pongningmei-5394afbb.name'), designation: c('cbse.disclosure.teacherDetails.duithoiliu-pongningmei-5394afbb.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.duithoiliu-pongningmei-5394afbb.qualification') },
+    { contentId: "SR. CAROLINE CHONGLOI", name: c('cbse.disclosure.teacherDetails.sr-caroline-chongloi-23f8b27f.name'), designation: c('cbse.disclosure.teacherDetails.sr-caroline-chongloi-23f8b27f.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.sr-caroline-chongloi-23f8b27f.qualification') },
+    { contentId: "JAYEETA KAR", name: c('cbse.disclosure.teacherDetails.jayeeta-kar-05890aa3.name'), designation: c('cbse.disclosure.teacherDetails.jayeeta-kar-05890aa3.designation'), designationStyle: "TGT", qualification: c('cbse.disclosure.teacherDetails.jayeeta-kar-05890aa3.qualification') },
+    { contentId: "PRANJITA KALITA", name: c('cbse.disclosure.teacherDetails.pranjita-kalita-0a73978e.name'), designation: c('cbse.disclosure.teacherDetails.pranjita-kalita-0a73978e.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.pranjita-kalita-0a73978e.qualification') },
+    { contentId: "BIPANCHI CHOUDHURY", name: c('cbse.disclosure.teacherDetails.bipanchi-choudhury-b46f2bb1.name'), designation: c('cbse.disclosure.teacherDetails.bipanchi-choudhury-b46f2bb1.designation'), designationStyle: "WELLNESS TEACHER", qualification: c('cbse.disclosure.teacherDetails.bipanchi-choudhury-b46f2bb1.qualification') },
+    { contentId: "SR. YAMCHINGNAO RIYAO GRACE PEMMILA", name: c('cbse.disclosure.teacherDetails.sr-yamchingnao-riyao-grace-pemmila-e7529adb.name'), designation: c('cbse.disclosure.teacherDetails.sr-yamchingnao-riyao-grace-pemmila-e7529adb.designation'), designationStyle: "PRINCIPAL", qualification: c('cbse.disclosure.teacherDetails.sr-yamchingnao-riyao-grace-pemmila-e7529adb.qualification') },
+    { contentId: "RIMPI SARKAR", name: c('cbse.disclosure.teacherDetails.rimpi-sarkar-543714cb.name'), designation: c('cbse.disclosure.teacherDetails.rimpi-sarkar-543714cb.designation'), designationStyle: "PRT", qualification: c('cbse.disclosure.teacherDetails.rimpi-sarkar-543714cb.qualification') },
+    { contentId: "KAMAL JYOTI NATH", name: c('cbse.disclosure.teacherDetails.kamal-jyoti-nath-db5cdbc7.name'), designation: c('cbse.disclosure.teacherDetails.kamal-jyoti-nath-db5cdbc7.designation'), designationStyle: "PET", qualification: c('cbse.disclosure.teacherDetails.kamal-jyoti-nath-db5cdbc7.qualification') },
+    { contentId: "RAJA BISWAS", name: c('cbse.disclosure.teacherDetails.raja-biswas-cbd473e7.name'), designation: c('cbse.disclosure.teacherDetails.raja-biswas-cbd473e7.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.raja-biswas-cbd473e7.qualification') },
+    { contentId: "SHAHNAZ RAHMAN", name: c('cbse.disclosure.teacherDetails.shahnaz-rahman-0bcbdb77.name'), designation: c('cbse.disclosure.teacherDetails.shahnaz-rahman-0bcbdb77.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.shahnaz-rahman-0bcbdb77.qualification') },
+    { contentId: "BAISHALI PHOOKUN", name: c('cbse.disclosure.teacherDetails.baishali-phookun-b2e91311.name'), designation: c('cbse.disclosure.teacherDetails.baishali-phookun-b2e91311.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.baishali-phookun-b2e91311.qualification') },
+    { contentId: "SR. LISSY MATHEW", name: c('cbse.disclosure.teacherDetails.sr-lissy-mathew-7ed6d8ff.name'), designation: c('cbse.disclosure.teacherDetails.sr-lissy-mathew-7ed6d8ff.designation'), designationStyle: "OTHER", qualification: c('cbse.disclosure.teacherDetails.sr-lissy-mathew-7ed6d8ff.qualification') },
+    { contentId: "SANJANA RAAJ", name: c('cbse.disclosure.teacherDetails.sanjana-raaj-359d05a2.name'), designation: c('cbse.disclosure.teacherDetails.sanjana-raaj-359d05a2.designation'), designationStyle: "PGT", qualification: c('cbse.disclosure.teacherDetails.sanjana-raaj-359d05a2.qualification') },
+    { contentId: "SR. THEKUVELU RHAKHO", name: c('cbse.disclosure.teacherDetails.sr-thekuvelu-rhakho-823b3a0a.name'), designation: c('cbse.disclosure.teacherDetails.sr-thekuvelu-rhakho-823b3a0a.designation'), designationStyle: "SPECIAL EDUCATOR", qualification: c('cbse.disclosure.teacherDetails.sr-thekuvelu-rhakho-823b3a0a.qualification') }
   ]
 
   const handleViewPdf = (key) => {
+    setPdfError(false)
     console.log('View PDF clicked for key:', key)
     
     if (key === 'fee') {
@@ -380,8 +338,8 @@ const MandatoryPublicDisclosure = () => {
               <ClipboardList size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">Mandatory Public Disclosure</h1>
-              <p className="text-gold-300 text-sm mt-0.5">Appendix – IX - As required by CBSE affiliation bye-laws</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('cbse.disclosure.copy.page-headings-and-explana.mandatory-public-disclosure-e77d6d18')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('cbse.disclosure.copy.page-headings-and-explana.appendix-ix-as-required-by-cbse-aff-8297a153')}</p>
             </div>
           </div>
         </div>
@@ -403,10 +361,7 @@ const MandatoryPublicDisclosure = () => {
             <div className="flex items-start gap-3">
               <AlertCircle size={18} className="text-amber-600 flex-shrink-0 mt-0.5" />
               <p className="text-xs text-amber-800">
-                <span className="font-semibold">Note:</span> The school needs to upload the self-attested copies of 
-                documents by Chairman/Manager/Secretary and Principal. In case, it is noticed at later stage that 
-                uploaded documents are not genuine then school shall be liable for action as per norms.
-              </p>
+                <span className="font-semibold">{c('cbse.disclosure.copy.page-headings-and-explana.note-1150f054')}</span>{' ' + c('cbse.disclosure.copy.page-headings-and-explana.the-school-needs-to-upload-the-self-38eceb93')}</p>
             </div>
           </motion.div>
 
@@ -416,7 +371,7 @@ const MandatoryPublicDisclosure = () => {
             initial="hidden"
             animate={controls}
           >
-            <SectionHeader title="A: GENERAL INFORMATION" icon={ClipboardList} section="general">
+            <SectionHeader title={c('cbse.disclosure.heading.a-general-information')} icon={ClipboardList} section="general">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-gradient-to-r from-gold-50 to-gold-100/50">
@@ -428,7 +383,7 @@ const MandatoryPublicDisclosure = () => {
                   </thead>
                   <tbody>
                     {generalInfo.map((item, index) => (
-                      <tr key={item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
+                      <tr key={item.additional ? item.key : item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
                         <td className="px-4 py-2.5 text-gray-500 text-xs border-b border-gray-100">{index + 1}</td>
                         <td className="px-4 py-2.5 font-medium text-maroon-900 border-b border-gray-100 text-xs">{item.label}</td>
                         <td className="px-4 py-2.5 text-gray-700 border-b border-gray-100 text-xs">{item.value}</td>
@@ -446,7 +401,7 @@ const MandatoryPublicDisclosure = () => {
             initial="hidden"
             animate={controls}
           >
-            <SectionHeader title="B: DOCUMENTS AND INFORMATION" icon={FileText} section="documents">
+            <SectionHeader title={c('cbse.disclosure.heading.b-documents-and-information')} icon={FileText} section="documents">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-gradient-to-r from-gold-50 to-gold-100/50">
@@ -457,11 +412,11 @@ const MandatoryPublicDisclosure = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {documentsInfo.map((item, index) => {
+                    {[...documentsInfo, ...disclosureDocuments.additional.map(document => ({ key: document.key, label: document.name, icon: FileText, additional: true }))].map((item, index) => {
                       const pdf = pdfData[item.key]
                       const Icon = item.icon
                       return (
-                        <tr key={item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
+                        <tr key={item.additional ? item.key : item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
                           <td className="px-4 py-2.5 text-gray-500 text-xs border-b border-gray-100">{index + 1}</td>
                           <td className="px-4 py-2.5 text-gray-700 border-b border-gray-100 text-xs flex items-center gap-2">
                             <Icon size={14} className="text-maroon-600 flex-shrink-0" />
@@ -473,9 +428,7 @@ const MandatoryPublicDisclosure = () => {
                                 onClick={() => handleViewPdf(item.key)}
                                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gold-50 hover:bg-gold-100 text-gold-700 text-xs font-medium rounded-lg transition-all duration-300 hover:shadow-md group"
                               >
-                                <Eye size={13} className="group-hover:scale-110 transition-transform" />
-                                View More
-                              </button>
+                                <Eye size={13} className="group-hover:scale-110 transition-transform" />{c('cbse.disclosure.copy.page-headings-and-explana.view-more-15435b31')}</button>
                             ) : (
                               <span className="text-gray-400 text-xs">Not Available</span>
                             )}
@@ -495,7 +448,7 @@ const MandatoryPublicDisclosure = () => {
             initial="hidden"
             animate={controls}
           >
-            <SectionHeader title="C: RESULT AND ACADEMICS" icon={BookOpen} section="result">
+            <SectionHeader title={c('cbse.disclosure.heading.c-result-and-academics')} icon={BookOpen} section="result">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-gradient-to-r from-gold-50 to-gold-100/50">
@@ -509,7 +462,7 @@ const MandatoryPublicDisclosure = () => {
                     {resultInfo.map((item, index) => {
                       const Icon = item.icon
                       return (
-                        <tr key={item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
+                        <tr key={item.additional ? item.key : item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
                           <td className="px-4 py-2.5 text-gray-500 text-xs border-b border-gray-100">{index + 1}</td>
                           <td className="px-4 py-2.5 text-gray-700 border-b border-gray-100 text-xs flex items-center gap-2">
                             <Icon size={14} className="text-maroon-600 flex-shrink-0" />
@@ -520,9 +473,7 @@ const MandatoryPublicDisclosure = () => {
                               onClick={() => handleViewPdf(item.key)}
                               className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gold-50 hover:bg-gold-100 text-gold-700 text-xs font-medium rounded-lg transition-all duration-300 hover:shadow-md group"
                             >
-                              <Eye size={13} className="group-hover:scale-110 transition-transform" />
-                              View More
-                            </button>
+                              <Eye size={13} className="group-hover:scale-110 transition-transform" />{c('cbse.disclosure.copy.page-headings-and-explana.view-more-15435b31.2')}</button>
                           </td>
                         </tr>
                       )
@@ -539,7 +490,7 @@ const MandatoryPublicDisclosure = () => {
             initial="hidden"
             animate={controls}
           >
-            <SectionHeader title="D: STAFF (TEACHING)" icon={Users} section="staff">
+            <SectionHeader title={c('cbse.disclosure.heading.d-staff-teaching')} icon={Users} section="staff">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-gradient-to-r from-gold-50 to-gold-100/50">
@@ -551,7 +502,7 @@ const MandatoryPublicDisclosure = () => {
                   </thead>
                   <tbody>
                     {staffInfo.map((item, index) => (
-                      <tr key={item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
+                      <tr key={item.additional ? item.key : item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
                         <td className="px-4 py-2.5 text-gray-500 text-xs border-b border-gray-100">{index + 1}</td>
                         <td className="px-4 py-2.5 font-medium text-maroon-900 border-b border-gray-100 text-xs">{item.label}</td>
                         <td className="px-4 py-2.5 text-gray-700 border-b border-gray-100 text-xs">{item.value}</td>
@@ -569,7 +520,7 @@ const MandatoryPublicDisclosure = () => {
             initial="hidden"
             animate={controls}
           >
-            <SectionHeader title="E: SCHOOL INFRASTRUCTURE" icon={Building2} section="infrastructure">
+            <SectionHeader title={c('cbse.disclosure.heading.e-school-infrastructure')} icon={Building2} section="infrastructure">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-gradient-to-r from-gold-50 to-gold-100/50">
@@ -581,13 +532,12 @@ const MandatoryPublicDisclosure = () => {
                   </thead>
                   <tbody>
                     {infrastructureInfo.map((item, index) => (
-                      <tr key={item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
+                      <tr key={item.additional ? item.key : item.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
                         <td className="px-4 py-2.5 text-gray-500 text-xs border-b border-gray-100">{index + 1}</td>
                         <td className="px-4 py-2.5 font-medium text-maroon-900 border-b border-gray-100 text-xs">{item.label}</td>
                         <td className="px-4 py-2.5 text-gray-700 border-b border-gray-100 text-xs">
                           {item.label === 'YouTube Video of School Inspection' ? (
-                            <a href={item.value} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium text-xs hover:underline transition-colors">
-                              View Video <ExternalLink size={12} />
+                            <a href={item.value} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium text-xs hover:underline transition-colors">{c('cbse.disclosure.copy.page-headings-and-explana.view-video-a384a35a') + ' '}<ExternalLink size={12} />
                             </a>
                           ) : (
                             item.value
@@ -613,9 +563,7 @@ const MandatoryPublicDisclosure = () => {
                 <div className="p-1.5 bg-gold-500/20 rounded-lg">
                   <GraduationCap size={16} className="text-gold-300" />
                 </div>
-                <h2 className="text-white font-bold text-sm tracking-wide">
-                  F: TEACHER DETAILS
-                </h2>
+                <h2 className="text-white font-bold text-sm tracking-wide">{c('cbse.disclosure.copy.page-headings-and-explana.f-teacher-details-26d732c9')}</h2>
               </div>
             </div>
             <div className="bg-white rounded-b-2xl shadow-lg border border-gray-100 border-t-0 overflow-hidden">
@@ -631,18 +579,18 @@ const MandatoryPublicDisclosure = () => {
                   </thead>
                   <tbody>
                     {teacherDetails.map((teacher, index) => (
-                      <tr key={teacher.name} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
+                      <tr key={teacher.contentId} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-gray-100/50 transition-colors'}>
                         <td className="px-4 py-2 text-gray-500 text-xs border-b border-gray-100">{index + 1}</td>
                         <td className="px-4 py-2 text-gray-700 border-b border-gray-100 text-xs font-medium">{teacher.name}</td>
                         <td className="px-4 py-2 text-gray-700 border-b border-gray-100 text-xs">
                           <span className={`px-2 py-0.5 rounded-full text-[9px] font-medium ${
-                            teacher.designation === 'PRINCIPAL' ? 'bg-maroon-100 text-maroon-800' :
-                            teacher.designation === 'VICE-PRINCIPAL' ? 'bg-purple-100 text-purple-800' :
-                            teacher.designation === 'PGT' ? 'bg-blue-100 text-blue-800' :
-                            teacher.designation === 'TGT' ? 'bg-green-100 text-green-800' :
-                            teacher.designation === 'PRT' ? 'bg-amber-100 text-amber-800' :
-                            teacher.designation === 'SPECIAL EDUCATOR' ? 'bg-rose-100 text-rose-800' :
-                            teacher.designation === 'WELLNESS TEACHER' ? 'bg-teal-100 text-teal-800' :
+                            teacher.designationStyle === 'PRINCIPAL' ? 'bg-maroon-100 text-maroon-800' :
+                            teacher.designationStyle === 'VICE-PRINCIPAL' ? 'bg-purple-100 text-purple-800' :
+                            teacher.designationStyle === 'PGT' ? 'bg-blue-100 text-blue-800' :
+                            teacher.designationStyle === 'TGT' ? 'bg-green-100 text-green-800' :
+                            teacher.designationStyle === 'PRT' ? 'bg-amber-100 text-amber-800' :
+                            teacher.designationStyle === 'SPECIAL EDUCATOR' ? 'bg-rose-100 text-rose-800' :
+                            teacher.designationStyle === 'WELLNESS TEACHER' ? 'bg-teal-100 text-teal-800' :
                             'bg-gray-100 text-gray-600'
                           }`}>
                             {teacher.designation}
@@ -655,8 +603,8 @@ const MandatoryPublicDisclosure = () => {
                 </table>
               </div>
               <div className="px-4 py-2.5 bg-gray-50/80 border-t border-gray-100 flex items-center justify-between">
-                <p className="text-xs text-gray-500">Total Teachers: <span className="font-semibold text-maroon-800">{teacherDetails.length}</span></p>
-                <p className="text-[9px] text-gray-400">Last updated: 2025</p>
+                <p className="text-xs text-gray-500">{c('cbse.disclosure.copy.page-headings-and-explana.total-teachers-204e02c7') + ' '}<span className="font-semibold text-maroon-800">{teacherDetails.length}</span></p>
+                <p className="text-[9px] text-gray-400">{c('cbse.disclosure.copy.page-headings-and-explana.last-updated-2025-80c80181')}</p>
               </div>
             </div>
           </motion.div>
@@ -672,9 +620,7 @@ const MandatoryPublicDisclosure = () => {
                 <div className="p-1.5 bg-gold-500/20 rounded-lg">
                   <Award size={16} className="text-gold-300" />
                 </div>
-                <h2 className="text-white font-bold text-sm tracking-wide">
-                  BOARD EXAMINATION RESULTS
-                </h2>
+                <h2 className="text-white font-bold text-sm tracking-wide">{c('cbse.disclosure.copy.page-headings-and-explana.board-examination-results-6a9ddf32')}</h2>
               </div>
             </div>
             <div className="bg-white rounded-b-2xl shadow-lg border border-gray-100 border-t-0 overflow-hidden p-5">
@@ -682,8 +628,8 @@ const MandatoryPublicDisclosure = () => {
                 {/* Class X Result */}
                 <div>
                   <div className="flex items-center gap-2 mb-2.5">
-                    <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold">X</div>
-                    <h3 className="text-sm font-bold text-maroon-900">Class X Result</h3>
+                    <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold">{c('cbse.disclosure.copy.page-headings-and-explana.x-4b68ab38')}</div>
+                    <h3 className="text-sm font-bold text-maroon-900">{c('cbse.disclosure.copy.page-headings-and-explana.class-x-result-f1ecf86c')}</h3>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-xs">
@@ -699,7 +645,7 @@ const MandatoryPublicDisclosure = () => {
                       </thead>
                       <tbody>
                         {classXResult.map((row, index) => (
-                          <tr key={row.year} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
+                          <tr key={row.contentId} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
                             <td className="px-2.5 py-1.5 text-gray-500 border-b">{index + 1}</td>
                             <td className="px-2.5 py-1.5 text-gray-700 border-b font-medium">{row.year}</td>
                             <td className="px-2.5 py-1.5 text-gray-700 border-b">{row.registered}</td>
@@ -716,8 +662,8 @@ const MandatoryPublicDisclosure = () => {
                 {/* Class XII Result */}
                 <div>
                   <div className="flex items-center gap-2 mb-2.5">
-                    <div className="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-bold">XII</div>
-                    <h3 className="text-sm font-bold text-maroon-900">Class XII Result</h3>
+                    <div className="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-bold">{c('cbse.disclosure.copy.page-headings-and-explana.xii-89e979f6')}</div>
+                    <h3 className="text-sm font-bold text-maroon-900">{c('cbse.disclosure.copy.page-headings-and-explana.class-xii-result-5295d6c8')}</h3>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full text-xs">
@@ -733,7 +679,7 @@ const MandatoryPublicDisclosure = () => {
                       </thead>
                       <tbody>
                         {classXIIResult.map((row, index) => (
-                          <tr key={row.year} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
+                          <tr key={row.contentId} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
                             <td className="px-2.5 py-1.5 text-gray-500 border-b">{index + 1}</td>
                             <td className="px-2.5 py-1.5 text-gray-700 border-b font-medium">{row.year}</td>
                             <td className="px-2.5 py-1.5 text-gray-700 border-b">{row.registered}</td>
@@ -764,11 +710,9 @@ const MandatoryPublicDisclosure = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-700">
-                    <span className="font-semibold text-purple-800">Students of Counsellor and Wellness Teacher:</span>
+                    <span className="font-semibold text-purple-800">{c('cbse.disclosure.copy.page-headings-and-explana.students-of-counsellor-and-wellness-d4c3e39c')}</span>
                   </p>
-                  <p className="text-sm text-purple-700 font-medium mt-0.5">
-                    MS. BIPANCHI CHOUDHURY
-                    <span className="text-gray-600 font-normal"> - MSc Psychology (Specialisation in Counseling)</span>
+                  <p className="text-sm text-purple-700 font-medium mt-0.5">{c('cbse.disclosure.copy.page-headings-and-explana.ms-bipanchi-choudhury-706e4bd4')}<span className="text-gray-600 font-normal">{' ' + c('cbse.disclosure.copy.page-headings-and-explana.msc-psychology-specialisation-in-co-7bff23fe')}</span>
                   </p>
                 </div>
               </div>
@@ -790,28 +734,24 @@ const MandatoryPublicDisclosure = () => {
           >
             <div className="flex items-center justify-between p-4 border-b bg-gradient-to-r from-maroon-50 to-gold-50 rounded-t-2xl">
               <div>
-                <h3 className="font-bold text-maroon-900 text-base">{selectedPdf.name}</h3>
-                <p className="text-xs text-gray-500 mt-0.5">{selectedPdf.description}</p>
+                <h3 className="font-bold text-maroon-900 text-base">{shownPdf.name}</h3>
+                <p className="text-xs text-gray-500 mt-0.5">{shownPdf.description}</p>
               </div>
               <button onClick={handleClosePdf} className="p-2 hover:bg-gray-200 rounded-lg transition-colors">
                 <X size={20} className="text-gray-600" />
               </button>
             </div>
             <div className="flex-1 p-4 overflow-hidden bg-gray-50">
-              <iframe src={selectedPdf.url} className="w-full h-full rounded-lg border border-gray-200 shadow-inner" title={selectedPdf.name} />
+              {pdfError || !shownPdf.url ? <p role="alert" className="text-sm text-gray-700">This PDF could not be previewed. Close this window, refresh the page and try again, or use Open in New Tab.</p> : <iframe src={shownPdf.url} className="w-full h-full rounded-lg border border-gray-200 shadow-inner" title={shownPdf.name} onError={() => setPdfError(true)} />}
             </div>
             <div className="flex items-center justify-between p-4 border-t bg-gray-50 rounded-b-2xl">
               <span className="text-xs text-gray-500 flex items-center gap-1.5">
-                <FileCheck size={14} className="text-green-600" />
-                PDF Document
-              </span>
+                <FileCheck size={14} className="text-green-600" />{c('cbse.disclosure.copy.pdf-preview-captions.pdf-document-0cbeb39b')}</span>
               <div className="flex gap-3">
-                <a href={selectedPdf.url} download className="px-4 py-2 bg-maroon-800 text-white rounded-lg text-sm font-medium hover:bg-maroon-700 transition-all duration-300 flex items-center gap-2 hover:shadow-lg">
-                  <Download size={15} /> Download
-                </a>
-                <a href={selectedPdf.url} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gold-600 text-white rounded-lg text-sm font-medium hover:bg-gold-700 transition-all duration-300 flex items-center gap-2 hover:shadow-lg">
-                  <ExternalLink size={15} /> Open in New Tab
-                </a>
+                <a href={shownPdf.url || undefined} aria-disabled={!shownPdf.url || undefined} download className="px-4 py-2 bg-maroon-800 text-white rounded-lg text-sm font-medium hover:bg-maroon-700 transition-all duration-300 flex items-center gap-2 hover:shadow-lg">
+                  <Download size={15} />{' ' + c('cbse.disclosure.copy.pdf-preview-captions.download-d6eafe82')}</a>
+                <a href={shownPdf.url || undefined} aria-disabled={!shownPdf.url || undefined} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gold-600 text-white rounded-lg text-sm font-medium hover:bg-gold-700 transition-all duration-300 flex items-center gap-2 hover:shadow-lg">
+                  <ExternalLink size={15} />{' ' + c('cbse.disclosure.copy.pdf-preview-captions.open-in-new-tab-35e74c3a')}</a>
               </div>
             </div>
           </motion.div>
@@ -835,10 +775,8 @@ const MandatoryPublicDisclosure = () => {
             <div className="flex items-center justify-between p-4 border-b bg-gradient-to-r from-maroon-800 to-maroon-700 rounded-t-2xl">
               <div>
                 <h3 className="font-bold text-white text-lg flex items-center gap-2">
-                  <Wallet size={20} className="text-gold-400" />
-                  Fee Structure 2026-27
-                </h3>
-                <p className="text-xs text-gold-300/80 mt-0.5">St. Mary's Sr. Secondary School, Maligaon</p>
+                  <Wallet size={20} className="text-gold-400" />{c('cbse.disclosure.copy.fee-structure-labels-and-.fee-structure-2026-27-38df3d32')}</h3>
+                <p className="text-xs text-gold-300/80 mt-0.5">{c('cbse.disclosure.copy.fee-structure-labels-and-.st-mary-s-sr-secondary-school-malig-25fd5643')}</p>
               </div>
               <button
                 onClick={handleCloseFeeStructure}
@@ -856,15 +794,15 @@ const MandatoryPublicDisclosure = () => {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="bg-gradient-to-r from-maroon-900 to-maroon-700 text-white">
-                        <th className="px-4 py-3.5 text-left font-semibold text-sm">CLASS</th>
-                        <th className="px-4 py-3.5 text-center font-semibold text-sm">ANNUAL FEES<br/><span className="text-xs font-normal text-gold-300">(Per Installment)</span></th>
-                        <th className="px-4 py-3.5 text-center font-semibold text-sm">TUITION FEES<br/><span className="text-xs font-normal text-gold-300">(Per Installment)</span></th>
-                        <th className="px-4 py-3.5 text-center font-semibold text-sm">INSTALLMENT<br/><span className="text-xs font-normal text-gold-300">Period</span></th>
+                        <th className="px-4 py-3.5 text-left font-semibold text-sm">{c('cbse.disclosure.copy.fee-structure-labels-and-.class-bb6a385e')}</th>
+                        <th className="px-4 py-3.5 text-center font-semibold text-sm">{c('cbse.disclosure.copy.fee-structure-labels-and-.annual-fees-b25ed05c')}<br/><span className="text-xs font-normal text-gold-300">{c('cbse.disclosure.copy.fee-structure-labels-and-.per-installment-bf8712c5')}</span></th>
+                        <th className="px-4 py-3.5 text-center font-semibold text-sm">{c('cbse.disclosure.copy.fee-structure-labels-and-.tuition-fees-33206568')}<br/><span className="text-xs font-normal text-gold-300">{c('cbse.disclosure.copy.fee-structure-labels-and-.per-installment-bf8712c5.2')}</span></th>
+                        <th className="px-4 py-3.5 text-center font-semibold text-sm">{c('cbse.disclosure.copy.fee-structure-labels-and-.installment-03777de7')}<br/><span className="text-xs font-normal text-gold-300">{c('cbse.disclosure.copy.fee-structure-labels-and-.period-6e795d4d')}</span></th>
                       </tr>
                     </thead>
                     <tbody>
                       {feeData.map((row, index) => (
-                        <tr key={row.class} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-maroon-50/30 transition-colors'}>
+                        <tr key={row.contentId} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50 hover:bg-maroon-50/30 transition-colors'}>
                           <td className="px-4 py-3.5 font-semibold text-maroon-900 border-b border-gray-100 text-sm">{row.class}</td>
                           <td className="px-4 py-3.5 text-center text-gray-700 border-b border-gray-100 text-sm font-medium">{row.annualPerInstallment}</td>
                           <td className="px-4 py-3.5 text-center text-gray-700 border-b border-gray-100 text-sm font-medium">{row.tuitionPerInstallment}</td>
@@ -885,9 +823,7 @@ const MandatoryPublicDisclosure = () => {
                   <div className="flex items-start gap-2">
                     <Info size={16} className="text-orange-600 flex-shrink-0 mt-0.5" />
                     <p className="text-xs text-amber-800">
-                      <span className="font-semibold">Note:</span> Fees are received by HDFC Bank Ltd., Maligaon Branch on behalf of the Institution. 
-                      No bills are issued. Parents/guardians should ensure timely payment.
-                    </p>
+                      <span className="font-semibold">{c('cbse.disclosure.copy.fee-structure-labels-and-.note-1150f054')}</span>{' ' + c('cbse.disclosure.copy.fee-structure-labels-and-.fees-are-received-by-hdfc-bank-ltd--76340e41')}</p>
                   </div>
                 </div>
 
@@ -895,40 +831,36 @@ const MandatoryPublicDisclosure = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 border-t border-gray-100">
                   <div>
                     <h4 className="text-xs font-bold text-maroon-900 mb-2 flex items-center gap-2">
-                      <Calendar size={14} className="text-blue-600" />
-                      Installment Schedule (KG - X)
-                    </h4>
+                      <Calendar size={14} className="text-blue-600" />{c('cbse.disclosure.copy.fee-structure-labels-and-.installment-schedule-kg-x-227c9fa0')}</h4>
                     <div className="space-y-1.5">
-                      {['April', 'July', 'October', 'January'].map((month) => (
-                        <div key={month} className="flex items-center justify-between p-2 rounded-lg bg-gray-50 border border-gray-100 text-xs">
-                          <span className="font-semibold text-maroon-800">{month}</span>
-                          <span className="text-gray-600">10th - 20th</span>
-                          <span className="text-[10px] bg-gold-100 text-gold-800 px-2 py-0.5 rounded-full">KG - X</span>
+                      {[{ contentId: "April", text: c('cbse.disclosure.feeMonths.april') }, { contentId: "July", text: c('cbse.disclosure.feeMonths.july') }, { contentId: "October", text: c('cbse.disclosure.feeMonths.october') }, { contentId: "January", text: c('cbse.disclosure.feeMonths.january') }].map((month) => (
+                        <div key={month.contentId} className="flex items-center justify-between p-2 rounded-lg bg-gray-50 border border-gray-100 text-xs">
+                          <span className="font-semibold text-maroon-800">{month.text}</span>
+                          <span className="text-gray-600">{c('cbse.disclosure.copy.fee-structure-labels-and-.10th-20th-e1c6369d')}</span>
+                          <span className="text-[10px] bg-gold-100 text-gold-800 px-2 py-0.5 rounded-full">{c('cbse.disclosure.copy.fee-structure-labels-and-.kg-x-94dba5bb')}</span>
                         </div>
                       ))}
                     </div>
                     <div className="mt-2 text-xs text-gray-500 bg-amber-50 p-2 rounded-lg border border-amber-200 flex items-center gap-2">
                       <AlertCircle size={14} className="text-amber-600 flex-shrink-0" />
-                      <span><span className="font-medium text-amber-800">Late Fee:</span> ₹100 on all late payments</span>
+                      <span><span className="font-medium text-amber-800">{c('cbse.disclosure.copy.fee-structure-labels-and-.late-fee-498464bb')}</span>{' ' + c('cbse.disclosure.copy.fee-structure-labels-and-.100-on-all-late-payments-ecbece78')}</span>
                     </div>
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-maroon-900 mb-2 flex items-center gap-2">
-                      <Calendar size={14} className="text-purple-600" />
-                      Installment Schedule (XI - XII)
-                    </h4>
+                      <Calendar size={14} className="text-purple-600" />{c('cbse.disclosure.copy.fee-structure-labels-and-.installment-schedule-xi-xii-e57c2b96')}</h4>
                     <div className="space-y-1.5">
-                      {['June', 'September', 'December'].map((month) => (
-                        <div key={month} className="flex items-center justify-between p-2 rounded-lg bg-gray-50 border border-gray-100 text-xs">
-                          <span className="font-semibold text-maroon-800">{month}</span>
-                          <span className="text-[10px] bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full">XI - XII</span>
+                      {[{ contentId: "June", text: c('cbse.disclosure.feeMonths.june') }, { contentId: "September", text: c('cbse.disclosure.feeMonths.september') }, { contentId: "December", text: c('cbse.disclosure.feeMonths.december') }].map((month) => (
+                        <div key={month.contentId} className="flex items-center justify-between p-2 rounded-lg bg-gray-50 border border-gray-100 text-xs">
+                          <span className="font-semibold text-maroon-800">{month.text}</span>
+                          <span className="text-[10px] bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full">{c('cbse.disclosure.copy.fee-structure-labels-and-.xi-xii-616d68a7')}</span>
                         </div>
                       ))}
                     </div>
                     <div className="mt-2 p-2 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
                       <p className="text-[10px] text-gray-700 flex items-start gap-1.5">
                         <Sparkles size={12} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                        <span><span className="font-semibold text-purple-800">Note:</span> Science stream annual fees are higher due to additional laboratory resources</span>
+                        <span><span className="font-semibold text-purple-800">{c('cbse.disclosure.copy.fee-structure-labels-and-.note-1150f054.2')}</span>{' ' + c('cbse.disclosure.copy.fee-structure-labels-and-.science-stream-annual-fees-are-high-3626df23')}</span>
                       </p>
                     </div>
                   </div>
@@ -937,10 +869,8 @@ const MandatoryPublicDisclosure = () => {
                 {/* Footer */}
                 <div className="px-4 py-2.5 bg-gray-50/80 border-t border-gray-100 flex items-center justify-between">
                   <p className="text-[10px] text-gray-400 flex items-center gap-1.5">
-                    <Info size={12} className="text-gold-500" />
-                    Fees cover twelve calendar months
-                  </p>
-                  <p className="text-[10px] text-gray-400">Updated: 2025-26</p>
+                    <Info size={12} className="text-gold-500" />{c('cbse.disclosure.copy.fee-structure-labels-and-.fees-cover-twelve-calendar-months-b7a2e5a6')}</p>
+                  <p className="text-[10px] text-gray-400">{c('cbse.disclosure.copy.fee-structure-labels-and-.updated-2025-26-77984986')}</p>
                 </div>
               </div>
             </div>
@@ -950,9 +880,7 @@ const MandatoryPublicDisclosure = () => {
               <button
                 onClick={handleCloseFeeStructure}
                 className="px-5 py-2 bg-maroon-800 text-white rounded-lg text-sm font-medium hover:bg-maroon-700 transition-all duration-300 hover:shadow-lg"
-              >
-                Close
-              </button>
+              >{c('cbse.disclosure.copy.fee-structure-labels-and-.close-7d9eb7ac')}</button>
             </div>
           </motion.div>
         </div>

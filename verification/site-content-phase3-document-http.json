@@ -1,0 +1,113 @@
+{
+  "checks": [
+    {
+      "method": "GET",
+      "route": "/api/disclosure-documents",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "GET",
+      "route": "/api/disclosure-documents/all",
+      "status": 401,
+      "expected": 401
+    },
+    {
+      "method": "PUT",
+      "route": "/api/disclosure-documents/fire",
+      "status": 401,
+      "expected": 401
+    },
+    {
+      "method": "POST",
+      "route": "/api/disclosure-documents/noc/restore",
+      "status": 409,
+      "expected": 409
+    },
+    {
+      "method": "PUT",
+      "route": "/api/disclosure-documents/fire",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "GET",
+      "route": "/api/files/disclosures/24827c08-7563-4637-8e6d-942cda72c275.pdf",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "HEAD",
+      "route": "/api/files/disclosures/24827c08-7563-4637-8e6d-942cda72c275.pdf",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "GET",
+      "route": "/api/files/disclosures/24827c08-7563-4637-8e6d-942cda72c275.pdf",
+      "status": 206,
+      "expected": 206
+    },
+    {
+      "method": "PUT",
+      "route": "/api/disclosure-documents/fire",
+      "status": 409,
+      "expected": 409
+    },
+    {
+      "method": "POST",
+      "route": "/api/disclosure-documents",
+      "status": 201,
+      "expected": 201
+    },
+    {
+      "method": "GET",
+      "route": "/api/disclosure-documents",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "PATCH",
+      "route": "/api/disclosure-documents/custom-21d440bb-7faa-4466-9e8d-81eeb31c5328",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "GET",
+      "route": "/api/files/disclosures/3fffa013-5fd7-445b-8cb8-aa5fe3187525.pdf",
+      "status": 404,
+      "expected": 404
+    },
+    {
+      "method": "GET",
+      "route": "/api/files/disclosures/3fffa013-5fd7-445b-8cb8-aa5fe3187525.pdf",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "DELETE",
+      "route": "/api/disclosure-documents/custom-21d440bb-7faa-4466-9e8d-81eeb31c5328",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "DELETE",
+      "route": "/api/disclosure-documents/fire",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "method": "POST",
+      "route": "/api/disclosure-documents/fire/restore",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "GET",
+      "route": "/wp-content/uploads/2026/05/Managing-Commitee.pdf",
+      "status": 200,
+      "expected": 200
+    }
+  ],
+  "passed": true
+}

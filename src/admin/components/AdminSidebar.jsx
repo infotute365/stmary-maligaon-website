@@ -10,6 +10,7 @@ import {
   Image,
   Download,
   Settings,
+  FileText,
   LogOut
 } from 'lucide-react'
 import { useAdminAuth } from '../context/AdminAuthContext'
@@ -19,6 +20,7 @@ const AdminSidebar = ({ open }) => {
 
   const menuItems = [
     { to: '/admin/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+    { to: '/admin/site-content', icon: FileText, label: 'Website Content' },
     { to: '/admin/management', icon: Users, label: 'Management' },
     { to: '/admin/committee', icon: Users2, label: 'Managing Committee' },
     { to: '/admin/staff', icon: UserCog, label: 'Staff' },

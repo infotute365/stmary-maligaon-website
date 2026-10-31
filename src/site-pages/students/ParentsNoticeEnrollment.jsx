@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { 
@@ -21,6 +22,7 @@ import {
 } from 'lucide-react'
 
 const ParentsNoticeEnrollment = () => {
+  const c = useSiteContent()
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -49,38 +51,38 @@ const ParentsNoticeEnrollment = () => {
   }
 
   const notices = [
-    {
-      text: "Parents and guardians are earnestly requested to co-operate with the school authorities regarding rules, lessons, home-work, co-curricular activities and character training of their children.",
+    { contentId: "Parents and guardians are earnestly requested to co-operate with the school authorities regarding rules, lessons, home-work, co-curricular activities and character training of their children.",
+      text: c('students.parentsNoticeEnrollment.notices.parents-and-guardians-are-earnestly-2f61a71b.text'),
       icon: Users,
       color: 'blue'
     },
-    {
-      text: "Any communication (request or complaint) made by the parents should be addressed to the Principal and not to the class teacher.",
+    { contentId: "Any communication (request or complaint) made by the parents should be addressed to the Principal and not to the class teacher.",
+      text: c('students.parentsNoticeEnrollment.notices.any-communication-request-or-complai-fe32b756.text'),
       icon: Mail,
       color: 'purple'
     },
-    {
-      text: "Parents are requested to interview the Head Mistress to discuss the progress of their children with previous appointment.",
+    { contentId: "Parents are requested to interview the Head Mistress to discuss the progress of their children with previous appointment.",
+      text: c('students.parentsNoticeEnrollment.notices.parents-are-requested-to-interview-t-834095b9.text'),
       icon: Calendar,
       color: 'emerald'
     },
-    {
-      text: "No school business will be transacted during holidays. Look through the regularity record, report book and answer script of the student periodically.",
+    { contentId: "No school business will be transacted during holidays. Look through the regularity record, report book and answer script of the student periodically.",
+      text: c('students.parentsNoticeEnrollment.notices.no-school-business-will-be-transacte-e55ea837.text'),
       icon: Clock,
       color: 'amber'
     },
-    {
-      text: "A record of address of parents or guardians is maintained in the school office. Any change of address should be communicated without delay to the school office.",
+    { contentId: "A record of address of parents or guardians is maintained in the school office. Any change of address should be communicated without delay to the school office.",
+      text: c('students.parentsNoticeEnrollment.notices.a-record-of-address-of-parents-or-gu-6cfc2692.text'),
       icon: Home,
       color: 'rose'
     }
   ]
 
   const enrolmentData = [
-    { class: 'I-V', sections: 10, students: 606, color: 'blue' },
-    { class: 'VI-VIII', sections: 6, students: 358, color: 'green' },
-    { class: 'IX-X', sections: 6, students: 225, color: 'amber' },
-    { class: 'XI-XII', sections: 6, students: 168, color: 'purple' }
+    { contentId: "I-V", class: c('students.parentsNoticeEnrollment.enrolmentData.i-v-026febb3.class'), sections: c('students.parentsNoticeEnrollment.enrolmentData.i-v-026febb3.sections'), students: c('students.parentsNoticeEnrollment.enrolmentData.i-v-026febb3.students'), color: 'blue' },
+    { contentId: "VI-VIII", class: c('students.parentsNoticeEnrollment.enrolmentData.vi-viii-404f6008.class'), sections: c('students.parentsNoticeEnrollment.enrolmentData.vi-viii-404f6008.sections'), students: c('students.parentsNoticeEnrollment.enrolmentData.vi-viii-404f6008.students'), color: 'green' },
+    { contentId: "IX-X", class: c('students.parentsNoticeEnrollment.enrolmentData.ix-x-0b21890d.class'), sections: c('students.parentsNoticeEnrollment.enrolmentData.ix-x-0b21890d.sections'), students: c('students.parentsNoticeEnrollment.enrolmentData.ix-x-0b21890d.students'), color: 'amber' },
+    { contentId: "XI-XII", class: c('students.parentsNoticeEnrollment.enrolmentData.xi-xii-50ed57cd.class'), sections: c('students.parentsNoticeEnrollment.enrolmentData.xi-xii-50ed57cd.sections'), students: c('students.parentsNoticeEnrollment.enrolmentData.xi-xii-50ed57cd.students'), color: 'purple' }
   ]
 
   const totalSections = enrolmentData.reduce((sum, row) => sum + row.sections, 0)
@@ -175,8 +177,8 @@ const ParentsNoticeEnrollment = () => {
               <ClipboardCheck size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">Notice For Parents</h1>
-              <p className="text-gold-300 text-sm mt-0.5">Important information & enrolment details</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('students.parentsNoticeEnrollment.copy.notice-for-parents.heading.notice-for-parents-165733f1')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('students.parentsNoticeEnrollment.copy.notice-for-parents.paragraph.important-information-enro-524f3594')}</p>
             </div>
           </div>
         </div>
@@ -229,8 +231,8 @@ const ParentsNoticeEnrollment = () => {
           >
             <SectionTitle 
               icon={Users} 
-              title="Section-wise Enrolment of Students" 
-              subtitle="2025-26" 
+              title={c('students.parentsNoticeEnrollment.copy.notice-for-parents.title.section-wise-enrolment-of--93b648c6')}
+              subtitle={c('students.parentsNoticeEnrollment.copy.notice-for-parents.subtitle.2025-26-fe899de8')}
             />
 
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
@@ -239,9 +241,9 @@ const ParentsNoticeEnrollment = () => {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="bg-gradient-to-r from-maroon-900 to-maroon-700 text-white">
-                      <th className="px-5 py-3.5 text-left font-semibold">Class</th>
-                      <th className="px-5 py-3.5 text-center font-semibold">No. of Sections</th>
-                      <th className="px-5 py-3.5 text-center font-semibold">No. of Students</th>
+                      <th className="px-5 py-3.5 text-left font-semibold">{c('students.parentsNoticeEnrollment.copy.notice-for-parents.text.class-4f3a9bd0')}</th>
+                      <th className="px-5 py-3.5 text-center font-semibold">{c('students.parentsNoticeEnrollment.copy.notice-for-parents.text.no-of-sections-fc336adf')}</th>
+                      <th className="px-5 py-3.5 text-center font-semibold">{c('students.parentsNoticeEnrollment.copy.notice-for-parents.text.no-of-students-e71029c3')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -249,7 +251,7 @@ const ParentsNoticeEnrollment = () => {
                       const colors = getColorClasses(row.color)
                       return (
                         <tr 
-                          key={row.class} 
+                          key={row.contentId}
                           className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-maroon-50/30 transition-colors duration-150`}
                         >
                           <td className="px-5 py-3 font-medium text-maroon-900 border-b border-gray-100">
@@ -271,7 +273,7 @@ const ParentsNoticeEnrollment = () => {
                     })}
                     {/* Total Row */}
                     <tr className="bg-gradient-to-r from-gold-50 to-amber-50">
-                      <td className="px-5 py-3.5 font-bold text-maroon-900">Total</td>
+                      <td className="px-5 py-3.5 font-bold text-maroon-900">{c('students.parentsNoticeEnrollment.copy.notice-for-parents.text.total-c9b3c382')}</td>
                       <td className="px-5 py-3.5 text-center font-bold text-maroon-900">
                         {totalSections}
                       </td>
@@ -286,10 +288,8 @@ const ParentsNoticeEnrollment = () => {
               {/* Footer */}
               <div className="bg-gray-50/80 px-5 py-2.5 border-t border-gray-100 flex items-center justify-between">
                 <p className="text-[10px] text-gray-400 flex items-center gap-1.5">
-                  <GraduationCap size={12} className="text-gold-500" />
-                  Total Enrolment for Academic Year 2025-26
-                </p>
-                <p className="text-[10px] text-gray-400">Updated: 2025</p>
+                  <GraduationCap size={12} className="text-gold-500" />{c('students.parentsNoticeEnrollment.copy.notice-for-parents.paragraph.total-enrolment-for-academ-1cd7a497')}</p>
+                <p className="text-[10px] text-gray-400">{c('students.parentsNoticeEnrollment.copy.notice-for-parents.paragraph.updated-2025-c78dde82')}</p>
               </div>
             </div>
           </motion.div>
@@ -305,13 +305,13 @@ const ParentsNoticeEnrollment = () => {
               const colors = getColorClasses(row.color)
               return (
                 <motion.div 
-                  key={row.class} 
+                  key={row.contentId}
                   variants={fadeInUp}
                   className={`bg-white rounded-xl shadow-sm border border-gray-100 p-3 text-center hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:${colors.border}`}
                 >
                   <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">{row.class}</p>
                   <p className="text-xl font-bold text-maroon-900">{row.students}</p>
-                  <p className="text-[10px] text-gray-400">{row.sections} Sections</p>
+                  <p className="text-[10px] text-gray-400">{row.sections}{' ' + c('students.parentsNoticeEnrollment.copy.notice-for-parents.paragraph.sections-9bae918a')}</p>
                 </motion.div>
               )
             })}
@@ -327,8 +327,7 @@ const ParentsNoticeEnrollment = () => {
             <div className="flex items-center justify-center gap-2">
               <AlertCircle size={16} className="text-gold-600" />
               <p className="text-xs text-gray-600">
-                <span className="font-medium text-maroon-700">For any queries,</span> please contact the school office during working hours.
-              </p>
+                <span className="font-medium text-maroon-700">{c('students.parentsNoticeEnrollment.copy.notice-for-parents.text.for-any-queries-23631b1a')}</span>{' ' + c('students.parentsNoticeEnrollment.copy.notice-for-parents.paragraph.please-contact-the-school--f7bb6225')}</p>
             </div>
           </motion.div>
 
@@ -342,7 +341,7 @@ const ParentsNoticeEnrollment = () => {
             <div className="inline-block bg-gradient-to-r from-maroon-50 to-gold-50/30 rounded-full px-5 py-2 border border-maroon-100/60">
               <div className="flex items-center gap-2 text-xs text-gray-600">
                 <Sparkles size={14} className="text-gold-500" />
-                <span className="font-medium text-maroon-700">"Partnership between parents and school is key to student success"</span>
+                <span className="font-medium text-maroon-700">{c('students.parentsNoticeEnrollment.copy.notice-for-parents.text.partnership-between-parent-d82bc2c2')}</span>
                 <Sparkles size={14} className="text-gold-500" />
               </div>
             </div>

@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 // src/components/home/PrincipalMessage.jsx
 
 import React from 'react'
@@ -6,6 +7,7 @@ import { motion } from 'framer-motion'
 import principalImage from '../../assets/principal.png'
 
 const PrincipalMessage = () => {
+  const c = useSiteContent()
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -51,13 +53,10 @@ const PrincipalMessage = () => {
         >
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="h-px w-10 bg-gold-400" />
-            <span className="text-gold-600 text-xs font-semibold tracking-[0.25em] uppercase">
-              Leadership Message
-            </span>
+            <span className="text-gold-600 text-xs font-semibold tracking-[0.25em] uppercase">{c('home.principal.leadership-message')}</span>
             <span className="h-px w-10 bg-gold-400" />
           </div>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-maroon-900">
-            From the <span className="text-gold-600 italic">Principal's Desk</span>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-maroon-900">{c('home.principal.from-the') + ' '}<span className="text-gold-600 italic">{c('home.principal.principal-s-desk')}</span>
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-gold-400 to-maroon-600 mx-auto mt-4 rounded-full" />
         </motion.div>
@@ -107,12 +106,8 @@ const PrincipalMessage = () => {
               {/* Name Plate */}
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="w-12 h-0.5 bg-gold-400 rounded-full mb-3" />
-                <p className="font-serif text-2xl font-bold text-white leading-tight drop-shadow-lg">
-                  GRACE PEMMILA
-                </p>
-                <p className="text-xs text-gold-300 tracking-[0.2em] uppercase mt-1 font-medium">
-                  Principal, St. Mary's Sr. Sec. School
-                </p>
+                <p className="font-serif text-2xl font-bold text-white leading-tight drop-shadow-lg">{c('home.principal.grace-pemmila')}</p>
+                <p className="text-xs text-gold-300 tracking-[0.2em] uppercase mt-1 font-medium">{c('home.principal.principal-st-mary-s-sr-sec-school')}</p>
               </div>
             </div>
 
@@ -121,66 +116,52 @@ const PrincipalMessage = () => {
               {/* Opening Quote */}
               <div className="flex items-start gap-3 mb-4">
                 <Quote size={24} className="text-gold-300 flex-shrink-0 mt-0.5" />
-                <span className="text-[10px] font-semibold text-gold-600 tracking-[0.2em] uppercase">
-                  A Message of Welcome
-                </span>
+                <span className="text-[10px] font-semibold text-gold-600 tracking-[0.2em] uppercase">{c('home.principal.a-message-of-welcome')}</span>
               </div>
 
               {/* Message Content with scroll */}
               <div className="space-y-4 text-gray-700 leading-relaxed text-sm md:text-[15px] max-h-[280px] overflow-y-auto pr-3 custom-scrollbar">
-                <p className="text-base md:text-lg font-serif text-maroon-800 font-medium leading-relaxed">
-                  "Education is not just about filling minds with facts, but about lighting a fire of curiosity and purpose."
-                </p>
+                <p className="text-base md:text-lg font-serif text-maroon-800 font-medium leading-relaxed">{c('home.principal.education-is-not-just-about-filling-minds-with-facts-but-about-li')}</p>
 
-                <p>
-                  Welcome to <span className="text-maroon-800 font-semibold">St. Mary's Sr. Secondary School, Maligaon</span> — a place where young minds are nurtured, characters are built, and futures are shaped. It is my privilege to lead this institution that has been a beacon of quality education in Guwahati for over 35 years.
-                </p>
+                <p>{c('home.principal.welcome-to') + ' '}<span className="text-maroon-800 font-semibold">{c('home.principal.st-mary-s-sr-secondary-school-maligaon')}</span>{' ' + c('home.principal.a-place-where-young-minds-are-nurtured-characters-are-built-and-f')}</p>
 
-                <p>
-                  At St. Mary's, we believe that every child is unique and possesses immense potential. Our mission is to nurture this potential through a holistic approach that combines academic excellence, character development, and life skills. We create an environment where students feel safe, valued, and inspired to explore.
-                </p>
+                <p>{c('home.principal.at-st-mary-s-we-believe-that-every-child-is-unique-and-possesses')}</p>
 
                 {/* Highlight Quote */}
                 <div className="my-3 pl-5 border-l-4 border-gold-400 py-2 bg-gradient-to-r from-gold-50/60 to-transparent rounded-r-lg">
-                  <p className="italic text-maroon-800 text-sm leading-relaxed">
-                    "We strive to create a learning environment that inspires curiosity, fosters creativity, and builds resilience. Our students are prepared not just for examinations, but for life."
-                  </p>
+                  <p className="italic text-maroon-800 text-sm leading-relaxed">{c('home.principal.we-strive-to-create-a-learning-environment-that-inspires-curiosit')}</p>
                 </div>
 
-                <p>
-                  Our dedicated team of teachers works tirelessly to ensure every student receives individual attention and support. We encourage students to discover their passions, participate in co-curricular activities, and develop a strong sense of social responsibility. We believe in education that goes beyond textbooks — education that builds character.
-                </p>
+                <p>{c('home.principal.our-dedicated-team-of-teachers-works-tirelessly-to-ensure-every-s')}</p>
 
-                <p>
-                  I invite parents to partner with us in this transformative journey. Together, we can shape the future of our children and help them become confident, compassionate, and capable individuals who will make a positive impact on the world.
-                </p>
+                <p>{c('home.principal.i-invite-parents-to-partner-with-us-in-this-transformative-journe')}</p>
               </div>
 
               {/* Footer */}
               <div className="mt-5 pt-4 border-t-2 border-gold-200/60">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <a
-                    href="mailto:principal@stmarysmaligaon.edu.in"
+                    href={'mailto:' + c('home.principal.emailDestination')}
                     className="inline-flex items-center gap-2 px-4 py-2 bg-maroon-50 hover:bg-maroon-100 rounded-xl transition-all duration-300 border border-maroon-100/50 group"
                   >
                     <Mail size={15} className="text-maroon-700 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm font-medium text-maroon-800">st.marysschool66@yahoo.com</span>
+                    <span className="text-sm font-medium text-maroon-800">{c('home.principal.st-marysschool66-yahoo-com')}</span>
                   </a>
 
                   <div className="text-right">
-                    <p className="font-serif text-xl font-bold text-maroon-800 leading-tight">GRACE PEMMILA</p>
-                    <p className="text-xs font-semibold text-gold-600 tracking-[0.15em] uppercase">Principal</p>
+                    <p className="font-serif text-xl font-bold text-maroon-800 leading-tight">{c('home.principal.grace-pemmila')}</p>
+                    <p className="text-xs font-semibold text-gold-600 tracking-[0.15em] uppercase">{c('home.principal.principal')}</p>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap items-center justify-between mt-3 pt-3 border-t border-gold-100/50">
                   <div className="flex items-center gap-2">
                     <Heart size={13} className="text-rose-400" />
-                    <span className="text-sm font-medium text-maroon-700 italic">"With faith, knowledge, and compassion."</span>
+                    <span className="text-sm font-medium text-maroon-700 italic">{c('home.principal.with-faith-knowledge-and-compassion')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Sparkles size={13} className="text-gold-500" />
-                    <span className="text-xs font-semibold text-maroon-600 tracking-wide">Est. 1966</span>
+                    <span className="text-xs font-semibold text-maroon-600 tracking-wide">{c('home.principal.est-1966')}</span>
                   </div>
                 </div>
               </div>

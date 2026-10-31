@@ -1,0 +1,2001 @@
+[
+  {
+    "key": "global.school.name",
+    "group": "global",
+    "section": "School identity & contact",
+    "label": "School name",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's Sr. Secondary School",
+    "enabled": true
+  },
+  {
+    "key": "global.school.shortName",
+    "group": "global",
+    "section": "School identity & contact",
+    "label": "Short school name",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's Sr. Sec. School",
+    "enabled": true
+  },
+  {
+    "key": "global.school.branch",
+    "group": "global",
+    "section": "School identity & contact",
+    "label": "Branch",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Maligaon",
+    "enabled": true
+  },
+  {
+    "key": "global.school.city",
+    "group": "global",
+    "section": "School identity & contact",
+    "label": "City and state",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Guwahati, Assam",
+    "enabled": true
+  },
+  {
+    "key": "global.school.established",
+    "group": "global",
+    "section": "School identity & contact",
+    "label": "Year established",
+    "type": "number",
+    "defaultValue": 1966,
+    "enabled": true
+  },
+  {
+    "key": "global.school.affiliation",
+    "group": "global",
+    "section": "School identity & contact",
+    "label": "Affiliation",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "CBSE",
+    "enabled": true
+  },
+  {
+    "key": "global.school.address",
+    "group": "global",
+    "section": "School identity & contact",
+    "label": "Top-bar address",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Maligaon, Guwahati, Assam - 781011",
+    "enabled": true
+  },
+  {
+    "key": "global.school.phone",
+    "group": "global",
+    "section": "School identity & contact",
+    "label": "Top-bar phone",
+    "type": "tel",
+    "maxLength": 500,
+    "defaultValue": "+91 87520 16092",
+    "enabled": true
+  },
+  {
+    "key": "global.school.email",
+    "group": "global",
+    "section": "School identity & contact",
+    "label": "Top-bar email",
+    "type": "email",
+    "maxLength": 500,
+    "defaultValue": "st.marysschool66@yahoo.com",
+    "enabled": true
+  },
+  {
+    "key": "global.topbar.maligaon-guwahati",
+    "group": "global",
+    "section": "Top bar",
+    "label": "Maligaon, Guwahati",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Maligaon, Guwahati",
+    "enabled": true
+  },
+  {
+    "key": "global.topbar.email",
+    "group": "global",
+    "section": "Top bar",
+    "label": "Email",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Email",
+    "enabled": true
+  },
+  {
+    "key": "global.topbar.affiliated-to",
+    "group": "global",
+    "section": "Top bar",
+    "label": "Affiliated to",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Affiliated to",
+    "enabled": true
+  },
+  {
+    "key": "global.topbar.est",
+    "group": "global",
+    "section": "Top bar",
+    "label": "• Est.",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "• Est.",
+    "enabled": true
+  },
+  {
+    "key": "global.topbar.admin-login",
+    "group": "global",
+    "section": "Top bar",
+    "label": "Admin Login",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Admin Login",
+    "enabled": true
+  },
+  {
+    "key": "global.topbar.login",
+    "group": "global",
+    "section": "Top bar",
+    "label": "Login",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Login",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label1",
+    "group": "global",
+    "section": "Navigation - About Us",
+    "label": "Founder - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Founder",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label2",
+    "group": "global",
+    "section": "Navigation - About Us",
+    "label": "Co-Founders - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Co-Founders",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label3",
+    "group": "global",
+    "section": "Navigation - About Us",
+    "label": "History - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "History",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label4",
+    "group": "global",
+    "section": "Navigation - About Us",
+    "label": "Mission & Vision - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Mission & Vision",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label5",
+    "group": "global",
+    "section": "Navigation - About Us",
+    "label": "Educational Approach - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Educational Approach",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label6",
+    "group": "global",
+    "section": "Navigation - Administration",
+    "label": "Management - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Management",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label7",
+    "group": "global",
+    "section": "Navigation - Administration",
+    "label": "Managing Committee - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Managing Committee",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label8",
+    "group": "global",
+    "section": "Navigation - Administration",
+    "label": "Staff - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Staff",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label9",
+    "group": "global",
+    "section": "Navigation - Administration",
+    "label": "Teaching Staff - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Teaching Staff",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label10",
+    "group": "global",
+    "section": "Navigation - CBSE Information",
+    "label": "Mandatory Public Disclosure - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Mandatory Public Disclosure",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label11",
+    "group": "global",
+    "section": "Navigation - CBSE Information",
+    "label": "School Information - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "School Information",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label12",
+    "group": "global",
+    "section": "Navigation - Students",
+    "label": "Fees - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Fees",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label13",
+    "group": "global",
+    "section": "Navigation - Students",
+    "label": "Rules - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Rules",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label14",
+    "group": "global",
+    "section": "Navigation - Students",
+    "label": "Leave - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Leave",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label15",
+    "group": "global",
+    "section": "Navigation - Students",
+    "label": "Examination - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Examination",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label16",
+    "group": "global",
+    "section": "Navigation - Students",
+    "label": "Discipline - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Discipline",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label17",
+    "group": "global",
+    "section": "Navigation - Students",
+    "label": "Uniform - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Uniform",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label18",
+    "group": "global",
+    "section": "Navigation - Students",
+    "label": "Parents Notice / Enrollment - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Parents Notice / Enrollment",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label19",
+    "group": "global",
+    "section": "Navigation - Activities",
+    "label": "Co-Curricular - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Co-Curricular",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label20",
+    "group": "global",
+    "section": "Navigation - Activities",
+    "label": "Sports - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Sports",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label21",
+    "group": "global",
+    "section": "Navigation - Activities",
+    "label": "Excursions - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Excursions",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label22",
+    "group": "global",
+    "section": "Navigation - Activities",
+    "label": "Clubs - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Clubs",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label23",
+    "group": "global",
+    "section": "Navigation - Direct links",
+    "label": "Gallery - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Gallery",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label24",
+    "group": "global",
+    "section": "Navigation - Direct links",
+    "label": "Downloads - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Downloads",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label25",
+    "group": "global",
+    "section": "Navigation - Direct links",
+    "label": "Transport - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Transport",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.label26",
+    "group": "global",
+    "section": "Navigation - Direct links",
+    "label": "Contact - link label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Contact",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.home",
+    "group": "global",
+    "section": "Navigation",
+    "label": "Home",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Home",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.about-us",
+    "group": "global",
+    "section": "Navigation",
+    "label": "Section or menu label: About Us",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "About Us",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.administration",
+    "group": "global",
+    "section": "Navigation",
+    "label": "Section or menu label: Administration",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Administration",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.cbse-information",
+    "group": "global",
+    "section": "Navigation",
+    "label": "Section or menu label: CBSE Information",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "CBSE Information",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.students",
+    "group": "global",
+    "section": "Navigation",
+    "label": "Section or menu label: Students",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Students",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.activities",
+    "group": "global",
+    "section": "Navigation",
+    "label": "Section or menu label: Activities",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Activities",
+    "enabled": true
+  },
+  {
+    "key": "global.navigation.login",
+    "group": "global",
+    "section": "Navigation",
+    "label": "Login",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Login",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.st-mary-s-senior-secondary-school",
+    "group": "global",
+    "section": "Footer",
+    "label": "St. Mary's Senior Secondary School",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's Senior Secondary School",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.maligaon-guwahati-assam-nurturing-minds-and-building-character-si",
+    "group": "global",
+    "section": "Footer",
+    "label": "Maligaon, Guwahati, Assam — nurturing minds and building character since 1966.",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Maligaon, Guwahati, Assam — nurturing minds and building character since 1966.",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.st-mary-s-senior-secondary-school-maligaon-is-an-english-medium-s",
+    "group": "global",
+    "section": "Footer",
+    "label": "St. Mary's Senior Secondary School, Maligaon is an English medium School established in 19",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's Senior Secondary School, Maligaon is an English medium School established in 1966, and is run by the Salesians Sisters of Don Bosco.",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.quick-links",
+    "group": "global",
+    "section": "Footer",
+    "label": "Quick Links",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Quick Links",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.about-us",
+    "group": "global",
+    "section": "Footer",
+    "label": "About Us",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "About Us",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.staff",
+    "group": "global",
+    "section": "Footer",
+    "label": "Staff",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Staff",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.fees",
+    "group": "global",
+    "section": "Footer",
+    "label": "Fees",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Fees",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.downloads",
+    "group": "global",
+    "section": "Footer",
+    "label": "Downloads",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Downloads",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.gallery",
+    "group": "global",
+    "section": "Footer",
+    "label": "Gallery",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Gallery",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.cbse-info",
+    "group": "global",
+    "section": "Footer",
+    "label": "CBSE Info",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "CBSE Info",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.mandatory-public-disclosure",
+    "group": "global",
+    "section": "Footer",
+    "label": "Mandatory Public Disclosure",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Mandatory Public Disclosure",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.school-information",
+    "group": "global",
+    "section": "Footer",
+    "label": "School Information",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "School Information",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.examination",
+    "group": "global",
+    "section": "Footer",
+    "label": "Examination",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Examination",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.rules",
+    "group": "global",
+    "section": "Footer",
+    "label": "Rules",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Rules",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.contact",
+    "group": "global",
+    "section": "Footer",
+    "label": "Contact",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Contact",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.st-mary-s-senior-secondary-school-maligaon-nambari-guwahati-78101",
+    "group": "global",
+    "section": "Footer",
+    "label": "St. Mary's Senior Secondary School, Maligaon, Nambari, Guwahati-781011",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's Senior Secondary School, Maligaon, Nambari, Guwahati-781011",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.87520-16092",
+    "group": "global",
+    "section": "Footer",
+    "label": "Contact phone",
+    "type": "tel",
+    "maxLength": 500,
+    "defaultValue": "87520 16092",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.st-marysschool66-yahoo-com",
+    "group": "global",
+    "section": "Footer",
+    "label": "Contact email",
+    "type": "email",
+    "maxLength": 500,
+    "defaultValue": "st.marysschool66@yahoo.com",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.st-mary-s-sr-sec-school-all-rights-reserved",
+    "group": "global",
+    "section": "Footer",
+    "label": "St. Mary's Sr. Sec. School | All Rights Reserved",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's Sr. Sec. School | All Rights Reserved",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.designed-by",
+    "group": "global",
+    "section": "Footer",
+    "label": "Designed by",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Designed by",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.apexaspire",
+    "group": "global",
+    "section": "Footer",
+    "label": "ApexAspire",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "ApexAspire",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.facebookUrl",
+    "group": "global",
+    "section": "Footer social links",
+    "label": "Facebook URL",
+    "type": "url",
+    "maxLength": 500,
+    "defaultValue": "#",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.instagramUrl",
+    "group": "global",
+    "section": "Footer social links",
+    "label": "Instagram URL",
+    "type": "url",
+    "maxLength": 500,
+    "defaultValue": "#",
+    "enabled": true
+  },
+  {
+    "key": "global.footer.youtubeUrl",
+    "group": "global",
+    "section": "Footer social links",
+    "label": "YouTube URL",
+    "type": "url",
+    "maxLength": 500,
+    "defaultValue": "#",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide1.title",
+    "group": "home",
+    "section": "Hero Carousel → Slide 1",
+    "label": "Slide title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Nurturing Minds, Building Character",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide1.subtitle",
+    "group": "home",
+    "section": "Hero Carousel → Slide 1",
+    "label": "Slide subtitle",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Welcome to St. Mary's Sr. Secondary School, Maligaon",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide2.title",
+    "group": "home",
+    "section": "Hero Carousel → Slide 2",
+    "label": "Slide title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Excellence in CBSE Education",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide2.subtitle",
+    "group": "home",
+    "section": "Hero Carousel → Slide 2",
+    "label": "Slide subtitle",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "A tradition of academic achievement since 1966",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide3.title",
+    "group": "home",
+    "section": "Hero Carousel → Slide 3",
+    "label": "Slide title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Holistic Growth for Every Child",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide3.subtitle",
+    "group": "home",
+    "section": "Hero Carousel → Slide 3",
+    "label": "Slide subtitle",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Academics, sports, arts and values working together",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide4.title",
+    "group": "home",
+    "section": "Hero Carousel → Slide 4",
+    "label": "Slide title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Building Future Leaders",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide4.subtitle",
+    "group": "home",
+    "section": "Hero Carousel → Slide 4",
+    "label": "Slide subtitle",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Empowering students for a brighter tomorrow",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide5.title",
+    "group": "home",
+    "section": "Hero Carousel → Slide 5",
+    "label": "Slide title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Join the St. Mary's Family",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.slide5.subtitle",
+    "group": "home",
+    "section": "Hero Carousel → Slide 5",
+    "label": "Slide subtitle",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Admissions Open 2026-27",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.discover-more",
+    "group": "home",
+    "section": "Hero Carousel",
+    "label": "Discover More",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Discover More",
+    "enabled": true
+  },
+  {
+    "key": "home.hero.explore-gallery",
+    "group": "home",
+    "section": "Hero Carousel",
+    "label": "Explore Gallery",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Explore Gallery",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.school-notices",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "School Notices",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "School Notices",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.important-updates-from-the-administration",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "Important updates from the administration",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Important updates from the administration",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.loading-circulars",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "Loading circulars…",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Loading circulars…",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.view",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "View",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "View",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.no-circulars-available",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "No circulars available",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "No circulars available",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.new-notices-posted-by-the-school-will-appear-here",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "New notices posted by the school will appear here.",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "New notices posted by the school will appear here.",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.circular",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "Circular",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Circular",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.download-pdf",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "Download PDF",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Download PDF",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.loading",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "Loading",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Loading",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.notice",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "Notice",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Notice",
+    "enabled": true
+  },
+  {
+    "key": "home.circulars.notices",
+    "group": "home",
+    "section": "Circulars — presentation labels",
+    "label": "Notices",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Notices",
+    "enabled": true
+  },
+  {
+    "key": "home.welcome.highlight1",
+    "group": "home",
+    "section": "Welcome section",
+    "label": "Highlight 1",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "CBSE-affiliated curriculum with a strong academic foundation",
+    "enabled": true
+  },
+  {
+    "key": "home.welcome.highlight2",
+    "group": "home",
+    "section": "Welcome section",
+    "label": "Highlight 2",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Experienced and caring teaching faculty",
+    "enabled": true
+  },
+  {
+    "key": "home.welcome.highlight3",
+    "group": "home",
+    "section": "Welcome section",
+    "label": "Highlight 3",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Modern labs, library, and sports infrastructure",
+    "enabled": true
+  },
+  {
+    "key": "home.welcome.highlight4",
+    "group": "home",
+    "section": "Welcome section",
+    "label": "Highlight 4",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Focus on values, discipline, and all-round development",
+    "enabled": true
+  },
+  {
+    "key": "home.welcome.established",
+    "group": "home",
+    "section": "Welcome section",
+    "label": "Established",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Established",
+    "enabled": true
+  },
+  {
+    "key": "home.welcome.welcome-to",
+    "group": "home",
+    "section": "Welcome section",
+    "label": "Welcome to",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Welcome to",
+    "enabled": true
+  },
+  {
+    "key": "home.welcome.for-over-three-decades-we-have-been-committed-to-providing-qualit",
+    "group": "home",
+    "section": "Welcome section",
+    "label": "For over three decades, we have been committed to providing quality education rooted in st",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "For over three decades, we have been committed to providing quality education rooted in strong values. Our approach blends academic rigor with creativity, sports, and character building, preparing every student for a confident future.",
+    "enabled": true
+  },
+  {
+    "key": "home.welcome.read-our-story",
+    "group": "home",
+    "section": "Welcome section",
+    "label": "Read Our Story",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Read Our Story",
+    "enabled": true
+  },
+  {
+    "key": "home.about.title1",
+    "group": "home",
+    "section": "About our school - About School",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "About School",
+    "enabled": true
+  },
+  {
+    "key": "home.about.description1",
+    "group": "home",
+    "section": "About our school - About School",
+    "label": "Card description",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's Senior Secondary School, Maligaon is an English medium School established in 1966, and is run by the Salesians Sisters of Don Bosco.",
+    "enabled": true
+  },
+  {
+    "key": "home.about.title2",
+    "group": "home",
+    "section": "About our school - Vision & Mission",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Vision & Mission",
+    "enabled": true
+  },
+  {
+    "key": "home.about.description2",
+    "group": "home",
+    "section": "About our school - Vision & Mission",
+    "label": "Card description",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "St. Mary's School, Maligaon is committed to making the integral formation accessible to young girls of diverse backgrounds. Our mission is to nurture empowered, compassionate, and responsible citizens who will contribute meaningfully to society.",
+    "enabled": true
+  },
+  {
+    "key": "home.about.title3",
+    "group": "home",
+    "section": "About our school - Curriculum",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Curriculum",
+    "enabled": true
+  },
+  {
+    "key": "home.about.description3",
+    "group": "home",
+    "section": "About our school - Curriculum",
+    "label": "Card description",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "The system of education followed in the schools run by the Salesian Sisters is the Preventive System which is based on three great principles of Reason, Religion, and Loving Kindness. This system focuses on integral formation of the whole person.",
+    "enabled": true
+  },
+  {
+    "key": "home.about.title4",
+    "group": "home",
+    "section": "About our school - Admission Enquiry",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Admission Enquiry",
+    "enabled": true
+  },
+  {
+    "key": "home.about.description4",
+    "group": "home",
+    "section": "About our school - Admission Enquiry",
+    "label": "Card description",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "Age eligibility (As on 1st April of the academic session for which admission is sought). The day for the pre-primary classes is designed to address the developmental needs of young learners through play-based and activity-oriented learning.",
+    "enabled": true
+  },
+  {
+    "key": "home.about.value1",
+    "group": "home",
+    "section": "About our school - Statistic 1",
+    "label": "Statistic value",
+    "type": "statistic",
+    "maxLength": 500,
+    "defaultValue": "1966",
+    "enabled": true
+  },
+  {
+    "key": "home.about.label1",
+    "group": "home",
+    "section": "About our school - Statistic 1",
+    "label": "Statistic label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Year Established",
+    "enabled": true
+  },
+  {
+    "key": "home.about.value2",
+    "group": "home",
+    "section": "About our school - Statistic 2",
+    "label": "Statistic value",
+    "type": "statistic",
+    "maxLength": 500,
+    "defaultValue": "60+",
+    "enabled": true
+  },
+  {
+    "key": "home.about.label2",
+    "group": "home",
+    "section": "About our school - Statistic 2",
+    "label": "Statistic label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Years of Excellence",
+    "enabled": true
+  },
+  {
+    "key": "home.about.value3",
+    "group": "home",
+    "section": "About our school - Statistic 3",
+    "label": "Statistic value",
+    "type": "statistic",
+    "maxLength": 500,
+    "defaultValue": "1500+",
+    "enabled": true
+  },
+  {
+    "key": "home.about.label3",
+    "group": "home",
+    "section": "About our school - Statistic 3",
+    "label": "Statistic label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Students",
+    "enabled": true
+  },
+  {
+    "key": "home.about.value4",
+    "group": "home",
+    "section": "About our school - Statistic 4",
+    "label": "Statistic value",
+    "type": "statistic",
+    "maxLength": 500,
+    "defaultValue": "55+",
+    "enabled": true
+  },
+  {
+    "key": "home.about.label4",
+    "group": "home",
+    "section": "About our school - Statistic 4",
+    "label": "Statistic label",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Teaching Staff",
+    "enabled": true
+  },
+  {
+    "key": "home.about.about-our-school",
+    "group": "home",
+    "section": "About our school",
+    "label": "About Our School",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "About Our School",
+    "enabled": true
+  },
+  {
+    "key": "home.about.welcome-to",
+    "group": "home",
+    "section": "About our school",
+    "label": "Welcome to",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Welcome to",
+    "enabled": true
+  },
+  {
+    "key": "home.about.st-mary-s",
+    "group": "home",
+    "section": "About our school",
+    "label": "St. Mary's",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's",
+    "enabled": true
+  },
+  {
+    "key": "home.about.empowering-young-minds-through-quality-education-values-and-holis",
+    "group": "home",
+    "section": "About our school",
+    "label": "Empowering young minds through quality education, values, and holistic development since 1",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Empowering young minds through quality education, values, and holistic development since 1966.",
+    "enabled": true
+  },
+  {
+    "key": "home.about.read-more",
+    "group": "home",
+    "section": "About our school",
+    "label": "Read More",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Read More",
+    "enabled": true
+  },
+  {
+    "key": "home.about.discover-more",
+    "group": "home",
+    "section": "About our school",
+    "label": "📚 Discover More",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "📚 Discover More",
+    "enabled": true
+  },
+  {
+    "key": "home.about.explore-our-academic-programs-achievements-and-community",
+    "group": "home",
+    "section": "About our school",
+    "label": "Explore our academic programs, achievements, and community",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Explore our academic programs, achievements, and community",
+    "enabled": true
+  },
+  {
+    "key": "home.page.what-sets-us-apart",
+    "group": "home",
+    "section": "School highlights - Section heading",
+    "label": "Section or menu label: What Sets Us Apart",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "What Sets Us Apart",
+    "enabled": true
+  },
+  {
+    "key": "home.page.why-choose",
+    "group": "home",
+    "section": "School highlights - Section heading",
+    "label": "Why Choose",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Why Choose",
+    "enabled": true
+  },
+  {
+    "key": "home.page.st-mary-s",
+    "group": "home",
+    "section": "School highlights - Section heading",
+    "label": "St. Mary's",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's",
+    "enabled": true
+  },
+  {
+    "key": "home.page.a-well-rounded-environment-built-on-academics-character-and-oppor",
+    "group": "home",
+    "section": "School highlights - Section heading",
+    "label": "A well-rounded environment built on academics, character, and opportunity.",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "A well-rounded environment built on academics, character, and opportunity.",
+    "enabled": true
+  },
+  {
+    "key": "home.features.title1",
+    "group": "home",
+    "section": "School highlights - Academic Excellence",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Academic Excellence",
+    "enabled": true
+  },
+  {
+    "key": "home.features.description1",
+    "group": "home",
+    "section": "School highlights - Academic Excellence",
+    "label": "Card description",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Our curriculum fosters critical thinking, creativity, and a lifelong love for learning in every student.",
+    "enabled": true
+  },
+  {
+    "key": "home.features.stats1",
+    "group": "home",
+    "section": "School highlights - Academic Excellence",
+    "label": "Badge text",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "98% Pass Rate",
+    "enabled": true
+  },
+  {
+    "key": "home.features.title2",
+    "group": "home",
+    "section": "School highlights - Modern Infrastructure",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Modern Infrastructure",
+    "enabled": true
+  },
+  {
+    "key": "home.features.description2",
+    "group": "home",
+    "section": "School highlights - Modern Infrastructure",
+    "label": "Card description",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "State-of-the-art classrooms, labs, library, and sports facilities for holistic development.",
+    "enabled": true
+  },
+  {
+    "key": "home.features.stats2",
+    "group": "home",
+    "section": "School highlights - Modern Infrastructure",
+    "label": "Badge text",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "25+ Facilities",
+    "enabled": true
+  },
+  {
+    "key": "home.features.title3",
+    "group": "home",
+    "section": "School highlights - Science & Innovation",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Science & Innovation",
+    "enabled": true
+  },
+  {
+    "key": "home.features.description3",
+    "group": "home",
+    "section": "School highlights - Science & Innovation",
+    "label": "Card description",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Well-equipped labs and innovation centers to nurture young scientists and inventors.",
+    "enabled": true
+  },
+  {
+    "key": "home.features.stats3",
+    "group": "home",
+    "section": "School highlights - Science & Innovation",
+    "label": "Badge text",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "12+ Labs",
+    "enabled": true
+  },
+  {
+    "key": "home.features.title4",
+    "group": "home",
+    "section": "School highlights - Computer Education",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Computer Education",
+    "enabled": true
+  },
+  {
+    "key": "home.features.description4",
+    "group": "home",
+    "section": "School highlights - Computer Education",
+    "label": "Card description",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Comprehensive computer education from basic programming to advanced AI concepts.",
+    "enabled": true
+  },
+  {
+    "key": "home.features.stats4",
+    "group": "home",
+    "section": "School highlights - Computer Education",
+    "label": "Badge text",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "AI & ML Ready",
+    "enabled": true
+  },
+  {
+    "key": "home.features.title5",
+    "group": "home",
+    "section": "School highlights - Community & Values",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Community & Values",
+    "enabled": true
+  },
+  {
+    "key": "home.features.description5",
+    "group": "home",
+    "section": "School highlights - Community & Values",
+    "label": "Card description",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "A nurturing environment that promotes values, discipline, and social responsibility.",
+    "enabled": true
+  },
+  {
+    "key": "home.features.stats5",
+    "group": "home",
+    "section": "School highlights - Community & Values",
+    "label": "Badge text",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "1500+ Students",
+    "enabled": true
+  },
+  {
+    "key": "home.features.title6",
+    "group": "home",
+    "section": "School highlights - Extracurricular Activities",
+    "label": "Card title",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Extracurricular Activities",
+    "enabled": true
+  },
+  {
+    "key": "home.features.description6",
+    "group": "home",
+    "section": "School highlights - Extracurricular Activities",
+    "label": "Card description",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Sports, arts, clubs, and cultural events for overall personality development.",
+    "enabled": true
+  },
+  {
+    "key": "home.features.stats6",
+    "group": "home",
+    "section": "School highlights - Extracurricular Activities",
+    "label": "Badge text",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "50+ Activities",
+    "enabled": true
+  },
+  {
+    "key": "home.features.learn-more",
+    "group": "home",
+    "section": "School highlights",
+    "label": "Learn More",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Learn More",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.leadership-message",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Leadership Message",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Leadership Message",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.from-the",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "From the",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "From the",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.principal-s-desk",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Principal's Desk",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Principal's Desk",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.grace-pemmila",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "GRACE PEMMILA",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "GRACE PEMMILA",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.principal-st-mary-s-sr-sec-school",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Principal, St. Mary's Sr. Sec. School",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Principal, St. Mary's Sr. Sec. School",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.a-message-of-welcome",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "A Message of Welcome",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "A Message of Welcome",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.education-is-not-just-about-filling-minds-with-facts-but-about-li",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "\"Education is not just about filling minds with facts, but about lighting a fire of curios",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "\"Education is not just about filling minds with facts, but about lighting a fire of curiosity and purpose.\"",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.welcome-to",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Welcome to",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Welcome to",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.st-mary-s-sr-secondary-school-maligaon",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "St. Mary's Sr. Secondary School, Maligaon",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary's Sr. Secondary School, Maligaon",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.a-place-where-young-minds-are-nurtured-characters-are-built-and-f",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Message paragraph - — a place where young minds are nurtured, characters are built, a...",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "— a place where young minds are nurtured, characters are built, and futures are shaped. It is my privilege to lead this institution that has been a beacon of quality education in Guwahati for over 35 years.",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.at-st-mary-s-we-believe-that-every-child-is-unique-and-possesses",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Message paragraph - At St. Mary's, we believe that every child is unique and possesse...",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "At St. Mary's, we believe that every child is unique and possesses immense potential. Our mission is to nurture this potential through a holistic approach that combines academic excellence, character development, and life skills. We create an environment where students feel safe, valued, and inspired to explore.",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.we-strive-to-create-a-learning-environment-that-inspires-curiosit",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "\"We strive to create a learning environment that inspires curiosity, fosters creativity, a",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "\"We strive to create a learning environment that inspires curiosity, fosters creativity, and builds resilience. Our students are prepared not just for examinations, but for life.\"",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.our-dedicated-team-of-teachers-works-tirelessly-to-ensure-every-s",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Message paragraph - Our dedicated team of teachers works tirelessly to ensure every s...",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "Our dedicated team of teachers works tirelessly to ensure every student receives individual attention and support. We encourage students to discover their passions, participate in co-curricular activities, and develop a strong sense of social responsibility. We believe in education that goes beyond textbooks — education that builds character.",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.i-invite-parents-to-partner-with-us-in-this-transformative-journe",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Message paragraph - I invite parents to partner with us in this transformative journe...",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "I invite parents to partner with us in this transformative journey. Together, we can shape the future of our children and help them become confident, compassionate, and capable individuals who will make a positive impact on the world.",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.st-marysschool66-yahoo-com",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "st.marysschool66@yahoo.com",
+    "type": "email",
+    "maxLength": 500,
+    "defaultValue": "st.marysschool66@yahoo.com",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.principal",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Principal",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Principal",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.with-faith-knowledge-and-compassion",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "\"With faith, knowledge, and compassion.\"",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "\"With faith, knowledge, and compassion.\"",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.est-1966",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Est. 1966",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Est. 1966",
+    "enabled": true
+  },
+  {
+    "key": "home.principal.emailDestination",
+    "group": "home",
+    "section": "Principal’s message",
+    "label": "Email link destination (original differs from displayed email)",
+    "type": "email",
+    "maxLength": 500,
+    "defaultValue": "principal@stmarysmaligaon.edu.in",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.our-leadership",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Our Leadership",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Our Leadership",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.sr-superior-s",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Sr. Superior's",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Sr. Superior's",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.message",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Message",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Message",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.salesian-sisters",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Salesian Sisters",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Salesian Sisters",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.sr-lissy-mathew",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Sr. Lissy Mathew",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Sr. Lissy Mathew",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.manager",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Manager,",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Manager,",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.a-message-from-the-manager",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "A Message from the Manager",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "A Message from the Manager",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.i-am-pleased-to-write-these-lines-on-this-web-page-of-st-mary-s-s",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "\"I am pleased to write these lines on this web page of St. Mary's Sr. Sec. School, Maligao",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "\"I am pleased to write these lines on this web page of St. Mary's Sr. Sec. School, Maligaon, as I return to the institution after nine years.\"",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.i-am-truly-excited-to-be-part-of-this-educational-community-and-c",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "I am truly excited to be part of this educational community and contribute to the growth a",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "I am truly excited to be part of this educational community and contribute to the growth and success of our students. Our vision is to build upon our existing strength while implementing new initiatives and programs to enrich the educational experience for all students.",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.i-am-dedicated-to-working-collaboratively-with-our-esteemed-facul",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "I am dedicated to working collaboratively with our esteemed faculty, staff and parents to ",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "I am dedicated to working collaboratively with our esteemed faculty, staff and parents to ensure that every student receives a comprehensive education that is accessible to young people from diverse backgrounds. Our mission is to foster a child-centered learning environment within a supportive and nurturing family-like atmosphere.",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.i-sincerely-appreciate-the-ongoing-support-of-the-educational-com",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "\"I sincerely appreciate the ongoing support of the educational community for our school. I",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "\"I sincerely appreciate the ongoing support of the educational community for our school. I look forward to collaborating to achieve success together.\"",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.with-gratitude-and-hope",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "With gratitude and hope",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "With gratitude and hope",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.don-bosco",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Don Bosco",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Don Bosco",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.st-john-bosco",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "St. John Bosco",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. John Bosco",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.founder",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Founder",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Founder",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.founder-message",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Founder Message",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Founder Message",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.st-john-bosco-popularly-known-as-don-bosco-italian-for-father-bos",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "St. John Bosco, popularly known as Don Bosco (Italian for Father Bosco) was born at Becchi",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "St. John Bosco, popularly known as Don Bosco (Italian for Father Bosco) was born at Becchi, in Piedmont, Italy on August 16, 1815. From a very young age he was inspired to work for the poor young people of his time...",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.read-more",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Read More",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Read More",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.fma",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "FMA",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "FMA",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.st-mary-mazzarello",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "St. Mary Mazzarello",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "St. Mary Mazzarello",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.co-foundress",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Co-Foundress",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Co-Foundress",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.co-foundress-message",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Co-Foundress Message",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Co-Foundress Message",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.god-s-ways-are-marvellous-contemporaneously-with-don-bosco-mary-m",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "God's ways are marvellous. Contemporaneously with Don Bosco, Mary Mazzarello in the hamlet",
+    "type": "textarea",
+    "maxLength": 8000,
+    "defaultValue": "God's ways are marvellous. Contemporaneously with Don Bosco, Mary Mazzarello in the hamlet of Mornese a little village in Piedmont, Italy thirsted with the same desire to help girls. She was born on May 9, 1837...",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.inspired-by-the-salesian-spirit-of",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Inspired by the Salesian spirit of",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Inspired by the Salesian spirit of",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.reason-religion-and-loving-kindness",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Reason, Religion, and Loving Kindness",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Reason, Religion, and Loving Kindness",
+    "enabled": true
+  },
+  {
+    "key": "home.sisters.managerDesignation",
+    "group": "home",
+    "section": "Sisters - manager, founder & co-foundress",
+    "label": "Signature designation",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Manager",
+    "enabled": true
+  },
+  {
+    "key": "home.page.admissions-open",
+    "group": "home",
+    "section": "Admissions call to action",
+    "label": "Admissions Open",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Admissions Open",
+    "enabled": true
+  },
+  {
+    "key": "home.page.ready-to-begin-your-child-s",
+    "group": "home",
+    "section": "Admissions call to action",
+    "label": "Ready to begin your child's",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Ready to begin your child's",
+    "enabled": true
+  },
+  {
+    "key": "home.page.journey-with-us",
+    "group": "home",
+    "section": "Admissions call to action",
+    "label": "journey with us?",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "journey with us?",
+    "enabled": true
+  },
+  {
+    "key": "home.page.admissions-for-the-new-academic-year-are-now-open-join-the-st-mar",
+    "group": "home",
+    "section": "Admissions call to action",
+    "label": "Admissions for the new academic year are now open. Join the St. Mary's family today.",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Admissions for the new academic year are now open. Join the St. Mary's family today.",
+    "enabled": true
+  },
+  {
+    "key": "home.page.apply-now",
+    "group": "home",
+    "section": "Admissions call to action",
+    "label": "Apply Now",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Apply Now",
+    "enabled": true
+  },
+  {
+    "key": "home.page.contact-us",
+    "group": "home",
+    "section": "Admissions call to action",
+    "label": "Contact Us",
+    "type": "text",
+    "maxLength": 500,
+    "defaultValue": "Contact Us",
+    "enabled": true
+  }
+]

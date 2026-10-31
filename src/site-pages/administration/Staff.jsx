@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useState, useEffect } from 'react'
 import { Contact } from 'lucide-react'
 import PageHeader from '../../components/common/PageHeader.jsx'
@@ -6,6 +7,7 @@ import api from '../../services/api.js'
 import { getMediaUrl } from '../../utils/media.js'
 
 const Staff = () => {
+  const c = useSiteContent()
   const [staff, setStaff] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -28,7 +30,7 @@ const Staff = () => {
   if (loading) {
     return (
       <div>
-        <PageHeader title="Staff" subtitle="Our teaching and support teams" icon={<Contact size={18} />} />
+        <PageHeader homeLabel={c('administration.staff.breadcrumb.home')} title={c('administration.staff.pageHeader.title')} subtitle={c('administration.staff.pageHeader.subtitle')} icon={<Contact size={18} />} />
         <section className="section-padding">
           <div className="container-custom flex justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-4 border-maroon-600 border-t-transparent"></div>
@@ -40,15 +42,15 @@ const Staff = () => {
 
   return (
     <div>
-      <PageHeader title="Staff" subtitle="Our teaching and support teams" icon={<Contact size={18} />} />
+      <PageHeader homeLabel={c('administration.staff.breadcrumb.home')} title={c('administration.staff.pageHeader.title')} subtitle={c('administration.staff.pageHeader.subtitle')} icon={<Contact size={18} />} />
       <section className="section-padding">
         <div className="container-custom">
           <SectionWrapper>
-            <h2 className="font-serif text-xl font-bold text-maroon-900 mb-4">Non-Teaching Staff</h2>
+            <h2 className="font-serif text-xl font-bold text-maroon-900 mb-4">{c('administration.staff.copy.non-teaching-staff.heading.non-teaching-staff-bb622965')}</h2>
           </SectionWrapper>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
             {staff.length === 0 ? (
-              <p className="text-center text-gray-500 col-span-3">No staff members found.</p>
+              <p className="text-center text-gray-500 col-span-3">{c('administration.staff.copy.non-teaching-staff.paragraph.no-staff-members-found-91906373')}</p>
             ) : (
               staff.map((s) => (
                 <SectionWrapper key={s._id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
@@ -70,11 +72,11 @@ const Staff = () => {
           </div>
 
           <SectionWrapper>
-            <h2 className="font-serif text-xl font-bold text-maroon-900 mb-4">A Glimpse of Our Faculty</h2>
+            <h2 className="font-serif text-xl font-bold text-maroon-900 mb-4">{c('administration.staff.copy.a-glimpse-of-our-facul.heading.a-glimpse-of-our-faculty-84f0beab')}</h2>
           </SectionWrapper>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {/* Teaching staff will be displayed here */}
-            <p className="text-center text-gray-500 col-span-4">Teaching staff list coming soon...</p>
+            <p className="text-center text-gray-500 col-span-4">{c('administration.staff.copy.a-glimpse-of-our-facul.paragraph.teaching-staff-list-coming-19d19643')}</p>
           </div>
         </div>
       </section>

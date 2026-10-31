@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useState, useEffect } from 'react'
 import { GraduationCap } from 'lucide-react'
 import PageHeader from '../../components/common/PageHeader.jsx'
@@ -7,6 +8,7 @@ import api from '../../services/api.js'
 import { getMediaUrl } from '../../utils/media.js'
 
 const TeachingStaff = () => {
+  const c = useSiteContent()
   const [teachingStaff, setTeachingStaff] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -27,9 +29,9 @@ const TeachingStaff = () => {
   }
 
   const categories = {
-    prt: { label: 'PRT Staff', icon: '👶' },
-    tgt: { label: 'TGT Staff', icon: '📚' },
-    pgt: { label: 'PGT Staff', icon: '🎓' }
+    prt: { label: c('administration.teachingStaff.categories.prt.label'), icon: '👶' },
+    tgt: { label: c('administration.teachingStaff.categories.tgt.label'), icon: '📚' },
+    pgt: { label: c('administration.teachingStaff.categories.pgt.label'), icon: '🎓' }
   }
 
   const groupedStaff = teachingStaff.reduce((acc, item) => {
@@ -42,7 +44,7 @@ const TeachingStaff = () => {
   if (loading) {
     return (
       <div>
-        <PageHeader title="Teaching Staff" subtitle="Meet our dedicated educators" icon={<GraduationCap size={18} />} />
+        <PageHeader homeLabel={c('administration.teachingStaff.breadcrumb.home')} title={c('administration.teachingStaff.pageHeader.title')} subtitle={c('administration.teachingStaff.pageHeader.subtitle')} icon={<GraduationCap size={18} />} />
         <section className="section-padding">
           <div className="container-custom flex justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-4 border-maroon-600 border-t-transparent"></div>
@@ -54,7 +56,7 @@ const TeachingStaff = () => {
 
   return (
     <div>
-      <PageHeader title="Teaching Staff" subtitle="Meet our dedicated educators" icon={<GraduationCap size={18} />} />
+      <PageHeader homeLabel={c('administration.teachingStaff.breadcrumb.home')} title={c('administration.teachingStaff.pageHeader.title')} subtitle={c('administration.teachingStaff.pageHeader.subtitle')} icon={<GraduationCap size={18} />} />
       <section className="section-padding">
         <div className="container-custom">
           {Object.keys(categories).map((categoryKey) => {
@@ -86,7 +88,7 @@ const TeachingStaff = () => {
           })}
 
           {teachingStaff.length === 0 && (
-            <p className="text-center text-gray-500 py-8">No teaching staff members found.</p>
+            <p className="text-center text-gray-500 py-8">{c('administration.teachingStaff.copy.text.paragraph.no-teaching-staff-members--e3de0c26')}</p>
           )}
         </div>
       </section>

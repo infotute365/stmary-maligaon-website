@@ -1,16 +1,18 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React from 'react'
 import { CheckCircle2 } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { schoolInfo } from '../../data/seedData.js'
-
-const highlights = [
-  'CBSE-affiliated curriculum with a strong academic foundation',
-  'Experienced and caring teaching faculty',
-  'Modern labs, library, and sports infrastructure',
-  'Focus on values, discipline, and all-round development'
-]
 
 const WelcomeSection = () => {
+  const c = useSiteContent()
+  const highlights = [
+    c('home.welcome.highlight1'),
+    c('home.welcome.highlight2'),
+    c('home.welcome.highlight3'),
+    c('home.welcome.highlight4')
+  ]
+
+
   return (
     <section className="section-padding bg-white">
       <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -27,8 +29,8 @@ const WelcomeSection = () => {
             className="rounded-3xl shadow-2xl w-full h-[380px] object-cover"
           />
           <div className="absolute -bottom-6 -right-6 bg-gold-400 text-maroon-900 rounded-2xl shadow-xl px-6 py-4">
-            <p className="font-serif text-2xl font-bold">{schoolInfo.established}</p>
-            <p className="text-xs font-semibold tracking-wide">Established</p>
+            <p className="font-serif text-2xl font-bold">{c('global.school.established')}</p>
+            <p className="text-xs font-semibold tracking-wide">{c('home.welcome.established')}</p>
           </div>
         </motion.div>
 
@@ -38,15 +40,11 @@ const WelcomeSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-gold-600 text-xs font-semibold tracking-[0.2em] uppercase">Welcome to</span>
+          <span className="text-gold-600 text-xs font-semibold tracking-[0.2em] uppercase">{c('home.welcome.welcome-to')}</span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-maroon-900 mt-2 mb-4">
-            {schoolInfo.name}, {schoolInfo.branch}
+            {c('global.school.name')}, {c('global.school.branch')}
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            For over three decades, we have been committed to providing quality education rooted in
-            strong values. Our approach blends academic rigor with creativity, sports, and character
-            building, preparing every student for a confident future.
-          </p>
+          <p className="text-gray-600 leading-relaxed mb-6">{c('home.welcome.for-over-three-decades-we-have-been-committed-to-providing-qualit')}</p>
 
           <ul className="space-y-3 mb-8">
             {highlights.map((item) => (
@@ -57,7 +55,7 @@ const WelcomeSection = () => {
             ))}
           </ul>
 
-          <a href="/about/history" className="btn-primary">Read Our Story</a>
+          <a href="/about/history" className="btn-primary">{c('home.welcome.read-our-story')}</a>
         </motion.div>
       </div>
     </section>

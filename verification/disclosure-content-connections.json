@@ -1,0 +1,1289 @@
+{
+  "fields": 321,
+  "locations": [
+    {
+      "key": "cbse.disclosure.feeData.kg-88ed3209.class",
+      "line": 75
+    },
+    {
+      "key": "cbse.disclosure.feeData.kg-88ed3209.annualPerInstallment",
+      "line": 76
+    },
+    {
+      "key": "cbse.disclosure.feeData.kg-88ed3209.tuitionPerInstallment",
+      "line": 77
+    },
+    {
+      "key": "cbse.disclosure.feeData.kg-88ed3209.installmentPeriod",
+      "line": 78
+    },
+    {
+      "key": "cbse.disclosure.feeData.i-iii-2cbad711.class",
+      "line": 81
+    },
+    {
+      "key": "cbse.disclosure.feeData.i-iii-2cbad711.annualPerInstallment",
+      "line": 82
+    },
+    {
+      "key": "cbse.disclosure.feeData.i-iii-2cbad711.tuitionPerInstallment",
+      "line": 83
+    },
+    {
+      "key": "cbse.disclosure.feeData.i-iii-2cbad711.installmentPeriod",
+      "line": 84
+    },
+    {
+      "key": "cbse.disclosure.feeData.iv-v-85edf8c5.class",
+      "line": 87
+    },
+    {
+      "key": "cbse.disclosure.feeData.iv-v-85edf8c5.annualPerInstallment",
+      "line": 88
+    },
+    {
+      "key": "cbse.disclosure.feeData.iv-v-85edf8c5.tuitionPerInstallment",
+      "line": 89
+    },
+    {
+      "key": "cbse.disclosure.feeData.iv-v-85edf8c5.installmentPeriod",
+      "line": 90
+    },
+    {
+      "key": "cbse.disclosure.feeData.vi-viii-25461a9d.class",
+      "line": 93
+    },
+    {
+      "key": "cbse.disclosure.feeData.vi-viii-25461a9d.annualPerInstallment",
+      "line": 94
+    },
+    {
+      "key": "cbse.disclosure.feeData.vi-viii-25461a9d.tuitionPerInstallment",
+      "line": 95
+    },
+    {
+      "key": "cbse.disclosure.feeData.vi-viii-25461a9d.installmentPeriod",
+      "line": 96
+    },
+    {
+      "key": "cbse.disclosure.feeData.ix-x-fa5a0ae1.class",
+      "line": 99
+    },
+    {
+      "key": "cbse.disclosure.feeData.ix-x-fa5a0ae1.annualPerInstallment",
+      "line": 100
+    },
+    {
+      "key": "cbse.disclosure.feeData.ix-x-fa5a0ae1.tuitionPerInstallment",
+      "line": 101
+    },
+    {
+      "key": "cbse.disclosure.feeData.ix-x-fa5a0ae1.installmentPeriod",
+      "line": 102
+    },
+    {
+      "key": "cbse.disclosure.feeData.xi-xii-hum-com-c8567a1a.class",
+      "line": 105
+    },
+    {
+      "key": "cbse.disclosure.feeData.xi-xii-hum-com-c8567a1a.annualPerInstallment",
+      "line": 106
+    },
+    {
+      "key": "cbse.disclosure.feeData.xi-xii-hum-com-c8567a1a.tuitionPerInstallment",
+      "line": 107
+    },
+    {
+      "key": "cbse.disclosure.feeData.xi-xii-hum-com-c8567a1a.installmentPeriod",
+      "line": 108
+    },
+    {
+      "key": "cbse.disclosure.feeData.xi-xii-science-30417878.class",
+      "line": 111
+    },
+    {
+      "key": "cbse.disclosure.feeData.xi-xii-science-30417878.annualPerInstallment",
+      "line": 112
+    },
+    {
+      "key": "cbse.disclosure.feeData.xi-xii-science-30417878.tuitionPerInstallment",
+      "line": 113
+    },
+    {
+      "key": "cbse.disclosure.feeData.xi-xii-science-30417878.installmentPeriod",
+      "line": 114
+    },
+    {
+      "key": "cbse.disclosure.pdf.academic.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.affiliation.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.building.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.deo.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.fire.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.noc.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.pta.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.results.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.rte.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.smc.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.society.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.pdf.water.description",
+      "line": 119
+    },
+    {
+      "key": "cbse.disclosure.generalInfo.name-of-the-school-edc46f3d.value",
+      "line": 134
+    },
+    {
+      "key": "cbse.disclosure.generalInfo.affiliation-no-ace32fb2.value",
+      "line": 135
+    },
+    {
+      "key": "cbse.disclosure.generalInfo.school-code-9ac482e0.value",
+      "line": 136
+    },
+    {
+      "key": "cbse.disclosure.generalInfo.complete-address-with-pin-code-4a1d3869.value",
+      "line": 137
+    },
+    {
+      "key": "cbse.disclosure.generalInfo.principal-name-6da55b79.value",
+      "line": 138
+    },
+    {
+      "key": "cbse.disclosure.generalInfo.principal-qualification-a66a2a7f.value",
+      "line": 139
+    },
+    {
+      "key": "cbse.disclosure.generalInfo.school-email-id-c472d2ad.value",
+      "line": 140
+    },
+    {
+      "key": "cbse.disclosure.generalInfo.contact-details-landline-mobile-131c7776.value",
+      "line": 141
+    },
+    {
+      "key": "cbse.disclosure.staffInfo.principal-afc19f17.value",
+      "line": 164
+    },
+    {
+      "key": "cbse.disclosure.staffInfo.total-no-of-teachers-570421ae.value",
+      "line": 165
+    },
+    {
+      "key": "cbse.disclosure.staffInfo.pgt-b38bc0c1.value",
+      "line": 166
+    },
+    {
+      "key": "cbse.disclosure.staffInfo.tgt-655caf7a.value",
+      "line": 167
+    },
+    {
+      "key": "cbse.disclosure.staffInfo.prt-e4fd7627.value",
+      "line": 168
+    },
+    {
+      "key": "cbse.disclosure.staffInfo.teachers-section-ratio-db85e052.value",
+      "line": 169
+    },
+    {
+      "key": "cbse.disclosure.staffInfo.special-educator-63512f39.value",
+      "line": 170
+    },
+    {
+      "key": "cbse.disclosure.staffInfo.counsellor-and-wellness-teacher-e968d490.value",
+      "line": 171
+    },
+    {
+      "key": "cbse.disclosure.infrastructureInfo.total-campus-area-of-the-school-in-sq-mtr-f92c477c.value",
+      "line": 175
+    },
+    {
+      "key": "cbse.disclosure.infrastructureInfo.no-and-size-of-the-class-rooms-in-sq-mtr-836e96f3.value",
+      "line": 176
+    },
+    {
+      "key": "cbse.disclosure.infrastructureInfo.no-and-size-of-laboratories-including-compute-a34dd9d4.value",
+      "line": 177
+    },
+    {
+      "key": "cbse.disclosure.infrastructureInfo.internet-facility-6c67ecd2.value",
+      "line": 178
+    },
+    {
+      "key": "cbse.disclosure.infrastructureInfo.no-of-girls-toilets-228b5391.value",
+      "line": 179
+    },
+    {
+      "key": "cbse.disclosure.infrastructureInfo.no-of-boys-toilets-200c7567.value",
+      "line": 180
+    },
+    {
+      "key": "cbse.disclosure.infrastructureInfo.youtube-video-of-school-inspection-8bbb3ac1.value",
+      "line": 181
+    },
+    {
+      "key": "cbse.disclosure.classXResult.2025-b2b2f104.passed",
+      "line": 185
+    },
+    {
+      "key": "cbse.disclosure.classXResult.2025-b2b2f104.percentage",
+      "line": 185
+    },
+    {
+      "key": "cbse.disclosure.classXResult.2025-b2b2f104.registered",
+      "line": 185
+    },
+    {
+      "key": "cbse.disclosure.classXResult.2025-b2b2f104.remarks",
+      "line": 185
+    },
+    {
+      "key": "cbse.disclosure.classXResult.2025-b2b2f104.year",
+      "line": 185
+    },
+    {
+      "key": "cbse.disclosure.classXIIResult.2025-b2b2f104.passed",
+      "line": 189
+    },
+    {
+      "key": "cbse.disclosure.classXIIResult.2025-b2b2f104.percentage",
+      "line": 189
+    },
+    {
+      "key": "cbse.disclosure.classXIIResult.2025-b2b2f104.registered",
+      "line": 189
+    },
+    {
+      "key": "cbse.disclosure.classXIIResult.2025-b2b2f104.remarks",
+      "line": 189
+    },
+    {
+      "key": "cbse.disclosure.classXIIResult.2025-b2b2f104.year",
+      "line": 189
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-pinky-topno-0e85b6f2.designation",
+      "line": 193
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-pinky-topno-0e85b6f2.name",
+      "line": 193
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-pinky-topno-0e85b6f2.qualification",
+      "line": 193
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-martha-soigi-80c2bebc.designation",
+      "line": 194
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-martha-soigi-80c2bebc.name",
+      "line": 194
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-martha-soigi-80c2bebc.qualification",
+      "line": 194
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrigakhee-pandit-a35c2e37.designation",
+      "line": 195
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrigakhee-pandit-a35c2e37.name",
+      "line": 195
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrigakhee-pandit-a35c2e37.qualification",
+      "line": 195
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-bishantis-myrthong-bedcf60f.designation",
+      "line": 196
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-bishantis-myrthong-bedcf60f.name",
+      "line": 196
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-bishantis-myrthong-bedcf60f.qualification",
+      "line": 196
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-liza-paul-8ce2161b.designation",
+      "line": 197
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-liza-paul-8ce2161b.name",
+      "line": 197
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-liza-paul-8ce2161b.qualification",
+      "line": 197
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-mousumi-das-df4fd2fe.designation",
+      "line": 198
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-mousumi-das-df4fd2fe.name",
+      "line": 198
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-mousumi-das-df4fd2fe.qualification",
+      "line": 198
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-shyamali-chanda-a9b35fe4.designation",
+      "line": 199
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-shyamali-chanda-a9b35fe4.name",
+      "line": 199
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-shyamali-chanda-a9b35fe4.qualification",
+      "line": 199
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.trupti-das-5308f350.designation",
+      "line": 200
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.trupti-das-5308f350.name",
+      "line": 200
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.trupti-das-5308f350.qualification",
+      "line": 200
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-hema-tiwari-d670bf1e.designation",
+      "line": 201
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-hema-tiwari-d670bf1e.name",
+      "line": 201
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-hema-tiwari-d670bf1e.qualification",
+      "line": 201
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-indrajit-kalita-02d55d35.designation",
+      "line": 202
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-indrajit-kalita-02d55d35.name",
+      "line": 202
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-indrajit-kalita-02d55d35.qualification",
+      "line": 202
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-dipti-deka-ca940eb6.designation",
+      "line": 203
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-dipti-deka-ca940eb6.name",
+      "line": 203
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-dipti-deka-ca940eb6.qualification",
+      "line": 203
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-anjana-mitra-1654ac6f.designation",
+      "line": 204
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-anjana-mitra-1654ac6f.name",
+      "line": 204
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-anjana-mitra-1654ac6f.qualification",
+      "line": 204
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-minu-martha-panna-9aff041f.designation",
+      "line": 205
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-minu-martha-panna-9aff041f.name",
+      "line": 205
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-minu-martha-panna-9aff041f.qualification",
+      "line": 205
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-zeenat-zaman-a4a2d096.designation",
+      "line": 206
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-zeenat-zaman-a4a2d096.name",
+      "line": 206
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-zeenat-zaman-a4a2d096.qualification",
+      "line": 206
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-binffa-majumdar-a29127cc.designation",
+      "line": 207
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-binffa-majumdar-a29127cc.name",
+      "line": 207
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-binffa-majumdar-a29127cc.qualification",
+      "line": 207
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-anuradha-kalita-631174e7.designation",
+      "line": 208
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-anuradha-kalita-631174e7.name",
+      "line": 208
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-anuradha-kalita-631174e7.qualification",
+      "line": 208
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-suvartha-vani-deka-17fe883b.designation",
+      "line": 209
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-suvartha-vani-deka-17fe883b.name",
+      "line": 209
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-suvartha-vani-deka-17fe883b.qualification",
+      "line": 209
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-ajanta-b-chowdhury-516f453c.designation",
+      "line": 210
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-ajanta-b-chowdhury-516f453c.name",
+      "line": 210
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-ajanta-b-chowdhury-516f453c.qualification",
+      "line": 210
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.barsha-bujar-baruah-c14a63f9.designation",
+      "line": 211
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.barsha-bujar-baruah-c14a63f9.name",
+      "line": 211
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.barsha-bujar-baruah-c14a63f9.qualification",
+      "line": 211
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.ms-roseline-anthony-1d5fde16.designation",
+      "line": 212
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.ms-roseline-anthony-1d5fde16.name",
+      "line": 212
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.ms-roseline-anthony-1d5fde16.qualification",
+      "line": 212
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-rajlaxmi-roy-d5b1688b.designation",
+      "line": 213
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-rajlaxmi-roy-d5b1688b.name",
+      "line": 213
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-rajlaxmi-roy-d5b1688b.qualification",
+      "line": 213
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-shyamobi-r-narzary-e5927ee3.designation",
+      "line": 214
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-shyamobi-r-narzary-e5927ee3.name",
+      "line": 214
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-shyamobi-r-narzary-e5927ee3.qualification",
+      "line": 214
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-madhumita-das-48abe866.designation",
+      "line": 215
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-madhumita-das-48abe866.name",
+      "line": 215
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-madhumita-das-48abe866.qualification",
+      "line": 215
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-shonali-roy-5ecf839c.designation",
+      "line": 216
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-shonali-roy-5ecf839c.name",
+      "line": 216
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-shonali-roy-5ecf839c.qualification",
+      "line": 216
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nilanjana-samanta-a6cee9f9.designation",
+      "line": 217
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nilanjana-samanta-a6cee9f9.name",
+      "line": 217
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nilanjana-samanta-a6cee9f9.qualification",
+      "line": 217
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-payel-das-b69aca0a.designation",
+      "line": 218
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-payel-das-b69aca0a.name",
+      "line": 218
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-payel-das-b69aca0a.qualification",
+      "line": 218
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-anamika-das-a85e9add.designation",
+      "line": 219
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-anamika-das-a85e9add.name",
+      "line": 219
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-anamika-das-a85e9add.qualification",
+      "line": 219
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-jahnabi-baishya-664f5269.designation",
+      "line": 220
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-jahnabi-baishya-664f5269.name",
+      "line": 220
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-jahnabi-baishya-664f5269.qualification",
+      "line": 220
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-juli-devi-6909e027.designation",
+      "line": 221
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-juli-devi-6909e027.name",
+      "line": 221
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-juli-devi-6909e027.qualification",
+      "line": 221
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-thomas-narzary-8716417e.designation",
+      "line": 222
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-thomas-narzary-8716417e.name",
+      "line": 222
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-thomas-narzary-8716417e.qualification",
+      "line": 222
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-bornali-saikia-e11e5a3f.designation",
+      "line": 223
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-bornali-saikia-e11e5a3f.name",
+      "line": 223
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-bornali-saikia-e11e5a3f.qualification",
+      "line": 223
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-alakananda-pathak-f57482a9.designation",
+      "line": 224
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-alakananda-pathak-f57482a9.name",
+      "line": 224
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-alakananda-pathak-f57482a9.qualification",
+      "line": 224
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nandita-sengupta-4fb014c5.designation",
+      "line": 225
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nandita-sengupta-4fb014c5.name",
+      "line": 225
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nandita-sengupta-4fb014c5.qualification",
+      "line": 225
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-deepanwita-bose-saha-d4326a59.designation",
+      "line": 226
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-deepanwita-bose-saha-d4326a59.name",
+      "line": 226
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-deepanwita-bose-saha-d4326a59.qualification",
+      "line": 226
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-basabi-chanda-c64c7a31.designation",
+      "line": 227
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-basabi-chanda-c64c7a31.name",
+      "line": 227
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-basabi-chanda-c64c7a31.qualification",
+      "line": 227
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-kakoli-patwari-701ad15a.designation",
+      "line": 228
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-kakoli-patwari-701ad15a.name",
+      "line": 228
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-kakoli-patwari-701ad15a.qualification",
+      "line": 228
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-tanaya-baruah-04e731fe.designation",
+      "line": 229
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-tanaya-baruah-04e731fe.name",
+      "line": 229
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.miss-tanaya-baruah-04e731fe.qualification",
+      "line": 229
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nizara-kalita-2ab03e13.designation",
+      "line": 230
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nizara-kalita-2ab03e13.name",
+      "line": 230
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nizara-kalita-2ab03e13.qualification",
+      "line": 230
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nabamita-boral-44a59793.designation",
+      "line": 231
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nabamita-boral-44a59793.name",
+      "line": 231
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nabamita-boral-44a59793.qualification",
+      "line": 231
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nilotpala-sarma-95a4a68a.designation",
+      "line": 232
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nilotpala-sarma-95a4a68a.name",
+      "line": 232
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-nilotpala-sarma-95a4a68a.qualification",
+      "line": 232
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-bhogiram-kujur-b2caf7c2.designation",
+      "line": 233
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-bhogiram-kujur-b2caf7c2.name",
+      "line": 233
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-bhogiram-kujur-b2caf7c2.qualification",
+      "line": 233
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-sunita-chettri-d145d643.designation",
+      "line": 234
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-sunita-chettri-d145d643.name",
+      "line": 234
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-sunita-chettri-d145d643.qualification",
+      "line": 234
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-stephen-baglary-c48f96f7.designation",
+      "line": 235
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-stephen-baglary-c48f96f7.name",
+      "line": 235
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mr-stephen-baglary-c48f96f7.qualification",
+      "line": 235
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-flora-marak-51d6b9a0.designation",
+      "line": 236
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-flora-marak-51d6b9a0.name",
+      "line": 236
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.mrs-flora-marak-51d6b9a0.qualification",
+      "line": 236
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.jaba-kumari-das-c805a850.designation",
+      "line": 237
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.jaba-kumari-das-c805a850.name",
+      "line": 237
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.jaba-kumari-das-c805a850.qualification",
+      "line": 237
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.valsamma-joseph-f0cdab7e.designation",
+      "line": 238
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.valsamma-joseph-f0cdab7e.name",
+      "line": 238
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.valsamma-joseph-f0cdab7e.qualification",
+      "line": 238
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.chayanika-sarma-65c56d0e.designation",
+      "line": 239
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.chayanika-sarma-65c56d0e.name",
+      "line": 239
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.chayanika-sarma-65c56d0e.qualification",
+      "line": 239
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.dhriti-das-e0094ddd.designation",
+      "line": 240
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.dhriti-das-e0094ddd.name",
+      "line": 240
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.dhriti-das-e0094ddd.qualification",
+      "line": 240
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.panchali-das-837b348d.designation",
+      "line": 241
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.panchali-das-837b348d.name",
+      "line": 241
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.panchali-das-837b348d.qualification",
+      "line": 241
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-kunnel-elizabeth-c9eb3c88.designation",
+      "line": 242
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-kunnel-elizabeth-c9eb3c88.name",
+      "line": 242
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-kunnel-elizabeth-c9eb3c88.qualification",
+      "line": 242
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.duithoiliu-pongningmei-5394afbb.designation",
+      "line": 243
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.duithoiliu-pongningmei-5394afbb.name",
+      "line": 243
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.duithoiliu-pongningmei-5394afbb.qualification",
+      "line": 243
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-caroline-chongloi-23f8b27f.designation",
+      "line": 244
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-caroline-chongloi-23f8b27f.name",
+      "line": 244
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-caroline-chongloi-23f8b27f.qualification",
+      "line": 244
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.jayeeta-kar-05890aa3.designation",
+      "line": 245
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.jayeeta-kar-05890aa3.name",
+      "line": 245
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.jayeeta-kar-05890aa3.qualification",
+      "line": 245
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.pranjita-kalita-0a73978e.designation",
+      "line": 246
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.pranjita-kalita-0a73978e.name",
+      "line": 246
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.pranjita-kalita-0a73978e.qualification",
+      "line": 246
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.bipanchi-choudhury-b46f2bb1.designation",
+      "line": 247
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.bipanchi-choudhury-b46f2bb1.name",
+      "line": 247
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.bipanchi-choudhury-b46f2bb1.qualification",
+      "line": 247
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-yamchingnao-riyao-grace-pemmila-e7529adb.designation",
+      "line": 248
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-yamchingnao-riyao-grace-pemmila-e7529adb.name",
+      "line": 248
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-yamchingnao-riyao-grace-pemmila-e7529adb.qualification",
+      "line": 248
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.rimpi-sarkar-543714cb.designation",
+      "line": 249
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.rimpi-sarkar-543714cb.name",
+      "line": 249
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.rimpi-sarkar-543714cb.qualification",
+      "line": 249
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.kamal-jyoti-nath-db5cdbc7.designation",
+      "line": 250
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.kamal-jyoti-nath-db5cdbc7.name",
+      "line": 250
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.kamal-jyoti-nath-db5cdbc7.qualification",
+      "line": 250
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.raja-biswas-cbd473e7.designation",
+      "line": 251
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.raja-biswas-cbd473e7.name",
+      "line": 251
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.raja-biswas-cbd473e7.qualification",
+      "line": 251
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.shahnaz-rahman-0bcbdb77.designation",
+      "line": 252
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.shahnaz-rahman-0bcbdb77.name",
+      "line": 252
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.shahnaz-rahman-0bcbdb77.qualification",
+      "line": 252
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.baishali-phookun-b2e91311.designation",
+      "line": 253
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.baishali-phookun-b2e91311.name",
+      "line": 253
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.baishali-phookun-b2e91311.qualification",
+      "line": 253
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-lissy-mathew-7ed6d8ff.designation",
+      "line": 254
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-lissy-mathew-7ed6d8ff.name",
+      "line": 254
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-lissy-mathew-7ed6d8ff.qualification",
+      "line": 254
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sanjana-raaj-359d05a2.designation",
+      "line": 255
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sanjana-raaj-359d05a2.name",
+      "line": 255
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sanjana-raaj-359d05a2.qualification",
+      "line": 255
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-thekuvelu-rhakho-823b3a0a.designation",
+      "line": 256
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-thekuvelu-rhakho-823b3a0a.name",
+      "line": 256
+    },
+    {
+      "key": "cbse.disclosure.teacherDetails.sr-thekuvelu-rhakho-823b3a0a.qualification",
+      "line": 256
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.mandatory-public-disclosure-e77d6d18",
+      "line": 341
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.appendix-ix-as-required-by-cbse-aff-8297a153",
+      "line": 342
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.note-1150f054",
+      "line": 364
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.the-school-needs-to-upload-the-self-38eceb93",
+      "line": 364
+    },
+    {
+      "key": "cbse.disclosure.heading.a-general-information",
+      "line": 374
+    },
+    {
+      "key": "cbse.disclosure.heading.b-documents-and-information",
+      "line": 404
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.view-more-15435b31",
+      "line": 431
+    },
+    {
+      "key": "cbse.disclosure.heading.c-result-and-academics",
+      "line": 451
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.view-more-15435b31.2",
+      "line": 476
+    },
+    {
+      "key": "cbse.disclosure.heading.d-staff-teaching",
+      "line": 493
+    },
+    {
+      "key": "cbse.disclosure.heading.e-school-infrastructure",
+      "line": 523
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.view-video-a384a35a",
+      "line": 540
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.f-teacher-details-26d732c9",
+      "line": 566
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.total-teachers-204e02c7",
+      "line": 606
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.last-updated-2025-80c80181",
+      "line": 607
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.board-examination-results-6a9ddf32",
+      "line": 623
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.x-4b68ab38",
+      "line": 631
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.class-x-result-f1ecf86c",
+      "line": 632
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.xii-89e979f6",
+      "line": 665
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.class-xii-result-5295d6c8",
+      "line": 666
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.students-of-counsellor-and-wellness-d4c3e39c",
+      "line": 713
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.ms-bipanchi-choudhury-706e4bd4",
+      "line": 715
+    },
+    {
+      "key": "cbse.disclosure.copy.page-headings-and-explana.msc-psychology-specialisation-in-co-7bff23fe",
+      "line": 715
+    },
+    {
+      "key": "cbse.disclosure.copy.pdf-preview-captions.pdf-document-0cbeb39b",
+      "line": 749
+    },
+    {
+      "key": "cbse.disclosure.copy.pdf-preview-captions.download-d6eafe82",
+      "line": 752
+    },
+    {
+      "key": "cbse.disclosure.copy.pdf-preview-captions.open-in-new-tab-35e74c3a",
+      "line": 754
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.fee-structure-2026-27-38df3d32",
+      "line": 778
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.st-mary-s-sr-secondary-school-malig-25fd5643",
+      "line": 779
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.class-bb6a385e",
+      "line": 797
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.annual-fees-b25ed05c",
+      "line": 798
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.per-installment-bf8712c5",
+      "line": 798
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.per-installment-bf8712c5.2",
+      "line": 799
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.tuition-fees-33206568",
+      "line": 799
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.installment-03777de7",
+      "line": 800
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.period-6e795d4d",
+      "line": 800
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.fees-are-received-by-hdfc-bank-ltd--76340e41",
+      "line": 826
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.note-1150f054",
+      "line": 826
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.installment-schedule-kg-x-227c9fa0",
+      "line": 834
+    },
+    {
+      "key": "cbse.disclosure.feeMonths.april",
+      "line": 836
+    },
+    {
+      "key": "cbse.disclosure.feeMonths.january",
+      "line": 836
+    },
+    {
+      "key": "cbse.disclosure.feeMonths.july",
+      "line": 836
+    },
+    {
+      "key": "cbse.disclosure.feeMonths.october",
+      "line": 836
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.10th-20th-e1c6369d",
+      "line": 839
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.kg-x-94dba5bb",
+      "line": 840
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.100-on-all-late-payments-ecbece78",
+      "line": 846
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.late-fee-498464bb",
+      "line": 846
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.installment-schedule-xi-xii-e57c2b96",
+      "line": 851
+    },
+    {
+      "key": "cbse.disclosure.feeMonths.december",
+      "line": 853
+    },
+    {
+      "key": "cbse.disclosure.feeMonths.june",
+      "line": 853
+    },
+    {
+      "key": "cbse.disclosure.feeMonths.september",
+      "line": 853
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.xi-xii-616d68a7",
+      "line": 856
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.note-1150f054.2",
+      "line": 863
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.science-stream-annual-fees-are-high-3626df23",
+      "line": 863
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.fees-cover-twelve-calendar-months-b7a2e5a6",
+      "line": 872
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.updated-2025-26-77984986",
+      "line": 873
+    },
+    {
+      "key": "cbse.disclosure.copy.fee-structure-labels-and-.close-7d9eb7ac",
+      "line": 883
+    }
+  ]
+}

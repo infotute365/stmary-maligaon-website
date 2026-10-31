@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 // src/components/home/FeatureCard.jsx
 
 import React, { useState } from 'react'
@@ -8,68 +9,69 @@ import {
 import { motion } from 'framer-motion'
 
 const FeatureCard = () => {
+  const c = useSiteContent()
   const [hoveredIndex, setHoveredIndex] = useState(null)
 
   const features = [
     {
       icon: <GraduationCap size={24} />,
-      title: 'Academic Excellence',
-      description: 'Our curriculum fosters critical thinking, creativity, and a lifelong love for learning in every student.',
+      title: c('home.features.title1'),
+      description: c('home.features.description1'),
       accent: '#7A0C1E',
       lightAccent: 'bg-maroon-50',
       iconBg: 'bg-maroon-100',
       textColor: 'text-maroon-700',
-      stats: '98% Pass Rate'
+      stats: c('home.features.stats1')
     },
     {
       icon: <Building2 size={24} />,
-      title: 'Modern Infrastructure',
-      description: 'State-of-the-art classrooms, labs, library, and sports facilities for holistic development.',
+      title: c('home.features.title2'),
+      description: c('home.features.description2'),
       accent: '#8a1e2a',
       lightAccent: 'bg-rose-50',
       iconBg: 'bg-rose-100',
       textColor: 'text-rose-700',
-      stats: '25+ Facilities'
+      stats: c('home.features.stats2')
     },
     {
       icon: <FlaskConical size={24} />,
-      title: 'Science & Innovation',
-      description: 'Well-equipped labs and innovation centers to nurture young scientists and inventors.',
+      title: c('home.features.title3'),
+      description: c('home.features.description3'),
       accent: '#b02d3a',
       lightAccent: 'bg-red-50',
       iconBg: 'bg-red-100',
       textColor: 'text-red-700',
-      stats: '12+ Labs'
+      stats: c('home.features.stats3')
     },
     {
       icon: <Code size={24} />,
-      title: 'Computer Education',
-      description: 'Comprehensive computer education from basic programming to advanced AI concepts.',
+      title: c('home.features.title4'),
+      description: c('home.features.description4'),
       accent: '#c94a54',
       lightAccent: 'bg-pink-50',
       iconBg: 'bg-pink-100',
       textColor: 'text-pink-700',
-      stats: 'AI & ML Ready'
+      stats: c('home.features.stats4')
     },
     {
       icon: <Users size={24} />,
-      title: 'Community & Values',
-      description: 'A nurturing environment that promotes values, discipline, and social responsibility.',
+      title: c('home.features.title5'),
+      description: c('home.features.description5'),
       accent: '#7A0C1E',
       lightAccent: 'bg-maroon-50',
       iconBg: 'bg-maroon-100',
       textColor: 'text-maroon-700',
-      stats: '1500+ Students'
+      stats: c('home.features.stats5')
     },
     {
       icon: <Trophy size={24} />,
-      title: 'Extracurricular Activities',
-      description: 'Sports, arts, clubs, and cultural events for overall personality development.',
+      title: c('home.features.title6'),
+      description: c('home.features.description6'),
       accent: '#D9A441',
       lightAccent: 'bg-amber-50',
       iconBg: 'bg-amber-100',
       textColor: 'text-amber-700',
-      stats: '50+ Activities'
+      stats: c('home.features.stats6')
     }
   ]
 
@@ -161,9 +163,7 @@ const FeatureCard = () => {
               <span
                 className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-300 group-hover:gap-3 cursor-pointer"
                 style={{ color: feature.accent }}
-              >
-                Learn More
-                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
+              >{c('home.features.learn-more')}<ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
               </span>
             </div>
           </div>

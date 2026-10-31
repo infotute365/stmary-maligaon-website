@@ -1,22 +1,24 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React from 'react'
 import { Bus, MapPin, ShieldCheck, Clock, Phone, User, Building, AlertCircle } from 'lucide-react'
 import SectionWrapper from '../../components/common/SectionWrapper.jsx'
 
 const Transport = () => {
+  const c = useSiteContent()
   const operators = [
-    'Mr. Babul Baishya',
-    'Md. Babujan Mia',
-    'Mrs. Mary Sangma',
-    'Green Valley Pvt. Ltd.'
+    { contentId: "Mr. Babul Baishya", text: c('infrastructure.transport.operators.mr-babul-baishya-1c0975df') },
+    { contentId: "Md. Babujan Mia", text: c('infrastructure.transport.operators.md-babujan-mia-d95533f3') },
+    { contentId: "Mrs. Mary Sangma", text: c('infrastructure.transport.operators.mrs-mary-sangma-3ff20ce0') },
+    { contentId: "Green Valley Pvt. Ltd.", text: c('infrastructure.transport.operators.green-valley-pvt-ltd-20e10ab4') }
   ]
 
   const vehicles = [
     {
       sl: 1,
-      number: 'AS01HC2324',
-      owner: 'Mr. Nila Das',
-      contact: '9127122829',
-      route: 'Ajara, Dharapur, Khanamukh, Lonkeshwar, Forest School, Hindu Garigaon, Khatmail, APR, Engineering College, Khundarbari, Nursery, GotaNagar'
+      number: c('infrastructure.transport.vehicles.1-6b86b273.number'),
+      owner: c('infrastructure.transport.vehicles.1-6b86b273.owner'),
+      contact: c('infrastructure.transport.vehicles.1-6b86b273.contact'),
+      route: c('infrastructure.transport.vehicles.1-6b86b273.route')
     }
   ]
 
@@ -30,8 +32,8 @@ const Transport = () => {
               <Bus size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-xl md:text-2xl font-bold">Transport</h1>
-              <p className="text-sm text-gold-300/80 mt-0.5">Safe and reliable school transport</p>
+              <h1 className="text-xl md:text-2xl font-bold">{c('infrastructure.transport.copy.transport.heading.transport-aaead4ab')}</h1>
+              <p className="text-sm text-gold-300/80 mt-0.5">{c('infrastructure.transport.copy.transport.paragraph.safe-and-reliable-school-t-0468b5b6')}</p>
             </div>
           </div>
         </div>
@@ -45,9 +47,7 @@ const Transport = () => {
             <p className="text-sm text-amber-800 flex items-start gap-2">
               <AlertCircle size={18} className="text-amber-600 flex-shrink-0 mt-0.5" />
               <span>
-                <span className="font-semibold">As per CBSE norms,</span> the School has authorized the following 
-                bus-operators only for the safe transportation of the students.
-              </span>
+                <span className="font-semibold">{c('infrastructure.transport.copy.transport.text.as-per-cbse-norms-a9b25e4c')}</span>{' ' + c('infrastructure.transport.copy.transport.text.the-school-has-authorized--ea989cd1')}</span>
             </p>
           </div>
 
@@ -61,26 +61,24 @@ const Transport = () => {
                 <div className="w-8 h-8 rounded-full bg-maroon-50 flex items-center justify-center mx-auto mb-1.5">
                   <User size={14} className="text-maroon-700" />
                 </div>
-                <p className="text-xs font-medium text-gray-800 leading-tight">{operator}</p>
+                <p className="text-xs font-medium text-gray-800 leading-tight">{operator.text}</p>
               </div>
             ))}
           </div>
 
           {/* Vehicle Details */}
           <h2 className="text-lg font-serif font-bold text-maroon-900 mb-4 flex items-center gap-2">
-            <Bus size={18} className="text-gold-600" />
-            Authorized Vehicles
-          </h2>
+            <Bus size={18} className="text-gold-600" />{c('infrastructure.transport.copy.authorized-vehicles.heading.authorized-vehicles-a8396403')}</h2>
 
           <SectionWrapper className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-6">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-maroon-800 text-white">
-                    <th className="px-4 py-3 text-left font-semibold">Sl.</th>
-                    <th className="px-4 py-3 text-left font-semibold">Vehicle Number</th>
-                    <th className="px-4 py-3 text-left font-semibold">Owner</th>
-                    <th className="px-4 py-3 text-left font-semibold">Contact</th>
+                    <th className="px-4 py-3 text-left font-semibold">{c('infrastructure.transport.copy.authorized-vehicles.text.sl-b6739935')}</th>
+                    <th className="px-4 py-3 text-left font-semibold">{c('infrastructure.transport.copy.authorized-vehicles.text.vehicle-number-57c8177a')}</th>
+                    <th className="px-4 py-3 text-left font-semibold">{c('infrastructure.transport.copy.authorized-vehicles.text.owner-4b1b8aa3')}</th>
+                    <th className="px-4 py-3 text-left font-semibold">{c('infrastructure.transport.copy.authorized-vehicles.text.contact-2b5c3d26')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -111,9 +109,9 @@ const Transport = () => {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-blue-900 text-sm">Route Details</h4>
+                <h4 className="font-semibold text-blue-900 text-sm">{c('infrastructure.transport.copy.route-details.heading.route-details-86a01c88')}</h4>
                 <p className="text-xs text-gray-700 mt-1 leading-relaxed">
-                  <span className="font-medium">Vehicle No. AS01HC2324 covers:</span> {vehicles[0].route}
+                  <span className="font-medium">{c('infrastructure.transport.copy.route-details.text.vehicle-no-as01hc2324-cove-59ba07af')}</span> {vehicles[0].route}
                 </p>
               </div>
             </div>
@@ -125,24 +123,24 @@ const Transport = () => {
               <div className="w-10 h-10 rounded-xl bg-maroon-50 text-maroon-800 flex items-center justify-center mx-auto mb-2.5">
                 <MapPin size={20} />
               </div>
-              <h4 className="font-serif font-bold text-maroon-900 text-sm">Wide Route Coverage</h4>
-              <p className="text-gray-600 text-xs mt-1">Buses cover major residential areas across Maligaon and greater Guwahati.</p>
+              <h4 className="font-serif font-bold text-maroon-900 text-sm">{c('infrastructure.transport.copy.wide-route-coverage.heading.wide-route-coverage-84a4f033')}</h4>
+              <p className="text-gray-600 text-xs mt-1">{c('infrastructure.transport.copy.wide-route-coverage.paragraph.buses-cover-major-resident-b6077bb8')}</p>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 text-center hover:shadow-md transition-shadow">
               <div className="w-10 h-10 rounded-xl bg-maroon-50 text-maroon-800 flex items-center justify-center mx-auto mb-2.5">
                 <ShieldCheck size={20} />
               </div>
-              <h4 className="font-serif font-bold text-maroon-900 text-sm">Safety First</h4>
-              <p className="text-gray-600 text-xs mt-1">GPS-tracked buses with trained drivers and an attendant on every route.</p>
+              <h4 className="font-serif font-bold text-maroon-900 text-sm">{c('infrastructure.transport.copy.safety-first.heading.safety-first-ca6141dc')}</h4>
+              <p className="text-gray-600 text-xs mt-1">{c('infrastructure.transport.copy.safety-first.paragraph.gps-tracked-buses-with-tra-5ffac874')}</p>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 text-center hover:shadow-md transition-shadow">
               <div className="w-10 h-10 rounded-xl bg-maroon-50 text-maroon-800 flex items-center justify-center mx-auto mb-2.5">
                 <Clock size={20} />
               </div>
-              <h4 className="font-serif font-bold text-maroon-900 text-sm">Punctual Timing</h4>
-              <p className="text-gray-600 text-xs mt-1">Fixed pick-up and drop-off schedules shared with parents each term.</p>
+              <h4 className="font-serif font-bold text-maroon-900 text-sm">{c('infrastructure.transport.copy.punctual-timing.heading.punctual-timing-008fd822')}</h4>
+              <p className="text-gray-600 text-xs mt-1">{c('infrastructure.transport.copy.punctual-timing.paragraph.fixed-pick-up-and-drop-off-dd26ccf9')}</p>
             </div>
           </div>
 
@@ -150,7 +148,7 @@ const Transport = () => {
           <div className="mt-6 text-center p-3 bg-gold-50 rounded-lg border border-gold-200">
             <p className="text-xs text-maroon-800 flex items-center justify-center gap-2">
               <Building size={14} className="text-gold-600" />
-              <span>For route details and transport fees, please contact the school transport office.</span>
+              <span>{c('infrastructure.transport.copy.punctual-timing.text.for-route-details-and-tran-f825ee09')}</span>
             </p>
           </div>
 

@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useState, useEffect } from 'react'
 import { Download, FileText, FileCheck, FileSpreadsheet } from 'lucide-react'
 import PageHeader from '../components/common/PageHeader.jsx'
@@ -7,6 +8,7 @@ import { getMediaUrl } from '../utils/media.js'
 const BACKEND_URL = '';
 
 const Downloads = () => {
+  const c = useSiteContent()
   const [downloads, setDownloads] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -55,7 +57,7 @@ const Downloads = () => {
   if (loading) {
     return (
       <div>
-        <PageHeader title="Downloads" subtitle="Forms, notices and documents" icon={<Download size={18} />} />
+        <PageHeader homeLabel={c('pages.downloads.breadcrumb.home')} title={c('pages.downloads.pageHeader.title')} subtitle={c('pages.downloads.pageHeader.subtitle')} icon={<Download size={18} />} />
         <section className="section-padding">
           <div className="container-custom flex justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-4 border-maroon-600 border-t-transparent"></div>
@@ -70,14 +72,14 @@ const Downloads = () => {
 
   return (
     <div>
-      <PageHeader title="Downloads" subtitle="Forms, notices and documents" icon={<Download size={18} />} />
+      <PageHeader homeLabel={c('pages.downloads.breadcrumb.home')} title={c('pages.downloads.pageHeader.title')} subtitle={c('pages.downloads.pageHeader.subtitle')} icon={<Download size={18} />} />
 
       <section className="section-padding">
         <div className="container-custom">
           {downloads.length === 0 ? (
             <div className="text-center py-12">
               <FileText size={48} className="mx-auto text-gray-300" />
-              <p className="text-gray-500 mt-4">No downloads available.</p>
+              <p className="text-gray-500 mt-4">{c('pages.downloads.copy.page-header.paragraph.no-downloads-available-bcf537a5')}</p>
             </div>
           ) : (
             <div className="space-y-8 max-w-3xl mx-auto">

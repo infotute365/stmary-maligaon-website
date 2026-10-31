@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { 
@@ -21,6 +22,7 @@ import {
 } from 'lucide-react'
 
 const Leave = () => {
+  const c = useSiteContent()
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -49,48 +51,48 @@ const Leave = () => {
   }
 
   const leaveRules = [
-    {
-      text: "No student should absent herself without obtaining leave previously, unless it is a sick leave.",
+    { contentId: "No student should absent herself without obtaining leave previously, unless it is a sick leave.",
+      text: c('students.leave.leaveRules.no-student-should-absent-herself-wit-b1f6428f.text'),
       icon: FileText,
       color: 'blue'
     },
-    {
-      text: "Students must return after the holidays on the appointed date. In case of sickness the school authority must be notified and Doctor's certificate must be provided. Without the prior information late comers are liable to lose their seats.",
+    { contentId: "Students must return after the holidays on the appointed date. In case of sickness the school authority must be notified and Doctor's certificate must be provided. Without the prior information late comers are liable to lose their seats.",
+      text: c('students.leave.leaveRules.students-must-return-after-the-holid-0c6d23ff.text'),
       icon: Calendar,
       color: 'purple'
     },
-    {
-      text: "The names of those who are absent without leave for one month or more may be struck off the rolls.",
+    { contentId: "The names of those who are absent without leave for one month or more may be struck off the rolls.",
+      text: c('students.leave.leaveRules.the-names-of-those-who-are-absent-wi-3c35015d.text'),
       icon: XCircle,
       color: 'red'
     },
-    {
-      text: "Leave must be obtained by writing application from parents or guardians in the prescribed 'leave record'. Late comers must produce a similar justification.",
+    { contentId: "Leave must be obtained by writing application from parents or guardians in the prescribed 'leave record'. Late comers must produce a similar justification.",
+      text: c('students.leave.leaveRules.leave-must-be-obtained-by-writing-ap-6d33545f.text'),
       icon: FileText,
       color: 'emerald'
     },
-    {
-      text: "To be admitted to the class room, those who have been absent and late comers, must show their teachers their regularity record duly counter signed by the Sister – in – charge. The school disclaims all responsibilities on failure to produce it a student is obliged to return home during school hours.",
+    { contentId: "To be admitted to the class room, those who have been absent and late comers, must show their teachers their regularity record duly counter signed by the Sister – in – charge. The school disclaims all responsibilities on failure to produce it a student is obliged to return home during school hours.",
+      text: c('students.leave.leaveRules.to-be-admitted-to-the-class-room-tho-bf9f4026.text'),
       icon: Shield,
       color: 'amber'
     },
-    {
-      text: "No student is allowed to leave the school premises except on the strength of a letter of authorization from the parents/ guardians, as well accompanied by them and too for a weighty reason.",
+    { contentId: "No student is allowed to leave the school premises except on the strength of a letter of authorization from the parents/ guardians, as well accompanied by them and too for a weighty reason.",
+      text: c('students.leave.leaveRules.no-student-is-allowed-to-leave-the-s-437f19ce.text'),
       icon: Home,
       color: 'indigo'
     },
-    {
-      text: "Students who have been absent from the class must state the reason for their absence briefly in their regularity record. Reason for a private nature may be intimated by a letter to the Headmistress/ Sister – In – Charge. Birthday, excursion, urgent business are not considered sufficient reasons. Absence from school in order to study is never allowed.",
+    { contentId: "Students who have been absent from the class must state the reason for their absence briefly in their regularity record. Reason for a private nature may be intimated by a letter to the Headmistress/ Sister – In – Charge. Birthday, excursion, urgent business are not considered sufficient reasons. Absence from school in order to study is never allowed.",
+      text: c('students.leave.leaveRules.students-who-have-been-absent-from-t-42c7a508.text'),
       icon: Info,
       color: 'rose'
     }
   ]
 
   const importantNotes = [
-    { label: 'Prior Leave Required', value: 'Yes, except for sick leave', icon: CheckCircle },
-    { label: 'Absence Period', value: '1 month - may be struck off', icon: AlertCircle },
-    { label: 'Late Arrival', value: 'Requires justification', icon: Clock },
-    { label: 'Premises Exit', value: 'Parent authorization required', icon: User },
+    { contentId: "Prior Leave Required", label: c('students.leave.importantNotes.prior-leave-required-d4e884a0.label'), value: c('students.leave.importantNotes.prior-leave-required-d4e884a0.value'), icon: CheckCircle },
+    { contentId: "Absence Period", label: c('students.leave.importantNotes.absence-period-f5f9486b.label'), value: c('students.leave.importantNotes.absence-period-f5f9486b.value'), icon: AlertCircle },
+    { contentId: "Late Arrival", label: c('students.leave.importantNotes.late-arrival-b143dcad.label'), value: c('students.leave.importantNotes.late-arrival-b143dcad.value'), icon: Clock },
+    { contentId: "Premises Exit", label: c('students.leave.importantNotes.premises-exit-d7446cfb.label'), value: c('students.leave.importantNotes.premises-exit-d7446cfb.value'), icon: User },
   ]
 
   const getColorClasses = (color) => {
@@ -184,8 +186,8 @@ const Leave = () => {
               <CalendarDays size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">Leave & Absence</h1>
-              <p className="text-gold-300 text-sm mt-0.5">Policies and procedures for student attendance</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('students.leave.copy.leave-absence.heading.leave-absence-8b0834b8')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('students.leave.copy.leave-absence.paragraph.policies-and-procedures-fo-a2a6e589')}</p>
             </div>
           </div>
         </div>
@@ -208,7 +210,7 @@ const Leave = () => {
               const Icon = item.icon
               return (
                 <motion.div 
-                  key={item.label} 
+                  key={item.contentId}
                   variants={fadeInUp}
                   className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-gold-300 group"
                 >
@@ -233,8 +235,8 @@ const Leave = () => {
           >
             <SectionTitle 
               icon={Shield} 
-              title="Leave & Absence Regulations" 
-              subtitle="7 Rules" 
+              title={c('students.leave.copy.leave-absence.title.leave-absence-regulations-ccb0b745')}
+              subtitle={c('students.leave.copy.leave-absence.subtitle.7-rules-19d85698')}
             />
             
             <motion.div 
@@ -263,8 +265,7 @@ const Leave = () => {
                           {rule.text}
                         </p>
                         <div className="mt-2 flex items-center gap-2">
-                          <span className={`text-[10px] font-medium px-2.5 py-0.5 rounded-full ${colors.tag}`}>
-                            Rule {index + 1}
+                          <span className={`text-[10px] font-medium px-2.5 py-0.5 rounded-full ${colors.tag}`}>{c('students.leave.copy.leave-absence.text.rule-62845f31') + ' '}{index + 1}
                           </span>
                         </div>
                       </div>
@@ -293,14 +294,12 @@ const Leave = () => {
                 <div className="p-2 rounded-xl bg-blue-100 group-hover:scale-110 transition-transform duration-300">
                   <FileText size={18} className="text-blue-600" />
                 </div>
-                <h4 className="font-bold text-blue-900 text-sm">Step 1: Application</h4>
+                <h4 className="font-bold text-blue-900 text-sm">{c('students.leave.copy.step-1-application.heading.step-1-application-1b618dc9')}</h4>
               </div>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                Write leave application in prescribed 'leave record' format signed by parents/guardians
-              </p>
+              <p className="text-xs text-gray-600 leading-relaxed">{c('students.leave.copy.step-1-application.paragraph.write-leave-application-in-fbf5ccf8')}</p>
               <div className="mt-3 flex items-center gap-1.5 text-xs text-blue-700 bg-blue-100/50 px-3 py-1 rounded-full w-fit">
                 <Clock size={12} />
-                <span>Prior leave required</span>
+                <span>{c('students.leave.copy.step-1-application.text.prior-leave-required-795d497e')}</span>
               </div>
             </motion.div>
 
@@ -312,14 +311,12 @@ const Leave = () => {
                 <div className="p-2 rounded-xl bg-orange-100 group-hover:scale-110 transition-transform duration-300">
                   <Shield size={18} className="text-orange-600" />
                 </div>
-                <h4 className="font-bold text-orange-900 text-sm">Step 2: Approval</h4>
+                <h4 className="font-bold text-orange-900 text-sm">{c('students.leave.copy.step-2-approval.heading.step-2-approval-c96e71fa')}</h4>
               </div>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                Regularity record must be countersigned by Sister-in-charge for re-entry
-              </p>
+              <p className="text-xs text-gray-600 leading-relaxed">{c('students.leave.copy.step-2-approval.paragraph.regularity-record-must-be--654fe49b')}</p>
               <div className="mt-3 flex items-center gap-1.5 text-xs text-orange-700 bg-orange-100/50 px-3 py-1 rounded-full w-fit">
                 <CheckCircle size={12} />
-                <span>Required for admission</span>
+                <span>{c('students.leave.copy.step-2-approval.text.required-for-admission-caf34b56')}</span>
               </div>
             </motion.div>
 
@@ -331,14 +328,12 @@ const Leave = () => {
                 <div className="p-2 rounded-xl bg-rose-100 group-hover:scale-110 transition-transform duration-300">
                   <AlertCircle size={18} className="text-rose-600" />
                 </div>
-                <h4 className="font-bold text-rose-900 text-sm">Step 3: Consequences</h4>
+                <h4 className="font-bold text-rose-900 text-sm">{c('students.leave.copy.step-3-consequences.heading.step-3-consequences-3d0e430a')}</h4>
               </div>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                1 month absence without leave may result in name being struck off rolls
-              </p>
+              <p className="text-xs text-gray-600 leading-relaxed">{c('students.leave.copy.step-3-consequences.paragraph.1-month-absence-without-le-1961bc76')}</p>
               <div className="mt-3 flex items-center gap-1.5 text-xs text-rose-700 bg-rose-100/50 px-3 py-1 rounded-full w-fit">
                 <XCircle size={12} />
-                <span>Strict action applicable</span>
+                <span>{c('students.leave.copy.step-3-consequences.text.strict-action-applicable-6f859d24')}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -359,20 +354,20 @@ const Leave = () => {
                 <div className="p-1.5 rounded-lg bg-emerald-100">
                   <Stethoscope size={16} className="text-emerald-600" />
                 </div>
-                <h5 className="font-semibold text-emerald-900 text-sm">Sick Leave Protocol</h5>
+                <h5 className="font-semibold text-emerald-900 text-sm">{c('students.leave.copy.step-3-consequences.heading.sick-leave-protocol-a6833f75')}</h5>
               </div>
               <ul className="space-y-2 text-xs text-gray-700">
                 <li className="flex items-start gap-2">
                   <ArrowRight size={14} className="text-emerald-500 flex-shrink-0 mt-0.5" />
-                  <span>Notify school authority immediately</span>
+                  <span>{c('students.leave.copy.step-3-consequences.text.notify-school-authority-im-57f99847')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ArrowRight size={14} className="text-emerald-500 flex-shrink-0 mt-0.5" />
-                  <span>Doctor's certificate must be provided</span>
+                  <span>{c('students.leave.copy.step-3-consequences.text.doctor-s-certificate-must--4e17a1d8')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ArrowRight size={14} className="text-emerald-500 flex-shrink-0 mt-0.5" />
-                  <span>Prior information required for late comers</span>
+                  <span>{c('students.leave.copy.step-3-consequences.text.prior-information-required-212fdb68')}</span>
                 </li>
               </ul>
             </motion.div>
@@ -386,24 +381,24 @@ const Leave = () => {
                 <div className="p-1.5 rounded-lg bg-purple-100">
                   <Info size={16} className="text-purple-600" />
                 </div>
-                <h5 className="font-semibold text-purple-900 text-sm">Important Exceptions</h5>
+                <h5 className="font-semibold text-purple-900 text-sm">{c('students.leave.copy.step-3-consequences.heading.important-exceptions-c4f77ad6')}</h5>
               </div>
               <ul className="space-y-2 text-xs text-gray-700">
                 <li className="flex items-start gap-2">
                   <XCircle size={14} className="text-red-500 flex-shrink-0 mt-0.5" />
-                  <span>Birthday - Not a valid reason</span>
+                  <span>{c('students.leave.copy.step-3-consequences.text.birthday-not-a-valid-reaso-55c0909f')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <XCircle size={14} className="text-red-500 flex-shrink-0 mt-0.5" />
-                  <span>Excursion - Not considered sufficient</span>
+                  <span>{c('students.leave.copy.step-3-consequences.text.excursion-not-considered-s-3f9c54e6')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <XCircle size={14} className="text-red-500 flex-shrink-0 mt-0.5" />
-                  <span>Urgent business - Not acceptable</span>
+                  <span>{c('students.leave.copy.step-3-consequences.text.urgent-business-not-accept-399cf0f4')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <XCircle size={14} className="text-red-500 flex-shrink-0 mt-0.5" />
-                  <span>Studying at home - Never allowed</span>
+                  <span>{c('students.leave.copy.step-3-consequences.text.studying-at-home-never-all-99ff86a1')}</span>
                 </li>
               </ul>
             </motion.div>
@@ -420,9 +415,7 @@ const Leave = () => {
               <div className="p-1.5 rounded-lg bg-maroon-100">
                 <AlertCircle size={16} className="text-maroon-700" />
               </div>
-              <p className="text-xs text-maroon-800 font-medium text-center">
-                All leave applications must be submitted with proper justification. The school reserves the right to take disciplinary action for unauthorized absence.
-              </p>
+              <p className="text-xs text-maroon-800 font-medium text-center">{c('students.leave.copy.step-3-consequences.paragraph.all-leave-applications-mus-bddd38de')}</p>
             </div>
           </motion.div>
 
@@ -436,7 +429,7 @@ const Leave = () => {
             <div className="inline-block bg-gradient-to-r from-gray-50 to-gold-50/30 rounded-full px-5 py-2 border border-gray-200">
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <Sparkles size={14} className="text-gold-500" />
-                <span>Regular attendance is key to academic success</span>
+                <span>{c('students.leave.copy.step-3-consequences.text.regular-attendance-is-key--18b93e9a')}</span>
                 <Sparkles size={14} className="text-gold-500" />
               </div>
             </div>

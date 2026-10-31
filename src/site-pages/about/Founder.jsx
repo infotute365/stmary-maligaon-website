@@ -1,15 +1,17 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React from 'react';
 import boscoImage from '../../assets/bosco.png'; // Adjust the path as needed
 
 const Founder = () => {
+  const c = useSiteContent()
   return (
     <div>
       {/* Custom Header – no breadcrumbs */}
       <div className="bg-maroon-900 text-white py-12 px-4">
         <div className="container-custom mx-auto">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold">Our Founder</h1>
-          <p className="text-gold-300 text-lg mt-2">Don Bosco – the great Modern Educator</p>
-          <p className="text-gray-300 text-sm mt-1">Life Sketch of Don Bosco</p>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold">{c('about.founder.copy.our-founder.heading.our-founder-8b80712b')}</h1>
+          <p className="text-gold-300 text-lg mt-2">{c('about.founder.copy.our-founder.paragraph.don-bosco-the-great-modern-01d7353e')}</p>
+          <p className="text-gray-300 text-sm mt-1">{c('about.founder.copy.our-founder.paragraph.life-sketch-of-don-bosco-90cc8ded')}</p>
         </div>
       </div>
 
@@ -26,80 +28,45 @@ const Founder = () => {
                   className="w-48 h-48 rounded-full object-cover shadow-lg flex-shrink-0 border-4 border-gold-500"
                 />
                 <div>
-                  <h2 className="font-serif text-3xl font-bold text-maroon-900">St. John Bosco</h2>
-                  <p className="text-gold-600 text-sm font-semibold mb-4">1815 – 1888</p>
-                  <p className="text-gray-700 leading-relaxed">
-                    St. John Bosco, popularly known as Don Bosco (Italian for Father Bosco), was born at
-                    Becchi, in Piedmont, Italy on August 16, 1815. From a very young age he was called to
-                    work for poor young people of his time, when Europe was under the grip of Industrial
-                    Revolution and many a young person who came to the cities to study or in search of
-                    work fell an easy prey to the many social evils of his time.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed mt-3">
-                    He lost his father at the age of 2 and was brought up by his mother, who was truly his
-                    guide, his model and his educator. From early years of life he discovered his leadership
-                    qualities especially among his peers. At the age of nine little John Bosco was given a
-                    mission in vision. He was to transform the young people{' '}
-                    <span className="italic">“NOT WITH BLOWS BUT WITH LOVING KINDNESS”</span> that was the
-                    goal of his life. Overcoming untold hardships and hostility he become a priest on
-                    June 5th 1841. His determination to be a priest for young people combined with his
-                    dynamic optimism resulted in the flowering of his long cherished goal.
-                  </p>
+                  <h2 className="font-serif text-3xl font-bold text-maroon-900">{c('about.founder.copy.st-john-bosco.heading.st-john-bosco-d31e0620')}</h2>
+                  <p className="text-gold-600 text-sm font-semibold mb-4">{c('about.founder.copy.st-john-bosco.paragraph.1815-1888-996df8a9')}</p>
+                  <p className="text-gray-700 leading-relaxed">{c('about.founder.copy.st-john-bosco.paragraph.st-john-bosco-popularly-kn-ba91af3d')}</p>
+                  <p className="text-gray-700 leading-relaxed mt-3">{c('about.founder.copy.st-john-bosco.paragraph.he-lost-his-father-at-the--31cbaad2')}{' '}
+                    <span className="italic">{c('about.founder.copy.st-john-bosco.text.not-with-blows-but-with-lo-96597da9')}</span>{' ' + c('about.founder.copy.st-john-bosco.paragraph.that-was-the-goal-of-his-l-b696d281')}</p>
                 </div>
               </div>
 
               {/* Educational Vision */}
               <div className="mt-8 border-t border-gray-200 pt-8">
-                <h3 className="font-serif text-2xl font-bold text-maroon-900 mb-4">
-                  His Educational Vision
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Don Bosco was an educational practitioner rather than educational theorist. It is
-                  impossible to understand his approach to education without reference to his experiences
-                  in life, because he actually incorporated the lessons of his own life experiences into
-                  his pedagogy. This style of education consists in involving young people, their parents
-                  or guardians and the educators in a family atmosphere. This system is based on{' '}
-                  <strong>Reason</strong>, <strong>Religion</strong> (Faith in God) and{' '}
-                  <strong>Loving Kindness</strong>. The goal is integral formation. This embraces
-                  developing physical, intellectual, moral, social and spiritual aspects of person’s life.
-                </p>
+                <h3 className="font-serif text-2xl font-bold text-maroon-900 mb-4">{c('about.founder.copy.his-educational-vision.heading.his-educational-vision-57ae0709')}</h3>
+                <p className="text-gray-700 leading-relaxed">{c('about.founder.copy.his-educational-vision.paragraph.don-bosco-was-an-education-6ca1c7fa')}{' '}
+                  <strong>{c('about.founder.copy.his-educational-vision.text.reason-f81ab834')}</strong>, <strong>{c('about.founder.copy.his-educational-vision.text.religion-f8a52d21')}</strong>{' ' + c('about.founder.copy.his-educational-vision.paragraph.faith-in-god-and-7b75c119')}{' '}
+                  <strong>{c('about.founder.copy.his-educational-vision.text.loving-kindness-6cfff4c1')}</strong>{c('about.founder.copy.his-educational-vision.paragraph.the-goal-is-integral-forma-9c00f183')}</p>
 
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                   <div className="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
                     <div className="text-gold-600 text-3xl mb-2">🧠</div>
-                    <h4 className="font-semibold text-maroon-900">Reason</h4>
-                    <p className="text-sm text-gray-600">Intellectual formation and critical thinking</p>
+                    <h4 className="font-semibold text-maroon-900">{c('about.founder.copy.reason.heading.reason-f81ab834')}</h4>
+                    <p className="text-sm text-gray-600">{c('about.founder.copy.reason.paragraph.intellectual-formation-and-43dceafc')}</p>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
                     <div className="text-gold-600 text-3xl mb-2">🙏</div>
-                    <h4 className="font-semibold text-maroon-900">Religion</h4>
-                    <p className="text-sm text-gray-600">Faith in God and moral values</p>
+                    <h4 className="font-semibold text-maroon-900">{c('about.founder.copy.religion.heading.religion-f8a52d21')}</h4>
+                    <p className="text-sm text-gray-600">{c('about.founder.copy.religion.paragraph.faith-in-god-and-moral-val-2ae8039e')}</p>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
                     <div className="text-gold-600 text-3xl mb-2">❤️</div>
-                    <h4 className="font-semibold text-maroon-900">Loving Kindness</h4>
-                    <p className="text-sm text-gray-600">Compassion and caring relationships</p>
+                    <h4 className="font-semibold text-maroon-900">{c('about.founder.copy.loving-kindness.heading.loving-kindness-6cfff4c1')}</h4>
+                    <p className="text-sm text-gray-600">{c('about.founder.copy.loving-kindness.paragraph.compassion-and-caring-rela-3ade949e')}</p>
                   </div>
                 </div>
               </div>
 
               {/* Legacy */}
               <div className="mt-8 border-t border-gray-200 pt-8">
-                <h3 className="font-serif text-2xl font-bold text-maroon-900 mb-4">His Legacy</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Blooming in spite of initial poverty, hardships, opposition of all sorts, soon his works
-                  flourished. The little seed planted by him grew into a mighty tree, and now all over the
-                  world there are hundreds of educational institutes catering to thousands of young people.
-                  Rightly, Don Bosco is recognized as the Father, Friend and Teacher of all young people.
-                  He is the Founder of the Salesian Father (SDB), Salesian Sisters (FMA), and Salesian
-                  Cooperators (SC).
-                </p>
-                <p className="text-gray-700 leading-relaxed mt-3">
-                  Today Don Bosco’s unique charism for young people lives on undiminished, in its original
-                  freshness and dynamism in every corner of the earth. Where youth exists there Don Bosco
-                  is present through his Sons and Daughters for whom Don Bosco is a father, Teacher,
-                  Founder, Friend and Leader… ever relevant for Yesterday… Today… and Tomorrow…
-                </p>
+                <h3 className="font-serif text-2xl font-bold text-maroon-900 mb-4">{c('about.founder.copy.his-legacy.heading.his-legacy-ebcadbec')}</h3>
+                <p className="text-gray-700 leading-relaxed">{c('about.founder.copy.his-legacy.paragraph.blooming-in-spite-of-initi-cdf0288b')}</p>
+                <p className="text-gray-700 leading-relaxed mt-3">{c('about.founder.copy.his-legacy.paragraph.today-don-bosco-s-unique-c-9e2db861')}</p>
               </div>
             </div>
           </div>

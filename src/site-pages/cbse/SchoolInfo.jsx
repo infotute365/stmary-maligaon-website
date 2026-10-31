@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react'
-import { motion, useInView, useAnimation } from 'framer-motion'
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
+import React from 'react'
+import { motion } from 'framer-motion'
 import { 
   Info, 
   MapPin, 
@@ -20,185 +21,178 @@ import {
   Heart
 } from 'lucide-react'
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] }
+  }
+}
+
+const staggerChildren = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 }
+  }
+}
+
+const SectionTitle = ({ icon: Icon, title }) => (
+  <motion.div
+    variants={fadeInUp}
+    className="flex items-center gap-3 mb-4"
+  >
+    <div className="p-2 bg-gold-100 rounded-lg">
+      <Icon size={18} className="text-maroon-700" />
+    </div>
+    <h3 className="text-lg font-serif font-bold text-maroon-900">{title}</h3>
+    <div className="flex-1 h-px bg-gradient-to-r from-gold-300/50 to-transparent" />
+  </motion.div>
+)
+
+const InfoCard = ({ icon: Icon, label, value, className = '' }) => (
+  <motion.div
+    variants={fadeInUp}
+    className={`bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-all duration-300 hover:border-gold-300 ${className}`}
+  >
+    <div className="flex items-center gap-2 text-gold-600 mb-1">
+      <Icon size={16} />
+      <p className="text-[10px] font-semibold uppercase tracking-wide text-gray-500">{label}</p>
+    </div>
+    <p className="text-maroon-900 font-medium text-sm">{value}</p>
+  </motion.div>
+)
+
+const StatCard = ({ label, value }) => (
+  <motion.div
+    variants={fadeInUp}
+    className="bg-white rounded-xl shadow-sm border border-gray-100 p-3 text-center hover:shadow-md transition-all duration-300 hover:border-gold-300"
+  >
+    <p className="text-[10px] text-gold-600 font-semibold uppercase tracking-wide">{label}</p>
+    <p className="text-maroon-900 font-bold text-lg">{value}</p>
+  </motion.div>
+)
+
+const FacilityBadge = ({ label, value }) => (
+  <div className={`flex items-center justify-between px-3 py-2 rounded-lg border ${value === 'Yes' ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'}`}>
+    <span className="text-xs text-gray-600">{label}</span>
+    <span className={`text-xs font-semibold ${value === 'Yes' ? 'text-green-600' : 'text-red-500'}`}>
+      {value}
+    </span>
+  </div>
+)
+
+// Keep information visible before hydration and when saved CMS values arrive.
 const SchoolInfo = () => {
-  const controls = useAnimation()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start('visible')
-    }
-  }, [controls, isInView])
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] }
-    }
-  }
-
-  const staggerChildren = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08 }
-    }
-  }
+  const c = useSiteContent()
 
   const schoolData = {
-    name: "St. Mary's Senior Secondary School Maligaon",
-    address: "Maligaon, Guwahati - 781011",
-    district: "Kamrup (M), Assam",
-    email: "st.marysschool66@yahoo.com",
-    phone: "0361 2670489",
-    mobile: "87520 16092",
-    establishment: "1966",
-    noc: "GIS/NOC/11/2009/155",
+    name: c('cbse.schoolInfo.schoolData.name'),
+    address: c('cbse.schoolInfo.schoolData.address'),
+    district: c('cbse.schoolInfo.schoolData.district'),
+    email: c('cbse.schoolInfo.schoolData.email'),
+    phone: c('cbse.schoolInfo.schoolData.phone'),
+    mobile: c('cbse.schoolInfo.schoolData.mobile'),
+    establishment: c('cbse.schoolInfo.schoolData.establishment'),
+    noc: c('cbse.schoolInfo.schoolData.noc'),
     nocDate: "29/06/2010",
-    affiliation: "CBSE",
-    status: "Provisional",
-    affiliationNo: "230105",
+    affiliation: c('cbse.schoolInfo.schoolData.affiliation'),
+    status: c('cbse.schoolInfo.schoolData.status'),
+    affiliationNo: c('cbse.schoolInfo.schoolData.affiliationNo'),
     affiliationSince: "2011",
-    affiliationUpto: "2026",
-    trust: "The Salesian Sisters of St. Mary's Maligaon",
+    affiliationUpto: c('cbse.schoolInfo.schoolData.affiliationUpto'),
+    trust: c('cbse.schoolInfo.schoolData.trust'),
     trustAddress: "Maligaon, Guwahati - 781011",
-    manager: "SR. GRACE OTTALANKAL",
-    area: "4.5 Acres",
+    manager: c('cbse.schoolInfo.schoolData.manager'),
+    area: c('cbse.schoolInfo.schoolData.area'),
     areaSqm: "4395.5 Sq. Meter",
-    builtUp: "1300.6 Sq. Meter",
-    playground: "5574.2 Sq. Meter",
-    indoorGames: "Yes",
-    danceRooms: "Yes",
-    musicRooms: "Yes",
-    hostels: "No",
-    swimmingPool: "No",
-    gymnasium: "No",
-    healthCheckup: "No",
-    transport: "Buses hired on contract basis",
-    principal: "1",
-    vicePrincipal: "1",
-    primaryIncharge: "1",
-    pgt: "19",
-    tgt: "14",
-    prt: "19",
-    healthWellnessTeacher: "1",
-    librarian: "1",
-    specialEducator: "1",
-    others: "14",
-    bank: "HDFC",
-    librarySize: "45X21 Sq. Feet",
-    periodicals: "14",
-    dailies: "3",
-    referenceBooks: "3965",
-    magazines: "8",
-    otherBooks: "6493",
-    grievanceOfficer: "VALLIYIL ELIZABETH",
+    builtUp: c('cbse.schoolInfo.schoolData.builtUp'),
+    playground: c('cbse.schoolInfo.schoolData.playground'),
+    indoorGames: c('cbse.schoolInfo.schoolData.indoorGames'),
+    danceRooms: c('cbse.schoolInfo.schoolData.danceRooms'),
+    musicRooms: c('cbse.schoolInfo.schoolData.musicRooms'),
+    hostels: c('cbse.schoolInfo.schoolData.hostels'),
+    swimmingPool: c('cbse.schoolInfo.schoolData.swimmingPool'),
+    gymnasium: c('cbse.schoolInfo.schoolData.gymnasium'),
+    healthCheckup: c('cbse.schoolInfo.schoolData.healthCheckup'),
+    transport: c('cbse.schoolInfo.schoolData.transport'),
+    principal: c('cbse.schoolInfo.schoolData.principal'),
+    vicePrincipal: c('cbse.schoolInfo.schoolData.vicePrincipal'),
+    primaryIncharge: c('cbse.schoolInfo.schoolData.primaryIncharge'),
+    pgt: c('cbse.schoolInfo.schoolData.pgt'),
+    tgt: c('cbse.schoolInfo.schoolData.tgt'),
+    prt: c('cbse.schoolInfo.schoolData.prt'),
+    healthWellnessTeacher: c('cbse.schoolInfo.schoolData.healthWellnessTeacher'),
+    librarian: c('cbse.schoolInfo.schoolData.librarian'),
+    specialEducator: c('cbse.schoolInfo.schoolData.specialEducator'),
+    others: c('cbse.schoolInfo.schoolData.others'),
+    bank: c('cbse.schoolInfo.schoolData.bank'),
+    librarySize: c('cbse.schoolInfo.schoolData.librarySize'),
+    periodicals: c('cbse.schoolInfo.schoolData.periodicals'),
+    dailies: c('cbse.schoolInfo.schoolData.dailies'),
+    referenceBooks: c('cbse.schoolInfo.schoolData.referenceBooks'),
+    magazines: c('cbse.schoolInfo.schoolData.magazines'),
+    otherBooks: c('cbse.schoolInfo.schoolData.otherBooks'),
+    grievanceOfficer: c('cbse.schoolInfo.schoolData.grievanceOfficer'),
     grievanceEmail: "srelizabeth@gmail.com",
     grievancePhone: "6001128485",
-    sexualHarassmentHead: "Mrs. Liza Paul",
+    sexualHarassmentHead: c('cbse.schoolInfo.schoolData.sexualHarassmentHead'),
     sexualHarassmentContact: "9435707179",
     sexualHarassmentEmail: "paulliza77@gmail.com",
-    academicSession: "April to March",
-    vacationPeriod: "July 1st to July 31st",
-    admissionPeriod: "March to April"
+    academicSession: c('cbse.schoolInfo.schoolData.academicSession'),
+    vacationPeriod: c('cbse.schoolInfo.schoolData.vacationPeriod'),
+    admissionPeriod: c('cbse.schoolInfo.schoolData.admissionPeriod')
   }
 
   const quickFacts = [
-    { label: 'Board', value: schoolData.affiliation, icon: Award },
-    { label: 'Affiliation Status', value: `${schoolData.status} (up to ${schoolData.affiliationUpto})`, icon: Clock },
-    { label: 'Establishment', value: schoolData.establishment, icon: Calendar },
-    { label: 'Campus Area', value: schoolData.area, icon: Building },
-    { label: 'Academic Session', value: schoolData.academicSession, icon: Calendar },
-    { label: 'Admission Period', value: schoolData.admissionPeriod, icon: Clock }
+    { contentId: "Board", label: c('cbse.schoolInfo.quickFacts.board-4816cbfd.label'), value: schoolData.affiliation, icon: Award },
+    { contentId: "Affiliation Status", label: c('cbse.schoolInfo.quickFacts.affiliation-status-26c89b43.label'), value: `${schoolData.status} ${c('cbse.schoolInfo.quickFacts.affiliation-status-26c89b43.value.caption2')} ${schoolData.affiliationUpto})`, icon: Clock },
+    { contentId: "Establishment", label: c('cbse.schoolInfo.quickFacts.establishment-d4565839.label'), value: schoolData.establishment, icon: Calendar },
+    { contentId: "Campus Area", label: c('cbse.schoolInfo.quickFacts.campus-area-800b2b37.label'), value: schoolData.area, icon: Building },
+    { contentId: "Academic Session", label: c('cbse.schoolInfo.quickFacts.academic-session-302e8da9.label'), value: schoolData.academicSession, icon: Calendar },
+    { contentId: "Admission Period", label: c('cbse.schoolInfo.quickFacts.admission-period-17d106d3.label'), value: schoolData.admissionPeriod, icon: Clock }
   ]
 
   const contactInfo = [
-    { label: 'Address', value: `${schoolData.address}, ${schoolData.district}`, icon: MapPin },
-    { label: 'Phone', value: schoolData.phone, icon: Phone },
-    { label: 'Mobile', value: schoolData.mobile, icon: Phone },
-    { label: 'Email', value: schoolData.email, icon: Mail }
+    { contentId: "Address", label: c('cbse.schoolInfo.contactInfo.address-56ef8f20.label'), value: `${schoolData.address}, ${schoolData.district}`, icon: MapPin },
+    { contentId: "Phone", label: c('cbse.schoolInfo.contactInfo.phone-63dceb88.label'), value: schoolData.phone, icon: Phone },
+    { contentId: "Mobile", label: c('cbse.schoolInfo.contactInfo.mobile-cbaad3cf.label'), value: schoolData.mobile, icon: Phone },
+    { contentId: "Email", label: c('cbse.schoolInfo.contactInfo.email-969ccbd3.label'), value: schoolData.email, icon: Mail }
   ]
 
   const staffStrength = [
-    { label: 'Principal', value: schoolData.principal },
-    { label: 'Vice Principal', value: schoolData.vicePrincipal },
-    { label: 'Primary Incharge', value: schoolData.primaryIncharge },
-    { label: 'PGT', value: schoolData.pgt },
-    { label: 'TGT', value: schoolData.tgt },
-    { label: 'PRT', value: schoolData.prt },
-    { label: 'Health Wellness Teacher', value: schoolData.healthWellnessTeacher },
-    { label: 'Librarian', value: schoolData.librarian },
-    { label: 'Special Educator', value: schoolData.specialEducator },
-    { label: 'Others', value: schoolData.others }
+    { contentId: "Principal", label: c('cbse.schoolInfo.staffStrength.principal-afc19f17.label'), value: schoolData.principal },
+    { contentId: "Vice Principal", label: c('cbse.schoolInfo.staffStrength.vice-principal-f59921ca.label'), value: schoolData.vicePrincipal },
+    { contentId: "Primary Incharge", label: c('cbse.schoolInfo.staffStrength.primary-incharge-c7a673eb.label'), value: schoolData.primaryIncharge },
+    { contentId: "PGT", label: c('cbse.schoolInfo.staffStrength.pgt-b38bc0c1.label'), value: schoolData.pgt },
+    { contentId: "TGT", label: c('cbse.schoolInfo.staffStrength.tgt-655caf7a.label'), value: schoolData.tgt },
+    { contentId: "PRT", label: c('cbse.schoolInfo.staffStrength.prt-e4fd7627.label'), value: schoolData.prt },
+    { contentId: "Health Wellness Teacher", label: c('cbse.schoolInfo.staffStrength.health-wellness-teacher-0002e7ac.label'), value: schoolData.healthWellnessTeacher },
+    { contentId: "Librarian", label: c('cbse.schoolInfo.staffStrength.librarian-24f57581.label'), value: schoolData.librarian },
+    { contentId: "Special Educator", label: c('cbse.schoolInfo.staffStrength.special-educator-63512f39.label'), value: schoolData.specialEducator },
+    { contentId: "Others", label: c('cbse.schoolInfo.staffStrength.others-ebdad9ba.label'), value: schoolData.others }
   ]
 
   const facilities = [
-    { label: 'Indoor Games', value: schoolData.indoorGames },
-    { label: 'Dance Rooms', value: schoolData.danceRooms },
-    { label: 'Music Rooms', value: schoolData.musicRooms },
-    { label: 'Swimming Pool', value: schoolData.swimmingPool },
-    { label: 'Gymnasium', value: schoolData.gymnasium },
-    { label: 'Hostels', value: schoolData.hostels },
-    { label: 'Health Checkup', value: schoolData.healthCheckup },
-    { label: 'Transport', value: schoolData.transport }
+    { contentId: "Indoor Games", label: c('cbse.schoolInfo.facilities.indoor-games-d3e3755e.label'), value: schoolData.indoorGames },
+    { contentId: "Dance Rooms", label: c('cbse.schoolInfo.facilities.dance-rooms-1de9ccea.label'), value: schoolData.danceRooms },
+    { contentId: "Music Rooms", label: c('cbse.schoolInfo.facilities.music-rooms-54d0d48e.label'), value: schoolData.musicRooms },
+    { contentId: "Swimming Pool", label: c('cbse.schoolInfo.facilities.swimming-pool-3afdc970.label'), value: schoolData.swimmingPool },
+    { contentId: "Gymnasium", label: c('cbse.schoolInfo.facilities.gymnasium-15c3b67e.label'), value: schoolData.gymnasium },
+    { contentId: "Hostels", label: c('cbse.schoolInfo.facilities.hostels-3c14c0bd.label'), value: schoolData.hostels },
+    { contentId: "Health Checkup", label: c('cbse.schoolInfo.facilities.health-checkup-789d6892.label'), value: schoolData.healthCheckup },
+    { contentId: "Transport", label: c('cbse.schoolInfo.facilities.transport-aaead4ab.label'), value: schoolData.transport }
   ]
 
   const libraryDetails = [
-    { label: 'Library Size', value: schoolData.librarySize },
-    { label: 'Periodicals', value: schoolData.periodicals },
-    { label: 'Dailies', value: schoolData.dailies },
-    { label: 'Reference Books', value: schoolData.referenceBooks },
-    { label: 'Magazines', value: schoolData.magazines },
-    { label: 'Other Books', value: schoolData.otherBooks }
+    { contentId: "Library Size", label: c('cbse.schoolInfo.libraryDetails.library-size-4eb24447.label'), value: schoolData.librarySize },
+    { contentId: "Periodicals", label: c('cbse.schoolInfo.libraryDetails.periodicals-17f7879c.label'), value: schoolData.periodicals },
+    { contentId: "Dailies", label: c('cbse.schoolInfo.libraryDetails.dailies-bae8227e.label'), value: schoolData.dailies },
+    { contentId: "Reference Books", label: c('cbse.schoolInfo.libraryDetails.reference-books-22b1d114.label'), value: schoolData.referenceBooks },
+    { contentId: "Magazines", label: c('cbse.schoolInfo.libraryDetails.magazines-32f3d8e8.label'), value: schoolData.magazines },
+    { contentId: "Other Books", label: c('cbse.schoolInfo.libraryDetails.other-books-28bbf46c.label'), value: schoolData.otherBooks }
   ]
-
-  const SectionTitle = ({ icon: Icon, title }) => (
-    <motion.div 
-      variants={fadeInUp}
-      className="flex items-center gap-3 mb-4"
-    >
-      <div className="p-2 bg-gold-100 rounded-lg">
-        <Icon size={18} className="text-maroon-700" />
-      </div>
-      <h3 className="text-lg font-serif font-bold text-maroon-900">{title}</h3>
-      <div className="flex-1 h-px bg-gradient-to-r from-gold-300/50 to-transparent" />
-    </motion.div>
-  )
-
-  const InfoCard = ({ icon: Icon, label, value, className = '' }) => (
-    <motion.div 
-      variants={fadeInUp}
-      className={`bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-all duration-300 hover:border-gold-300 ${className}`}
-    >
-      <div className="flex items-center gap-2 text-gold-600 mb-1">
-        <Icon size={16} />
-        <p className="text-[10px] font-semibold uppercase tracking-wide text-gray-500">{label}</p>
-      </div>
-      <p className="text-maroon-900 font-medium text-sm">{value}</p>
-    </motion.div>
-  )
-
-  const StatCard = ({ label, value }) => (
-    <motion.div 
-      variants={fadeInUp}
-      className="bg-white rounded-xl shadow-sm border border-gray-100 p-3 text-center hover:shadow-md transition-all duration-300 hover:border-gold-300"
-    >
-      <p className="text-[10px] text-gold-600 font-semibold uppercase tracking-wide">{label}</p>
-      <p className="text-maroon-900 font-bold text-lg">{value}</p>
-    </motion.div>
-  )
-
-  const FacilityBadge = ({ label, value }) => (
-    <div className={`flex items-center justify-between px-3 py-2 rounded-lg border ${value === 'Yes' ? 'bg-green-50 border-green-200' : 'bg-gray-50 border-gray-200'}`}>
-      <span className="text-xs text-gray-600">{label}</span>
-      <span className={`text-xs font-semibold ${value === 'Yes' ? 'text-green-600' : 'text-red-500'}`}>
-        {value}
-      </span>
-    </div>
-  )
 
   return (
     <div className="bg-gradient-to-b from-white to-[#FBF6EC] min-h-screen">
@@ -213,8 +207,8 @@ const SchoolInfo = () => {
               <Info size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">School Information</h1>
-              <p className="text-gold-300 text-sm mt-0.5">Complete institutional profile as per CBSE records</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('cbse.schoolInfo.copy.school-information.heading.school-information-e723085f')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('cbse.schoolInfo.copy.school-information.paragraph.complete-institutional-pro-f60b150b')}</p>
             </div>
           </div>
         </div>
@@ -223,14 +217,14 @@ const SchoolInfo = () => {
       {/* ========================================================== */}
       {/* MAIN CONTENT */}
       {/* ========================================================== */}
-      <section ref={ref} className="py-8 md:py-10">
+      <section className="py-8 md:py-10">
         <div className="container-custom max-w-5xl mx-auto">
           
           {/* School Name Header */}
           <motion.div
             variants={fadeInUp}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="bg-gradient-to-r from-maroon-900 to-maroon-700 text-white rounded-xl p-5 mb-6 shadow-lg"
           >
             <h2 className="text-lg md:text-xl font-bold text-center">{schoolData.name}</h2>
@@ -238,16 +232,16 @@ const SchoolInfo = () => {
           </motion.div>
 
           {/* Quick Facts Grid */}
-          <SectionTitle icon={Sparkles} title="Quick Facts" />
+          <SectionTitle icon={Sparkles} title={c('cbse.schoolInfo.copy.school-information.title.quick-facts-7d338e4a')} />
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6"
           >
             {quickFacts.map((item) => (
               <InfoCard 
-                key={item.label} 
+                key={item.contentId}
                 icon={item.icon} 
                 label={item.label} 
                 value={item.value} 
@@ -256,16 +250,16 @@ const SchoolInfo = () => {
           </motion.div>
 
           {/* Contact Information */}
-          <SectionTitle icon={Phone} title="Contact Information" />
+          <SectionTitle icon={Phone} title={c('cbse.schoolInfo.copy.school-information.title.contact-information-7c01aec3')} />
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6"
           >
             {contactInfo.map((item) => (
               <InfoCard 
-                key={item.label} 
+                key={item.contentId}
                 icon={item.icon} 
                 label={item.label} 
                 value={item.value} 
@@ -274,11 +268,11 @@ const SchoolInfo = () => {
           </motion.div>
 
           {/* Affiliation Details */}
-          <SectionTitle icon={Award} title="Affiliation Details" />
+          <SectionTitle icon={Award} title={c('cbse.schoolInfo.copy.school-information.title.affiliation-details-00743d92')} />
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6"
           >
             <InfoCard 
@@ -306,11 +300,11 @@ const SchoolInfo = () => {
           </motion.div>
 
           {/* Trust & Management */}
-          <SectionTitle icon={Building} title="Trust & Management" />
+          <SectionTitle icon={Building} title={c('cbse.schoolInfo.copy.school-information.title.trust-management-31452517')} />
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6"
           >
             <InfoCard 
@@ -328,11 +322,11 @@ const SchoolInfo = () => {
           </motion.div>
 
           {/* Campus & Facilities */}
-          <SectionTitle icon={Building} title="Campus & Facilities" />
+          <SectionTitle icon={Building} title={c('cbse.schoolInfo.copy.school-information.title.campus-facilities-ade7f025')} />
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6"
           >
             <InfoCard icon={Building} label="Total Area" value={schoolData.area}>
@@ -346,49 +340,49 @@ const SchoolInfo = () => {
           {/* Facilities Grid */}
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6"
           >
             {facilities.map((item) => (
-              <motion.div key={item.label} variants={fadeInUp}>
+              <motion.div key={item.contentId} variants={fadeInUp}>
                 <FacilityBadge label={item.label} value={item.value} />
               </motion.div>
             ))}
           </motion.div>
 
           {/* Teaching Staff */}
-          <SectionTitle icon={Users} title="Teaching Staff" />
+          <SectionTitle icon={Users} title={c('cbse.schoolInfo.copy.school-information.title.teaching-staff-842be9d2')} />
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-6"
           >
             {staffStrength.map((item) => (
-              <StatCard key={item.label} label={item.label} value={item.value} />
+              <StatCard key={item.contentId} label={item.label} value={item.value} />
             ))}
           </motion.div>
 
           {/* Library Resources */}
-          <SectionTitle icon={Library} title="Library Resources" />
+          <SectionTitle icon={Library} title={c('cbse.schoolInfo.copy.school-information.title.library-resources-8df05693')} />
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6"
           >
             {libraryDetails.map((item) => (
-              <StatCard key={item.label} label={item.label} value={item.value} />
+              <StatCard key={item.contentId} label={item.label} value={item.value} />
             ))}
           </motion.div>
 
           {/* Grievance & Sexual Harassment */}
-          <SectionTitle icon={Shield} title="Grievance & Committees" />
+          <SectionTitle icon={Shield} title={c('cbse.schoolInfo.copy.school-information.title.grievance-committees-50a63dbd')} />
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6"
           >
             <InfoCard 
@@ -410,11 +404,11 @@ const SchoolInfo = () => {
           </motion.div>
 
           {/* Academic Calendar */}
-          <SectionTitle icon={Calendar} title="Academic Calendar" />
+          <SectionTitle icon={Calendar} title={c('cbse.schoolInfo.copy.school-information.title.academic-calendar-3426c640')} />
           <motion.div 
             variants={staggerChildren}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6"
           >
             <InfoCard icon={Calendar} label="Academic Session" value={schoolData.academicSession} />
@@ -425,13 +419,12 @@ const SchoolInfo = () => {
           {/* Bank Details */}
           <motion.div 
             variants={fadeInUp}
-            initial="hidden"
-            animate={controls}
+            initial={false}
+            animate="visible"
             className="p-4 bg-gradient-to-r from-gray-50 to-gold-50/30 rounded-xl border border-gray-200"
           >
-            <p className="text-[10px] text-gold-600 font-semibold uppercase tracking-wide text-center">Salary Processing</p>
-            <p className="text-center text-maroon-900 font-medium text-sm">
-              Bank: <span className="font-bold">{schoolData.bank}</span> • Single Cheque Transfer: <span className="text-green-600 font-semibold">Yes</span>
+            <p className="text-[10px] text-gold-600 font-semibold uppercase tracking-wide text-center">{c('cbse.schoolInfo.copy.school-information.paragraph.salary-processing-0b87e0c6')}</p>
+            <p className="text-center text-maroon-900 font-medium text-sm">{c('cbse.schoolInfo.copy.school-information.paragraph.bank-4be33ffe') + ' '}<span className="font-bold">{schoolData.bank}</span>{' ' + c('cbse.schoolInfo.copy.school-information.paragraph.single-cheque-transfer-6c3d1e44') + ' '}<span className="text-green-600 font-semibold">{c('cbse.schoolInfo.copy.school-information.text.yes-85a39ab3')}</span>
             </p>
           </motion.div>
 

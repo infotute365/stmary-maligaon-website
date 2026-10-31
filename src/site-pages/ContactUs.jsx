@@ -1,9 +1,10 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useState, useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { Phone, Mail, MapPin, Send, MessageSquare, Clock, Building, Globe, Sparkles, CheckCircle } from 'lucide-react'
-import { schoolInfo } from '../data/seedData.js'
 
 const ContactUs = () => {
+  const c = useSiteContent()
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -53,31 +54,31 @@ const ContactUs = () => {
   }
 
   const contactInfo = [
-    { 
+    { contentId: "Address",
       icon: MapPin, 
-      label: 'Address', 
-      value: schoolInfo.address,
+      label: c('pages.contactUs.contactInfo.address-56ef8f20.label'),
+      value: c('pages.contactUs.details.address'),
       color: 'text-blue-600',
       bg: 'bg-blue-50'
     },
-    { 
+    { contentId: "Phone",
       icon: Phone, 
-      label: 'Phone', 
-      value: schoolInfo.phone,
+      label: c('pages.contactUs.contactInfo.phone-63dceb88.label'),
+      value: c('pages.contactUs.details.phone'),
       color: 'text-green-600',
       bg: 'bg-green-50'
     },
-    { 
+    { contentId: "Email",
       icon: Mail, 
-      label: 'Email', 
-      value: schoolInfo.email,
+      label: c('pages.contactUs.contactInfo.email-969ccbd3.label'),
+      value: c('pages.contactUs.details.email'),
       color: 'text-purple-600',
       bg: 'bg-purple-50'
     },
-    { 
+    { contentId: "Office Hours",
       icon: Clock, 
-      label: 'Office Hours', 
-      value: 'Mon - Fri: 8:00 AM - 4:00 PM',
+      label: c('pages.contactUs.contactInfo.office-hours-83583009.label'),
+      value: c('pages.contactUs.contactInfo.office-hours-83583009.value'),
       color: 'text-amber-600',
       bg: 'bg-amber-50'
     }
@@ -96,8 +97,8 @@ const ContactUs = () => {
               <MessageSquare size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">Contact Us</h1>
-              <p className="text-gold-300 text-sm mt-0.5">We'd love to hear from you</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('pages.contactUs.copy.contact-us.heading.contact-us-98b67063')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('pages.contactUs.copy.contact-us.paragraph.we-d-love-to-hear-from-you-834b8676')}</p>
             </div>
           </div>
         </div>
@@ -120,7 +121,7 @@ const ContactUs = () => {
               const Icon = item.icon
               return (
                 <motion.div 
-                  key={item.label}
+                  key={item.contentId}
                   variants={fadeInUp}
                   className={`${item.bg} rounded-xl border border-gray-100 p-4 hover:shadow-lg transition-all duration-300 group hover:-translate-y-1`}
                 >
@@ -157,35 +158,35 @@ const ContactUs = () => {
                   <div className="p-1.5 rounded-lg bg-gold-100">
                     <Building size={18} className="text-gold-600" />
                   </div>
-                  <h2 className="text-lg font-serif font-bold text-maroon-900">School Information</h2>
+                  <h2 className="text-lg font-serif font-bold text-maroon-900">{c('pages.contactUs.copy.school-information.heading.school-information-e723085f')}</h2>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
                     <MapPin size={16} className="text-gold-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs font-semibold text-gray-500">Address</p>
-                      <p className="text-sm text-gray-700">{schoolInfo.address}</p>
+                      <p className="text-xs font-semibold text-gray-500">{c('pages.contactUs.copy.school-information.paragraph.address-56ef8f20')}</p>
+                      <p className="text-sm text-gray-700">{c('pages.contactUs.details.address')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
                     <Phone size={16} className="text-gold-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs font-semibold text-gray-500">Phone</p>
-                      <p className="text-sm text-gray-700">{schoolInfo.phone}</p>
+                      <p className="text-xs font-semibold text-gray-500">{c('pages.contactUs.copy.school-information.paragraph.phone-63dceb88')}</p>
+                      <p className="text-sm text-gray-700">{c('pages.contactUs.details.phone')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
                     <Mail size={16} className="text-gold-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs font-semibold text-gray-500">Email</p>
-                      <p className="text-sm text-gray-700">{schoolInfo.email}</p>
+                      <p className="text-xs font-semibold text-gray-500">{c('pages.contactUs.copy.school-information.paragraph.email-969ccbd3')}</p>
+                      <p className="text-sm text-gray-700">{c('pages.contactUs.details.email')}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
                     <Globe size={16} className="text-gold-500 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs font-semibold text-gray-500">Website</p>
-                      <p className="text-sm text-gray-700">{schoolInfo.website || 'www.stmarysmaligaon.edu.in'}</p>
+                      <p className="text-xs font-semibold text-gray-500">{c('pages.contactUs.copy.school-information.paragraph.website-b5a229ac')}</p>
+                      <p className="text-sm text-gray-700">{c('pages.contactUs.details.website')}</p>
                     </div>
                   </div>
                 </div>
@@ -205,7 +206,7 @@ const ContactUs = () => {
                   />
                 </div>
                 <div className="p-3 text-center bg-gray-50 border-t border-gray-100">
-                  <p className="text-[10px] text-gray-400">📍 Find us on Google Maps</p>
+                  <p className="text-[10px] text-gray-400">{c('pages.contactUs.copy.school-information.paragraph.find-us-on-google-maps-171801a2')}</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -221,7 +222,7 @@ const ContactUs = () => {
                 <div className="p-1.5 rounded-lg bg-gold-100">
                   <Send size={18} className="text-gold-600" />
                 </div>
-                <h2 className="text-lg font-serif font-bold text-maroon-900">Send a Message</h2>
+                <h2 className="text-lg font-serif font-bold text-maroon-900">{c('pages.contactUs.copy.send-a-message.heading.send-a-message-65e73925')}</h2>
               </div>
 
               {sent ? (
@@ -238,43 +239,41 @@ const ContactUs = () => {
                   <button 
                     onClick={() => { setSent(false); setForm({ name: '', email: '', message: '' }) }}
                     className="mt-4 text-sm text-gold-600 hover:text-gold-700 font-medium"
-                  >
-                    Send another message →
-                  </button>
+                  >{c('pages.contactUs.copy.message-sent.text.send-another-message-6b7ce001')}</button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">Your Name *</label>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">{c('pages.contactUs.copy.message-sent.text.your-name-fa414f1e')}</label>
                     <input
                       required
                       name="name"
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="Enter your full name"
+                      placeholder={c('pages.contactUs.copy.message-sent.placeholder.enter-your-full-name-b3627016')}
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-maroon-400 focus:ring-2 focus:ring-maroon-100 outline-none transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">Email Address *</label>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">{c('pages.contactUs.copy.message-sent.text.email-address-1b72562c')}</label>
                     <input
                       required
                       type="email"
                       name="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="your@email.com"
+                      placeholder={c('pages.contactUs.copy.message-sent.placeholder.your-email-com-97af051a')}
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-maroon-400 focus:ring-2 focus:ring-maroon-100 outline-none transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">Message *</label>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">{c('pages.contactUs.copy.message-sent.text.message-92a9beb8')}</label>
                     <textarea
                       required
                       name="message"
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="Write your message here..."
+                      placeholder={c('pages.contactUs.copy.message-sent.placeholder.write-your-message-here-3f45baeb')}
                       rows={5}
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-maroon-400 focus:ring-2 focus:ring-maroon-100 outline-none transition-all resize-none"
                     />
@@ -291,14 +290,10 @@ const ContactUs = () => {
                       </>
                     ) : (
                       <>
-                        <Send size={16} />
-                        Send Message
-                      </>
+                        <Send size={16} />{c('pages.contactUs.copy.message-sent.text.send-message-0fe0571f')}</>
                     )}
                   </button>
-                  <p className="text-[10px] text-gray-400 text-center">
-                    We'll respond within 24-48 hours
-                  </p>
+                  <p className="text-[10px] text-gray-400 text-center">{c('pages.contactUs.copy.message-sent.paragraph.we-ll-respond-within-24-48-5c895539')}</p>
                 </form>
               )}
             </motion.div>
@@ -314,7 +309,7 @@ const ContactUs = () => {
             <div className="inline-block bg-gradient-to-r from-gray-50 to-gold-50/30 rounded-full px-6 py-2.5 border border-gray-200">
               <p className="text-xs text-gray-500 flex items-center gap-2">
                 <Sparkles size={14} className="text-gold-500" />
-                <span>For urgent queries, please call us during office hours</span>
+                <span>{c('pages.contactUs.copy.message-sent.text.for-urgent-queries-please--1ec5512d')}</span>
               </p>
             </div>
           </motion.div>

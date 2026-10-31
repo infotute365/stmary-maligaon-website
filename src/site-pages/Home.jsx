@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 // src/pages/Home.jsx
 
 import React, { useEffect, useState } from 'react'
@@ -156,6 +157,7 @@ const BackToTop = () => {
    Home Page — Enhanced & More Beautiful
 --------------------------------------------------------- */
 const Home = () => {
+  const c = useSiteContent()
   const { scrollY } = useScroll()
   const parallaxSlow = useTransform(scrollY, [0, 1500], [0, 100])
   const parallaxFast = useTransform(scrollY, [0, 1500], [0, -140])
@@ -243,15 +245,14 @@ const Home = () => {
 
         <div className="container-custom relative z-10">
           <SectionWrapper className="text-center max-w-2xl mx-auto mb-14">
-            <SectionEyebrow label="What Sets Us Apart" icon={Crown} />
+            <SectionEyebrow label={c('home.page.what-sets-us-apart')} icon={Crown} />
             <motion.h2
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-maroon-900"
-            >
-              Why Choose <span className="text-gold-600 italic">St. Mary's</span>
+            >{c('home.page.why-choose') + ' '}<span className="text-gold-600 italic">{c('home.page.st-mary-s')}</span>
             </motion.h2>
             <GradientUnderline className="mt-4 mb-4" />
             <motion.p
@@ -260,9 +261,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-gray-500 text-sm max-w-md mx-auto leading-relaxed"
-            >
-              A well-rounded environment built on academics, character, and opportunity.
-            </motion.p>
+            >{c('home.page.a-well-rounded-environment-built-on-academics-character-and-oppor')}</motion.p>
           </SectionWrapper>
           <FeatureCard />
         </div>
@@ -336,16 +335,9 @@ const Home = () => {
             className="max-w-xl"
           >
             <span className="inline-flex items-center gap-2 text-gold-300 text-xs font-semibold tracking-[0.25em] uppercase mb-4 bg-white/5 backdrop-blur-sm px-4 py-1.5 rounded-full border border-gold-400/20">
-              <Star size={12} className="text-gold-400 fill-gold-400" />
-              Admissions Open
-            </span>
-            <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Ready to begin your child's <br className="hidden lg:block" />
-              journey with us?
-            </h3>
-            <p className="text-maroon-200 text-base mt-4 max-w-md">
-              Admissions for the new academic year are now open. Join the St. Mary's family today.
-            </p>
+              <Star size={12} className="text-gold-400 fill-gold-400" />{c('home.page.admissions-open')}</span>
+            <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">{c('home.page.ready-to-begin-your-child-s') + ' '}<br className="hidden lg:block" />{c('home.page.journey-with-us')}</h3>
+            <p className="text-maroon-200 text-base mt-4 max-w-md">{c('home.page.admissions-for-the-new-academic-year-are-now-open-join-the-st-mar')}</p>
           </motion.div>
 
           <motion.div
@@ -365,9 +357,7 @@ const Home = () => {
               whileTap={{ scale: 0.96 }}
               className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-500 hover:to-gold-600 text-maroon-900 font-bold px-8 py-4 rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                Apply Now
-                <Sparkles size={16} className="text-maroon-900/70" />
+              <span className="relative z-10 flex items-center gap-2">{c('home.page.apply-now')}<Sparkles size={16} className="text-maroon-900/70" />
               </span>
               <motion.span
                 className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
@@ -383,9 +373,7 @@ const Home = () => {
               whileTap={{ scale: 0.96 }}
               className="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white font-medium px-8 py-4 rounded-2xl transition-all duration-300 group"
             >
-              <Heart size={18} className="text-gold-400 group-hover:scale-110 transition-transform duration-300" />
-              Contact Us
-            </motion.a>
+              <Heart size={18} className="text-gold-400 group-hover:scale-110 transition-transform duration-300" />{c('home.page.contact-us')}</motion.a>
           </motion.div>
         </div>
 

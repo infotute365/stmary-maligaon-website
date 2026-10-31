@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { 
@@ -12,6 +13,7 @@ import {
 } from 'lucide-react'
 
 const Uniform = () => {
+  const c = useSiteContent()
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -40,33 +42,33 @@ const Uniform = () => {
   }
 
   const kgToX = [
-    'White blouse',
-    'Dark Grey Pinafores (KG and Class I)',
-    'Dark Grey Skirt with bib (Class II & III)',
-    'Dark Grey Skirt (Class IV to V)',
-    'Dark Grey Trousers (Class VI to X)',
-    'Neck – Tie (Class IV to X)',
-    'Maroon sweater with two lemon stripes (Class KG to V) / Maroon Blazer (Class VI to X)',
-    'House Shirts, track pants, white canvas shoes on Wednesday (Class IV to X)',
-    'White socks & black shoes',
-    'Students should plait their hair into two pony-tails and tie with red ribbon'
+    { contentId: "White blouse", text: c('students.uniform.kgToX.white-blouse-03c92aca') },
+    { contentId: "Dark Grey Pinafores (KG and Class I)", text: c('students.uniform.kgToX.dark-grey-pinafores-kg-and-class-i-08b7bc01') },
+    { contentId: "Dark Grey Skirt with bib (Class II & III)", text: c('students.uniform.kgToX.dark-grey-skirt-with-bib-class-ii-ii-69c96441') },
+    { contentId: "Dark Grey Skirt (Class IV to V)", text: c('students.uniform.kgToX.dark-grey-skirt-class-iv-to-v-f1e8ac32') },
+    { contentId: "Dark Grey Trousers (Class VI to X)", text: c('students.uniform.kgToX.dark-grey-trousers-class-vi-to-x-b61a9fbe') },
+    { contentId: "Neck – Tie (Class IV to X)", text: c('students.uniform.kgToX.neck-tie-class-iv-to-x-d164b632') },
+    { contentId: "Maroon sweater with two lemon stripes (Class KG to V) / Maroon Blazer (Class VI to X)", text: c('students.uniform.kgToX.maroon-sweater-with-two-lemon-stripe-ed7ef129') },
+    { contentId: "House Shirts, track pants, white canvas shoes on Wednesday (Class IV to X)", text: c('students.uniform.kgToX.house-shirts-track-pants-white-canva-5a09534e') },
+    { contentId: "White socks & black shoes", text: c('students.uniform.kgToX.white-socks-black-shoes-b7229642') },
+    { contentId: "Students should plait their hair into two pony-tails and tie with red ribbon", text: c('students.uniform.kgToX.students-should-plait-their-hair-int-99a89fa2') }
   ]
 
   const seniorSecondary = [
-    'Dark brown trousers',
-    'Cream Top',
-    'Maroon Scarf',
-    'Dark brown blazers',
-    'Track Suit on PE Day',
-    'White socks & black shoes',
-    'Students should plait their hair neatly and tie with black rubber band or ribbon'
+    { contentId: "Dark brown trousers", text: c('students.uniform.seniorSecondary.dark-brown-trousers-139db37a') },
+    { contentId: "Cream Top", text: c('students.uniform.seniorSecondary.cream-top-fce77970') },
+    { contentId: "Maroon Scarf", text: c('students.uniform.seniorSecondary.maroon-scarf-7e295e85') },
+    { contentId: "Dark brown blazers", text: c('students.uniform.seniorSecondary.dark-brown-blazers-dfe43079') },
+    { contentId: "Track Suit on PE Day", text: c('students.uniform.seniorSecondary.track-suit-on-pe-day-4d884a32') },
+    { contentId: "White socks & black shoes", text: c('students.uniform.seniorSecondary.white-socks-black-shoes-b7229642') },
+    { contentId: "Students should plait their hair neatly and tie with black rubber band or ribbon", text: c('students.uniform.seniorSecondary.students-should-plait-their-hair-nea-bcfd3034') }
   ]
 
   const uniformHighlights = [
-    { label: 'Classes KG - X', value: 'Dark Grey & Maroon', color: 'bg-gradient-to-r from-gray-600 to-maroon-700' },
-    { label: 'Classes XI - XII', value: 'Dark Brown & Cream', color: 'bg-gradient-to-r from-amber-800 to-amber-100' },
-    { label: 'Footwear', value: 'White socks & Black shoes', color: 'bg-gradient-to-r from-gray-300 to-black' },
-    { label: 'Accessories', value: 'Tie / Scarf / Ribbon', color: 'bg-gradient-to-r from-red-600 to-maroon-800' },
+    { contentId: "Classes KG - X", label: c('students.uniform.uniformHighlights.classes-kg-x-cef03c8d.label'), value: c('students.uniform.uniformHighlights.classes-kg-x-cef03c8d.value'), color: 'bg-gradient-to-r from-gray-600 to-maroon-700' },
+    { contentId: "Classes XI - XII", label: c('students.uniform.uniformHighlights.classes-xi-xii-52e7fb3f.label'), value: c('students.uniform.uniformHighlights.classes-xi-xii-52e7fb3f.value'), color: 'bg-gradient-to-r from-amber-800 to-amber-100' },
+    { contentId: "Footwear", label: c('students.uniform.uniformHighlights.footwear-e5eef62d.label'), value: c('students.uniform.uniformHighlights.footwear-e5eef62d.value'), color: 'bg-gradient-to-r from-gray-300 to-black' },
+    { contentId: "Accessories", label: c('students.uniform.uniformHighlights.accessories-b08648db.label'), value: c('students.uniform.uniformHighlights.accessories-b08648db.value'), color: 'bg-gradient-to-r from-red-600 to-maroon-800' },
   ]
 
   const SectionTitle = ({ icon: Icon, title, subtitle }) => (
@@ -98,8 +100,8 @@ const Uniform = () => {
               <Shirt size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">School Uniform</h1>
-              <p className="text-gold-300 text-sm mt-0.5">Dress code guidelines for all students</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('students.uniform.copy.school-uniform.heading.school-uniform-eac1b168')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('students.uniform.copy.school-uniform.paragraph.dress-code-guidelines-for--ef413d53')}</p>
             </div>
           </div>
         </div>
@@ -120,9 +122,7 @@ const Uniform = () => {
           >
             <div className="flex items-start gap-3">
               <CheckCircle size={18} className="text-amber-600 flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-amber-800 font-medium">
-                It is compulsory for every student to come to school in full school uniform including footwear.
-              </p>
+              <p className="text-sm text-amber-800 font-medium">{c('students.uniform.copy.school-uniform.paragraph.it-is-compulsory-for-every-c9530b7c')}</p>
             </div>
           </motion.div>
 
@@ -135,7 +135,7 @@ const Uniform = () => {
           >
             {uniformHighlights.map((item) => (
               <motion.div 
-                key={item.label} 
+                key={item.contentId}
                 variants={fadeInUp}
                 className="bg-white rounded-xl shadow-sm border border-gray-100 p-3.5 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-gold-300"
               >
@@ -158,8 +158,8 @@ const Uniform = () => {
                 <div className="p-1 rounded-lg bg-gold-500/20">
                   <Users size={16} className="text-gold-300" />
                 </div>
-                <h2 className="text-white font-bold text-sm tracking-wide">Classes KG to X</h2>
-                <span className="ml-auto text-[10px] text-gold-300/70 font-medium">10 Items</span>
+                <h2 className="text-white font-bold text-sm tracking-wide">{c('students.uniform.copy.classes-kg-to-x.heading.classes-kg-to-x-449e4959')}</h2>
+                <span className="ml-auto text-[10px] text-gold-300/70 font-medium">{c('students.uniform.copy.classes-kg-to-x.text.10-items-cb91afe8')}</span>
               </div>
             </div>
             <div className="p-6">
@@ -178,7 +178,7 @@ const Uniform = () => {
                     <div className="flex-shrink-0 mt-0.5">
                       <CircleDot size={14} className="text-gold-500 group-hover:scale-110 transition-transform duration-300" />
                     </div>
-                    <span className="group-hover:font-medium transition-all">{item}</span>
+                    <span className="group-hover:font-medium transition-all">{item.text}</span>
                     <span className="ml-auto text-[10px] text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
                       {String(index + 1).padStart(2, '0')}
                     </span>
@@ -190,10 +190,8 @@ const Uniform = () => {
             {/* Footer */}
             <div className="bg-gray-50/80 px-6 py-2.5 border-t border-gray-100 flex items-center justify-between">
               <p className="text-[10px] text-gray-400 flex items-center gap-1.5">
-                <Clock size={12} className="text-gold-500" />
-                Uniform applies to all students in these classes
-              </p>
-              <p className="text-[10px] text-gray-400">Updated: 2025-26</p>
+                <Clock size={12} className="text-gold-500" />{c('students.uniform.copy.classes-kg-to-x.paragraph.uniform-applies-to-all-stu-a357c6bf')}</p>
+              <p className="text-[10px] text-gray-400">{c('students.uniform.copy.classes-kg-to-x.paragraph.updated-2025-26-77984986')}</p>
             </div>
           </motion.div>
 
@@ -209,8 +207,8 @@ const Uniform = () => {
                 <div className="p-1 rounded-lg bg-gold-500/20">
                   <Award size={16} className="text-gold-300" />
                 </div>
-                <h2 className="text-white font-bold text-sm tracking-wide">Senior Secondary Classes (XI - XII)</h2>
-                <span className="ml-auto text-[10px] text-gold-300/70 font-medium">7 Items</span>
+                <h2 className="text-white font-bold text-sm tracking-wide">{c('students.uniform.copy.senior-secondary-class.heading.senior-secondary-classes-x-e6a6d06a')}</h2>
+                <span className="ml-auto text-[10px] text-gold-300/70 font-medium">{c('students.uniform.copy.senior-secondary-class.text.7-items-12d650fe')}</span>
               </div>
             </div>
             <div className="p-6">
@@ -229,7 +227,7 @@ const Uniform = () => {
                     <div className="flex-shrink-0 mt-0.5">
                       <CircleDot size={14} className="text-gold-500 group-hover:scale-110 transition-transform duration-300" />
                     </div>
-                    <span className="group-hover:font-medium transition-all">{item}</span>
+                    <span className="group-hover:font-medium transition-all">{item.text}</span>
                     <span className="ml-auto text-[10px] text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
                       {String(index + 1).padStart(2, '0')}
                     </span>
@@ -241,10 +239,8 @@ const Uniform = () => {
             {/* Footer */}
             <div className="bg-gray-50/80 px-6 py-2.5 border-t border-gray-100 flex items-center justify-between">
               <p className="text-[10px] text-gray-400 flex items-center gap-1.5">
-                <Shield size={12} className="text-gold-500" />
-                Uniform applies to all Senior Secondary students
-              </p>
-              <p className="text-[10px] text-gray-400">Updated: 2025-26</p>
+                <Shield size={12} className="text-gold-500" />{c('students.uniform.copy.senior-secondary-class.paragraph.uniform-applies-to-all-sen-02e9fa67')}</p>
+              <p className="text-[10px] text-gray-400">{c('students.uniform.copy.senior-secondary-class.paragraph.updated-2025-26-77984986')}</p>
             </div>
           </motion.div>
 
@@ -258,7 +254,7 @@ const Uniform = () => {
             <div className="inline-block bg-gradient-to-r from-gray-50 to-gold-50/30 rounded-full px-6 py-2.5 border border-gray-200">
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <Sparkles size={14} className="text-gold-500" />
-                <span>All students must be in complete uniform as per their respective classes</span>
+                <span>{c('students.uniform.copy.senior-secondary-class.text.all-students-must-be-in-co-103c8e4b')}</span>
                 <Sparkles size={14} className="text-gold-500" />
               </div>
             </div>

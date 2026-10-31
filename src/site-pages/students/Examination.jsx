@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { 
@@ -23,6 +24,7 @@ import {
 } from 'lucide-react'
 
 const Examination = () => {
+  const c = useSiteContent()
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -51,43 +53,43 @@ const Examination = () => {
   }
 
   const promotionRules = [
-    {
-      text: "Promotion depends on the student's performance throughout the year and not merely on marks scored in the final examination.",
+    { contentId: "Promotion depends on the student's performance throughout the year and not merely on marks scored in the final examination.",
+      text: c('students.examination.promotionRules.promotion-depends-on-the-student-s-p-4dfbbc1a.text'),
       icon: TrendingUp,
       color: 'emerald'
     },
-    {
-      text: "Reports of terminal examination and unit tests are given in the student's report cards. Parents/Guardian should sign them regularly and follow the progress of their children/wards. A student found with report unsigned will not be admitted in the class.",
+    { contentId: "Reports of terminal examination and unit tests are given in the student's report cards. Parents/Guardian should sign them regularly and follow the progress of their children/wards. A student found with report unsigned will not be admitted in the class.",
+      text: c('students.examination.promotionRules.reports-of-terminal-examination-and-ddceb2d8.text'),
       icon: FileSpreadsheet,
       color: 'blue'
     },
-    {
-      text: "Promotion is decided at the meeting of the Principal and the Teachers concerned. Hence results are final and cannot be re-considered. Final Examination answer scripts shall not be shown.",
+    { contentId: "Promotion is decided at the meeting of the Principal and the Teachers concerned. Hence results are final and cannot be re-considered. Final Examination answer scripts shall not be shown.",
+      text: c('students.examination.promotionRules.promotion-is-decided-at-the-meeting-d2849062.text'),
       icon: Shield,
       color: 'purple'
     },
-    {
-      text: "No student will be allowed to repeat the same class for a third time. A student who fails twice in three consecutive years is considered as withdrawn from the school.",
+    { contentId: "No student will be allowed to repeat the same class for a third time. A student who fails twice in three consecutive years is considered as withdrawn from the school.",
+      text: c('students.examination.promotionRules.no-student-will-be-allowed-to-repeat-2799bd9e.text'),
       icon: XCircle,
       color: 'red'
     },
-    {
-      text: "A student who fails in any two major subjects is considered to have failed.",
+    { contentId: "A student who fails in any two major subjects is considered to have failed.",
+      text: c('students.examination.promotionRules.a-student-who-fails-in-any-two-major-fa47903a.text'),
       icon: TrendingDown,
       color: 'rose'
     },
-    {
-      text: "No student will be allowed to sit for the promotion examination if the attendance during the year is below 90%.",
+    { contentId: "No student will be allowed to sit for the promotion examination if the attendance during the year is below 90%.",
+      text: c('students.examination.promotionRules.no-student-will-be-allowed-to-sit-fo-0a87c376.text'),
       icon: Clock,
       color: 'amber'
     }
   ]
 
   const keyHighlights = [
-    { label: 'Minimum Attendance', value: '90% required for promotion exam', icon: Clock },
-    { label: 'Repeat Policy', value: 'Maximum 2 failures allowed', icon: XCircle },
-    { label: 'Major Subjects', value: 'Failure in 2 = Failed', icon: AlertCircle },
-    { label: 'Final Decision', value: 'Principal & Teachers meeting', icon: Users },
+    { contentId: "Minimum Attendance", label: c('students.examination.keyHighlights.minimum-attendance-9d64a739.label'), value: c('students.examination.keyHighlights.minimum-attendance-9d64a739.value'), icon: Clock },
+    { contentId: "Repeat Policy", label: c('students.examination.keyHighlights.repeat-policy-8643d1a1.label'), value: c('students.examination.keyHighlights.repeat-policy-8643d1a1.value'), icon: XCircle },
+    { contentId: "Major Subjects", label: c('students.examination.keyHighlights.major-subjects-8f6cc8dc.label'), value: c('students.examination.keyHighlights.major-subjects-8f6cc8dc.value'), icon: AlertCircle },
+    { contentId: "Final Decision", label: c('students.examination.keyHighlights.final-decision-e540856d.label'), value: c('students.examination.keyHighlights.final-decision-e540856d.value'), icon: Users },
   ]
 
   const getColorClasses = (color) => {
@@ -179,8 +181,8 @@ const Examination = () => {
               <FileSpreadsheet size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">Examination & Promotion</h1>
-              <p className="text-gold-300 text-sm mt-0.5">Assessment structure, policies and promotion criteria</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('students.examination.copy.examination-promotion.heading.examination-promotion-0cd6872c')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('students.examination.copy.examination-promotion.paragraph.assessment-structure-polic-61ab8cbb')}</p>
             </div>
           </div>
         </div>
@@ -203,7 +205,7 @@ const Examination = () => {
               const Icon = item.icon
               return (
                 <motion.div 
-                  key={item.label} 
+                  key={item.contentId}
                   variants={fadeInUp}
                   className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-gold-300 group"
                 >
@@ -228,8 +230,8 @@ const Examination = () => {
           >
             <SectionTitle 
               icon={Flag} 
-              title="Promotion Regulations" 
-              subtitle="Rules & Policies" 
+              title={c('students.examination.copy.examination-promotion.title.promotion-regulations-1ea16bb4')}
+              subtitle={c('students.examination.copy.examination-promotion.subtitle.rules-policies-f41e0629')}
             />
             
             <motion.div 
@@ -258,8 +260,7 @@ const Examination = () => {
                           {rule.text}
                         </p>
                         <div className="mt-2 flex items-center gap-2">
-                          <span className={`text-[10px] font-medium px-2.5 py-0.5 rounded-full ${colors.tag}`}>
-                            Rule {index + 1}
+                          <span className={`text-[10px] font-medium px-2.5 py-0.5 rounded-full ${colors.tag}`}>{c('students.examination.copy.examination-promotion.text.rule-62845f31') + ' '}{index + 1}
                           </span>
                         </div>
                       </div>
@@ -282,8 +283,8 @@ const Examination = () => {
           >
             <SectionTitle 
               icon={Target} 
-              title="Assessment Structure" 
-              subtitle="Examination Types" 
+              title={c('students.examination.copy.examination-promotion.title.assessment-structure-4cabb06b')}
+              subtitle={c('students.examination.copy.examination-promotion.subtitle.examination-types-60a627d7')}
             />
             
             <motion.div 
@@ -301,14 +302,12 @@ const Examination = () => {
                   <div className="p-2.5 rounded-xl bg-blue-100 group-hover:scale-110 transition-transform duration-300">
                     <BarChart size={18} className="text-blue-600" />
                   </div>
-                  <h4 className="font-bold text-blue-900 text-sm">Unit Tests</h4>
+                  <h4 className="font-bold text-blue-900 text-sm">{c('students.examination.copy.unit-tests.heading.unit-tests-dada9f62')}</h4>
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Regular unit tests conducted throughout the year to track continuous progress and identify areas for improvement.
-                </p>
+                <p className="text-xs text-gray-600 leading-relaxed">{c('students.examination.copy.unit-tests.paragraph.regular-unit-tests-conduct-f5f44762')}</p>
                 <div className="mt-3 flex items-center gap-1.5 text-xs text-blue-700 bg-blue-100/50 px-3 py-1 rounded-full w-fit">
                   <Calendar size={12} />
-                  <span>Conducted periodically</span>
+                  <span>{c('students.examination.copy.unit-tests.text.conducted-periodically-8e3e6c26')}</span>
                 </div>
               </motion.div>
 
@@ -321,14 +320,12 @@ const Examination = () => {
                   <div className="p-2.5 rounded-xl bg-purple-100 group-hover:scale-110 transition-transform duration-300">
                     <BookOpen size={18} className="text-purple-600" />
                   </div>
-                  <h4 className="font-bold text-purple-900 text-sm">Terminal Exams</h4>
+                  <h4 className="font-bold text-purple-900 text-sm">{c('students.examination.copy.terminal-exams.heading.terminal-exams-f248f349')}</h4>
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Comprehensive terminal examinations assessing the syllabus covered in each academic term.
-                </p>
+                <p className="text-xs text-gray-600 leading-relaxed">{c('students.examination.copy.terminal-exams.paragraph.comprehensive-terminal-exa-1d6d9554')}</p>
                 <div className="mt-3 flex items-center gap-1.5 text-xs text-purple-700 bg-purple-100/50 px-3 py-1 rounded-full w-fit">
                   <FileSpreadsheet size={12} />
-                  <span>Report cards issued</span>
+                  <span>{c('students.examination.copy.terminal-exams.text.report-cards-issued-4a0723ed')}</span>
                 </div>
               </motion.div>
 
@@ -341,14 +338,12 @@ const Examination = () => {
                   <div className="p-2.5 rounded-xl bg-emerald-100 group-hover:scale-110 transition-transform duration-300">
                     <GraduationCap size={18} className="text-emerald-600" />
                   </div>
-                  <h4 className="font-bold text-emerald-900 text-sm">Final Promotion</h4>
+                  <h4 className="font-bold text-emerald-900 text-sm">{c('students.examination.copy.final-promotion.heading.final-promotion-f0400afc')}</h4>
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Year-long performance evaluation conducted by Principal and Teachers for final promotion decision.
-                </p>
+                <p className="text-xs text-gray-600 leading-relaxed">{c('students.examination.copy.final-promotion.paragraph.year-long-performance-eval-b91a1769')}</p>
                 <div className="mt-3 flex items-center gap-1.5 text-xs text-emerald-700 bg-emerald-100/50 px-3 py-1 rounded-full w-fit">
                   <Shield size={12} />
-                  <span>Final & binding decision</span>
+                  <span>{c('students.examination.copy.final-promotion.text.final-binding-decision-aa45ccf6')}</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -370,20 +365,20 @@ const Examination = () => {
                 <div className="p-1.5 rounded-lg bg-amber-100">
                   <Users size={16} className="text-amber-600" />
                 </div>
-                <h5 className="font-semibold text-amber-900 text-sm">Parent/Guardian Responsibilities</h5>
+                <h5 className="font-semibold text-amber-900 text-sm">{c('students.examination.copy.final-promotion.heading.parent-guardian-responsibi-f2ecf16b')}</h5>
               </div>
               <ul className="space-y-2 text-xs text-gray-700">
                 <li className="flex items-start gap-2">
                   <CheckCircle size={14} className="text-amber-500 flex-shrink-0 mt-0.5" />
-                  <span>Sign report cards regularly</span>
+                  <span>{c('students.examination.copy.final-promotion.text.sign-report-cards-regularl-4d6a00fa')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={14} className="text-amber-500 flex-shrink-0 mt-0.5" />
-                  <span>Monitor child's academic progress</span>
+                  <span>{c('students.examination.copy.final-promotion.text.monitor-child-s-academic-p-148502c9')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <AlertCircle size={14} className="text-red-500 flex-shrink-0 mt-0.5" />
-                  <span>Unsigned reports = No class admission</span>
+                  <span>{c('students.examination.copy.final-promotion.text.unsigned-reports-no-class--b627a0ff')}</span>
                 </li>
               </ul>
             </motion.div>
@@ -397,20 +392,20 @@ const Examination = () => {
                 <div className="p-1.5 rounded-lg bg-rose-100">
                   <AlertCircle size={16} className="text-rose-600" />
                 </div>
-                <h5 className="font-semibold text-rose-900 text-sm">Important Restrictions</h5>
+                <h5 className="font-semibold text-rose-900 text-sm">{c('students.examination.copy.final-promotion.heading.important-restrictions-0a1f7d06')}</h5>
               </div>
               <ul className="space-y-2 text-xs text-gray-700">
                 <li className="flex items-start gap-2">
                   <XCircle size={14} className="text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span>No re-evaluation of results</span>
+                  <span>{c('students.examination.copy.final-promotion.text.no-re-evaluation-of-result-4b0b5427')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <XCircle size={14} className="text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span>Answer scripts not shown</span>
+                  <span>{c('students.examination.copy.final-promotion.text.answer-scripts-not-shown-7bfc923b')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <XCircle size={14} className="text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span>No third attempt in same class</span>
+                  <span>{c('students.examination.copy.final-promotion.text.no-third-attempt-in-same-c-9a39bf0c')}</span>
                 </li>
               </ul>
             </motion.div>
@@ -427,10 +422,7 @@ const Examination = () => {
               <div className="p-2 rounded-xl bg-gold-500/20">
                 <Award size={20} className="text-gold-300" />
               </div>
-              <p className="text-sm text-white font-serif text-center leading-relaxed">
-                "Promotion is a comprehensive evaluation of the student's entire year's performance, 
-                not just the final examination marks."
-              </p>
+              <p className="text-sm text-white font-serif text-center leading-relaxed">{c('students.examination.copy.final-promotion.paragraph.promotion-is-a-comprehensi-30617bc6')}</p>
             </div>
           </motion.div>
 
@@ -444,7 +436,7 @@ const Examination = () => {
             <div className="inline-block bg-gradient-to-r from-gray-50 to-gold-50/30 rounded-full px-5 py-2 border border-gray-200">
               <p className="text-xs text-gray-500 flex items-center gap-2">
                 <Info size={14} className="text-gold-500" />
-                <span>Results are final after the meeting of Principal and Teachers concerned</span>
+                <span>{c('students.examination.copy.final-promotion.text.results-are-final-after-th-688303be')}</span>
               </p>
             </div>
           </motion.div>

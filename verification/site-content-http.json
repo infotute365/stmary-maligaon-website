@@ -1,0 +1,259 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/login",
+      "status": 200
+    },
+    {
+      "route": "/gallery",
+      "status": 200
+    },
+    {
+      "route": "/downloads",
+      "status": 200
+    },
+    {
+      "route": "/contact-us",
+      "status": 200
+    },
+    {
+      "route": "/about/founder",
+      "status": 200
+    },
+    {
+      "route": "/about/co-founders",
+      "status": 200
+    },
+    {
+      "route": "/about/history",
+      "status": 200
+    },
+    {
+      "route": "/about/mission-vision",
+      "status": 200
+    },
+    {
+      "route": "/about/educational-approach",
+      "status": 200
+    },
+    {
+      "route": "/administration/management",
+      "status": 200
+    },
+    {
+      "route": "/administration/managing-committee",
+      "status": 200
+    },
+    {
+      "route": "/administration/staff",
+      "status": 200
+    },
+    {
+      "route": "/administration/teaching-staff",
+      "status": 200
+    },
+    {
+      "route": "/administration/management-committee",
+      "status": 200
+    },
+    {
+      "route": "/administrative/management",
+      "status": 200
+    },
+    {
+      "route": "/administrative/managing-committee",
+      "status": 200
+    },
+    {
+      "route": "/administrative/management-committee",
+      "status": 200
+    },
+    {
+      "route": "/administrative/staff",
+      "status": 200
+    },
+    {
+      "route": "/administrative/teaching-staff",
+      "status": 200
+    },
+    {
+      "route": "/cbse/mandatory-public-disclosure",
+      "status": 200
+    },
+    {
+      "route": "/cbse/school-info",
+      "status": 200
+    },
+    {
+      "route": "/students/fees",
+      "status": 200
+    },
+    {
+      "route": "/students/rules",
+      "status": 200
+    },
+    {
+      "route": "/students/leave",
+      "status": 200
+    },
+    {
+      "route": "/students/examination",
+      "status": 200
+    },
+    {
+      "route": "/students/discipline",
+      "status": 200
+    },
+    {
+      "route": "/students/uniform",
+      "status": 200
+    },
+    {
+      "route": "/students/parents-notice-enrollment",
+      "status": 200
+    },
+    {
+      "route": "/infrastructure/transport",
+      "status": 200
+    },
+    {
+      "route": "/activities/co-curricular",
+      "status": 200
+    },
+    {
+      "route": "/activities/sports",
+      "status": 200
+    },
+    {
+      "route": "/activities/excursions",
+      "status": 200
+    },
+    {
+      "route": "/activities/clubs",
+      "status": 200
+    },
+    {
+      "route": "/admin/login",
+      "status": 200
+    },
+    {
+      "route": "/admin/site-content",
+      "status": 200
+    },
+    {
+      "route": "/admin/dashboard",
+      "status": 200
+    },
+    {
+      "route": "/admin/management",
+      "status": 200
+    },
+    {
+      "route": "/admin/committee",
+      "status": 200
+    },
+    {
+      "route": "/admin/staff",
+      "status": 200
+    },
+    {
+      "route": "/admin/teaching-staff",
+      "status": 200
+    },
+    {
+      "route": "/admin/circulars",
+      "status": 200
+    },
+    {
+      "route": "/admin/gallery",
+      "status": 200
+    },
+    {
+      "route": "/admin/downloads",
+      "status": 200
+    }
+  ],
+  "assets": [
+    {
+      "asset": "/_next/static/css/3b78318b40105e07.css",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/School_Logo.edd14f01.jpeg",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/imageOne.01c6a8ee.png",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/principal.e922ee6c.png",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/sister.3c7315f3.png",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/bosco.de728949.png",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/coFounder.9b2a5a5e.png",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/imageFive.2247f8c3.png",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/imageFour.ec4c38bc.png",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/imageThree.8fb75eb0.png",
+      "status": 200
+    },
+    {
+      "asset": "/_next/static/media/imageTwo.f7e393ad.png",
+      "status": 200
+    }
+  ],
+  "api": [
+    {
+      "method": "GET",
+      "route": "/api/health",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "method": "GET",
+      "route": "/api/site-content/all?group=home",
+      "status": 401,
+      "expected": 401
+    },
+    {
+      "method": "PUT",
+      "route": "/api/site-content/home.hero.slide1.title",
+      "status": 401,
+      "expected": 401
+    },
+    {
+      "method": "GET",
+      "route": "/api/site-content?group=invalid",
+      "status": 400,
+      "expected": 400
+    },
+    {
+      "method": "GET",
+      "route": "/api/site-content?group=home",
+      "status": 503,
+      "expected": 503
+    }
+  ],
+  "passed": true
+}

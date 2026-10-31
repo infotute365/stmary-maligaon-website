@@ -1,0 +1,7 @@
+{
+  "route": "/cbse/school-info",
+  "status": 200,
+  "informationPresent": true,
+  "hiddenContentStyles": false,
+  "passed": true
+}

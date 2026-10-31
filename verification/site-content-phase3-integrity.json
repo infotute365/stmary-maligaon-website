@@ -1,0 +1,13 @@
+{
+  "snapshotFiles": 81,
+  "unchanged": 79,
+  "intentionalExtensions": [
+    "src/server/security/serveUpload.js",
+    "src/server/config/localStorage.js"
+  ],
+  "originalAssetsAndUploadsUnchanged": 51,
+  "businessDiff": "",
+  "branch": "codex/phase3-disclosure-documents",
+  "diffCheckExit": 0,
+  "diffWhitespaceIssues": []
+}

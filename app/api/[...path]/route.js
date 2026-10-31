@@ -9,6 +9,9 @@ import { requestMetadata, boundedBody, validateFlatBody } from '@/server/securit
 import { isTrustedRequest } from '@/server/middleware/csrf.js'
 import { consumeLimit, clientKey } from '@/server/security/rateLimit.js'
 import { badRequest } from '@/server/security/errors.js'
+import { getSiteContent, getAllSiteContent, updateSiteContent, resetSiteContent } from '@/server/controllers/siteContentController.js'
+import { getDisclosureDocuments, getAllDisclosureDocuments, createDisclosureDocument, replaceDisclosureDocument, restoreDisclosureDocument, updateDisclosureDocument, deleteDisclosureDocument } from '@/server/controllers/disclosureDocumentController.js'
+import { fixedDisclosureByKey, customDisclosureKey } from '@/content/disclosureDocuments.js'
 
 import { login, logout, checkAuth, changePassword } from '@/server/controllers/authController.js'
 import { createManagement, getManagement, getAllManagement, getManagementById, updateManagement, deleteManagement } from '@/server/controllers/managementController.js'
@@ -131,13 +134,13 @@ async function parseRequest(request, pathParts, req, route) {
   const multipart = contentType.includes('multipart/form-data')
   if (multipart && !route.upload) throw badRequest('This route does not accept files')
   if (multipart) {
-    const buffer = await boundedBody(request, 21 * 1024 * 1024)
+    const buffer = await boundedBody(request, (route.disclosureWrite ? 11 : 21) * 1024 * 1024)
     let form
     try { form = await new Request(request.url, { method: 'POST', headers: { 'content-type': contentType }, body: buffer }).formData() }
     catch { throw badRequest('Invalid multipart form') }
     const body = Object.create(null)
     const incoming = []
-    const expected = { 'image-single': 'image', images: 'images', pdf: 'pdf', document: 'file' }[route.upload]
+    const expected = { 'image-single': 'image', images: 'images', pdf: 'pdf', document: 'file', 'disclosure-pdf': 'pdf' }[route.upload]
     for (const [key, value] of form.entries()) {
       if (typeof value === 'string') {
         if (Object.hasOwn(body, key)) throw badRequest('Duplicate form field')
@@ -149,6 +152,12 @@ async function parseRequest(request, pathParts, req, route) {
     }
     req.body = validateFlatBody(body)
     if (incoming.length > (route.upload === 'images' ? 4 : 1)) throw badRequest('Too many uploaded files')
+    if (route.upload === 'disclosure-pdf') {
+      // New disclosure controllers validate identity/body/revision before validating
+      // and storing this file. Existing upload/CRUD parsing remains unchanged.
+      req.file = incoming[0]
+      return req
+    }
     // Sequential processing avoids multiplying image decoder memory usage.
     const files = []
     for (const value of incoming) files.push(await writeUpload(value, route.upload === 'pdf' ? 'pdf' : route.upload === 'document' ? 'document' : 'image', expected, req))
@@ -159,6 +168,20 @@ async function parseRequest(request, pathParts, req, route) {
     if (buffer.length && !contentType.includes('application/json')) throw Object.assign(new Error('Expected JSON'), { status: 415 })
     try { req.body = validateFlatBody(buffer.length ? JSON.parse(buffer.toString('utf8')) : {}) }
     catch (error) { if (error instanceof SyntaxError) throw badRequest('Invalid JSON'); throw error }
+    if (route.disclosureWrite && buffer.length) {
+      const tokens = buffer.toString('utf8').match(/"(?:[^"\\]|\\.)*"|true|false|null|-?\d+(?:\.\d+)?(?:e[+-]?\d+)?|[{}:,]/gi) || []
+      const keys = new Set()
+      let expectKey = false
+      for (const token of tokens) {
+        if (token === '{' || token === ',') expectKey = true
+        else if (expectKey && token.startsWith('"')) {
+          const key = JSON.parse(token)
+          if (keys.has(key)) throw badRequest('Duplicate JSON field')
+          keys.add(key)
+          expectKey = false
+        }
+      }
+    }
   }
   return req
 }
@@ -171,6 +194,25 @@ async function runMiddleware(middleware, req, res) {
 
 function matchRoute(method, parts) {
   const [resource, first, second] = parts
+  if (resource === 'disclosure-documents') {
+    if (parts.length === 1 && method === 'GET') return { handler: getDisclosureDocuments, skipConnection: true }
+    if (parts.length === 2 && first === 'all' && method === 'GET') return { handler: getAllDisclosureDocuments, auth: true }
+    if (parts.length === 1 && method === 'POST') return { handler: createDisclosureDocument, auth: true, upload: 'disclosure-pdf', disclosureWrite: true }
+    const approvedKey = Object.hasOwn(fixedDisclosureByKey, first || '') || customDisclosureKey.test(first || '')
+    if (!approvedKey) return null
+    if (parts.length === 3 && second === 'restore' && method === 'POST') return { handler: restoreDisclosureDocument, auth: true, disclosureWrite: true, params: { documentKey: first } }
+    if (parts.length !== 2) return null
+    if (method === 'PUT') return { handler: replaceDisclosureDocument, auth: true, upload: 'disclosure-pdf', disclosureWrite: true, params: { documentKey: first } }
+    if (method === 'PATCH') return { handler: updateDisclosureDocument, auth: true, disclosureWrite: true, params: { documentKey: first } }
+    if (method === 'DELETE') return { handler: deleteDisclosureDocument, auth: true, disclosureWrite: true, params: { documentKey: first } }
+    return null
+  }
+  if (resource === 'site-content') {
+    if (parts.length === 1 && method === 'GET') return { handler: getSiteContent, skipConnection: true }
+    if (parts.length === 2 && first === 'all' && method === 'GET') return { handler: getAllSiteContent, auth: true }
+    if (parts.length === 2 && /^[a-zA-Z0-9.-]{1,160}$/.test(first) && ['PUT', 'DELETE'].includes(method)) return { handler: method === 'PUT' ? updateSiteContent : resetSiteContent, auth: true, contentWrite: true, params: { key: first } }
+    return null
+  }
   if (parts.length > 3 || (parts.length === 3 && !(method === 'PATCH' && ['gallery', 'downloads'].includes(resource) && second === 'toggle'))) return null
   if (resource === 'auth' && parts.length !== 2) return null
   if (resource === 'health' && !(parts.length === 1 || (parts.length === 2 && first === 'ready'))) return null
@@ -270,15 +312,23 @@ export async function handleApiRequest(request, context) {
     const { path: pathParts = [] } = await context.params
     const route = matchRoute(request.method, pathParts)
     if (!route) return NextResponse.json({ success: false, message: 'Route not found' }, { status: 404 })
-    if (!isTrustedRequest(request)) return NextResponse.json({ success: false, message: 'Request origin is not allowed' }, { status: 403 })
+    if (!isTrustedRequest(request)) return NextResponse.json({ success: false, message: 'Request origin is not allowed' }, { status: 403, headers: { 'Cache-Control': 'no-store' } })
     req = requestMetadata(request)
     req.params = route.params || {}
     const res = createResponse()
     if (req.params.id && !/^[a-f0-9]{24}$/i.test(req.params.id)) return NextResponse.json({ success: false, message: 'Invalid record ID' }, { status: 400 })
     // Liveness stays available during a DB outage; /health/ready tests DB connectivity.
     if (route.auth && !req.cookies.adminToken && !req.headers.authorization?.startsWith('Bearer ')) return NextResponse.json({ success: false, message: 'Not authenticated' }, { status: 401, headers: { 'Cache-Control': 'no-store' } })
-    if (pathParts[0] !== 'health') await connectDB()
+    if (pathParts[0] !== 'health' && !route.skipConnection) await connectDB()
     if (route.auth && !(await runMiddleware(protect, req, res))) return toNextResponse(res.state)
+    if (route.disclosureWrite) {
+      const limit = await consumeLimit(`disclosure-update:${req.admin._id}`, 60, 15 * 60 * 1000)
+      if (!limit.allowed) return NextResponse.json({ success: false, message: 'Too many document changes. Please try again later.' }, { status: 429, headers: { 'Retry-After': String(limit.retryAfter), 'Cache-Control': 'no-store' } })
+    }
+    if (route.contentWrite) {
+      const limit = await consumeLimit(`site-content:${req.admin._id}`, 120, 15 * 60 * 1000)
+      if (!limit.allowed) return NextResponse.json({ success: false, message: 'Too many text updates. Please try again later.' }, { status: 429, headers: { 'Retry-After': String(limit.retryAfter), 'Cache-Control': 'no-store' } })
+    }
     if (pathParts[0] === 'auth' && request.method !== 'GET') {
       const limit = await consumeLimit(`auth-client:${clientKey(request)}`, 60, 15 * 60 * 1000)
       if (!limit.allowed) return NextResponse.json({ success: false, message: 'Too many attempts. Please try again later.' }, { status: 429, headers: { 'Retry-After': String(limit.retryAfter) } })

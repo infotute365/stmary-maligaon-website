@@ -1,41 +1,43 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React from 'react';
 // If you have a school image in your assets, uncomment and import:
 // import schoolImage from '../../assets/school.jpg'; // Adjust path
 
 const History = () => {
+  const c = useSiteContent()
   // Data from the images
   const headmistresses = [
-    { no: 1, name: 'Sr. Rose Briganza', years: '1969 – 1973' },
-    { no: 2, name: 'Sr. Alice Olikal', years: '1973 – 1977' },
-    { no: 3, name: 'Sr. Bridget Puthempurackel', years: '1977 – 1979' },
-    { no: 4, name: 'Sr. Annie Thevarukunnel', years: '1979 – 1982' },
-    { no: 5, name: 'Sr. Teresa Karottukunnel', years: '1982 – 1985' },
-    { no: 6, name: 'Sr. Leeza Kokat', years: '1985 – 1988' },
-    { no: 7, name: 'Sr. Tessy Potteparambil', years: '1988 – 1990' },
-    { no: 8, name: 'Sr. Mabel Gothorp', years: '1990 – 1993' },
-    { no: 9, name: 'Sr. Catherine Kanampuzha', years: '1993 – 1996' },
-    { no: 10, name: 'Sr. Teresa Edattukalayil', years: '1996 – 1997' },
-    { no: 11, name: 'Sr. Mary Pettikal', years: '1997 – 2000' },
-    { no: 12, name: 'Sr. Teresa Jojo', years: '2000 – 2004' },
-    { no: 13, name: 'Sr. Lucy Nedumala', years: '2004 – 2006' },
-    { no: 14, name: 'Sr. Lissy Rose Mathew', years: '2006 – 2015' },
-    { no: 15, name: 'Sr. Nelia Mary Khrasi', years: '2015 – 2020' },
-    { no: 16, name: 'Sr. Sania Rosemary', years: '2020 – Present' },
+    { no: 1, name: c('about.history.headmistresses.1-6b86b273.name'), years: c('about.history.headmistresses.1-6b86b273.years') },
+    { no: 2, name: c('about.history.headmistresses.2-d4735e3a.name'), years: c('about.history.headmistresses.2-d4735e3a.years') },
+    { no: 3, name: c('about.history.headmistresses.3-4e074085.name'), years: c('about.history.headmistresses.3-4e074085.years') },
+    { no: 4, name: c('about.history.headmistresses.4-4b227777.name'), years: c('about.history.headmistresses.4-4b227777.years') },
+    { no: 5, name: c('about.history.headmistresses.5-ef2d127d.name'), years: c('about.history.headmistresses.5-ef2d127d.years') },
+    { no: 6, name: c('about.history.headmistresses.6-e7f6c011.name'), years: c('about.history.headmistresses.6-e7f6c011.years') },
+    { no: 7, name: c('about.history.headmistresses.7-7902699b.name'), years: c('about.history.headmistresses.7-7902699b.years') },
+    { no: 8, name: c('about.history.headmistresses.8-2c624232.name'), years: c('about.history.headmistresses.8-2c624232.years') },
+    { no: 9, name: c('about.history.headmistresses.9-19581e27.name'), years: c('about.history.headmistresses.9-19581e27.years') },
+    { no: 10, name: c('about.history.headmistresses.10-4a44dc15.name'), years: c('about.history.headmistresses.10-4a44dc15.years') },
+    { no: 11, name: c('about.history.headmistresses.11-4fc82b26.name'), years: c('about.history.headmistresses.11-4fc82b26.years') },
+    { no: 12, name: c('about.history.headmistresses.12-6b51d431.name'), years: c('about.history.headmistresses.12-6b51d431.years') },
+    { no: 13, name: c('about.history.headmistresses.13-3fdba35f.name'), years: c('about.history.headmistresses.13-3fdba35f.years') },
+    { no: 14, name: c('about.history.headmistresses.14-8527a891.name'), years: c('about.history.headmistresses.14-8527a891.years') },
+    { no: 15, name: c('about.history.headmistresses.15-e629fa65.name'), years: c('about.history.headmistresses.15-e629fa65.years') },
+    { no: 16, name: c('about.history.headmistresses.16-b17ef6d1.name'), years: c('about.history.headmistresses.16-b17ef6d1.years') },
   ];
 
   const superiors = [
-    { no: 1, name: 'Sr. Natalina Nunes', years: '1969 – 1971' },
-    { no: 2, name: 'Sr. Maria Mampilly', years: '1971 – 1975' },
-    { no: 3, name: 'Sr. Alice Correa', years: '1975 – 1979' },
-    { no: 4, name: 'Sr. Dorothy Gomes', years: '1979 – 1981' },
-    { no: 5, name: 'Sr. Bridget Puthempurackel', years: '1981 – 1985' },
-    { no: 6, name: 'Sr. Isabella Suja', years: '1985 – 1988' },
-    { no: 7, name: 'Sr. Catherine Susngi', years: '1988 – 1994' },
-    { no: 8, name: 'Sr. Celine Michael', years: '1994 – 1999' },
-    { no: 9, name: 'Sr. Grace Ottolankal', years: '1999 – 2005' },
-    { no: 10, name: 'Sr. Catherine Kanampuzha', years: '2005 – 2012' },
-    { no: 11, name: 'Sr. Bridget Puthempurackel', years: '2012 – 2018' },
-    { no: 12, name: 'Sr. Grace Ottolankal', years: '2018 – Present' },
+    { no: 1, name: c('about.history.superiors.1-6b86b273.name'), years: c('about.history.superiors.1-6b86b273.years') },
+    { no: 2, name: c('about.history.superiors.2-d4735e3a.name'), years: c('about.history.superiors.2-d4735e3a.years') },
+    { no: 3, name: c('about.history.superiors.3-4e074085.name'), years: c('about.history.superiors.3-4e074085.years') },
+    { no: 4, name: c('about.history.superiors.4-4b227777.name'), years: c('about.history.superiors.4-4b227777.years') },
+    { no: 5, name: c('about.history.superiors.5-ef2d127d.name'), years: c('about.history.superiors.5-ef2d127d.years') },
+    { no: 6, name: c('about.history.superiors.6-e7f6c011.name'), years: c('about.history.superiors.6-e7f6c011.years') },
+    { no: 7, name: c('about.history.superiors.7-7902699b.name'), years: c('about.history.superiors.7-7902699b.years') },
+    { no: 8, name: c('about.history.superiors.8-2c624232.name'), years: c('about.history.superiors.8-2c624232.years') },
+    { no: 9, name: c('about.history.superiors.9-19581e27.name'), years: c('about.history.superiors.9-19581e27.years') },
+    { no: 10, name: c('about.history.superiors.10-4a44dc15.name'), years: c('about.history.superiors.10-4a44dc15.years') },
+    { no: 11, name: c('about.history.superiors.11-4fc82b26.name'), years: c('about.history.superiors.11-4fc82b26.years') },
+    { no: 12, name: c('about.history.superiors.12-6b51d431.name'), years: c('about.history.superiors.12-6b51d431.years') },
   ];
 
   return (
@@ -43,8 +45,8 @@ const History = () => {
       {/* Custom Header – no breadcrumbs */}
       <div className="bg-maroon-900 text-white py-12 px-4">
         <div className="container-custom mx-auto">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold">Our History</h1>
-          <p className="text-gold-300 text-lg mt-2">A brief history of St. Mary’s English High School, Maligaon</p>
+          <h1 className="text-4xl md:text-5xl font-serif font-bold">{c('about.history.copy.our-history.heading.our-history-59ab2712')}</h1>
+          <p className="text-gold-300 text-lg mt-2">{c('about.history.copy.our-history.paragraph.a-brief-history-of-st-mary-30f19fce')}</p>
         </div>
       </div>
 
@@ -57,9 +59,7 @@ const History = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-          <h2 className="text-white text-3xl md:text-5xl font-serif font-bold tracking-wide drop-shadow-lg">
-            St. Mary’s English High School
-          </h2>
+          <h2 className="text-white text-3xl md:text-5xl font-serif font-bold tracking-wide drop-shadow-lg">{c('about.history.copy.st-mary-s-english-high.heading.st-mary-s-english-high-sch-5d0607b5')}</h2>
         </div>
       </div>
 
@@ -68,58 +68,31 @@ const History = () => {
         <div className="container-custom max-w-4xl mx-auto">
           {/* History Text */}
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-10 border border-gray-100">
-            <h2 className="font-serif text-3xl font-bold text-maroon-900 mb-6">Our Journey</h2>
+            <h2 className="font-serif text-3xl font-bold text-maroon-900 mb-6">{c('about.history.copy.our-journey.heading.our-journey-a8e21009')}</h2>
 
-            <p className="text-gray-700 leading-relaxed mb-4">
-              St. Mary’s Primary School, Maligaon, was started as a branch school to relieve the pressure
-              for admissions in St. Mary’s School Guwahati. The primary school was opened on{' '}
-              <strong>January 10<sup>th</sup> 1966</strong>. The sisters and teachers came daily from
-              St. Mary’s Guwahati to conduct classes in a temporary building, while supervising the
-              construction of a new school building. In 1969 the school was upgraded to Class IV with
-              240 boys, 145 girls, 8 teachers and 9 other employees.
+            <p className="text-gray-700 leading-relaxed mb-4">{c('about.history.copy.our-journey.paragraph.st-mary-s-primary-school-m-273b274d')}{' '}
+              <strong>{c('about.history.copy.our-journey.text.january-10-eef69408')}<sup>{c('about.history.copy.our-journey.text.th-6bde0b83')}</sup>{' ' + c('about.history.copy.our-journey.text.1966-c00cf031')}</strong>{c('about.history.copy.our-journey.paragraph.the-sisters-and-teachers-c-d116633c')}</p>
+
+            <h3 className="font-serif text-2xl font-bold text-maroon-800 mt-8 mb-4">{c('about.history.copy.upgrading-the-school.heading.upgrading-the-school-187807b8')}</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">{c('about.history.copy.upgrading-the-school.paragraph.due-to-constant-pressure-f-848ff171') + ' '}<strong>{c('about.history.copy.upgrading-the-school.text.january-1988-4cee56aa')}</strong>{' ' + c('about.history.copy.upgrading-the-school.paragraph.class-viii-was-introduced--93b7d441') + ' '}<strong>{c('about.history.copy.upgrading-the-school.text.january-1991-e6eeb4b3')}</strong>{' ' + c('about.history.copy.upgrading-the-school.paragraph.the-school-became-a-full-f-70bcd865') + ' '}<strong>{c('about.history.copy.upgrading-the-school.text.1-6b86b273')}<sup>{c('about.history.copy.upgrading-the-school.text.st-56af4bde')}</sup>{' ' + c('about.history.copy.upgrading-the-school.text.april-1998-321b84de')}</strong>.
             </p>
 
-            <h3 className="font-serif text-2xl font-bold text-maroon-800 mt-8 mb-4">Upgrading the School</h3>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Due to constant pressure from the parents of our students who found it difficult to get
-              admission in the High School at St. Mary’s, Guwahati, the management decided to upgrade the
-              school. Hence from <strong>January 1988</strong> Class VIII was introduced and the upgrading
-              continued. In <strong>January 1991</strong> the school became a full fledged High School.
-              The first group of students appeared for the HSLC public examinations in March 1992.
-              St. Mary’s English High School, Maligaon obtained its recognition from the Board of
-              Secondary Education, Assam (SEBA) with effect from <strong>1<sup>st</sup> April 1998</strong>.
-            </p>
-
-            <h3 className="font-serif text-2xl font-bold text-maroon-800 mt-8 mb-4">
-              Affiliation to the Central Board of Secondary Education, Delhi (CBSE)
-            </h3>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              As per the continuous request of the parents we have decided to affiliate the school to the
-              Central Board and the issue was brought to the higher authorities. After the necessary
-              permission from them the process began for the affiliation of the school to the Central
-              Board of Secondary Education. Finally in <strong>April, 2011</strong> the school was
-              affiliated to C.B.S.E. Vide affiliation No. 230105 and school code: 30086. We rejoice at the
-              first batch of Class X students writing their examination under C.B.S.E. and the excellent
-              results brought by them. This gave us the impetus to upgrade the school to the senior
-              secondary level. The necessary permission was granted in <strong>April 2013</strong>. At
-              present there are 127 students in Class XI, in the three streams of study namely,
-              <strong> Science, Commerce and Humanities</strong>.
+            <h3 className="font-serif text-2xl font-bold text-maroon-800 mt-8 mb-4">{c('about.history.copy.affiliation-to-the-cen.heading.affiliation-to-the-central-d4b29c4f')}</h3>
+            <p className="text-gray-700 leading-relaxed mb-4">{c('about.history.copy.affiliation-to-the-cen.paragraph.as-per-the-continuous-requ-263f3965') + ' '}<strong>{c('about.history.copy.affiliation-to-the-cen.text.april-2011-81bedbed')}</strong>{' ' + c('about.history.copy.affiliation-to-the-cen.paragraph.the-school-was-affiliated--2c15a14d') + ' '}<strong>{c('about.history.copy.affiliation-to-the-cen.text.april-2013-e4f24ddc')}</strong>{c('about.history.copy.affiliation-to-the-cen.paragraph.at-present-there-are-127-s-54c2ffe1')}<strong>{' ' + c('about.history.copy.affiliation-to-the-cen.text.science-commerce-and-human-0d3e44c7')}</strong>.
             </p>
           </div>
 
           {/* Headmistresses / Principals Table */}
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-gray-100 mb-10">
             <h3 className="font-serif text-2xl font-bold text-maroon-900 mb-6 flex items-center">
-              <span className="bg-gold-500 w-1 h-8 mr-3 rounded"></span>
-              Headmistresses / Principals
-            </h3>
+              <span className="bg-gold-500 w-1 h-8 mr-3 rounded"></span>{c('about.history.copy.headmistresses-princip.heading.headmistresses-principals-55c6d996')}</h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm md:text-base">
                 <thead>
                   <tr className="bg-maroon-800 text-white">
-                    <th className="py-3 px-4 text-left font-semibold">No.</th>
-                    <th className="py-3 px-4 text-left font-semibold">Name</th>
-                    <th className="py-3 px-4 text-left font-semibold">Year</th>
+                    <th className="py-3 px-4 text-left font-semibold">{c('about.history.copy.headmistresses-princip.text.no-38178a20')}</th>
+                    <th className="py-3 px-4 text-left font-semibold">{c('about.history.copy.headmistresses-princip.text.name-dcd1d522')}</th>
+                    <th className="py-3 px-4 text-left font-semibold">{c('about.history.copy.headmistresses-princip.text.year-89f68325')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -138,16 +111,14 @@ const History = () => {
           {/* Superiors Table */}
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border border-gray-100">
             <h3 className="font-serif text-2xl font-bold text-maroon-900 mb-6 flex items-center">
-              <span className="bg-gold-500 w-1 h-8 mr-3 rounded"></span>
-              Superiors who guided the school
-            </h3>
+              <span className="bg-gold-500 w-1 h-8 mr-3 rounded"></span>{c('about.history.copy.superiors-who-guided-t.heading.superiors-who-guided-the-s-6e2a52c4')}</h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm md:text-base">
                 <thead>
                   <tr className="bg-maroon-800 text-white">
-                    <th className="py-3 px-4 text-left font-semibold">No.</th>
-                    <th className="py-3 px-4 text-left font-semibold">Name</th>
-                    <th className="py-3 px-4 text-left font-semibold">Year</th>
+                    <th className="py-3 px-4 text-left font-semibold">{c('about.history.copy.superiors-who-guided-t.text.no-38178a20')}</th>
+                    <th className="py-3 px-4 text-left font-semibold">{c('about.history.copy.superiors-who-guided-t.text.name-dcd1d522')}</th>
+                    <th className="py-3 px-4 text-left font-semibold">{c('about.history.copy.superiors-who-guided-t.text.year-89f68325')}</th>
                   </tr>
                 </thead>
                 <tbody>

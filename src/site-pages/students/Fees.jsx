@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { 
@@ -15,6 +16,7 @@ import {
 } from 'lucide-react'
 
 const Fees = () => {
+  const c = useSiteContent()
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -44,78 +46,78 @@ const Fees = () => {
 
   // Updated fee data from the image
   const feeData = [
-    { 
-      class: 'KG', 
-      annualPerInstallment: '₹ 9,150', 
-      tuitionPerInstallment: '—',
-      installmentPeriod: '3 Months',
+    { contentId: "KG",
+      class: c('students.fees.feeData.kg-88ed3209.class'),
+      annualPerInstallment: c('students.fees.feeData.kg-88ed3209.annualPerInstallment'),
+      tuitionPerInstallment: c('students.fees.feeData.kg-88ed3209.tuitionPerInstallment'),
+      installmentPeriod: c('students.fees.feeData.kg-88ed3209.installmentPeriod'),
       colour: 'purple'
     },
-    { 
-      class: 'I - III', 
-      annualPerInstallment: '₹ 3,630', 
-      tuitionPerInstallment: '₹ 6,300',
-      installmentPeriod: '3 Months',
+    { contentId: "I - III",
+      class: c('students.fees.feeData.i-iii-10d135b2.class'),
+      annualPerInstallment: c('students.fees.feeData.i-iii-10d135b2.annualPerInstallment'),
+      tuitionPerInstallment: c('students.fees.feeData.i-iii-10d135b2.tuitionPerInstallment'),
+      installmentPeriod: c('students.fees.feeData.i-iii-10d135b2.installmentPeriod'),
       colour: 'blue'
     },
-    { 
-      class: 'IV - V', 
-      annualPerInstallment: '₹ 3,640', 
-      tuitionPerInstallment: '₹ 6,300',
-      installmentPeriod: '3 Months',
+    { contentId: "IV - V",
+      class: c('students.fees.feeData.iv-v-005e4ae7.class'),
+      annualPerInstallment: c('students.fees.feeData.iv-v-005e4ae7.annualPerInstallment'),
+      tuitionPerInstallment: c('students.fees.feeData.iv-v-005e4ae7.tuitionPerInstallment'),
+      installmentPeriod: c('students.fees.feeData.iv-v-005e4ae7.installmentPeriod'),
       colour: 'teal'
     },
-    { 
-      class: 'VI - VIII', 
-      annualPerInstallment: '₹ 3,680', 
-      tuitionPerInstallment: '₹ 6,300',
-      installmentPeriod: '3 Months',
+    { contentId: "VI - VIII",
+      class: c('students.fees.feeData.vi-viii-0091659b.class'),
+      annualPerInstallment: c('students.fees.feeData.vi-viii-0091659b.annualPerInstallment'),
+      tuitionPerInstallment: c('students.fees.feeData.vi-viii-0091659b.tuitionPerInstallment'),
+      installmentPeriod: c('students.fees.feeData.vi-viii-0091659b.installmentPeriod'),
       colour: 'green'
     },
-    { 
-      class: 'IX - X', 
-      annualPerInstallment: '₹ 3,775', 
-      tuitionPerInstallment: '₹ 6,300',
-      installmentPeriod: '3 Months',
+    { contentId: "IX - X",
+      class: c('students.fees.feeData.ix-x-f0c3b216.class'),
+      annualPerInstallment: c('students.fees.feeData.ix-x-f0c3b216.annualPerInstallment'),
+      tuitionPerInstallment: c('students.fees.feeData.ix-x-f0c3b216.tuitionPerInstallment'),
+      installmentPeriod: c('students.fees.feeData.ix-x-f0c3b216.installmentPeriod'),
       colour: 'amber'
     },
-    { 
-      class: 'XI - XII (Hum/Com)', 
-      annualPerInstallment: '₹ 5,930', 
-      tuitionPerInstallment: '₹ 8,800',
-      installmentPeriod: '4 Months',
+    { contentId: "XI - XII (Hum/Com)",
+      class: c('students.fees.feeData.xi-xii-hum-com-baeaed42.class'),
+      annualPerInstallment: c('students.fees.feeData.xi-xii-hum-com-baeaed42.annualPerInstallment'),
+      tuitionPerInstallment: c('students.fees.feeData.xi-xii-hum-com-baeaed42.tuitionPerInstallment'),
+      installmentPeriod: c('students.fees.feeData.xi-xii-hum-com-baeaed42.installmentPeriod'),
       colour: 'orange'
     },
-    { 
-      class: 'XI - XII (Science)', 
-      annualPerInstallment: '₹ 8,480', 
-      tuitionPerInstallment: '₹ 8,800',
-      installmentPeriod: '4 Months',
+    { contentId: "XI - XII (Science)",
+      class: c('students.fees.feeData.xi-xii-science-8c553a58.class'),
+      annualPerInstallment: c('students.fees.feeData.xi-xii-science-8c553a58.annualPerInstallment'),
+      tuitionPerInstallment: c('students.fees.feeData.xi-xii-science-8c553a58.tuitionPerInstallment'),
+      installmentPeriod: c('students.fees.feeData.xi-xii-science-8c553a58.installmentPeriod'),
       colour: 'rose'
     }
   ]
 
   const installmentSchedule = [
-    { month: 'April', period: '10th - 20th', classes: 'KG to X' },
-    { month: 'July', period: '10th - 20th', classes: 'KG to X' },
-    { month: 'October', period: '10th - 20th', classes: 'KG to X' },
-    { month: 'January', period: '10th - 20th', classes: 'KG to X' },
+    { contentId: "April", month: c('students.fees.installmentSchedule.april-4afe6ea1.month'), period: c('students.fees.installmentSchedule.april-4afe6ea1.period'), classes: c('students.fees.installmentSchedule.april-4afe6ea1.classes') },
+    { contentId: "July", month: c('students.fees.installmentSchedule.july-e9cf7a1c.month'), period: c('students.fees.installmentSchedule.july-e9cf7a1c.period'), classes: c('students.fees.installmentSchedule.july-e9cf7a1c.classes') },
+    { contentId: "October", month: c('students.fees.installmentSchedule.october-fdd79178.month'), period: c('students.fees.installmentSchedule.october-fdd79178.period'), classes: c('students.fees.installmentSchedule.october-fdd79178.classes') },
+    { contentId: "January", month: c('students.fees.installmentSchedule.january-37082e68.month'), period: c('students.fees.installmentSchedule.january-37082e68.period'), classes: c('students.fees.installmentSchedule.january-37082e68.classes') },
   ]
 
   const seniorInstallmentSchedule = [
-    { month: 'June', classes: 'XI & XII' },
-    { month: 'September', classes: 'XI & XII' },
-    { month: 'December', classes: 'XI & XII' },
+    { contentId: "June", month: c('students.fees.seniorInstallmentSchedule.june-d5808c0e.month'), classes: c('students.fees.seniorInstallmentSchedule.june-d5808c0e.classes') },
+    { contentId: "September", month: c('students.fees.seniorInstallmentSchedule.september-cd559ea0.month'), classes: c('students.fees.seniorInstallmentSchedule.september-cd559ea0.classes') },
+    { contentId: "December", month: c('students.fees.seniorInstallmentSchedule.december-8fb204ca.month'), classes: c('students.fees.seniorInstallmentSchedule.december-8fb204ca.classes') },
   ]
 
   const importantRules = [
-    'Fees cover twelve calendar months - no reduction for holidays or broken periods',
-    'Students are liable to pay fees as long as their names are officially on rolls',
-    'Late payment fine of Rs. 100/- will be levied on all late payments',
-    'Students leaving/joining during any term must pay tuition, annual and other fees for whole year',
-    'Absence from examination does not mean exemption from examination fees',
-    'Results will be withheld for students with outstanding dues',
-    'School fees and other dues are liable to be revised at any time'
+    { contentId: "Fees cover twelve calendar months - no reduction for holidays or broken periods", text: c('students.fees.importantRules.fees-cover-twelve-calendar-months-no-9d609da5') },
+    { contentId: "Students are liable to pay fees as long as their names are officially on rolls", text: c('students.fees.importantRules.students-are-liable-to-pay-fees-as-l-0c7b65d0') },
+    { contentId: "Late payment fine of Rs. 100/- will be levied on all late payments", text: c('students.fees.importantRules.late-payment-fine-of-rs-100-will-be-3bbba47b') },
+    { contentId: "Students leaving/joining during any term must pay tuition, annual and other fees for whole year", text: c('students.fees.importantRules.students-leaving-joining-during-any-308c213e') },
+    { contentId: "Absence from examination does not mean exemption from examination fees", text: c('students.fees.importantRules.absence-from-examination-does-not-me-1a66888a') },
+    { contentId: "Results will be withheld for students with outstanding dues", text: c('students.fees.importantRules.results-will-be-withheld-for-student-135880f0') },
+    { contentId: "School fees and other dues are liable to be revised at any time", text: c('students.fees.importantRules.school-fees-and-other-dues-are-liabl-c6c889d5') }
   ]
 
   const getColorClasses = (color) => {
@@ -160,8 +162,8 @@ const Fees = () => {
               <Wallet size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">Fee Structure</h1>
-              <p className="text-gold-300 text-sm mt-0.5">Academic Year 2025-26</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('students.fees.copy.fee-structure.heading.fee-structure-dad7cf5c')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('students.fees.copy.fee-structure.paragraph.academic-year-2025-26-51a89bb2')}</p>
             </div>
           </div>
         </div>
@@ -183,8 +185,8 @@ const Fees = () => {
             <div className="flex items-start gap-3">
               <AlertCircle size={18} className="text-orange-600 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm text-gray-700 font-medium">Fees are received by HDFC Bank Ltd., Maligaon Branch on behalf of the Institution</p>
-                <p className="text-xs text-gray-600 mt-0.5">No bills are issued. Parents/guardians should ensure timely payment</p>
+                <p className="text-sm text-gray-700 font-medium">{c('students.fees.copy.fee-structure.paragraph.fees-are-received-by-hdfc--b21a214e')}</p>
+                <p className="text-xs text-gray-600 mt-0.5">{c('students.fees.copy.fee-structure.paragraph.no-bills-are-issued-parent-51846d17')}</p>
               </div>
             </div>
           </motion.div>
@@ -200,10 +202,10 @@ const Fees = () => {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-gradient-to-r from-maroon-900 to-maroon-700 text-white">
-                    <th className="px-4 py-3.5 text-left font-semibold text-sm">CLASS</th>
-                    <th className="px-4 py-3.5 text-center font-semibold text-sm">ANNUAL FEES<br/><span className="text-xs font-normal text-gold-300">(Per Installment)</span></th>
-                    <th className="px-4 py-3.5 text-center font-semibold text-sm">TUITION FEES<br/><span className="text-xs font-normal text-gold-300">(Per Installment)</span></th>
-                    <th className="px-4 py-3.5 text-center font-semibold text-sm">INSTALLMENT<br/><span className="text-xs font-normal text-gold-300">Period</span></th>
+                    <th className="px-4 py-3.5 text-left font-semibold text-sm">{c('students.fees.copy.fee-structure.text.class-bb6a385e')}</th>
+                    <th className="px-4 py-3.5 text-center font-semibold text-sm">{c('students.fees.copy.fee-structure.text.annual-fees-b25ed05c')}<br/><span className="text-xs font-normal text-gold-300">{c('students.fees.copy.fee-structure.text.per-installment-bf8712c5')}</span></th>
+                    <th className="px-4 py-3.5 text-center font-semibold text-sm">{c('students.fees.copy.fee-structure.text.tuition-fees-33206568')}<br/><span className="text-xs font-normal text-gold-300">{c('students.fees.copy.fee-structure.text.per-installment-bf8712c5.2')}</span></th>
+                    <th className="px-4 py-3.5 text-center font-semibold text-sm">{c('students.fees.copy.fee-structure.text.installment-03777de7')}<br/><span className="text-xs font-normal text-gold-300">{c('students.fees.copy.fee-structure.text.period-6e795d4d')}</span></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -211,7 +213,7 @@ const Fees = () => {
                     const colors = getColorClasses(row.colour)
                     return (
                       <tr 
-                        key={row.class} 
+                        key={row.contentId}
                         className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-maroon-50/30 transition-colors duration-150`}
                       >
                         <td className="px-4 py-3 font-semibold text-maroon-900 border-b border-gray-100 text-sm">
@@ -242,10 +244,8 @@ const Fees = () => {
             {/* Table Footer */}
             <div className="bg-gray-50/80 px-4 py-2.5 border-t border-gray-100 flex items-center justify-between">
               <p className="text-[10px] text-gray-400 flex items-center gap-1.5">
-                <Info size={12} className="text-gold-500" />
-                Fees cover twelve calendar months
-              </p>
-              <p className="text-[10px] text-gray-400">Updated: 2025-26</p>
+                <Info size={12} className="text-gold-500" />{c('students.fees.copy.fee-structure.paragraph.fees-cover-twelve-calendar-b7a2e5a6')}</p>
+              <p className="text-[10px] text-gray-400">{c('students.fees.copy.fee-structure.paragraph.updated-2025-26-77984986')}</p>
             </div>
           </motion.div>
 
@@ -265,11 +265,11 @@ const Fees = () => {
                 <div className="p-1.5 rounded-lg bg-blue-100">
                   <Calendar size={16} className="text-blue-600" />
                 </div>
-                <h3 className="text-sm font-bold text-maroon-900">Installment Schedule <span className="text-xs font-normal text-gray-500">(KG - X)</span></h3>
+                <h3 className="text-sm font-bold text-maroon-900">{c('students.fees.copy.installment-schedule-k.heading.installment-schedule-501c42d9') + ' '}<span className="text-xs font-normal text-gray-500">{c('students.fees.copy.installment-schedule-k.text.kg-x-9ff5bd03')}</span></h3>
               </div>
               <div className="space-y-2">
                 {installmentSchedule.map((item) => (
-                  <div key={item.month} className="flex items-center justify-between p-2.5 rounded-lg bg-gray-50 border border-gray-100 hover:bg-blue-50/50 transition-colors">
+                  <div key={item.contentId} className="flex items-center justify-between p-2.5 rounded-lg bg-gray-50 border border-gray-100 hover:bg-blue-50/50 transition-colors">
                     <span className="font-semibold text-maroon-800 text-sm">{item.month}</span>
                     <span className="text-xs text-gray-600">{item.period}</span>
                     <span className="text-[10px] bg-gold-100 text-gold-800 px-2 py-0.5 rounded-full font-medium">{item.classes}</span>
@@ -278,7 +278,7 @@ const Fees = () => {
               </div>
               <div className="mt-3 text-xs text-gray-500 bg-amber-50 p-2.5 rounded-lg border border-amber-200 flex items-center gap-2">
                 <AlertCircle size={14} className="text-amber-600 flex-shrink-0" />
-                <span><span className="font-medium text-amber-800">Late Fee:</span> ₹100 on all late payments</span>
+                <span><span className="font-medium text-amber-800">{c('students.fees.copy.installment-schedule-k.text.late-fee-498464bb')}</span>{' ' + c('students.fees.copy.installment-schedule-k.text.100-on-all-late-payments-ecbece78')}</span>
               </div>
             </motion.div>
 
@@ -291,11 +291,11 @@ const Fees = () => {
                 <div className="p-1.5 rounded-lg bg-purple-100">
                   <Calendar size={16} className="text-purple-600" />
                 </div>
-                <h3 className="text-sm font-bold text-maroon-900">Installment Schedule <span className="text-xs font-normal text-gray-500">(XI - XII)</span></h3>
+                <h3 className="text-sm font-bold text-maroon-900">{c('students.fees.copy.installment-schedule-x.heading.installment-schedule-501c42d9') + ' '}<span className="text-xs font-normal text-gray-500">{c('students.fees.copy.installment-schedule-x.text.xi-xii-93ca1fbc')}</span></h3>
               </div>
               <div className="space-y-2">
                 {seniorInstallmentSchedule.map((item) => (
-                  <div key={item.month} className="flex items-center justify-between p-2.5 rounded-lg bg-gray-50 border border-gray-100 hover:bg-purple-50/50 transition-colors">
+                  <div key={item.contentId} className="flex items-center justify-between p-2.5 rounded-lg bg-gray-50 border border-gray-100 hover:bg-purple-50/50 transition-colors">
                     <span className="font-semibold text-maroon-800 text-sm">{item.month}</span>
                     <span className="text-xs bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full font-medium">{item.classes}</span>
                   </div>
@@ -304,7 +304,7 @@ const Fees = () => {
               <div className="mt-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
                 <p className="text-xs text-gray-700 flex items-start gap-2">
                   <Sparkles size={14} className="text-purple-600 flex-shrink-0 mt-0.5" />
-                  <span><span className="font-semibold text-purple-800">Note:</span> Science stream annual fees are higher due to additional laboratory and practical resources</span>
+                  <span><span className="font-semibold text-purple-800">{c('students.fees.copy.installment-schedule-x.text.note-1150f054')}</span>{' ' + c('students.fees.copy.installment-schedule-x.text.science-stream-annual-fees-af0336cb')}</span>
                 </p>
               </div>
             </motion.div>
@@ -321,13 +321,13 @@ const Fees = () => {
               <div className="p-1.5 rounded-lg bg-gold-100">
                 <Shield size={16} className="text-gold-600" />
               </div>
-              <h3 className="text-sm font-bold text-maroon-900">Important Fee Rules & Guidelines</h3>
+              <h3 className="text-sm font-bold text-maroon-900">{c('students.fees.copy.important-fee-rules-gu.heading.important-fee-rules-guidel-c45d8cf7')}</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {importantRules.map((rule, index) => (
                 <div key={index} className="flex items-start gap-2.5 p-2.5 rounded-lg hover:bg-gray-50 transition-colors group">
                   <div className="w-1.5 h-1.5 rounded-full bg-gold-500 mt-2 flex-shrink-0 group-hover:scale-125 transition-transform" />
-                  <p className="text-xs text-gray-700 leading-relaxed">{rule}</p>
+                  <p className="text-xs text-gray-700 leading-relaxed">{rule.text}</p>
                 </div>
               ))}
             </div>
@@ -349,9 +349,9 @@ const Fees = () => {
                   <Building size={20} className="text-blue-600" />
                 </div>
               </div>
-              <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Bank</h4>
-              <p className="text-sm font-medium text-gray-700 mt-1">HDFC Bank Ltd.</p>
-              <p className="text-xs text-gray-500">Maligaon Branch, Guwahati</p>
+              <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">{c('students.fees.copy.bank.heading.bank-676c471b')}</h4>
+              <p className="text-sm font-medium text-gray-700 mt-1">{c('students.fees.copy.bank.paragraph.hdfc-bank-ltd-d8b55275')}</p>
+              <p className="text-xs text-gray-500">{c('students.fees.copy.bank.paragraph.maligaon-branch-guwahati-fcedfea2')}</p>
             </motion.div>
 
             <motion.div 
@@ -363,9 +363,9 @@ const Fees = () => {
                   <CreditCard size={20} className="text-green-600" />
                 </div>
               </div>
-              <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Payment Mode</h4>
-              <p className="text-sm font-medium text-gray-700 mt-1">Bank Deposit</p>
-              <p className="text-xs text-gray-500">On behalf of the Institution</p>
+              <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">{c('students.fees.copy.payment-mode.heading.payment-mode-f1441761')}</h4>
+              <p className="text-sm font-medium text-gray-700 mt-1">{c('students.fees.copy.payment-mode.paragraph.bank-deposit-bf349e3e')}</p>
+              <p className="text-xs text-gray-500">{c('students.fees.copy.payment-mode.paragraph.on-behalf-of-the-instituti-f476e2da')}</p>
             </motion.div>
 
             <motion.div 
@@ -377,9 +377,9 @@ const Fees = () => {
                   <AlertCircle size={20} className="text-red-600" />
                 </div>
               </div>
-              <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Late Fee</h4>
-              <p className="text-sm font-medium text-gray-700 mt-1">₹ 100</p>
-              <p className="text-xs text-gray-500">Levied on all late payments</p>
+              <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">{c('students.fees.copy.late-fee.heading.late-fee-3792cbcc')}</h4>
+              <p className="text-sm font-medium text-gray-700 mt-1">{c('students.fees.copy.late-fee.paragraph.100-26b6c5bc')}</p>
+              <p className="text-xs text-gray-500">{c('students.fees.copy.late-fee.paragraph.levied-on-all-late-payment-50fa6a38')}</p>
             </motion.div>
           </motion.div>
 
@@ -393,12 +393,12 @@ const Fees = () => {
             <div className="inline-block bg-gradient-to-r from-gray-50 to-gold-50/30 rounded-full px-5 py-2 border border-gray-200">
               <p className="text-xs text-gray-500 flex items-center gap-2">
                 <Info size={14} className="text-gold-500" />
-                <span>* Fees are subject to revision at any time as per school policies</span>
+                <span>{c('students.fees.copy.late-fee.text.fees-are-subject-to-revisi-208d95ab')}</span>
               </p>
             </div>
             <p className="text-xs text-gray-400 flex items-center justify-center gap-2">
               <Phone size={12} />
-              <span>For any fee-related queries, please contact the school office</span>
+              <span>{c('students.fees.copy.late-fee.text.for-any-fee-related-querie-16114dee')}</span>
             </p>
           </motion.div>
 

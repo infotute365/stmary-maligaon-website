@@ -3,6 +3,7 @@ import { createReadStream } from 'node:fs'
 import { Readable } from 'node:stream'
 import path from 'node:path'
 import { resolveUploadPath } from '../config/localStorage.js'
+import { disclosureFileAccess } from './disclosureFileAccess.js'
 
 const types = {
   '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
@@ -14,6 +15,10 @@ const types = {
 }
 export async function serveUpload(request, context) {
   const { path: segments = [] } = await context.params
+  if (segments[0] === 'disclosures') {
+    const access = await disclosureFileAccess(request, segments)
+    if (access !== 200) return new Response(access === 503 ? 'Document temporarily unavailable' : 'File not found', { status: access, headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' } })
+  }
   let requested
   try { requested = resolveUploadPath(segments.join('/')) }
   catch { return new Response('Forbidden', { status: 403 }) }
@@ -32,6 +37,10 @@ export async function serveUpload(request, context) {
       // Keep PDFs and images viewable. Other documents download rather than execute.
       'Content-Disposition': `${['.jpg', '.jpeg', '.png', '.gif', '.webp', '.pdf'].includes(ext) ? 'inline' : 'attachment'}; filename="${path.basename(actual).replace(/[^a-zA-Z0-9._-]/g, '_')}"`,
       'Content-Security-Policy': "default-src 'none'; sandbox; frame-ancestors 'self'",
+    }
+    if (segments[0] === 'disclosures') {
+      headers['Content-Type'] = 'application/pdf'
+      headers['Cache-Control'] = 'no-store'
     }
     let start = 0
     let end = stat.size - 1

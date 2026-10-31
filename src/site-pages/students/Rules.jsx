@@ -1,3 +1,4 @@
+import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React, { useEffect, useRef } from 'react'
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { 
@@ -22,6 +23,7 @@ import {
 } from 'lucide-react'
 
 const Rules = () => {
+  const c = useSiteContent()
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -50,123 +52,123 @@ const Rules = () => {
   }
 
   const generalRules = [
-    { 
-      text: 'Every student must possess a school calendar which should be brought to school daily.',
+    { contentId: "Every student must possess a school calendar which should be brought to school daily.",
+      text: c('students.rules.generalRules.every-student-must-possess-a-school-7bbe3c6c.text'),
       icon: Calendar,
-      category: 'Essential',
+      category: 'Essential', categoryText: c('students.rules.generalRules.every-student-must-possess-a-school-7bbe3c6c.categoryText'),
       color: 'red'
     },
-    { 
-      text: 'The school hours are from 7:45 AM to 2:00 PM. Students must be on the school campus at 7:30 AM.',
+    { contentId: "The school hours are from 7:45 AM to 2:00 PM. Students must be on the school campus at 7:30 AM.",
+      text: c('students.rules.generalRules.the-school-hours-are-from-7-45-am-to-64cba3a1.text'),
       icon: Clock,
-      category: 'Timing',
+      category: 'Timing', categoryText: c('students.rules.generalRules.the-school-hours-are-from-7-45-am-to-64cba3a1.categoryText'),
       color: 'blue'
     },
-    { 
-      text: 'To acquire greater communication facility only English should be spoken in the school campus.',
+    { contentId: "To acquire greater communication facility only English should be spoken in the school campus.",
+      text: c('students.rules.generalRules.to-acquire-greater-communication-fac-1cb9c70f.text'),
       icon: BookOpen,
-      category: 'Communication',
+      category: 'Communication', categoryText: c('students.rules.generalRules.to-acquire-greater-communication-fac-1cb9c70f.categoryText'),
       color: 'green'
     },
-    { 
-      text: 'Irregular attendance, habitual want of application, insubordination, any kind of cheating or serious misconduct, even outside the school campus or any habit or behaviour objectionable to the good name of the school are sufficient reasons to take disciplinary actions against the students.',
+    { contentId: "Irregular attendance, habitual want of application, insubordination, any kind of cheating or serious misconduct, even outside the school campus or any habit or behaviour objectionable to the good name of the school are sufficient reasons to take disciplinary actions against the students.",
+      text: c('students.rules.generalRules.irregular-attendance-habitual-want-o-26da65ad.text'),
       icon: Shield,
-      category: 'Discipline',
+      category: 'Discipline', categoryText: c('students.rules.generalRules.irregular-attendance-habitual-want-o-26da65ad.categoryText'),
       color: 'purple'
     },
-    { 
-      text: 'No books, periodicals, newspapers or any other item of objectionable nature shall be brought to the school. Parcels and letters addressed to the students are subjected to inspection before handing them over to the students.',
+    { contentId: "No books, periodicals, newspapers or any other item of objectionable nature shall be brought to the school. Parcels and letters addressed to the students are subjected to inspection before handing them over to the students.",
+      text: c('students.rules.generalRules.no-books-periodicals-newspapers-or-a-fe62ca6a.text'),
       icon: BookMarked,
-      category: 'Restrictions',
+      category: 'Restrictions', categoryText: c('students.rules.generalRules.no-books-periodicals-newspapers-or-a-fe62ca6a.categoryText'),
       color: 'orange'
     },
-    { 
-      text: 'Students are responsible for the safe custody of their books and belongings. Mobile phones, pen drives, CDs and any other electronic gadgets of objectionable nature as well as ornaments and jewellery of any kind are not allowed in the school.',
+    { contentId: "Students are responsible for the safe custody of their books and belongings. Mobile phones, pen drives, CDs and any other electronic gadgets of objectionable nature as well as ornaments and jewellery of any kind are not allowed in the school.",
+      text: c('students.rules.generalRules.students-are-responsible-for-the-saf-b7f37b6d.text'),
       icon: XCircle,
-      category: 'Prohibited Items',
+      category: 'Prohibited Items', categoryText: c('students.rules.generalRules.students-are-responsible-for-the-saf-b7f37b6d.categoryText'),
       color: 'rose'
     },
-    { 
-      text: 'Any damage done to the school property should be made good by the student concerned.',
+    { contentId: "Any damage done to the school property should be made good by the student concerned.",
+      text: c('students.rules.generalRules.any-damage-done-to-the-school-proper-6adf7668.text'),
       icon: AlertCircle,
-      category: 'Responsibility',
+      category: 'Responsibility', categoryText: c('students.rules.generalRules.any-damage-done-to-the-school-proper-6adf7668.categoryText'),
       color: 'amber'
     },
-    { 
-      text: 'No present or any demonstration to the teachers is allowed without the previous consent of the school authorities. Collection for any purpose whatsoever requires the Principal\'s sanction.',
+    { contentId: "No present or any demonstration to the teachers is allowed without the previous consent of the school authorities. Collection for any purpose whatsoever requires the Principal's sanction.",
+      text: c('students.rules.generalRules.no-present-or-any-demonstration-to-t-869d2d72.text'),
       icon: Users,
-      category: 'Protocol',
+      category: 'Protocol', categoryText: c('students.rules.generalRules.no-present-or-any-demonstration-to-t-869d2d72.categoryText'),
       color: 'indigo'
     },
-    { 
-      text: 'Every student attending the school is obliged to take part in all the extra-curricular activities of the school as part of their integral training and no one will be excused except for valid reasons. No student will abstain from physical exercise without the doctor\'s certificate.',
+    { contentId: "Every student attending the school is obliged to take part in all the extra-curricular activities of the school as part of their integral training and no one will be excused except for valid reasons. No student will abstain from physical exercise without the doctor's certificate.",
+      text: c('students.rules.generalRules.every-student-attending-the-school-i-0adf9270.text'),
       icon: Award,
-      category: 'Activities',
+      category: 'Activities', categoryText: c('students.rules.generalRules.every-student-attending-the-school-i-0adf9270.categoryText'),
       color: 'pink'
     },
-    { 
-      text: 'Parents/ Guardians are not allowed to see their children or interview teachers during the school hours.',
+    { contentId: "Parents/ Guardians are not allowed to see their children or interview teachers during the school hours.",
+      text: c('students.rules.generalRules.parents-guardians-are-not-allowed-to-c217146a.text'),
       icon: Phone,
-      category: 'Parent Guidelines',
+      category: 'Parent Guidelines', categoryText: c('students.rules.generalRules.parents-guardians-are-not-allowed-to-c217146a.categoryText'),
       color: 'teal'
     },
-    { 
-      text: 'Certificate, concession forms, recommendation letters etc. will be issued only two days after the application has been submitted in the office.',
+    { contentId: "Certificate, concession forms, recommendation letters etc. will be issued only two days after the application has been submitted in the office.",
+      text: c('students.rules.generalRules.certificate-concession-forms-recomme-d953767b.text'),
       icon: GraduationCap,
-      category: 'Administrative',
+      category: 'Administrative', categoryText: c('students.rules.generalRules.certificate-concession-forms-recomme-d953767b.categoryText'),
       color: 'cyan'
     },
-    { 
-      text: 'Being a Catholic institution, only Christian festivals are celebrated within the school campus. No disrespect will be shown to articles and images of religion and worship proper to Christian faith. Besides, every student is required to show respect for all religions and faiths.',
+    { contentId: "Being a Catholic institution, only Christian festivals are celebrated within the school campus. No disrespect will be shown to articles and images of religion and worship proper to Christian faith. Besides, every student is required to show respect for all religions and faiths.",
+      text: c('students.rules.generalRules.being-a-catholic-institution-only-ch-bfbecd59.text'),
       icon: Building,
-      category: 'Religious Policy',
+      category: 'Religious Policy', categoryText: c('students.rules.generalRules.being-a-catholic-institution-only-ch-bfbecd59.categoryText'),
       color: 'violet'
     }
   ]
 
   const admissionRules = [
-    {
-      text: 'New admissions are made only to K.G. Other admissions if any, will depend on the availability of seats and on the competence of the student.',
+    { contentId: "New admissions are made only to K.G. Other admissions if any, will depend on the availability of seats and on the competence of the student.",
+      text: c('students.rules.admissionRules.new-admissions-are-made-only-to-k-g-0aca0480.text'),
       icon: GraduationCap,
       color: 'blue'
     },
-    {
-      text: 'Students coming from other school are required to bring a School Leaving Certificate from the last school they attended and the mark sheet of the last Annual Examination.',
+    { contentId: "Students coming from other school are required to bring a School Leaving Certificate from the last school they attended and the mark sheet of the last Annual Examination.",
+      text: c('students.rules.admissionRules.students-coming-from-other-school-ar-45debb2d.text'),
       icon: BookOpen,
       color: 'green'
     },
-    {
-      text: 'New students must be introduced personally by their parents or guardians who will be responsible for their regularity, conduct and fees.',
+    { contentId: "New students must be introduced personally by their parents or guardians who will be responsible for their regularity, conduct and fees.",
+      text: c('students.rules.admissionRules.new-students-must-be-introduced-pers-2f189f22.text'),
       icon: Users,
       color: 'purple'
     },
-    {
-      text: 'If the school authorities think it convenient, they will examine the new applicants and place them in the class they are found fit for.',
+    { contentId: "If the school authorities think it convenient, they will examine the new applicants and place them in the class they are found fit for.",
+      text: c('students.rules.admissionRules.if-the-school-authorities-think-it-c-19ec8b0e.text'),
       icon: Award,
       color: 'amber'
     },
-    {
-      text: 'When admitted at any part of the year, they pay an entrance fee, the annual fee and the school fee of the whole year.',
+    { contentId: "When admitted at any part of the year, they pay an entrance fee, the annual fee and the school fee of the whole year.",
+      text: c('students.rules.admissionRules.when-admitted-at-any-part-of-the-yea-379091b2.text'),
       icon: AlertCircle,
       color: 'red'
     },
-    {
-      text: 'No transfer certificate will be issued until all dues to the school have been paid in full and that too only on receipt of written application from the parents or guardians.',
+    { contentId: "No transfer certificate will be issued until all dues to the school have been paid in full and that too only on receipt of written application from the parents or guardians.",
+      text: c('students.rules.admissionRules.no-transfer-certificate-will-be-issu-5d8a5082.text'),
       icon: Shield,
       color: 'orange'
     },
-    {
-      text: 'A fee of Rs. 100/- will be charged whenever an application for transfer certificate or a duplicate of the same is made. A fee Rs. 50/- will be charged for any extra from the register.',
+    { contentId: "A fee of Rs. 100/- will be charged whenever an application for transfer certificate or a duplicate of the same is made. A fee Rs. 50/- will be charged for any extra from the register.",
+      text: c('students.rules.admissionRules.a-fee-of-rs-100-will-be-charged-when-def0df34.text'),
       icon: AlertCircle,
       color: 'rose'
     }
   ]
 
   const quickHighlights = [
-    { label: 'School Hours', value: '7:45 AM - 2:00 PM', icon: Clock },
-    { label: 'Reporting Time', value: '7:30 AM', icon: Clock },
-    { label: 'Language Policy', value: 'English Only', icon: BookOpen },
-    { label: 'TC Fee', value: '₹ 100', icon: AlertCircle },
+    { contentId: "School Hours", label: c('students.rules.quickHighlights.school-hours-0a692ab9.label'), value: c('students.rules.quickHighlights.school-hours-0a692ab9.value'), icon: Clock },
+    { contentId: "Reporting Time", label: c('students.rules.quickHighlights.reporting-time-eac5781e.label'), value: c('students.rules.quickHighlights.reporting-time-eac5781e.value'), icon: Clock },
+    { contentId: "Language Policy", label: c('students.rules.quickHighlights.language-policy-4a1228be.label'), value: c('students.rules.quickHighlights.language-policy-4a1228be.value'), icon: BookOpen },
+    { contentId: "TC Fee", label: c('students.rules.quickHighlights.tc-fee-cb2dab14.label'), value: c('students.rules.quickHighlights.tc-fee-cb2dab14.value'), icon: AlertCircle },
   ]
 
   const getColorClasses = (color) => {
@@ -217,7 +219,7 @@ const Rules = () => {
         <h2 className="text-xl font-serif font-bold text-maroon-900">{title}</h2>
         {subtitle && <p className="text-xs text-gray-500">{subtitle}</p>}
       </div>
-      {count && <span className="text-xs font-medium text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full">{count} Rules</span>}
+      {count && <span className="text-xs font-medium text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full">{count}{' ' + c('students.rules.copy.page-header.text.rules-4228aeb0')}</span>}
       <div className="flex-1 h-px bg-gradient-to-r from-gold-300/50 to-transparent" />
     </motion.div>
   )
@@ -235,8 +237,8 @@ const Rules = () => {
               <BookMarked size={20} className="text-gold-300" />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif font-bold">Rules & Regulations</h1>
-              <p className="text-gold-300 text-sm mt-0.5">Guidelines for a disciplined and harmonious school environment</p>
+              <h1 className="text-2xl md:text-3xl font-serif font-bold">{c('students.rules.copy.rules-regulations.heading.rules-regulations-f8695ef9')}</h1>
+              <p className="text-gold-300 text-sm mt-0.5">{c('students.rules.copy.rules-regulations.paragraph.guidelines-for-a-disciplin-716b7dae')}</p>
             </div>
           </div>
         </div>
@@ -259,7 +261,7 @@ const Rules = () => {
               const Icon = item.icon
               return (
                 <motion.div 
-                  key={item.label} 
+                  key={item.contentId}
                   variants={fadeInUp}
                   className="bg-white rounded-xl shadow-sm border border-gray-100 p-3.5 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-gold-300 group"
                 >
@@ -284,7 +286,7 @@ const Rules = () => {
           >
             <SectionTitle 
               icon={Flag} 
-              title="General Rules" 
+              title={c('students.rules.copy.rules-regulations.title.general-rules-3a189765')}
               count="12" 
             />
             
@@ -312,7 +314,7 @@ const Rules = () => {
                         <div className="flex items-start flex-wrap gap-2">
                           <p className="text-sm text-gray-700 leading-relaxed flex-1">{rule.text}</p>
                           <span className={`flex-shrink-0 text-[10px] font-medium px-2.5 py-0.5 rounded-full ${categoryColor}`}>
-                            {rule.category}
+                            {rule.categoryText}
                           </span>
                         </div>
                       </div>
@@ -332,7 +334,7 @@ const Rules = () => {
           >
             <SectionTitle 
               icon={GraduationCap} 
-              title="Admission & Withdrawal" 
+              title={c('students.rules.copy.rules-regulations.title.admission-withdrawal-52ed78fd')}
               count="7" 
             />
 
@@ -380,24 +382,24 @@ const Rules = () => {
                 <div className="p-1.5 rounded-lg bg-blue-100 group-hover:scale-110 transition-transform duration-300">
                   <GraduationCap size={18} className="text-blue-700" />
                 </div>
-                <h4 className="font-bold text-blue-900 text-sm">Transfer Certificate (TC)</h4>
+                <h4 className="font-bold text-blue-900 text-sm">{c('students.rules.copy.transfer-certificate-t.heading.transfer-certificate-tc-25a1b26c')}</h4>
               </div>
               <ul className="space-y-1.5 text-xs text-gray-700">
                 <li className="flex items-start gap-2">
                   <ChevronRight size={14} className="text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>TC issued only after all dues are cleared</span>
+                  <span>{c('students.rules.copy.transfer-certificate-t.text.tc-issued-only-after-all-d-f3f095e6')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight size={14} className="text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Written application required from parents/guardians</span>
+                  <span>{c('students.rules.copy.transfer-certificate-t.text.written-application-requir-ec67b445')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight size={14} className="text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>TC Fee: <span className="font-semibold">₹100/-</span> per application</span>
+                  <span>{c('students.rules.copy.transfer-certificate-t.text.tc-fee-f63c95ee') + ' '}<span className="font-semibold">{c('students.rules.copy.transfer-certificate-t.text.100-b56956eb')}</span>{' ' + c('students.rules.copy.transfer-certificate-t.text.per-application-7c6f99ae')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <ChevronRight size={14} className="text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Extra copies from register: <span className="font-semibold">₹50/-</span> each</span>
+                  <span>{c('students.rules.copy.transfer-certificate-t.text.extra-copies-from-register-0b95dd27') + ' '}<span className="font-semibold">{c('students.rules.copy.transfer-certificate-t.text.50-d83d1e69')}</span>{' ' + c('students.rules.copy.transfer-certificate-t.text.each-bec16879')}</span>
                 </li>
               </ul>
             </motion.div>
@@ -410,24 +412,24 @@ const Rules = () => {
                 <div className="p-1.5 rounded-lg bg-orange-100 group-hover:scale-110 transition-transform duration-300">
                   <AlertCircle size={18} className="text-orange-700" />
                 </div>
-                <h4 className="font-bold text-orange-900 text-sm">Important Notes</h4>
+                <h4 className="font-bold text-orange-900 text-sm">{c('students.rules.copy.important-notes.heading.important-notes-b6c16d2b')}</h4>
               </div>
               <ul className="space-y-1.5 text-xs text-gray-700">
                 <li className="flex items-start gap-2">
                   <CheckCircle size={14} className="text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>New admissions primarily for KG only</span>
+                  <span>{c('students.rules.copy.important-notes.text.new-admissions-primarily-f-c958f0e2')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={14} className="text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>Admission based on seat availability & competence</span>
+                  <span>{c('students.rules.copy.important-notes.text.admission-based-on-seat-av-ce069eb4')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={14} className="text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>Full year fees applicable for mid-year admissions</span>
+                  <span>{c('students.rules.copy.important-notes.text.full-year-fees-applicable--5a13814a')}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={14} className="text-green-600 flex-shrink-0 mt-0.5" />
-                  <span>Parents responsible for student's regularity, conduct & fees</span>
+                  <span>{c('students.rules.copy.important-notes.text.parents-responsible-for-st-fade5c24')}</span>
                 </li>
               </ul>
             </motion.div>
@@ -443,8 +445,7 @@ const Rules = () => {
             <div className="flex items-center justify-center gap-2">
               <Sparkles size={16} className="text-gold-600" />
               <p className="text-xs text-gray-600">
-                <span className="font-medium text-maroon-700">These rules</span> are designed to create a disciplined, respectful, and conducive learning environment for all students.
-              </p>
+                <span className="font-medium text-maroon-700">{c('students.rules.copy.important-notes.text.these-rules-5d2d7583')}</span>{' ' + c('students.rules.copy.important-notes.paragraph.are-designed-to-create-a-d-f10207d4')}</p>
               <Sparkles size={16} className="text-gold-600" />
             </div>
           </motion.div>

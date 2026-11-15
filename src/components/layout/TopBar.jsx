@@ -2,7 +2,6 @@ import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 // src/components/layout/TopBar.jsx
 
 import React from 'react'
-import { Link } from '@/routing'
 import { Phone, Mail, MapPin, LogIn } from 'lucide-react'
 
 const TopBar = () => {
@@ -34,15 +33,14 @@ const TopBar = () => {
             <span className="hidden sm:inline text-gold-300 font-medium tracking-wide text-[9px] sm:text-[10px] whitespace-nowrap">{c('global.topbar.affiliated-to') + ' '}{c('global.school.affiliation')}{' ' + c('global.topbar.est') + ' '}{c('global.school.established')}
             </span>
 
-            {/* Admin Login Button */}
-            <Link
-              href={"/admin/login"}
+            {/* School Portal Login Button */}
+            <a
+              href="https://smsm.infotute.com/login"
               className="inline-flex items-center gap-1 bg-gold-500 hover:bg-gold-400 text-maroon-900 font-medium px-3 py-1 rounded-full transition-all duration-300 text-[9px] sm:text-[10px] shadow-md hover:shadow-lg hover:scale-105"
             >
               <LogIn size={12} className="sm:size-12" />
-              <span className="hidden xs:inline">{c('global.topbar.admin-login')}</span>
-              <span className="xs:hidden">{c('global.topbar.login')}</span>
-            </Link>
+              <span>{c('global.topbar.login')}</span>
+            </a>
           </div>
         </div>
       </div>

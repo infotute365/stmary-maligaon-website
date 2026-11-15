@@ -29,6 +29,7 @@ import NotFound from './site-pages/NotFound.jsx'
 import Gallery from './site-pages/Gallery.jsx'
 import Downloads from './site-pages/Downloads.jsx'
 import ContactUs from './site-pages/ContactUs.jsx'
+import Disclaimer from './site-pages/Disclaimer.jsx'
 
 import Founder from './site-pages/about/Founder.jsx'
 import CoFounders from './site-pages/about/CoFounders.jsx'
@@ -65,6 +66,7 @@ const publicPages = {
   '/gallery': Gallery,
   '/downloads': Downloads,
   '/contact-us': ContactUs,
+  '/disclaimer': Disclaimer,
   '/about/founder': Founder,
   '/about/co-founders': CoFounders,
   '/about/history': History,

@@ -131,7 +131,7 @@
   {
     "key": "global.topbar.admin-login",
     "group": "global",
-    "section": "Top bar",
+    "section": "Footer",
     "label": "Admin Login",
     "type": "text",
     "maxLength": 500,

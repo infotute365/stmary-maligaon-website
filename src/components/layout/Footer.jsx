@@ -1,7 +1,7 @@
 import { useSiteContent } from '@/content/SiteContentProvider.jsx'
 import React from 'react'
 import { Link } from '@/routing'
-import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react'
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, LogIn } from 'lucide-react'
 
 const Footer = () => {
   const c = useSiteContent()
@@ -38,6 +38,21 @@ const Footer = () => {
             <li><Link href={"/downloads"} className="hover:text-gold-300 transition-colors">{c('global.footer.downloads')}</Link></li>
             <li><Link href={"/gallery"} className="hover:text-gold-300 transition-colors">{c('global.footer.gallery')}</Link></li>
           </ul>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link
+              href="/admin/login"
+              className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-4 py-2 text-sm font-medium text-maroon-900 transition-colors hover:bg-gold-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400"
+            >
+              <LogIn size={16} aria-hidden="true" />
+              {c('global.topbar.admin-login')}
+            </Link>
+            <Link
+              href="/disclaimer"
+              className="inline-flex items-center rounded-full border border-gold-400 px-4 py-2 text-sm font-medium text-gold-300 transition-colors hover:bg-gold-400 hover:text-maroon-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400"
+            >
+              Disclaimer
+            </Link>
+          </div>
         </div>
 
         {/* Column 3 - CBSE Info */}

@@ -17,7 +17,8 @@ export const contentFields = Object.freeze([
   {"key": "global.topbar.email", "group": "global", "section": "Top bar", "label": "Email", "type": "text", "maxLength": 500, "defaultValue": "Email", "enabled": true},
   {"key": "global.topbar.affiliated-to", "group": "global", "section": "Top bar", "label": "Affiliated to", "type": "text", "maxLength": 500, "defaultValue": "Affiliated to", "enabled": true},
   {"key": "global.topbar.est", "group": "global", "section": "Top bar", "label": "• Est.", "type": "text", "maxLength": 500, "defaultValue": "• Est.", "enabled": true},
-  {"key": "global.topbar.admin-login", "group": "global", "section": "Top bar", "label": "Admin Login", "type": "text", "maxLength": 500, "defaultValue": "Admin Login", "enabled": true},
+  // Keep the permanent key and existing overrides when moving this link to the footer.
+  {"key": "global.topbar.admin-login", "group": "global", "section": "Footer", "label": "Admin Login", "type": "text", "maxLength": 500, "defaultValue": "Admin Login", "enabled": true},
   {"key": "global.topbar.login", "group": "global", "section": "Top bar", "label": "Login", "type": "text", "maxLength": 500, "defaultValue": "Login", "enabled": true},
   {"key": "global.navigation.label1", "group": "global", "section": "Navigation - About Us", "label": "Founder - link label", "type": "text", "maxLength": 500, "defaultValue": "Founder", "enabled": true},
   {"key": "global.navigation.label2", "group": "global", "section": "Navigation - About Us", "label": "Co-Founders - link label", "type": "text", "maxLength": 500, "defaultValue": "Co-Founders", "enabled": true},

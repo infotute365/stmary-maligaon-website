@@ -34,6 +34,8 @@ export const contentPages = Object.freeze([
 
 const routeGroups = Object.fromEntries(contentPages.filter(page => page.group !== 'global' && page.group !== 'pages.notFound').flatMap(page => [page.path, ...(page.aliases || [])].map(path => [path, page.group])))
 export function contentGroupForPath(pathname) {
+  // The static disclaimer only needs editable content for the shared header/footer.
+  if (pathname === '/disclaimer') return 'global'
   return routeGroups[pathname] || 'pages.notFound'
 }
 export function publicContentGroups(pageGroup) {

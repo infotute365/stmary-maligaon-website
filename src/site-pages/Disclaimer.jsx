@@ -13,7 +13,7 @@ const Disclaimer = () => (
             1. General Information
           </h2>
           <p>
-            The information contained on <strong>stmarysguwahati.com</strong> (the "Website") is provided by <strong>[ST. MARY’S HIGHER SECONDARY SCHOOL], Guwahati</strong> ("we," "us," or "our") for general informational and educational purposes only. While we strive to keep all academic calendars, circulars, fee structures, and admission notices accurate and up to date, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information, products, services, or related graphics contained on the Website. Any reliance you place on such information is strictly at your own risk.
+            The information contained on <strong>stmarysmaligaon.in</strong> (the "Website") is provided by <strong>[ST. MARY’S SENIOR SECONDARY SCHOOL]</strong> ("we," "us," or "our") for general informational and educational purposes only. While we strive to keep all academic calendars, circulars, fee structures, and admission notices accurate and up to date, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information, products, services, or related graphics contained on the Website. Any reliance you place on such information is strictly at your own risk.
           </p>
         </section>
 
@@ -31,7 +31,7 @@ const Disclaimer = () => (
             3. Limitation of Liability
           </h2>
           <p>
-            In no event will <strong>[ST. MARY’S HIGHER SECONDARY SCHOOL]</strong>, its management, trustees, principal, faculty, or staff be liable for any loss or damage, including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this Website. Every effort is made to keep the Website up and running smoothly; however, <strong>[ST. MARY’S HIGHER SECONDARY SCHOOL]</strong> takes no responsibility for, and will not be liable for, the Website being temporarily unavailable due to technical issues beyond our control.
+            In no event will <strong>[ST. MARY’S SENIOR SECONDARY SCHOOL]</strong>, its management, trustees, principal, faculty, or staff be liable for any loss or damage, including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this Website. Every effort is made to keep the Website up and running smoothly; however, <strong>[ST. MARY’S SENIOR SECONDARY SCHOOL]</strong> takes no responsibility for, and will not be liable for, the Website being temporarily unavailable due to technical issues beyond our control.
           </p>
         </section>
 
@@ -40,7 +40,7 @@ const Disclaimer = () => (
             4. External Links and Third-Party Services
           </h2>
           <p>
-            Through this Website, you may be able to link to other websites (such as examination boards, educational portals, or online payment gateways) that are not under the control of <strong>[ST. MARY’S HIGHER SECONDARY SCHOOL]</strong>. We have no control over the nature, content, and availability of those external sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.
+            Through this Website, you may be able to link to other websites (such as examination boards, educational portals, or online payment gateways) that are not under the control of <strong>[ST. MARY’S SENIOR SECONDARY SCHOOL]</strong>. We have no control over the nature, content, and availability of those external sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.
           </p>
         </section>
 
@@ -49,7 +49,7 @@ const Disclaimer = () => (
             5. Intellectual Property and Student Privacy
           </h2>
           <p>
-            All content on this Website, including text, school logos, emblems, photographs, videos, and downloadable study materials, is the intellectual property of <strong>[ST. MARY’S HIGHER SECONDARY SCHOOL]</strong> unless otherwise stated. Unauthorized copying, downloading, distribution, or misuse of any content—especially photographs or personal details of students and staff—is strictly prohibited and may attract legal action.
+            All content on this Website, including text, school logos, emblems, photographs, videos, and downloadable study materials, is the intellectual property of <strong>[ST. MARY’S SENIOR SECONDARY SCHOOL]</strong> unless otherwise stated. Unauthorized copying, downloading, distribution, or misuse of any content—especially photographs or personal details of students and staff—is strictly prohibited and may attract legal action.
           </p>
         </section>
 
@@ -58,7 +58,7 @@ const Disclaimer = () => (
             6. Right to Modify and Governing Law
           </h2>
           <p>
-            <strong>[ST. MARY’S HIGHER SECONDARY SCHOOL]</strong> reserves the right to add, delete, or modify any part of the Website content or this Disclaimer at any time without prior notice. This Disclaimer shall be governed by and construed in accordance with the laws of <strong>INDIA</strong>, and any disputes relating to this Disclaimer shall be subject to the exclusive jurisdiction of the courts in <strong>[Guwahati]</strong>.
+            <strong>[ST. MARY’S SENIOR SECONDARY SCHOOL]</strong> reserves the right to add, delete, or modify any part of the Website content or this Disclaimer at any time without prior notice. This Disclaimer shall be governed by and construed in accordance with the laws of <strong>INDIA</strong>, and any disputes relating to this Disclaimer shall be subject to the exclusive jurisdiction of the courts in <strong>[Guwahati]</strong>.
           </p>
         </section>
 
@@ -67,7 +67,7 @@ const Disclaimer = () => (
             7. Contact Us
           </h2>
           <p>
-            If you notice any inaccuracies on the Website or have questions regarding this Disclaimer, please contact the school office at <strong><a href="mailto:stmarysghy1924@yahoo.com" className="break-all text-maroon-800 underline underline-offset-4 hover:text-maroon-600">stmarysghy1924@yahoo.com</a></strong>
+            If you notice any inaccuracies on the Website or have questions regarding this Disclaimer, please contact the school office at <strong><a href="mailto:st.marysschool66@yahoo.com" className="break-all text-maroon-800 underline underline-offset-4 hover:text-maroon-600">st.marysschool66@yahoo.com</a></strong>
           </p>
         </section>
       </div>

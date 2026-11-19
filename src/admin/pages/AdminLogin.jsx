@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from '@/routing'
 import { useAdminAuth } from '../context/AdminAuthContext'
-import { Mail, Lock, LogIn, School } from 'lucide-react'
+import { Mail, Lock, LogIn, School, Eye, EyeOff } from 'lucide-react'
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const { login, isAuthenticated } = useAdminAuth()
@@ -24,11 +25,11 @@ const AdminLogin = () => {
     e.preventDefault()
     setError('')
     setLoading(true)
-    
+
     try {
       const result = await login(email, password)
       console.log('Login result:', result)
-      
+
       if (result.success) {
         console.log('Login successful, navigating...')
         // Force navigation after login
@@ -58,8 +59,12 @@ const AdminLogin = () => {
             <div className="w-16 h-16 rounded-2xl bg-maroon-800 text-gold-300 flex items-center justify-center mx-auto mb-4">
               <School size={32} />
             </div>
-            <h1 className="font-serif text-2xl font-bold text-maroon-900">Admin Login</h1>
-            <p className="text-gray-500 text-sm mt-1">St. Mary's Sr. Secondary School</p>
+            <h1 className="font-serif text-2xl font-bold text-maroon-900">
+              Admin Login
+            </h1>
+            <p className="text-gray-500 text-sm mt-1">
+              St. Mary's Sr. Secondary School
+            </p>
           </div>
 
           {error && (
@@ -70,9 +75,14 @@ const AdminLogin = () => {
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Email Address</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                Email Address
+              </label>
               <div className="relative">
-                <Mail size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                <Mail
+                  size={18}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                />
                 <input
                   type="email"
                   value={email}
@@ -85,17 +95,41 @@ const AdminLogin = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
+              <label
+                htmlFor="admin-password"
+                className="block text-sm font-medium text-gray-700 mb-1.5"
+              >
+                Password
+              </label>
               <div className="relative">
-                <Lock size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                <Lock
+                  size={18}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                />
                 <input
-                  type="password"
+                  id="admin-password"
+                  type={showPassword ? 'text' : 'password'}
+                  autoComplete="current-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-maroon-400 focus:ring-2 focus:ring-maroon-100 outline-none transition-all"
+                  className="w-full pl-10 pr-12 py-3 rounded-xl border border-gray-200 focus:border-maroon-400 focus:ring-2 focus:ring-maroon-100 outline-none transition-all"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((visible) => !visible)}
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  aria-pressed={showPassword}
+                  aria-controls="admin-password"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-lg text-gray-500 hover:text-maroon-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon-400"
+                >
+                  {showPassword ? (
+                    <EyeOff size={18} aria-hidden="true" />
+                  ) : (
+                    <Eye size={18} aria-hidden="true" />
+                  )}
+                </button>
               </div>
             </div>
 

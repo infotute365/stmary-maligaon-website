@@ -22,7 +22,7 @@ const Disclaimer = () => (
             2. Admissions, Fees, and Official Records
           </h2>
           <p>
-            Details regarding admissions, syllabus, examinations, and fee schedules published on this Website are indicative and subject to change without prior notice. In the event of any discrepancy between the information displayed on this Website and the official hard-copy records maintained at the <strong>[School Name]</strong> administrative office, the physical records at the school office shall be treated as final and binding.
+            Details regarding admissions, syllabus, examinations, and fee schedules published on this Website are indicative and subject to change without prior notice. In the event of any discrepancy between the information displayed on this Website and the official hard-copy records maintained at the <strong>ST. MARY’S SENIOR SECONDARY SCHOOL</strong> administrative office, the physical records at the school office shall be treated as final and binding.
           </p>
         </section>
 

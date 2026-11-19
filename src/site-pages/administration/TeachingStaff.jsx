@@ -29,9 +29,15 @@ const TeachingStaff = () => {
   }
 
   const categories = {
-    prt: { label: c('administration.teachingStaff.categories.prt.label'), icon: '👶' },
-    tgt: { label: c('administration.teachingStaff.categories.tgt.label'), icon: '📚' },
-    pgt: { label: c('administration.teachingStaff.categories.pgt.label'), icon: '🎓' }
+    prt: { label: c('administration.teachingStaff.categories.prt.label') },
+    tgt: {
+      label: c('administration.teachingStaff.categories.tgt.label'),
+      icon: '📚',
+    },
+    pgt: {
+      label: c('administration.teachingStaff.categories.pgt.label'),
+      icon: '🎓',
+    },
   }
 
   const groupedStaff = teachingStaff.reduce((acc, item) => {
@@ -44,7 +50,12 @@ const TeachingStaff = () => {
   if (loading) {
     return (
       <div>
-        <PageHeader homeLabel={c('administration.teachingStaff.breadcrumb.home')} title={c('administration.teachingStaff.pageHeader.title')} subtitle={c('administration.teachingStaff.pageHeader.subtitle')} icon={<GraduationCap size={18} />} />
+        <PageHeader
+          homeLabel={c('administration.teachingStaff.breadcrumb.home')}
+          title={c('administration.teachingStaff.pageHeader.title')}
+          subtitle={c('administration.teachingStaff.pageHeader.subtitle')}
+          icon={<GraduationCap size={18} />}
+        />
         <section className="section-padding">
           <div className="container-custom flex justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-4 border-maroon-600 border-t-transparent"></div>
@@ -56,7 +67,12 @@ const TeachingStaff = () => {
 
   return (
     <div>
-      <PageHeader homeLabel={c('administration.teachingStaff.breadcrumb.home')} title={c('administration.teachingStaff.pageHeader.title')} subtitle={c('administration.teachingStaff.pageHeader.subtitle')} icon={<GraduationCap size={18} />} />
+      <PageHeader
+        homeLabel={c('administration.teachingStaff.breadcrumb.home')}
+        title={c('administration.teachingStaff.pageHeader.title')}
+        subtitle={c('administration.teachingStaff.pageHeader.subtitle')}
+        icon={<GraduationCap size={18} />}
+      />
       <section className="section-padding">
         <div className="container-custom">
           {Object.keys(categories).map((categoryKey) => {
@@ -67,19 +83,23 @@ const TeachingStaff = () => {
               <div key={categoryKey} className="mb-8">
                 <SectionWrapper>
                   <h2 className="font-serif text-xl font-bold text-maroon-900 mb-4 flex items-center gap-2">
-                    <span>{categories[categoryKey].icon}</span>
+                    {categories[categoryKey].icon && (
+                      <span>{categories[categoryKey].icon}</span>
+                    )}
                     {categories[categoryKey].label}
-                    <span className="text-sm font-normal text-gray-500 ml-2">({items.length})</span>
+                    <span className="text-sm font-normal text-gray-500 ml-2">
+                      ({items.length})
+                    </span>
                   </h2>
                 </SectionWrapper>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   {items.map((t) => (
-                    <StaffCard 
-                      key={t._id} 
-                      name={t.name} 
-                      subject={t.designation} 
-                      qualification={t.qualification} 
-                      photo={getMediaUrl(t.image)} 
+                    <StaffCard
+                      key={t._id}
+                      name={t.name}
+                      subject={t.designation}
+                      qualification={t.qualification}
+                      photo={getMediaUrl(t.image)}
                     />
                   ))}
                 </div>
@@ -88,7 +108,11 @@ const TeachingStaff = () => {
           })}
 
           {teachingStaff.length === 0 && (
-            <p className="text-center text-gray-500 py-8">{c('administration.teachingStaff.copy.text.paragraph.no-teaching-staff-members--e3de0c26')}</p>
+            <p className="text-center text-gray-500 py-8">
+              {c(
+                'administration.teachingStaff.copy.text.paragraph.no-teaching-staff-members--e3de0c26',
+              )}
+            </p>
           )}
         </div>
       </section>
